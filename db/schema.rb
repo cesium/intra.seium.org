@@ -11,15 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128215157) do
+ActiveRecord::Schema.define(version: 20150130031256) do
 
   create_table "activities", force: true do |t|
+    t.string   "last_name"
     t.string   "name"
     t.text     "description"
     t.datetime "begin_date"
     t.datetime "end_date"
-    t.integer  "type"
+    t.integer  "activity_type"
     t.string   "place"
+    t.string   "poster_photo_url"
+    t.string   "banner_photo_url"
+    t.integer  "num_available_places"
+    t.float    "registration_fee_in_euros"
+    t.text     "prizes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "activities_speakers", id: false, force: true do |t|
+    t.integer "activity_id"
+    t.integer "speaker_id"
+  end
+
+  add_index "activities_speakers", ["activity_id"], name: "index_activities_speakers_on_activity_id"
+  add_index "activities_speakers", ["speaker_id"], name: "index_activities_speakers_on_speaker_id"
+
+  create_table "speakers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "photo_url"
+    t.text     "biography"
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.string   "google_plus_account"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

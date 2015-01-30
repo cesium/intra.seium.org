@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :speakers
+
   resources :activities
 
   devise_for :users
