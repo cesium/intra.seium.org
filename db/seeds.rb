@@ -67,3 +67,5 @@ users = User.create([
 		activities: activities
 	}
 ])
+
+users[0].add_badge(1)

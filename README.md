@@ -27,9 +27,11 @@ Model
 + Activity
 + Speaker
 + Company
++ Badge (by Merit gem)
 
 ### Relationships Between Entities
 
 + User and Activity (*N:N*)
 + Activity and Speaker (*N:N*)
 + Speaker and Company (*N:1*)
++ User and Badge (*N:N*)

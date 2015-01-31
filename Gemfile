@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 
 # Use devise for User authentication
 gem 'devise'
+
+# Use Merit for badge system
+gem 'merit'
