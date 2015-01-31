@@ -1,7 +1,7 @@
 class CreateSpeakers < ActiveRecord::Migration
   def change
     create_table :speakers do |t|
-      t.string :name
+      t.string :name, null: false, index: true
       t.string :email
       t.string :photo_url
       t.text :biography

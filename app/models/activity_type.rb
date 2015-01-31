@@ -1,8 +1,11 @@
 module ActivityType
-	TALK = 0
-	WORKSHOP = 1
-	LEISURE = 2
-	QUIZ = 3
-	CHALLENGE = 4
-	OTHER = 5
+	TALK = 1
+	WORKSHOP = 2
+	LEISURE = 3
+	QUIZ = 4
+	CHALLENGE = 5
+	HACKATHON = 6
+	SOCIAL = 7
+	SPORT = 8
+	OTHER = 0
 end

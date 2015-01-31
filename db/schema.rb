@@ -11,15 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130031256) do
+ActiveRecord::Schema.define(version: 20150130231937) do
 
   create_table "activities", force: true do |t|
-    t.string   "last_name"
-    t.string   "name"
+    t.string   "name",                                      null: false
     t.text     "description"
-    t.datetime "begin_date"
+    t.datetime "begin_date",                                null: false
     t.datetime "end_date"
-    t.integer  "activity_type"
+    t.integer  "activity_type",                             null: false
     t.string   "place"
     t.string   "poster_photo_url"
     t.string   "banner_photo_url"
@@ -28,6 +27,8 @@ ActiveRecord::Schema.define(version: 20150130031256) do
     t.text     "prizes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_free",                   default: true,  null: false
+    t.boolean  "has_prizes",                default: false, null: false
   end
 
   create_table "activities_speakers", id: false, force: true do |t|
@@ -38,8 +39,24 @@ ActiveRecord::Schema.define(version: 20150130031256) do
   add_index "activities_speakers", ["activity_id"], name: "index_activities_speakers_on_activity_id"
   add_index "activities_speakers", ["speaker_id"], name: "index_activities_speakers_on_speaker_id"
 
+  create_table "companies", force: true do |t|
+    t.string   "name",                                null: false
+    t.text     "description"
+    t.string   "address"
+    t.boolean  "is_partner",          default: false, null: false
+    t.integer  "partnership_type"
+    t.string   "web_site"
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.string   "google_plus_account"
+    t.string   "logo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "speakers", force: true do |t|
-    t.string   "name"
+    t.string   "name",                null: false
     t.string   "email"
     t.string   "photo_url"
     t.text     "biography"
@@ -49,7 +66,12 @@ ActiveRecord::Schema.define(version: 20150130031256) do
     t.string   "google_plus_account"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
+    t.string   "web_site"
+    t.integer  "company_id"
   end
+
+  add_index "speakers", ["company_id"], name: "index_speakers_on_company_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
