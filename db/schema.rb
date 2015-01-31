@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130231937) do
+ActiveRecord::Schema.define(version: 20150131041453) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20150130231937) do
 
   add_index "activities_speakers", ["activity_id"], name: "index_activities_speakers_on_activity_id"
   add_index "activities_speakers", ["speaker_id"], name: "index_activities_speakers_on_speaker_id"
+
+  create_table "activities_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
+  end
+
+  add_index "activities_users", ["activity_id"], name: "index_activities_users_on_activity_id"
+  add_index "activities_users", ["user_id"], name: "index_activities_users_on_user_id"
 
   create_table "companies", force: true do |t|
     t.string   "name",                                null: false
@@ -74,18 +82,35 @@ ActiveRecord::Schema.define(version: 20150130231937) do
   add_index "speakers", ["company_id"], name: "index_speakers_on_company_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                            default: "", null: false
+    t.string   "encrypted_password",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                    default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "birthday"
+    t.text     "biography"
+    t.boolean  "is_student"
+    t.boolean  "is_student_at_minho_univ"
+    t.boolean  "is_inf_eng_student_at_minho_univ"
+    t.boolean  "is_cesium_associate"
+    t.integer  "cesium_associate_number"
+    t.string   "minho_univ_student_id"
+    t.string   "university"
+    t.string   "course"
+    t.string   "photo_url"
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.string   "google_plus_account"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

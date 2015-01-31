@@ -12,3 +12,23 @@ Main Features
 + Badges Listing
 + Badge Acquirement Registration
 + Platform Administration
+
+Technology Used
+---------------
+
++ Ruby on Rails
+
+Model
+-----
+
+### Entities
+
++ User
++ Activity
++ Speaker
++ Company
+
+### Relationships Between Entities
+
++ Activity and Speaker (*N:N*)
++ Speaker and Company (*N:1*)
