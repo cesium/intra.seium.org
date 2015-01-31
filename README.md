@@ -28,6 +28,7 @@ Model
 + Speaker
 + Company
 + Badge (by Merit gem)
++ Edition
 
 ### Relationships Between Entities
 
@@ -35,3 +36,7 @@ Model
 + Activity and Speaker (*N:N*)
 + Speaker and Company (*N:1*)
 + User and Badge (*N:N*)
++ User and Edition (*N:N*)
++ Activity and Edition (*1:N*)
++ Company and Edition (*N:N*)
++ Speaker and Edition (*N:N*)

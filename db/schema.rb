@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131190138) do
+ActiveRecord::Schema.define(version: 20150131192845) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20150131190138) do
     t.datetime "updated_at"
     t.boolean  "is_free",                   default: true,  null: false
     t.boolean  "has_prizes",                default: false, null: false
+    t.integer  "edition_id"
   end
+
+  add_index "activities", ["edition_id"], name: "index_activities_on_edition_id"
 
   create_table "activities_speakers", id: false, force: true do |t|
     t.integer "activity_id"
@@ -74,6 +77,14 @@ ActiveRecord::Schema.define(version: 20150131190138) do
     t.datetime "updated_at"
   end
 
+  create_table "companies_editions", id: false, force: true do |t|
+    t.integer "company_id"
+    t.integer "edition_id"
+  end
+
+  add_index "companies_editions", ["company_id"], name: "index_companies_editions_on_company_id"
+  add_index "companies_editions", ["edition_id"], name: "index_companies_editions_on_edition_id"
+
   create_table "editions", force: true do |t|
     t.string   "name"
     t.integer  "edition_number"
@@ -83,6 +94,22 @@ ActiveRecord::Schema.define(version: 20150131190138) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "editions_speakers", id: false, force: true do |t|
+    t.integer "edition_id"
+    t.integer "speaker_id"
+  end
+
+  add_index "editions_speakers", ["edition_id"], name: "index_editions_speakers_on_edition_id"
+  add_index "editions_speakers", ["speaker_id"], name: "index_editions_speakers_on_speaker_id"
+
+  create_table "editions_users", id: false, force: true do |t|
+    t.integer "edition_id"
+    t.integer "user_id"
+  end
+
+  add_index "editions_users", ["edition_id"], name: "index_editions_users_on_edition_id"
+  add_index "editions_users", ["user_id"], name: "index_editions_users_on_user_id"
 
   create_table "merit_actions", force: true do |t|
     t.integer  "user_id"
@@ -173,7 +200,7 @@ ActiveRecord::Schema.define(version: 20150131190138) do
     t.integer  "sash_id"
     t.integer  "level",                            default: 0
     t.boolean  "is_organizer"
-    t.string   "organization_role"
+    t.string   "organizer_role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

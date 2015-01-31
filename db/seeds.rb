@@ -13,17 +13,18 @@ editions = Edition.create([
 companies = Company.create([
 	{
 		name: 'Blizzard',
-		is_partner: false
+		is_partner: false,
+		editions: editions
 	},
 	{
 		name: 'BEEVERYCREATIVE',
 		description: '3D Printing',
 		is_partner: true,
 		partnership_type: PartnershipType::SPONSOR,
-		web_site: 'https://beeverycreative.com/'
+		web_site: 'https://beeverycreative.com/',
+		editions: editions
 	}
 ])
-
 
 # Speakers
 speakers = Speaker.create([
@@ -32,14 +33,16 @@ speakers = Speaker.create([
 		role: '3D Evironment Artist',
 		biography: 'Começou carreira profissional na indústria dos vídeo jogos em terras Lusitanas na Seed Studios, no ano de 2007, onde trabalhou no jogo Under Siege Game, partindo depois para a Alemanha, onde ajudou a embelezar os ambientes de Crysis 2 e 3 antes de finalmente começar na Blizzard na Califórnia onde de momento trabalha no jogo Overwatch.',
 		twitter_account: 'https://twitter.com/HelderHP',
-		company: companies[0]
+		company: companies[0],
+		editions: editions
 	},
 	{
 		name: 'Francisco Mendes',
 		role: 'Entrepreneur & Creator',
 		biography: 'Empreendedor apaixonado por tecnologia. Licenciado em Engenharia Electrónica e Telecomunicações e pós-graduado em Engenharia de Automação Industrial, ambos pela Universidade de Aveiro, começou a sua carreira profissional como Engenheiro de I&D e posteriormente como director de Hardware. No final de 2010, juntou-se a Jorge Pinto e fundaram a bitBOX Electronic Systems, uma startup que começou na incubadora de empresas da Universidade de Aveiro e que mais tarde se tornou na BEEVERYCREATIVE, a empresa que criou a primeira impressora 3D portuguesa.',
 		twitter_account: 'https://twitter.com/fmendes75/',
-		company: companies[1]
+		company: companies[1],
+		editions: editions
 	}
 ])
 
@@ -53,7 +56,8 @@ activities = Activity.create([
 		activity_type: ActivityType::TALK,
 		place: 'Anfiteatro A2 @ DI',
 		num_available_places: 60,
-		speakers: [speakers[0]]
+		speakers: [speakers[0]],
+		edition: editions[0]
 	},
 	{
 		name: 'Modelação 3D',
@@ -63,7 +67,8 @@ activities = Activity.create([
 		activity_type: ActivityType::WORKSHOP,
 		place: 'Anfiteatro A2 @ DI',
 		num_available_places: 40,
-		speakers: [speakers[1]]
+		speakers: [speakers[1]],
+		edition: editions[0]
 	}
 ])
 
@@ -74,14 +79,19 @@ users = User.create([
 		password: '123456789',
 		first_name: 'José',
 		last_name: 'Alvim',
-		birthday: DateTime.civil_from_format(:local, 1990, 8, 6),
+		birthday: DateTime.civil_from_format(:local, 1990, 4, 18),
 		is_student: true,
 		is_student_at_minho_univ: true,
+		minho_univ_student_id: 'pg123456',
 		is_inf_eng_student_at_minho_univ: true,
 		is_cesium_associate: true,
 		cesium_associate_number: 1043,
-		activities: activities
+		is_organizer: true,
+		organizer_role: 'Membro',
+		activities: activities,
+		editions: editions
 	}
 ])
 
+# Badges Acquisition
 users[0].add_badge(1)
