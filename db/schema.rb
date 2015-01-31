@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131185645) do
+ActiveRecord::Schema.define(version: 20150131190138) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 20150131185645) do
     t.string   "github_account"
     t.string   "google_plus_account"
     t.string   "logo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "editions", force: true do |t|
+    t.string   "name"
+    t.integer  "edition_number"
+    t.text     "description"
+    t.datetime "begin_date"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
