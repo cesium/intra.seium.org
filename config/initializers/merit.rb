@@ -32,9 +32,24 @@ end
 #   Merit::Badge.create! attrs
 # end
 
-Merit::Badge.create!(
+Merit::Badge.create!({
 	id: 1,
-	name: "registration",
-	description: "Inscrição na Semana de Engenharia Informática",
-	custom_fields: { category: 'main' }
-)
+	name: "register",
+	description: "Registo na Plataforma Online da Semana de Engenharia Informática @ UM",
+	custom_fields:
+		{
+			category: 'main',
+			logo_url: 'http://www.pimall.com/nais/images/badge_m133.jpg'
+		}
+})
+
+Merit::Badge.create!({
+	id: 2,
+	name: "update-account",
+	description: "Atualização dos dados da conta",
+	custom_fields:
+		{
+			category: 'main',
+			logo_url: 'http://www.vectorgraphit.com/wp-content/uploads/2013/09/vintage_badge.jpg'
+		}
+})

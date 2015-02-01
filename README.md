@@ -28,6 +28,7 @@ Model
 + Speaker
 + Company
 + Badge (by Merit gem)
++ BadgeCode (Store unique codes for badges)
 + Edition
 
 ### Relationships Between Entities
@@ -37,6 +38,8 @@ Model
 + Speaker and Company (*N:1*)
 + User and Badge (*N:N*)
 + User and Edition (*N:N*)
-+ Activity and Edition (*1:N*)
++ Activity and Edition (*N:1*)
 + Company and Edition (*N:N*)
 + Speaker and Edition (*N:N*)
++ User and BadgeCode (*1:N*)
++ Badge and BadgeCode (*1:N*)
