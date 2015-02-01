@@ -41,8 +41,5 @@ gem 'spring',        group: :development
 # Use devise for User authentication
 gem 'devise'
 
-# Use Merit for badge system
-gem 'merit'
-
 # Use CouponCode for Generating Codes for Badges
 gem 'coupon_code'
