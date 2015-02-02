@@ -7,6 +7,7 @@ module Unseed
 			Edition.delete_all
 			Speaker.delete_all
 			User.delete_all
+			Badge.delete_all
 		end
 	end
 end

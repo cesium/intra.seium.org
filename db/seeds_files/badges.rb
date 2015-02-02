@@ -1,18 +1,19 @@
 module Seed
-	def self.badges(users)
-		BadgeCode.create([
+	def self.badges(editions, activities)
+		Badge.create([
 			{
-				badge_id: 1,
-				user: users[0],
-				code: CouponCode.generate,
-				status: BadgeCodeStatus::AVAILABLE,
-				expiration_date: DateTime.civil_from_format(:local, 2016)	
+				name: "register",
+				description: "Registo na Plataforma Online da Semana de Engenharia Informática @ UM",
+				category: 'main',
+				logo_url: 'http://www.pimall.com/nais/images/badge_m133.jpg',
+				edition: editions[0]
 			},
 			{
-				badge_id: 1,
-				code: CouponCode.generate,
-				status: BadgeCodeStatus::AVAILABLE,
-				expiration_date: DateTime.civil_from_format(:local, 2016)	
+				name: "update-account",
+				description: "Atualização dos dados da conta",
+				category: 'main',
+				logo_url: 'http://www.vectorgraphit.com/wp-content/uploads/2013/09/vintage_badge.jpg',
+				edition: editions[0]
 			}
 		])
 	end

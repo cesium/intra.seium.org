@@ -20,5 +20,5 @@ activities = Seed::activities(editions, speakers)
 # Users
 users = Seed::users(editions, activities)
 
-# Codes Generation for Badges
-badges = Seed::badges(users)
+# Badges
+badges = Seed::badges(editions, activities)

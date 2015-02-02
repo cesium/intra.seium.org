@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201181134) do
+ActiveRecord::Schema.define(version: 20150202044754) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -63,6 +63,20 @@ ActiveRecord::Schema.define(version: 20150201181134) do
   add_index "badge_codes", ["badge_id"], name: "index_badge_codes_on_badge_id"
   add_index "badge_codes", ["code"], name: "index_badge_codes_on_code"
   add_index "badge_codes", ["user_id"], name: "index_badge_codes_on_user_id"
+
+  create_table "badges", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "category"
+    t.integer  "edition_id"
+    t.integer  "activity_id"
+    t.string   "logo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "badges", ["activity_id"], name: "index_badges_on_activity_id"
+  add_index "badges", ["edition_id"], name: "index_badges_on_edition_id"
 
   create_table "companies", force: true do |t|
     t.string   "name",                                null: false
