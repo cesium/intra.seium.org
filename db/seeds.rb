@@ -4,6 +4,7 @@ require './db/seeds_files/speakers'
 require './db/seeds_files/activities'
 require './db/seeds_files/users'
 require './db/seeds_files/badges'
+require './db/seeds_files/badge_codes'
 
 # Editions
 editions = Seed::editions
@@ -22,3 +23,6 @@ users = Seed::users(editions, activities)
 
 # Badges
 badges = Seed::badges(editions, activities)
+
+# Badges Acquisition
+badge_codes = Seed::badge_codes(users, badges)
