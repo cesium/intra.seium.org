@@ -1,4 +1,4 @@
-module BadgeCodeStatus
+module BadgeAcquisitionStatus
 	AVAILABLE = 0
 	NOT_AVAILABLE = 1
 	USED = 2

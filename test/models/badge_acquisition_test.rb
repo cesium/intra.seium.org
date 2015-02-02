@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BadgeCodeTest < ActiveSupport::TestCase
+class BadgeAcquisitionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

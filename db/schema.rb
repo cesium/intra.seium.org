@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202050945) do
+ActiveRecord::Schema.define(version: 20150202061333) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150202050945) do
   add_index "activities_users", ["activity_id"], name: "index_activities_users_on_activity_id"
   add_index "activities_users", ["user_id"], name: "index_activities_users_on_user_id"
 
-  create_table "badge_codes", force: true do |t|
+  create_table "badge_acquisitions", force: true do |t|
     t.integer  "badge_id"
     t.integer  "user_id"
     t.string   "code"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20150202050945) do
     t.datetime "updated_at"
   end
 
-  add_index "badge_codes", ["badge_id"], name: "index_badge_codes_on_badge_id"
-  add_index "badge_codes", ["code"], name: "index_badge_codes_on_code"
-  add_index "badge_codes", ["user_id"], name: "index_badge_codes_on_user_id"
+  add_index "badge_acquisitions", ["badge_id"], name: "index_badge_acquisitions_on_badge_id"
+  add_index "badge_acquisitions", ["code"], name: "index_badge_acquisitions_on_code"
+  add_index "badge_acquisitions", ["user_id"], name: "index_badge_acquisitions_on_user_id"
 
   create_table "badges", force: true do |t|
     t.string   "name"
