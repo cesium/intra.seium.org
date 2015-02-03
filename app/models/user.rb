@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 	def badges
 		BadgeAcquisition.where(user_id: id).map { |bc| bc.badge }
 	end
+
+	def full_name
+		"#{first_name} #{last_name}"
+	end
 end

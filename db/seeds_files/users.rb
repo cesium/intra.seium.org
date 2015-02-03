@@ -7,6 +7,7 @@ module Seed
 				first_name: 'José',
 				last_name: 'Alvim',
 				birthday: DateTime.civil_from_format(:local, 1990, 4, 18),
+				photo_url: 'http://www.mg.gov.br/governomg/ecp/images.do?evento=imagem&urlPlc=gov-jose-cesario-de-faria-alvim.jpg',
 				is_student: true,
 				is_student_at_minho_univ: true,
 				minho_univ_student_id: 'pg123456',

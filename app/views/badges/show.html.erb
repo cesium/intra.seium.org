@@ -1,0 +1,41 @@
+<div id="notice">
+	<%= notice %>
+</div>
+
+<div id="badge">
+	<div id="badge-name">
+		Nome: <%= @badge.name %>
+	</div>	
+	<div id="badge-description">
+		Descrição: <%= @badge.description %>
+	</div>	
+	<div id="badge-category">
+		Categoria: <%= @badge.category %>
+	</div>	
+	<div id="badge-logo">
+		<img src="<%= @badge.logo_url %>" alt="<%= @badge.name %>"
+	</div>
+	<div id="badge-users">
+		<div id="badge-users-title">
+			<h2>Lista de utilizadores com este badge:</h2>
+		</div>
+		<div id="badge-users-list">
+			<ul>
+				<% @badge.users.each do |user| %>
+					<li class="badge-user">
+						<div id="badge-user-name">
+							<%= user.full_name %>
+						</div>
+						<div class="badge-user-photo">
+							<img src="<%= user.photo_url %>" alt="<%= user.full_name %>"
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div>
+	<%= link_to 'Back', badges_path %>
+</div>
