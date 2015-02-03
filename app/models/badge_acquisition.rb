@@ -2,38 +2,47 @@ class BadgeAcquisition < ActiveRecord::Base
   belongs_to :user
   belongs_to :badge
 
+	UserAlreadyHaveBadge = Class.new(StandardError)
+	InvalidCode = Class.new(StandardError)
+	CodeAlreadyInUse = Class.new(StandardError)
+	CodeExpirationDateExcedeed = Class.new(StandardError)
+
 	def self.acquire_badge(user, badge, code = nil)
-		fail 'Badge Expiration Date excedeed' if badge.expiration_date && DateTime.now > badge.expiration_date
-			
+		raise Badge::ExpirationDateExcedeed if badge.expiration_date && DateTime.now > badge.expiration_date
+
 		if badge.is_code_needed
-			ba = BadgeAcquisition.where(code: code).first
-			fail 'The code does not exist' unless code && ba
-
-			fail 'Code already in use' if ba.status == BadgeAcquisitionStatus::USED
-			fail 'Code not available' if ba.status == BadgeAcquisitionStatus::NOT_AVAILABLE
-
-			if ba.code_expiration_date && DateTime.now > ba.code_expiration_date
-				fail 'Badge Code Expiration Date excedeed'
-				ba.status = BadgeStatusAcquisition::EXPIRED
-			else
-				self.create_badge_acquisition_with_code(user, ba)
-			end
-
+			badge_acq = BadgeAcquisition.where(code: code).first
+			raise InvalidCode unless code && badge_acq
+			badge_acq.activate_badge_acquisition if badge_acq.validate_badge_acquisition(code)
 		else	
 				self.create_badge_acquisition(user, badge)
 		end
 	end
 
-		def self.create_badge_acquisition(user, badge)
-			BadgeAcquisition.create({
-					badge: badge,
-					user: user
-			})
-		end
+	private
 
-		def self.create_badge_acquisition_with_code(user, badge_acq)
-			badge_acq.user = user
-			badge_acq.status = BadgeAcquisitionStatus::USED
-			badge_acq.save
+	def self.create_badge_acquisition(user, badge)
+		if !user.badges.include? badge
+			BadgeAcquisition.create(user: user, badge: badge)
+		else
+			raise UserAlreadyHaveBadge.new
 		end
+	end
+
+	def activate_badge_acquisition
+		if !user.badges.include? badge
+			update(user: user, status: BadgeAcquisitionStatus::USED)
+		else
+			raise UserAlreadyHaveBadge.new
+		end
+	end
+
+	def validate_badge_acquisition(code)
+			raise CodeAlreadyInUse if status == BadgeAcquisitionStatus::USED
+			if code_expiration_date && DateTime.now > code_expiration_date
+				update(status: BadgeStatusAcquisition::EXPIRED)
+				raise CodeExpirationDateExcedeed
+			end
+			true
+	end
 end

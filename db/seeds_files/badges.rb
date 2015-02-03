@@ -24,6 +24,14 @@ module Seed
 				category: 'main',
 				logo_url: 'http://badgeunlock.com/wp-content/uploads/2010/10/Campus-Explorer1.png',
 				edition: editions[0]
+			},
+			{
+				name: "swift-master",
+				description: "Guru da nova linguagem da Apple!",
+				is_code_needed: true,
+				category: 'main',
+				logo_url: 'http://www.wired.com/wp-content/uploads/2014/07/Apple_Swift_Logo.png',
+				edition: editions[0]
 			}
 		])
 	end
