@@ -6,7 +6,7 @@ class Badge < ActiveRecord::Base
 	ExpirationDateExcedeed = Class.new(StandardError)
 
 	def users
-		BadgeAcquisition.where(badge_id: id).map { |bc| bc.user }
+		BadgeAcquisition.where(badge_id: id).map { |bc| bc.user }.select { |u| u }
 	end
 
 	def generate_codes(num_codes, status = BadgeAcquisitionStatus::AVAILABLE, code_expiration_date = nil)

@@ -12,29 +12,17 @@ class BadgesController < ApplicationController
     respond_with(@badge)
   end
 
-  def new
-    @badge = Badge.new
-    respond_with(@badge)
-  end
-
-  def edit
-  end
-
-  def create
-    @badge = Badge.new(badge_params)
-    @badge.save
-    respond_with(@badge)
-  end
-
-  def update
-    @badge.update(badge_params)
-    respond_with(@badge)
-  end
-
-  def destroy
-    @badge.destroy
-    respond_with(@badge)
-  end
+	def register
+		# DEVISE!!
+		user = User.first
+		code = params[:code]
+		begin
+			raise BadgeAcquisition::InvalidCode unless @badge_acq = BadgeAcquisition.where(code: code).first
+			BadgeAcquisition.acquire_badge(user, @badge_acq.badge, code)
+		rescue StandardError => e
+			@error = e
+		end
+	end
 
   private
     def set_badge
@@ -42,6 +30,6 @@ class BadgesController < ApplicationController
     end
 
     def badge_params
-      params.require(:badge).permit(:name, :description)
+      params.require(:badge).permit(:name, :description, :code)
     end
 end

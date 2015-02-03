@@ -14,7 +14,7 @@ class BadgeAcquisition < ActiveRecord::Base
 		if badge.is_code_needed
 			badge_acq = BadgeAcquisition.where(code: code).first
 			raise InvalidCode unless code && badge_acq
-			raise CodeNotAvailableRightNow unless badge_acq != BadgeAcquisitionStatus::NOT_AVAILABLE
+			raise CodeNotAvailableRightNow unless badge_acq.status != BadgeAcquisitionStatus::NOT_AVAILABLE
 			badge_acq.activate_badge_acquisition(user) if badge_acq.validate_badge_acquisition(code)
 		else	
 				self.create_badge_acquisition(user, badge)

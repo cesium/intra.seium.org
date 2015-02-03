@@ -39,8 +39,7 @@ module Seed
 				is_code_needed: true,
 				category: 'main',
 				logo_url: 'http://www.javatpoint.com/images/javascript/javascript_logo.png',
-				edition: editions[0],
-				expiration_date: DateTime.new(2014)
+				edition: editions[0]
 			}
 		])
 	end

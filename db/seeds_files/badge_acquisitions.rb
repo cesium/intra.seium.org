@@ -18,13 +18,13 @@ module Seed
 				status: BadgeAcquisitionStatus::USED,
 				code_expiration_date: DateTime.civil_from_format(:local, 2016),
 				acquisition_date: DateTime.now
-			},
-			{
-				badge: badges[2],
-				code: CouponCode.generate,
-				status: BadgeAcquisitionStatus::AVAILABLE,
-				code_expiration_date: DateTime.civil_from_format(:local, 2016)	
 			}
+			#{
+			#  badge: badges[2],
+			#  code: CouponCode.generate,
+			#  status: BadgeAcquisitionStatus::AVAILABLE,
+			#  code_expiration_date: DateTime.civil_from_format(:local, 2016)	
+			#}
 		])
 	end
 end

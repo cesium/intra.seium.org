@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :editions
+  #resources :editions
   #resources :companies
   #resources :speakers
   #resources :activities
+	get 'badges/register/:code' => 'badges#register'
 	resources :badges, only: [:index, :show]
   #devise_for :users
 

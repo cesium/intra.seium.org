@@ -1,0 +1,19 @@
+<h1><%= @error.to_s %></h1>
+<% 	case @error
+		when BadgeAcquisition::UserAlreadyHaveBadge %><%= @error.to_s %>
+<%	when BadgeAcquisition::InvalidCode %><%= @error.to_s %>
+<%	when BadgeAcquisition::CodeNotAvailableRightNow %><%= @error.to_s %>
+<%	when BadgeAcquisition::CodeAlreadyInUse %><%= @error.to_s %>
+<%	when BadgeAcquisition::CodeExpirationDateExcedeed %><%= @error.to_s %>
+<%	when Badge::ExpirationDateExcedeed %><%= @error.to_s %>
+<%	when NilClass %>
+	<div id="badge">
+		<div id="badge-name">
+			Parabéns! Acabaste de ganhar a badge <%= @badge_acq.badge.name %>.
+		</div>
+		<div id="badge-logo">
+			<img src="<%= @badge_acq.badge.logo_url %>" alt="<%= @badge_acq.badge.name %>"
+		</div>	
+	</div>
+<%	else %><%= "@error.to_s" %>
+<% 	end %>
