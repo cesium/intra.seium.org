@@ -4,17 +4,20 @@ module Seed
 			{
 				badge: badges[0],
 				user: users[0],
+				acquisition_date: DateTime.now
 			},
 			{
 				badge: badges[1],
 				user: users[0],
+				acquisition_date: DateTime.now
 			},
 			{
 				badge: badges[2],
 				user: users[0],
 				code: CouponCode.generate,
 				status: BadgeAcquisitionStatus::USED,
-				code_expiration_date: DateTime.civil_from_format(:local, 2016)	
+				code_expiration_date: DateTime.civil_from_format(:local, 2016),
+				acquisition_date: DateTime.now
 			},
 			{
 				badge: badges[2],

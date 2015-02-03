@@ -23,7 +23,7 @@ class BadgeAcquisition < ActiveRecord::Base
 
 	def activate_badge_acquisition(user)
 		if !user.badges.include? badge
-			update(user: user, status: BadgeAcquisitionStatus::USED)
+			update(user: user, status: BadgeAcquisitionStatus::USED, acquisition_date: DateTime.now)
 		else
 			raise UserAlreadyHaveBadge.new
 		end
@@ -42,7 +42,7 @@ class BadgeAcquisition < ActiveRecord::Base
 
 	def self.create_badge_acquisition(user, badge)
 		if !user.badges.include? badge
-			BadgeAcquisition.create(user: user, badge: badge)
+			BadgeAcquisition.create(user: user, badge: badge, acquisition_date: DateTime.now)
 		else
 			raise UserAlreadyHaveBadge.new
 		end
