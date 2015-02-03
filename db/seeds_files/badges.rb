@@ -32,6 +32,15 @@ module Seed
 				category: 'main',
 				logo_url: 'http://www.wired.com/wp-content/uploads/2014/07/Apple_Swift_Logo.png',
 				edition: editions[0]
+			},
+			{
+				name: "javascript-master",
+				description: "ES6 ftw!",
+				is_code_needed: true,
+				category: 'main',
+				logo_url: 'http://www.javatpoint.com/images/javascript/javascript_logo.png',
+				edition: editions[0],
+				expiration_date: DateTime.new(2014)
 			}
 		])
 	end
