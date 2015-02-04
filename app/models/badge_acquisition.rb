@@ -2,49 +2,56 @@ class BadgeAcquisition < ActiveRecord::Base
   belongs_to :user
   belongs_to :badge
 
-	UserAlreadyHaveBadge = Class.new(StandardError)
-	InvalidCode = Class.new(StandardError)
-	CodeNotAvailableRightNow = Class.new(StandardError)
-	CodeAlreadyInUse = Class.new(StandardError)
-	CodeExpirationDateExcedeed = Class.new(StandardError)
+	UserAlreadyHaveBadgeError = Class.new(StandardError)
+	InvalidCodeError = Class.new(StandardError)
+	CodeNotAvailableRightNowError = Class.new(StandardError)
+	CodeAlreadyInUseError = Class.new(StandardError)
+	CodeExpirationDateExcedeedError = Class.new(StandardError)
+	AcquisitionCodeNeededForBadgeError = Class.new(StandardError)
 
-	def self.acquire_badge(user, badge, code = nil)
-		raise Badge::ExpirationDateExcedeed if badge.expiration_date && DateTime.now > badge.expiration_date
+	def self.acquire_badge(user, badge)
+		raise Badge::ExpirationDateExcedeedError.new if badge.expired? 
+		raise AcquisitionCodeNeededForBadgeError if badge.is_code_needed
+		raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
 
-		if badge.is_code_needed
-			badge_acq = BadgeAcquisition.where(code: code).first
-			raise InvalidCode unless code && badge_acq
-			raise CodeNotAvailableRightNow unless badge_acq.status != BadgeAcquisitionStatus::NOT_AVAILABLE
-			badge_acq.activate_badge_acquisition(user) if badge_acq.validate_badge_acquisition(code)
-		else	
-				self.create_badge_acquisition(user, badge)
-		end
+		create(user: user, badge: badge, acquisition_date: DateTime.now).badge
 	end
 
-	def activate_badge_acquisition(user)
-		if !user.badges.include? badge
-			update(user: user, status: BadgeAcquisitionStatus::USED, acquisition_date: DateTime.now)
+	def self.acquire_badge_with_code(user, code)
+		raise InvalidCodeError.new unless code && badge_acq = where(code: code).first
+
+		badge = badge_acq.badge
+		raise Badge::ExpirationDateExcedeedError.new if badge.expired? 
+
+		raise CodeNotAvailableRightNowError.new if badge_acq.code_not_available?
+		raise CodeAlreadyInUseError.new if badge_acq.code_used?
+		raise CodeExpirationDateExcedeedError.new unless badge_acq.validate_code_expiration_date
+		raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
+
+		badge_acq.update(user: user, status: BadgeAcquisitionStatus::USED, acquisition_date: DateTime.now)
+		badge
+	end
+
+	def validate_code_expiration_date
+		if code_expired?
+			false
+		elsif code_expiration_date && DateTime.now > code_expiration_date
+			update(status: BadgeAcquisitionStatus::EXPIRED)
+			false
 		else
-			raise UserAlreadyHaveBadge.new
-		end
-	end
-
-	def validate_badge_acquisition(code)
-			raise CodeAlreadyInUse if status == BadgeAcquisitionStatus::USED
-			if code_expiration_date && DateTime.now > code_expiration_date
-				update(status: BadgeAcquisitionStatus::EXPIRED)
-				raise CodeExpirationDateExcedeed
-			end
 			true
+		end
 	end
 
-	private
+	def code_not_available?
+		status == BadgeAcquisitionStatus::NOT_AVAILABLE
+	end
 
-	def self.create_badge_acquisition(user, badge)
-		if !user.badges.include? badge
-			BadgeAcquisition.create(user: user, badge: badge, acquisition_date: DateTime.now)
-		else
-			raise UserAlreadyHaveBadge.new
-		end
+	def code_used?
+		status == BadgeAcquisitionStatus::USED
+	end
+
+	def code_expired?
+		status == BadgeAcquisitionStatus::EXPIRED
 	end
 end

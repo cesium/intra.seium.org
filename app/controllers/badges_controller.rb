@@ -17,8 +17,7 @@ class BadgesController < ApplicationController
 		user = User.first
 		code = params[:code]
 		begin
-			raise BadgeAcquisition::InvalidCode unless @badge_acq = BadgeAcquisition.where(code: code).first
-			BadgeAcquisition.acquire_badge(user, @badge_acq.badge, code)
+			@badge = BadgeAcquisition.acquire_badge_with_code(user, code)
 		rescue StandardError => e
 			@error = e
 		end

@@ -3,7 +3,7 @@ class Badge < ActiveRecord::Base
   belongs_to :activity
 
 	CodesNotAllowedError = Class.new(StandardError)
-	ExpirationDateExcedeed = Class.new(StandardError)
+	ExpirationDateExcedeedError = Class.new(StandardError)
 
 	def users
 		BadgeAcquisition.where(badge_id: id).map { |bc| bc.user }.select { |u| u }
@@ -23,5 +23,9 @@ class Badge < ActiveRecord::Base
 		else
 			raise CodesNotAllowedError.new
 		end
+	end
+
+	def expired?
+		expiration_date && DateTime.now > expiration_date
 	end
 end
