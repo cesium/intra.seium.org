@@ -12,6 +12,9 @@ class BadgesController < ApplicationController
     respond_with(@badge)
   end
 
+	def require
+	end
+
 	def register
 		# DEVISE!!
 		user = User.first
