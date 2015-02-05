@@ -1,7 +1,7 @@
 <div>
 	<% @users.each do |user| %>
 		<div>
-			<div>Username: <%= link_to user.username, user.username %></div>
+			<div>Username: <%= link_to user.username, "/users/#{user.username}" %></div>
 			<div>Email: <%= user.email %></div>
 			<div>Nome: <%= user.full_name %></div>
 			<div><%= image_tag(user.photo_url, alt: user.full_name, size: "128") %></div>

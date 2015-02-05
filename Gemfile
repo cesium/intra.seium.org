@@ -47,4 +47,6 @@ gem 'coupon_code'
 # Model Diagram Generation tool
 group :development, :test do
 	gem 'railroady'
+	gem 'better_errors'
+	gem 'binding_of_caller'
 end
