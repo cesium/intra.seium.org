@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div>
   <strong>Name:</strong>
   <%= @activity.name %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Description:</strong>
   <%= @activity.description %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Begin date:</strong>
   <%= @activity.begin_date %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>End date:</strong>
   <%= @activity.end_date %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Type:</strong>
   <%= @activity.activity_type %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Place:</strong>
   <%= @activity.place %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+<div>
+	#participante: <%= @activity.users.size %>
+	<% @activity.users.each do |user| %>
+		<div><%= link_to user.full_name, "/users/#{user.username}" %></div>
+	<% end %>
+</div>
