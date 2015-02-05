@@ -2,12 +2,13 @@ class BadgeAcquisition < ActiveRecord::Base
   belongs_to :user
   belongs_to :badge
 
-	UserAlreadyHaveBadgeError = Class.new(StandardError)
-	InvalidCodeError = Class.new(StandardError)
-	CodeNotAvailableRightNowError = Class.new(StandardError)
-	CodeAlreadyInUseError = Class.new(StandardError)
-	CodeExpirationDateExcedeedError = Class.new(StandardError)
-	AcquisitionCodeNeededForBadgeError = Class.new(StandardError)
+	AcquisitionError = Class.new(StandardError)
+	UserAlreadyHaveBadgeError = Class.new(AcquisitionError)
+	InvalidCodeError = Class.new(AcquisitionError)
+	CodeNotAvailableRightNowError = Class.new(AcquisitionError)
+	CodeAlreadyInUseError = Class.new(AcquisitionError)
+	CodeExpirationDateExcedeedError = Class.new(AcquisitionError)
+	AcquisitionCodeNeededForBadgeError = Class.new(AcquisitionError)
 
 	def self.acquire_badge(user, badge)
 		raise Badge::ExpirationDateExcedeedError.new if badge.expired? 
@@ -28,7 +29,13 @@ class BadgeAcquisition < ActiveRecord::Base
 		raise CodeExpirationDateExcedeedError.new unless badge_acq.validate_code_expiration_date
 		raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
 
-		badge_acq.update(user: user, status: BadgeAcquisitionStatus::USED, acquisition_date: DateTime.now)
+		if badge_acq.code_available_for_one_use?
+			badge_acq.update(user: user, status: BadgeCodeStatus::USED, acquisition_date: DateTime.now)
+		elsif badge_acq.code_available_for_multiple_uses?
+			create(user: user, badge: badge, code: code, status: BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES, acquisition_date: DateTime.now, code_expiration_date: badge_acq.code_expiration_date)
+		else
+			raise AcquisitionError
+		end
 		badge
 	end
 
@@ -36,7 +43,7 @@ class BadgeAcquisition < ActiveRecord::Base
 		if code_expired?
 			false
 		elsif code_expiration_date && DateTime.now > code_expiration_date
-			update(status: BadgeAcquisitionStatus::EXPIRED)
+			update(status: BadgeCodeStatus::EXPIRED)
 			false
 		else
 			true
@@ -44,14 +51,22 @@ class BadgeAcquisition < ActiveRecord::Base
 	end
 
 	def code_not_available?
-		status == BadgeAcquisitionStatus::NOT_AVAILABLE
+		status == BadgeCodeStatus::NOT_AVAILABLE
 	end
 
 	def code_used?
-		status == BadgeAcquisitionStatus::USED
+		status == BadgeCodeStatus::USED
 	end
 
 	def code_expired?
-		status == BadgeAcquisitionStatus::EXPIRED
+		status == BadgeCodeStatus::EXPIRED
+	end
+
+	def code_available_for_one_use?
+		status == BadgeCodeStatus::AVAILABLE_FOR_ONE_USE
+	end
+
+	def code_available_for_multiple_uses?
+		status == BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES
 	end
 end

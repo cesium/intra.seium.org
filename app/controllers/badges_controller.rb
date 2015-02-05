@@ -21,7 +21,7 @@ class BadgesController < ApplicationController
 		code = params[:code]
 		begin
 			@badge = BadgeAcquisition.acquire_badge_with_code(user, code)
-		rescue StandardError => e
+		rescue BadgeAcquisition::AcquisitionError => e
 			@error = e
 		end
 	end
