@@ -2,17 +2,17 @@ Rails.application.routes.draw do
   #resources :editions
   #resources :companies
   #resources :speakers
-  #resources :activities
+  
+	resources :activities, only: [:show]
 	
-	#get 'badges/register/:code', to: 'badges#register_code'
-	#post 'badges/register/:code', to:'badges#register_code'
 	resources :badges, only: [:index, :show] do
 		get :require, on: :collection
-		post :register, on: :collection
+		post :register, on: :collection, as: 'register_post'
 		get 'register/:code', on: :collection, to: 'badges#register', as: 'register_get'
 	end
   
-	#devise_for :users
+	resources :users, only: [:index, :show], param: :username
+	devise_for :users, only: [:registrations, :sessions]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

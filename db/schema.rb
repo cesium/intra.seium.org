@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203042749) do
+ActiveRecord::Schema.define(version: 20150205025826) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -181,9 +181,12 @@ ActiveRecord::Schema.define(version: 20150203042749) do
     t.string   "google_plus_account"
     t.boolean  "is_organizer"
     t.string   "organizer_role"
+    t.string   "username"
+    t.integer  "sex"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

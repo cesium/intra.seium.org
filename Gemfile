@@ -43,3 +43,8 @@ gem 'devise'
 
 # Use CouponCode for Generating Codes for Badges
 gem 'coupon_code'
+
+# Model Diagram Generation tool
+group :development, :test do
+	gem 'railroady'
+end

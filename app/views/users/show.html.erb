@@ -1,0 +1,23 @@
+<div>
+	<div>Username: <%= @user.username %></div>
+	<div>Email: <%= @user.email %></div>
+	<div>Nome: <%= @user.full_name %></div>
+	<div><%= image_tag(@user.photo_url, alt: @user.full_name, size: "128") %></div>
+	<div>
+		<h3>Atividades em que se registou</h3>
+		<% @user.activities.each do |activity| %>
+			<div>
+				<div><%= link_to activity.name, activity %></div>	
+			</div>
+		<% end %>
+	</div>
+	<div>
+		<h3>Badges adquiridos</h3>
+		<% @user.badges.each do |badge| %>
+			<div>
+				<div><%= link_to badge.name, badge %></div>	
+				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+			</div>
+		<% end %>
+	</div>
+</div>
