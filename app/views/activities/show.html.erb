@@ -31,7 +31,29 @@
 </div>
 
 <div>
-	#participante: <%= @activity.users.size %>
+	<% if @activity.end_date > DateTime.now %>
+		<div>
+			<% if !@user.registered_at? @activity %>
+				<%= button_to 'Inscrever na Atividade', register_activity_path(@activity) %>
+			<% else %>
+				<%= button_to 'Anular Inscrição na Atividade', deregister_activity_path(@activity), method: :delete %>
+			<% end %>	
+		</div>
+	<% else %>
+		<div>
+			Atividade já terminou.
+			<% if @user.registered_at? @activity %>
+				Tu participaste nela!
+			<% else %>
+				Tu não participaste nela.
+			<% end %>	
+		</div>
+	<% end %>
+</div>
+
+<div>
+	<h3>Número de Participante: <%= @activity.users.size %></h3>
+	<h3>Lista de Participantes</h3>
 	<% @activity.users.each do |user| %>
 		<div><%= link_to user.full_name, "/users/#{user.username}" %></div>
 	<% end %>

@@ -1,6 +1,4 @@
 class EditionsController < ApplicationController
-	respond_to :html
-
   before_action :set_edition, only: [:show, :edit, :update, :destroy]
 
   def index

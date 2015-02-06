@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-	respond_to :html
-
 	before_action :set_user, only: [:show]
 
 	def index

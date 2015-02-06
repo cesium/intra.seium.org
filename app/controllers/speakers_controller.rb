@@ -1,6 +1,4 @@
 class SpeakersController < ApplicationController
-	respond_to :html
-
   before_action :set_speaker, only: [:show, :edit, :update, :destroy]
 
   def index

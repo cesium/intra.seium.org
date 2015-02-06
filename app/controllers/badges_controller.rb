@@ -1,6 +1,4 @@
 class BadgesController < ApplicationController
-	respond_to :html
-
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,11 +14,9 @@ class BadgesController < ApplicationController
 	end
 
 	def register
-		# DEVISE!!
-		user = User.first
 		code = params[:code]
 		begin
-			@badge = BadgeAcquisition.acquire_badge_with_code(user, code)
+			@badge = BadgeAcquisition.acquire_badge_with_code(current_user, code)
 		rescue BadgeAcquisition::AcquisitionError => e
 			@error = e
 		end

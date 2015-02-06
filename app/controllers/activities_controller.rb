@@ -1,40 +1,30 @@
 class ActivitiesController < ApplicationController
-	respond_to :html
-
-  before_action :set_activity, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @activities = Activity.all
-    respond_with(@activities)
-  end
+  before_action :set_activity, only: [:show, :register, :deregister]
 
   def show
+		@user = current_user
     respond_with(@activity)
   end
 
-  def new
-    @activity = Activity.new
-    respond_with(@activity)
-  end
+	def register
+		user = current_user
+		
+		if !user.registered_at? @activity
+			user.activities << @activity
+		end
 
-  def edit
-  end
+		redirect_to activity_path
+	end
 
-  def create
-    @activity = Activity.new(activity_params)
-    @activity.save
-    respond_with(@activity)
-  end
+	def deregister
+		user = current_user
+		
+		if user.registered_at? @activity
+			user.activities.delete @activity
+		end
 
-  def update
-    @activity.update(activity_params)
-    respond_with(@activity)
-  end
-
-  def destroy
-    @activity.destroy
-    respond_with(@activity)
-  end
+		redirect_to activity_path
+	end
 
   private
     def set_activity

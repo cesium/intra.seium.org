@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   #resources :companies
   #resources :speakers
   
-	resources :activities, only: [:show]
+	resources :activities, only: [:show] do
+		post :register, on: :member
+		delete :deregister, on: :member
+	end
 	
 	resources :badges, only: [:index, :show] do
 		get :require, on: :collection
@@ -11,14 +14,15 @@ Rails.application.routes.draw do
 		get 'register/:code', on: :collection, to: 'badges#register', as: 'register_get'
 	end
   
+	devise_for :users
+	#get '/users/:username', to: 'users#show', as: 'user_root_path'
 	resources :users, only: [:index, :show], param: :username
-	devise_for :users, only: [:registrations, :sessions]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'activities#index'
+	root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

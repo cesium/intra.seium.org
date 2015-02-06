@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
 	def public_profile
 		self
 	end
+
+	def registered_at?(activity)
+		activities.include? activity
+	end
 end
