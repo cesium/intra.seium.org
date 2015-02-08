@@ -5,5 +5,18 @@ class ApplicationController < ActionController::Base
 
 	respond_to :html
 
+	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :authenticate_user!
+
+	protected
+
+	def configure_permitted_parameters
+		[	:first_name, :last_name, :username, :sex, :is_student, :is_student_at_minho_univ,
+			:is_inf_eng_student_at_minho_univ, :is_cesium_associate,
+			:cesium_associate_number, :minho_univ_student_id, :university,
+			:course
+		].each do |p|
+			devise_parameter_sanitizer.for(:sign_up) << p
+		end
+	end
 end

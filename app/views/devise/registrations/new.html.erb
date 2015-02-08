@@ -3,10 +3,29 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+	</div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+	</div>
+
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+	</div>
 
   <div class="field">
     <%= f.label :password %>
@@ -20,6 +39,90 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+	<div>
+		<span>Sexo</span>
+		<div class="field">
+			<%= f.label :sex, "Masculino" %>
+			<%= f.radio_button :sex, UserSex::MALE %>
+		</div>
+		<div class="field">
+			<%= f.label :sex, "Feminino" %>
+			<%= f.radio_button :sex, UserSex::FEMALE %>
+		</div>
+	</div>
+
+	<div>
+		<span>És estudante universitário?</span>
+		<div class="field">
+			<%= f.label :is_student, "Sim"%>
+			<%= f.radio_button :is_student, true %>
+		</div>
+		<div class="field">
+			<%= f.label :is_student, "Não"%>
+			<%= f.radio_button :is_student, false %>
+		</div>
+	</div>
+
+	<div>
+		<span>Estudas na Universidade do Minho?</span>
+		<div class="field">
+			<%= f.label :is_student_at_minho_univ, "Sim"%>
+			<%= f.radio_button :is_student_at_minho_univ, true %>
+		</div>
+		<div class="field">
+			<%= f.label :is_student_at_minho_univ, "Não" %>
+			<%= f.radio_button :is_student_at_minho_univ, false %>
+		</div>
+	</div>
+
+	<div>
+		<div class="field">
+			<%= f.label :minho_univ_student_id, "Qual o teu número de aluno?" %><br />
+			<%= f.text_field :minho_univ_student_id %>
+		</div>
+	</div>
+
+	<div>
+		<span>És aluno de Engenharia Informática (Licenciatura ou Mestrado)?</span>
+		<div class="field">
+			<%= f.label :is_inf_eng_student_at_minho_univ, "Sim" %><br />
+			<%= f.radio_button :is_inf_eng_student_at_minho_univ, true %>
+		</div>
+		<div class="field">
+			<%= f.label :is_inf_eng_student_at_minho_univ, "Não" %><br />
+			<%= f.radio_button :is_inf_eng_student_at_minho_univ, false %>
+		</div>
+	</div>
+
+	<div>
+		<span>És sócido do CeSIUM?</span>
+		<div class="field">
+			<%= f.label :is_cesium_associate, "Sim" %><br />
+			<%= f.radio_button :is_cesium_associate, true %>
+		</div>
+		<div class="field">
+			<%= f.label :is_cesium_associate, "Não" %><br />
+			<%= f.radio_button :is_cesium_associate, false %>
+		</div>
+	</div>
+
+	<div>
+		<div class="field">
+			<%= f.label :cesium_associate_number, "Qual o teu número de sócio?" %><br />
+			<%= f.text_field :cesium_associate_number %>
+		</div>
+	</div>
+
+  <div class="field">
+    <%= f.label :university %><br />
+    <%= f.text_field :university %>
+	</div>
+
+  <div class="field">
+    <%= f.label :course %><br />
+    <%= f.text_field :course %>
+	</div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
