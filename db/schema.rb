@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209033048) do
+ActiveRecord::Schema.define(version: 20150209034024) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -182,7 +182,7 @@ ActiveRecord::Schema.define(version: 20150209033048) do
     t.boolean  "is_organizer",                     default: false
     t.string   "organizer_role"
     t.string   "username"
-    t.integer  "sex",                              default: 0
+    t.integer  "sex"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
