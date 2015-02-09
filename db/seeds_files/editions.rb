@@ -1,6 +1,6 @@
 module Seed
 	def self.editions
-		Edition.create([
+		Edition.create!([
 			{
 				name: "I Semana de Engenharia Informática na Universidade do Minho",
 				edition_number: 1,

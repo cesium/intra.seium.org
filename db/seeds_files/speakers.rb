@@ -1,6 +1,6 @@
 module Seed
 	def self.speakers(editions, companies)
-		Speaker.create([
+		Speaker.create!([
 			{
 				name: 'Hélder Pinto',
 				role: '3D Evironment Artist',

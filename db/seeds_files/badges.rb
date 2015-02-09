@@ -1,6 +1,6 @@
 module Seed
 	def self.badges(editions, activities)
-		Badge.create([
+		Badge.create!([
 			{
 				name: "register",
 				description: "Registo na Plataforma Online da Semana de Engenharia Informática @ UM",

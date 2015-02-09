@@ -1,6 +1,6 @@
 module Seed
 	def self.companies(editions)
-		Company.create([
+		Company.create!([
 			{
 				name: 'Blizzard',
 				is_partner: false,

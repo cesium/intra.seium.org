@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205191747) do
+ActiveRecord::Schema.define(version: 20150209033048) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -150,12 +150,12 @@ ActiveRecord::Schema.define(version: 20150205191747) do
   add_index "speakers", ["company_id"], name: "index_speakers_on_company_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                            default: "", null: false
-    t.string   "encrypted_password",               default: "", null: false
+    t.string   "email",                            default: "",    null: false
+    t.string   "encrypted_password",               default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                    default: 0,  null: false
+    t.integer  "sign_in_count",                    default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -166,7 +166,7 @@ ActiveRecord::Schema.define(version: 20150205191747) do
     t.string   "last_name"
     t.datetime "birthday"
     t.text     "biography"
-    t.boolean  "is_student"
+    t.boolean  "is_univ_student"
     t.boolean  "is_student_at_minho_univ"
     t.boolean  "is_inf_eng_student_at_minho_univ"
     t.boolean  "is_cesium_associate"
@@ -179,10 +179,10 @@ ActiveRecord::Schema.define(version: 20150205191747) do
     t.string   "twitter_account"
     t.string   "github_account"
     t.string   "google_plus_account"
-    t.boolean  "is_organizer"
+    t.boolean  "is_organizer",                     default: false
     t.string   "organizer_role"
     t.string   "username"
-    t.integer  "sex"
+    t.integer  "sex",                              default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

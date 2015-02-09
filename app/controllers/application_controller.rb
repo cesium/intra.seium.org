@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 	protected
 
 	def configure_permitted_parameters
-		[	:first_name, :last_name, :username, :sex, :is_student, :is_student_at_minho_univ,
+		[	:first_name, :last_name, :username, :sex, :is_univ_student, :is_student_at_minho_univ,
 			:is_inf_eng_student_at_minho_univ, :is_cesium_associate,
 			:cesium_associate_number, :minho_univ_student_id, :university,
 			:course

@@ -1,6 +1,6 @@
 module Seed
 	def self.users(editions, activities)
-		User.create([
+		User.create!([
 			{
 				email: 'josealvim@sapo.pt',
 				password: '123456789',
@@ -10,7 +10,9 @@ module Seed
 				username: 'josealvim',
 				birthday: DateTime.civil_from_format(:local, 1990, 4, 18),
 				photo_url: 'https://media.licdn.com/mpr/mpr/shrink_500_500/p/2/005/06a/3fc/1c3bb12.jpg',
-				is_student: true,
+				is_univ_student: true,
+				university: 'Universidade do Minho',
+				course: 'Engenharia Informática',
 				is_student_at_minho_univ: true,
 				minho_univ_student_id: 'pg123456',
 				is_inf_eng_student_at_minho_univ: true,
@@ -30,13 +32,15 @@ module Seed
 				username: 'bmac',
 				birthday: DateTime.civil_from_format(:local, 1988, 11, 25),
 				photo_url: 'http://3.bp.blogspot.com/-WtP1AKDOng0/T8zwZgFCoVI/AAAAAAAADLQ/sjvlzF0G7ws/s320/574930_3538383931482_1028905081_3173764_590860986_n.jpg',
-				is_student: true,
-				is_student_at_minho_univ: false,
 				is_organizer: false,
 				university: 'Instituto Politécnico de Tomar',
 				course: 'Design e Tecnologia das Artes Gráficas',
 				activities: activities[0, 1],
-				editions: editions
+				editions: editions,
+				is_univ_student: true,
+				is_student_at_minho_univ: false,
+				is_inf_eng_student_at_minho_univ: false,
+				is_cesium_associate: false
 			},
 			{
 				email: 'tatianamiranda@gmail.com',
@@ -47,7 +51,10 @@ module Seed
 				username: 'tatim',
 				birthday: DateTime.civil_from_format(:local, 1993, 5, 2),
 				photo_url: 'https://pbs.twimg.com/profile_images/771755139/fot_068.jpg',
-				is_student: false,
+				is_univ_student: false,
+				is_student_at_minho_univ: false,
+				is_inf_eng_student_at_minho_univ: false,
+				is_cesium_associate: false,
 				activities: activities[1, 1],
 				editions: editions
 			}

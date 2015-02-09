@@ -1,6 +1,6 @@
 module Seed
 	def self.activities(editions, speakers)
-		Activity.create([
+		Activity.create!([
 			{
 				name: 'Vídeo Jogos Além-Fronteiras',
 				description: 'Palestra de discussão do estado atual em desenvolvimento de vídeojogos.',
