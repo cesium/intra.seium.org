@@ -1,11 +1,7 @@
-<h2>Sign up</h2>
+<h2>Registar</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 
   <div class="field">
     <%= f.label :first_name %><br />
@@ -41,89 +37,89 @@
   </div>
 
 	<div>
-		<span>Sexo</span>
+		<%= f.label :sex %>
 		<div class="field">
-			<%= f.label :sex, "Masculino" %>
+			<%= f.label :male %>
 			<%= f.radio_button :sex, UserSex::MALE %>
 		</div>
 		<div class="field">
-			<%= f.label :sex, "Feminino" %>
+			<%= f.label :female %>
 			<%= f.radio_button :sex, UserSex::FEMALE %>
 		</div>
 	</div>
 
 	<div id="is-univ-student">
-		<span>És estudante universitário?</span>
+		<%= f.label :is_univ_student %>
 		<div class="field">
-			<%= f.label :is_univ_student, "Sim"%>
-			<%= f.radio_button :is_univ_student, true, class: 'univ-student-info-checkbox' %>
+			<%= f.label :yes_sir %>
+			<%= f.radio_button :is_univ_student, true, class: 'univ-student-info-checkbox', checked: false %>
 		</div>
 		<div class="field">
-			<%= f.label :is_univ_student, "Não"%>
-			<%= f.radio_button :is_univ_student, false, class: 'univ-student-info-checkbox' %>
+			<%= f.label :no_sir %>
+			<%= f.radio_button :is_univ_student, false, class: 'univ-student-info-checkbox', checked: false %>
 		</div>
 	</div>
 
-	<div id="is-student-at-minho-univ">
-		<span>Estudas na Universidade do Minho?</span>
+	<div id="is-student-at-minho-univ" hidden>
+		<%= f.label :is_student_at_minho_univ %>
 		<div class="field">
-			<%= f.label :is_student_at_minho_univ, "Sim"%>
+			<%= f.label :yes_sir %>
 			<%= f.radio_button :is_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
-			<%= f.label :is_student_at_minho_univ, "Não" %>
-			<%= f.radio_button :is_student_at_minho_univ, false, class: 'univ-student-info-checkbox' %>
+			<%= f.label :no_sir %>
+			<%= f.radio_button :is_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
 		</div>
-		<div id="minho-univ-student-id" class="field">
-			<%= f.label :minho_univ_student_id, "Qual o teu número de aluno?" %><br />
+		<div id="minho-univ-student-id" class="field" hidden>
+			<%= f.label :minho_univ_student_id %><br />
 			<%= f.text_field :minho_univ_student_id %>
 		</div>
 	</div>
 
-	<div id="other-univ-info"/>
+	<div id="other-univ-info" hidden>
 		<div id="university" class="field">
-			<%= f.label :university, "Universidade" %><br />
+			<%= f.label :university %><br />
 			<%= f.text_field :university %>
 		</div>
 
 		<div id="course" class="field">
-			<%= f.label :course, "Curso" %><br />
+			<%= f.label :course %><br />
 			<%= f.text_field :course %>
 		</div>
 	</div>
 
-	<div id="is-inf-eng-student-at-minho-univ">
-		<span>És aluno de Engenharia Informática (Licenciatura ou Mestrado)?</span>
+	<div id="is-inf-eng-student-at-minho-univ" hidden>
+		<%= f.label :is_inf_eng_student_at_minho_univ %><br />
 		<div class="field">
-			<%= f.label :is_inf_eng_student_at_minho_univ, "Sim" %><br />
+			<%= f.label :yes_sir %><br />
 			<%= f.radio_button :is_inf_eng_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
-			<%= f.label :is_inf_eng_student_at_minho_univ, "Não" %><br />
-			<%= f.radio_button :is_inf_eng_student_at_minho_univ, false, class: 'univ-student-info-checkbox' %>
+			<%= f.label :no_sir %><br />
+			<%= f.radio_button :is_inf_eng_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
 		</div>
 	</div>
 
-	<div id="is-cesium-associate">
-		<span>És sócido do CeSIUM?</span>
+	<div id="is-cesium-associate" hidden>
+		<%= f.label :is_cesium_associate %><br />
 		<div class="field">
-			<%= f.label :is_cesium_associate, "Sim" %><br />
+			<%= f.label :yes_sir %><br />
 			<%= f.radio_button :is_cesium_associate, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
-			<%= f.label :is_cesium_associate, "Não" %><br />
-			<%= f.radio_button :is_cesium_associate, false, class: 'univ-student-info-checkbox' %>
+			<%= f.label :no_sir %><br />
+			<%= f.radio_button :is_cesium_associate, false, class: 'univ-student-info-checkbox', checked: true %>
 		</div>
-		<div id="cesium-associate-number">
+		<div id="cesium-associate-number" hidden>
 			<div class="field">
-				<%= f.label :cesium_associate_number, "Qual o teu número de sócio?" %><br />
+				<%= f.label :cesium_associate_number %><br />
 				<%= f.text_field :cesium_associate_number %>
 			</div>
 		</div>
 	</div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit %>
   </div>
 <% end %>
 

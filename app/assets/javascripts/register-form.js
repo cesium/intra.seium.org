@@ -109,5 +109,5 @@ $(document).ready(function(){
 	studInfo.cesiumAssociate.yesInput.addEventListener("click", function(){ isCesiumAssociateUpdate(studInfo); });
 	studInfo.cesiumAssociate.noInput.addEventListener("click", function(){ isNotCesiumAssociateUpdate(studInfo); });
 
-	initialStudInfoConfiguration(studInfo);
+	//initialStudInfoConfiguration(studInfo);
 });
