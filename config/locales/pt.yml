@@ -204,8 +204,10 @@ pt:
         first_name: "Nome Próprio"
         last_name: "Apelido"
         username: "Nome de Utilizador"
+        biography: "Biografia"
         password_confirmation: "Confirmação de Password"
         sex: "Sexo"
+        birthday: "Data de Nascimento"
         is_univ_student: "Estudante Universitário?"
         is_student_at_minho_univ: "Estudante da Universidade do Minho?"
         minho_univ_student_id: "Nº de aluno da Universidade do Minho"
@@ -214,6 +216,10 @@ pt:
         is_inf_eng_student_at_minho_univ: "Estudante de Engenharia Informática na Universidade do Minho (Licenciatura ou Mestrado)?" 
         is_cesium_associate: "Sócio do CeSIUM?"
         cesium_associate_number: "Nº de sócio do CeSIUM"
+        facebook_account: "Link para o perfil do Facebook"
+        twitter_account: "Link para o perfil do Twitter"
+        github_account: "Link para o perfil do GitHub"
+        google_plus_account: "Link para o perfil do Google Plus"
     errors:
       template:
         header:

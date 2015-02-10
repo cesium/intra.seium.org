@@ -18,5 +18,11 @@ class ApplicationController < ActionController::Base
 		].each do |p|
 			devise_parameter_sanitizer.for(:sign_up) << p
 		end
+
+		[	:birthday, :biography, :facebook_account, :twitter_account,
+	 		:github_account, :google_plus_account
+		].each do |p|
+			devise_parameter_sanitizer.for(:account_update) << p
+		end
 	end
 end
