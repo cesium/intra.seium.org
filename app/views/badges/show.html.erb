@@ -27,7 +27,7 @@
 							<%= user.full_name %>
 						</div>
 						<div class="badge-user-photo">
-							<img src="<%= user.photo_url %>" alt="<%= user.full_name %>"
+							<%= image_tag user.avatar.url(:thumb) %>
 						</div>
 					</li>
 				<% end %>

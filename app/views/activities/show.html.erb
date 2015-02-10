@@ -56,5 +56,8 @@
 	<h3>Lista de Participantes</h3>
 	<% @activity.users.each do |user| %>
 		<div><%= link_to user.full_name, "/users/#{user.username}" %></div>
+		<div>
+			<%= image_tag user.avatar.url(:thumb) %>
+		</div>
 	<% end %>
 </div>

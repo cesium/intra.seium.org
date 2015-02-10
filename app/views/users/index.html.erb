@@ -8,7 +8,7 @@
 			<div>Username: <%= link_to user.username, "/users/#{user.username}" %></div>
 			<div>Email: <%= user.email %></div>
 			<div>Nome: <%= user.full_name %></div>
-			<%= image_tag user.avatar.url(:medium) %>
+			<%= image_tag user.avatar.url(:thumb) %>
 			</div>
 		</div>
 	<% end %>
