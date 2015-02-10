@@ -52,76 +52,74 @@
 		</div>
 	</div>
 
-	<div>
+	<div id="is-univ-student">
 		<span>És estudante universitário?</span>
 		<div class="field">
 			<%= f.label :is_univ_student, "Sim"%>
-			<%= f.radio_button :is_univ_student, true %>
+			<%= f.radio_button :is_univ_student, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
 			<%= f.label :is_univ_student, "Não"%>
-			<%= f.radio_button :is_univ_student, false %>
+			<%= f.radio_button :is_univ_student, false, class: 'univ-student-info-checkbox' %>
 		</div>
 	</div>
 
-	<div>
+	<div id="is-student-at-minho-univ">
 		<span>Estudas na Universidade do Minho?</span>
 		<div class="field">
 			<%= f.label :is_student_at_minho_univ, "Sim"%>
-			<%= f.radio_button :is_student_at_minho_univ, true %>
+			<%= f.radio_button :is_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
 			<%= f.label :is_student_at_minho_univ, "Não" %>
-			<%= f.radio_button :is_student_at_minho_univ, false %>
+			<%= f.radio_button :is_student_at_minho_univ, false, class: 'univ-student-info-checkbox' %>
 		</div>
-	</div>
-
-	<div>
-		<div class="field">
+		<div id="minho-univ-student-id" class="field">
 			<%= f.label :minho_univ_student_id, "Qual o teu número de aluno?" %><br />
 			<%= f.text_field :minho_univ_student_id %>
 		</div>
 	</div>
 
-	<div>
+	<div id="other-univ-info"/>
+		<div id="university" class="field">
+			<%= f.label :university, "Universidade" %><br />
+			<%= f.text_field :university %>
+		</div>
+
+		<div id="course" class="field">
+			<%= f.label :course, "Curso" %><br />
+			<%= f.text_field :course %>
+		</div>
+	</div>
+
+	<div id="is-inf-eng-student-at-minho-univ">
 		<span>És aluno de Engenharia Informática (Licenciatura ou Mestrado)?</span>
 		<div class="field">
 			<%= f.label :is_inf_eng_student_at_minho_univ, "Sim" %><br />
-			<%= f.radio_button :is_inf_eng_student_at_minho_univ, true %>
+			<%= f.radio_button :is_inf_eng_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
 			<%= f.label :is_inf_eng_student_at_minho_univ, "Não" %><br />
-			<%= f.radio_button :is_inf_eng_student_at_minho_univ, false %>
+			<%= f.radio_button :is_inf_eng_student_at_minho_univ, false, class: 'univ-student-info-checkbox' %>
 		</div>
 	</div>
 
-	<div>
+	<div id="is-cesium-associate">
 		<span>És sócido do CeSIUM?</span>
 		<div class="field">
 			<%= f.label :is_cesium_associate, "Sim" %><br />
-			<%= f.radio_button :is_cesium_associate, true %>
+			<%= f.radio_button :is_cesium_associate, true, class: 'univ-student-info-checkbox' %>
 		</div>
 		<div class="field">
 			<%= f.label :is_cesium_associate, "Não" %><br />
-			<%= f.radio_button :is_cesium_associate, false %>
+			<%= f.radio_button :is_cesium_associate, false, class: 'univ-student-info-checkbox' %>
 		</div>
-	</div>
-
-	<div>
-		<div class="field">
-			<%= f.label :cesium_associate_number, "Qual o teu número de sócio?" %><br />
-			<%= f.text_field :cesium_associate_number %>
+		<div id="cesium-associate-number">
+			<div class="field">
+				<%= f.label :cesium_associate_number, "Qual o teu número de sócio?" %><br />
+				<%= f.text_field :cesium_associate_number %>
+			</div>
 		</div>
-	</div>
-
-  <div class="field">
-    <%= f.label :university %><br />
-    <%= f.text_field :university %>
-	</div>
-
-  <div class="field">
-    <%= f.label :course %><br />
-    <%= f.text_field :course %>
 	</div>
 
   <div class="actions">
@@ -130,3 +128,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%= javascript_include_tag 'register-form' %>
