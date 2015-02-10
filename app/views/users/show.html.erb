@@ -17,7 +17,7 @@
 	<div><b>Twitter:</b> <%= @user.twitter_account %></div>
 	<div><b>GitHub:</b> <%= @user.github_account %></div>
 	<div><b>Google Plus:</b> <%= @user.google_plus_account %></div>
-	<div><%= image_tag(@user.photo_url, alt: @user.full_name, size: "128") %></div>
+	<%= image_tag @user.avatar.url %>
 	<div>
 		<h3>Atividades em que se registou</h3>
 		<% @user.activities.each do |activity| %>

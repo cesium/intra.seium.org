@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209034024) do
+ActiveRecord::Schema.define(version: 20150210060258) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -174,7 +174,6 @@ ActiveRecord::Schema.define(version: 20150209034024) do
     t.string   "minho_univ_student_id"
     t.string   "university"
     t.string   "course"
-    t.string   "photo_url"
     t.string   "facebook_account"
     t.string   "twitter_account"
     t.string   "github_account"
@@ -183,6 +182,10 @@ ActiveRecord::Schema.define(version: 20150209034024) do
     t.string   "organizer_role"
     t.string   "username"
     t.integer  "sex"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
