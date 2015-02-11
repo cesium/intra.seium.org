@@ -38,13 +38,15 @@ Dir.glob("#{act_folder}/*.html") do |act_file|
 	Nokogiri::HTML(open(act_file), nil, 'UTF-8').css('.event-title').each do |act_tit_node|
 		act_node = act_tit_node.parent
 		act_node.css('.event-description').first.css('p').first.remove
+		act_desc = act_node.css('.event-description').first.content.strip.tr("'", " ")
 		location_str = act_node.css('.event-location').first.content
 		act = {
 			name: act_node.css('.event-title').first.content,
-			description: act_node.css('.event-description').first.content.strip.tr("'", " "),
+			description: act_desc,
 			begin_date: Time.new(year, month, day, location_str.split('-')[0].strip.split('h')[0].to_i, location_str.split('-')[0].strip.split('h')[1].to_i),
 			activity_type: det_act_type(act_node.css('.event-type').first.content),
 			place: (location_str.split('-')[1].strip if location_str.split('-')[1]),
+			speaker_name: (act_desc.match(/ORADOR.*$/)[0].split('-')[0].sub(/ORADOR:/, '').strip if act_desc.match(/ORADOR.*$/)),
 			speakers: nil,
 			edition: nil
 		}
@@ -64,6 +66,7 @@ File.open('tmp/activities.rb', "w") do |f|
 		f.puts "				begin_date: DateTime.civil_from_format(:local, #{year}, #{month}, #{a[:begin_date].day}, #{a[:begin_date].hour}, #{a[:begin_date].min}),"
 		f.puts "				activity_type: #{a[:activity_type]},"
 		f.puts "				place: '#{a[:place]}',"
+		f.puts "				speaker_name: \'#{a[:speaker_name]}\',"
 		f.puts "				speakers: [],"
 		f.puts "				edition: editions[0]"
 		f.puts "			}#{',' if i < activities.size-1 }"
