@@ -1,0 +1,45 @@
+.form-container
+  margin: 0 auto
+  width: 50%
+  text-align: center
+  & .col-md-2 label
+    margin-bottom: 0
+    margin-top: 5px
+    margin-right: 10px
+    float: right
+  & .col-md-10 input
+    float: left
+
+
+form
+  margin-top: 20px
+  & input
+  margin: 5px
+
+input:not([type=submit])
+  border: none
+  border-bottom: 1px solid #B0BEC5
+  -webkit-transition: border-color .3s ease
+  -moz-transition: border-color .3s ease
+  -o-transition: border-color .3s ease
+  &:focus
+  outline: 0
+  border-bottom: 1px solid #607D8B
+
+button.btn-submit
+  background: none
+  border: 2px solid #0277BD
+  border-radius: 5px
+  color: #0277BD
+  outline: none
+  text-transform: uppercase
+  padding: 10px
+  -webkit-transition: all 0.3s ease
+  -moz-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
+  transition: all 0.3s ease
+  &:hover,
+  &:focus
+    background: #0277BD
+    border-color: #fff
+    color: #fff
