@@ -1,15 +1,32 @@
+/* I really hate using !important but I'm having a hard overriding Bootstrap */
+
+body
+  background-color: #0277BD !important
+  color: #fff !important
+
+a
+  color: #fff !important
+  -webkit-transition: color 0.3s
+  -moz-transition: color 0.3s
+  transition: color 0.3s
+  &:hover,
+  &:focus
+    color: #fec503 !important
+    text-decoration: none !important
+
+
 .form-container
   margin: 0 auto
   width: 50%
   text-align: center
-  & .col-md-2
+  & .col-md-3
     padding: 0
     & label
       margin-bottom: 0px
-      margin-top: 5px
+      margin-top: 10px
       margin-right: 10px
       float: right
-  & .col-md-6
+  & .col-md-7
     padding: 0
     input
       float: left
@@ -18,32 +35,40 @@
 form
   margin-top: 20px
   & input
-  margin: 5px
+    margin: 5px
 
 input:not([type=submit])
   border: none
+  background-color: transparent
   border-bottom: 1px solid #B0BEC5
   -webkit-transition: border-color .3s ease
   -moz-transition: border-color .3s ease
   -o-transition: border-color .3s ease
   &:focus
     outline: 0
-    border-bottom: 1px solid #607D8B
+    border-bottom: 1px solid #fff
 
-button.btn-submit
+button.btn.btn-submit
   background: none
-  border: 2px solid #0277BD
+  border: 2px solid #fff
   border-radius: 5px
-  color: #0277BD
+  color: #fff
   outline: none
   text-transform: uppercase
   padding: 10px
+  margin-bottom: 10px
   -webkit-transition: all 0.3s ease
   -moz-transition: all 0.3s ease
   -o-transition: all 0.3s ease
   transition: all 0.3s ease
   &:hover,
   &:focus
-    background: #0277BD
-    border-color: #fff
-    color: #fff
+    background: #fff
+    color: #0277BD
+    & a
+      color: #0277BD !important
+  & a
+    color: inherit
+    &:hover,
+    &:focus
+      text-decoration: none
