@@ -1,6 +1,8 @@
 require 'nokogiri'
 require 'open-uri'
 
+puts "[INFO] Script that parses files in 'event' folder and generates a rails seed file for Activities"
+
 def det_act_type(str)
 	case str
 	when 'Palestra'

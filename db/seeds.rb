@@ -2,6 +2,7 @@ require './db/seeds_files/editions'
 require './db/seeds_files/companies'
 require './db/seeds_files/speakers'
 require './db/seeds_files/activities'
+require './db/seeds_files/staff'
 require './db/seeds_files/users'
 require './db/seeds_files/badges'
 require './db/seeds_files/badge_acquisitions'
@@ -17,6 +18,9 @@ speakers = Seed::speakers(editions, companies)
 
 # Activities
 activities = Seed::activities(editions, speakers)
+
+# Staff
+staff = Seed::staff(editions, activities)
 
 # Users
 users = Seed::users(editions, activities)
