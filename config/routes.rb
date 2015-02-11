@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #resources :companies
   #resources :speakers
   
-	resources :activities, only: [:show] do
+	resources :activities, only: [:index, :show] do
 		post :register, on: :member
 		delete :deregister, on: :member
 	end

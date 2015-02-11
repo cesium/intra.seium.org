@@ -55,3 +55,6 @@ end
 
 # Paperclip for image management
 gem "paperclip"
+
+# Nokogiri - Html Parser
+gem 'nokogiri'

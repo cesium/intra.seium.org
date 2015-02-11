@@ -1,11 +1,13 @@
 module ActivityType
 	TALK = 1
 	WORKSHOP = 2
-	LEISURE = 3
+	LOUNGE = 3
 	QUIZ = 4
 	CHALLENGE = 5
 	HACKATHON = 6
 	SOCIAL = 7
 	SPORT = 8
+	PRESENTATION = 9
+	DISCUSSION = 10
 	OTHER = 0
 end

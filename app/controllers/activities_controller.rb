@@ -1,6 +1,11 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :register, :deregister]
 
+	def index
+		@activities = Activity.all
+		respond_with(@activities)
+	end
+
   def show
 		@user = current_user
     respond_with(@activity)
