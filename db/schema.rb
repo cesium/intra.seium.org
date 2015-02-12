@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211201612) do
+ActiveRecord::Schema.define(version: 20150212163949) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 20150211201612) do
     t.boolean  "has_prizes",                default: false, null: false
     t.integer  "edition_id"
     t.string   "speaker_name"
+    t.string   "url_escaped_name",          default: "",    null: false
   end
 
   add_index "activities", ["edition_id"], name: "index_activities_on_edition_id"
+  add_index "activities", ["url_escaped_name"], name: "index_activities_on_url_escaped_name"
 
   create_table "activities_speakers", id: false, force: true do |t|
     t.integer "activity_id"

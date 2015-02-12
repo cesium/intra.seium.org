@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:show, :register, :deregister]
   before_action :set_edition
+  before_action :set_activity, only: [:show, :register, :deregister]
 
 	def index
 		@activities = @edition.activities
@@ -34,7 +34,19 @@ class ActivitiesController < ApplicationController
 
   private
     def set_activity
-      @activity = Activity.find(params[:id])
+			act	= 
+				if params[:id].match(/\A[0-9]+\z/)
+      		Activity.find(params[:id])
+				else
+					Activity.where(url_escaped_name: CGI::escape(params[:id])).first
+				end
+			
+      @activity =
+				if act && act.edition == @edition
+					act
+				else
+					nil
+				end
     end
 
 		def set_edition
