@@ -3,6 +3,8 @@ module Seed
 		Badge.create!([
 			{
 				name: "register",
+				codename: "register_account",
+				badge_type: BadgeType::USER_ACCOUNT,
 				description: "Registo na Plataforma Online da Semana de Engenharia Informática @ UM",
 				is_code_needed: false,
 				category: 'main',
@@ -11,6 +13,8 @@ module Seed
 			},
 			{
 				name: "update-account",
+				codename: "update_account",
+				badge_type: BadgeType::USER_ACCOUNT,
 				description: "Atualização dos dados da conta",
 				is_code_needed: false,
 				category: 'main',
@@ -19,6 +23,8 @@ module Seed
 			},
 			{
 				name: "explorer",
+				codename: "explorer",
+				badge_type: BadgeType::CODE_NEEDED,
 				description: "Até o Sherlock Holmes ficaria surpreso!",
 				is_code_needed: true,
 				category: 'main',
@@ -27,6 +33,8 @@ module Seed
 			},
 			{
 				name: "swift-master",
+				codename: "swift_master",
+				badge_type: BadgeType::CODE_NEEDED,
 				description: "Guru da nova linguagem da Apple!",
 				is_code_needed: true,
 				category: 'main',
@@ -35,6 +43,8 @@ module Seed
 			},
 			{
 				name: "javascript-master",
+				codename: "javascript-master",
+				badge_type: BadgeType::CODE_NEEDED,
 				description: "ES6 ftw!",
 				is_code_needed: true,
 				category: 'main',

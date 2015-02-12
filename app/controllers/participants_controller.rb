@@ -3,7 +3,7 @@ class ParticipantsController < ApplicationController
 	before_action :set_participant, only: [:show]
 
 	def index
-		@participants = @edition.users.map { |u| u.public_profile }
+		@participants = @edition.users
 		respond_with(@participants)
 	end
 
@@ -33,7 +33,7 @@ class ParticipantsController < ApplicationController
 	end
 
 	def set_participant
-		@participant = User.where(username: params[:username]).first.public_profile
+		@participant = User.where(username: params[:username]).first
 	end
 
 	def set_edition

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :activities
 	has_and_belongs_to_many :editions
 
+	after_save :update_account_badges
+
 	validates :first_name, :last_name, presence: true
 
 	validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 3..15 }
@@ -73,6 +75,12 @@ class User < ActiveRecord::Base
 			'Feminino'
 		else
 			'Desconhecido'
+		end
+	end
+
+	def update_account_badges
+		Badge.where(badge_type: BadgeType::USER_ACCOUNT).each do |badge|
+			BadgeHandler.send(badge.codename.to_sym, self, badge) unless badges.include? badge
 		end
 	end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212163949) do
+ActiveRecord::Schema.define(version: 20150212192910) do
 
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150212163949) do
     t.boolean  "is_free",                   default: true,  null: false
     t.boolean  "has_prizes",                default: false, null: false
     t.integer  "edition_id"
-    t.string   "speaker_name"
     t.string   "url_escaped_name",          default: "",    null: false
   end
 
@@ -79,9 +78,13 @@ ActiveRecord::Schema.define(version: 20150212163949) do
     t.datetime "updated_at"
     t.boolean  "is_code_needed"
     t.datetime "expiration_date"
+    t.string   "codename",        default: "", null: false
+    t.integer  "badge_type",      default: 0,  null: false
   end
 
   add_index "badges", ["activity_id"], name: "index_badges_on_activity_id"
+  add_index "badges", ["badge_type"], name: "index_badges_on_badge_type"
+  add_index "badges", ["codename"], name: "index_badges_on_codename", unique: true
   add_index "badges", ["edition_id"], name: "index_badges_on_edition_id"
 
   create_table "companies", force: true do |t|
