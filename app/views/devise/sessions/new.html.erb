@@ -4,43 +4,43 @@
       <div class="form-container">
         <img class="sei-logo" id="login-logo">
         <h2>Log in</h2>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field row">
-          <div class="col-md-offset-2 col-md-3">
-          <%= f.label :email %>
-        </div>
-        <div class="col-md-7">
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-        </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field row">
+              <div class="col-md-offset-2 col-md-3">
+                <%= f.label :email %>
+              </div>
+              <div class="col-md-7">
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+            </div>
 
-        <div class="field row">
-          <div class="col-md-offset-2 col-md-3">
-          <%= f.label :password %>
-        </div>
-        <div class="col-md-7">
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-        </div>
+            <div class="field row">
+              <div class="col-md-offset-2 col-md-3">
+                <%= f.label :password %>
+              </div>
+              <div class="col-md-7">
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+            </div>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end -%>
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+              <% end -%>
 
-        <div class="row">
-          <div class="actions col-md-6">
-            <%= button_tag "Log in", type: 'submit', class: 'btn btn-submit', id: 'user-new-submit' %>
-          </div>
+              <div class="row">
+                <div class="actions col-md-6">
+                  <%= button_tag "Log in", type: 'submit', class: 'btn btn-submit', id: 'user-new-login' %>
+                </div>
           <% end %>
 
-        <div class="cold-md-6">
-          <%= render "devise/shared/links" %>
+          <div class="cold-md-6">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
