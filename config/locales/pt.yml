@@ -113,6 +113,7 @@ pt:
       less_than_or_equal_to: tem de ser menor ou igual a %{count}
       not_a_number: não é um número
       not_an_integer: tem de ser um inteiro
+      not_saved: Formulário inválido
       odd: tem de ser ímpar
       record_invalid: ! 'A validação falhou: %{errors}'
       taken: não está disponível
@@ -213,7 +214,7 @@ pt:
         minho_univ_student_id: "Nº de aluno da Universidade do Minho"
         university: "Universidade/Instituto de Ensino Superior"
         course: "Curso"
-        is_inf_eng_student_at_minho_univ: "Estudante de Engenharia Informática na Universidade do Minho (Licenciatura ou Mestrado)?" 
+        is_inf_eng_student_at_minho_univ: "Estudante de Engenharia Informática na Universidade do Minho (Licenciatura ou Mestrado)?"
         is_cesium_associate: "Sócio do CeSIUM?"
         cesium_associate_number: "Nº de sócio do CeSIUM"
         facebook_account: "Link para o perfil do Facebook"
@@ -233,7 +234,7 @@ pt:
             is_student_at_minho_univ:
               inclusion: "não pode estar em branco"
             is_inf_eng_student_at_minho_univ:
-              inclusion: "não pode estar em branco" 
+              inclusion: "não pode estar em branco"
             is_cesium_associate:
               inclusion: "não pode estar em branco"
   helpers:
@@ -244,7 +245,7 @@ pt:
         minho_univ_student_id: "Qual o teu número de aluno?"
         university: "Então, em que Universidade/Instituto de Ensino Superior estudas?"
         course: "Qual o curso que frequentas?"
-        is_inf_eng_student_at_minho_univ: "És aluno de Engenharia Informática na Universidade do Minho (Licenciatura ou Mestrado)?" 
+        is_inf_eng_student_at_minho_univ: "És aluno de Engenharia Informática na Universidade do Minho (Licenciatura ou Mestrado)?"
         is_cesium_associate: "És sócio do CeSIUM?"
         cesium_associate_number: "Qual é o teu número de sócio?"
         male: "Masculino"
