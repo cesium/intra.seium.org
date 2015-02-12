@@ -65,13 +65,21 @@
 
           <div class="row">
             <%= f.label :sex %>
-            <div class="field">
-              <%= f.label :male, class: 'option-label col-md-6 col-sm-6 col-xs-6 sex-option' %>
-              <%= f.radio_button :sex, UserSex::MALE, class: 'col-md-6 col-sm-6 col-xs-6 sex-option' %>
+            <div class="field col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-label-container">
+                <%= f.label :male, class: 'option-label sex-option' %>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-container">
+                <%= f.radio_button :sex, UserSex::MALE, class: 'sex-option' %>
+              </div>
             </div>
-            <div class="field">
-              <%= f.label :female, class: 'option-label col-md-6 col-sm-6 col-xs-6 sex-option' %>
-              <%= f.radio_button :sex, UserSex::FEMALE, class: 'col-md-6 col-sm-6 col-xs-6 sex-option' %>
+            <div class="field col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-label-container">
+                <%= f.label :female, class: 'option-label sex-option' %>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-container">
+                <%= f.radio_button :sex, UserSex::FEMALE, class: 'sex-option' %>
+              </div>
             </div>
           </div>
 
@@ -152,7 +160,7 @@
             </div>
 
             <div id="cesium-associate-number" hidden>
-              <div class="field">
+              <div class="field row">
                 <div class="col-md-offset-2 col-md-3">
                   <%= f.label :cesium_associate_number %>
                 </div>
