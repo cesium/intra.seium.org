@@ -8,6 +8,7 @@ class ParticipantsController < ApplicationController
 	end
 
 	def show
+		@social = check_accounts
 		respond_with(@participant)
 	end
 
@@ -22,6 +23,14 @@ class ParticipantsController < ApplicationController
 	end
 
 	private
+
+	# Check if there are any social accounts
+	def check_accounts
+		( @participant.facebook_account != nil && @participant.facebook_account != "" ) ||
+		( @participant.twitter_account != nil && @participant.twitter_account != "" ) ||
+		( @participant.github_account != nil && @participant.github_account != "" ) ||
+		( @participant.google_plus_account != nil && @participant.google_plus_account != "" )
+	end
 
 	def set_participant
 		@participant = User.where(username: params[:username]).first.public_profile

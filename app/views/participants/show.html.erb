@@ -1,39 +1,84 @@
-<div>
-	<div><b>Email:</b> <%= @participant.email %></div>
-	<div><b>Username:</b> <%= @participant.username %></div>
-	<div><b>Nome:</b> <%= @participant.full_name %></div>
-	<div><b>Data de Nascimento:</b> <%= @participant.birthday %></div>
-	<div><b>Sexo:</b> <%= @participant.sex_to_s %></div>
-	<div><b>Biografia:</b> <%= @participant.biography %></div>
-	<div><b>Estudante Universitário?:</b> <%= @participant.is_univ_student %></div>
-	<div><b>Estudante da Universidade do Minho?:</b> <%= @participant.is_student_at_minho_univ %></div>
-	<div><b>Nº de Aluno da UM:</b> <%= @participant.minho_univ_student_id %></div>
-	<div><b>Estudante de E.I. na U.M.?:</b> <%= @participant.is_inf_eng_student_at_minho_univ %></div>
-	<div><b>Sócio do CeSIUM?:</b> <%= @participant.is_cesium_associate %></div>
-	<div><b>Nº de Sócio:</b> <%= @participant.cesium_associate_number %></div>
-	<div><b>Universidade:</b> <%= @participant.university %></div>
-	<div><b>Curso:</b> <%= @participant.course %></div>
-	<div><b>Facebook:</b> <%= @participant.facebook_account %></div>
-	<div><b>Twitter:</b> <%= @participant.twitter_account %></div>
-	<div><b>GitHub:</b> <%= @participant.github_account %></div>
-	<div><b>Google Plus:</b> <%= @participant.google_plus_account %></div>
-	<%= image_tag @participant.avatar.url %>
-	<div>
-		<h3>Atividades em que se registou</h3>
-		<% @participant.activities.each do |activity| %>
-			<div>
-				<div><%= link_to activity.name, activity %></div>	
-			</div>
-		<% end %>
-	</div>
-	<div>
-		<h3>Badges adquiridos</h3>
-		<% @participant.badges.each do |badge| %>
-			<div>
-				<div><%= link_to badge.name, badge %></div>	
-				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
-			</div>
-		<% end %>
+<div class="container">
+	<div class="col-md-12 text-center">
+		<div class="col-md-4 col-md-offset-4">
+			<%= image_tag @participant.avatar.url, class: 'img-responsive' %>
+			<h4><%= @participant.full_name %></h4>
+			<!-- Check if user is a university student -->
+			<% if @participant.is_univ_student %>
+			<% if @participant.is_inf_eng_student_at_minho_univ %>
+			<h5>Estudante de Engenharia Informática na Universidade do Minho</h5>
+			<% elsif @participant.is_student_at_minho_univ %>
+			<h5>Estudante na Universidade do Minho</h5>
+			<% else %>
+			<h5>Estudante Universitário na <%= @participant.university %></h5>
+			<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>
-<div><%= link_to 'Back', edition_participants_path(@edition) %></div>
+<br>
+<div class="container">
+	<div class="wrapper">
+		<ul class="list-group">
+			<li class="list-group-item-info list-group-item"><b>Email:</b> <%= @participant.email %></li>
+			<li class="list-group-item-info list-group-item"><b>Username:</b> <%= @participant.username %></li>
+			<% if @participant.birthday != nil %>
+			<li class="list-group-item-info list-group-item"><b>Data de nascimento:</b> <%= @participant.birthday %></li>
+			<% end %>
+			<li class="list-group-item-info list-group-item"><b>Sexo:</b> <%= @participant.sex_to_s %></li>
+			<% if @participant.biography != nil && @participant.biography != "" %>
+			<li class="list-group-item-info list-group-item"><b>Biografia:</b> <%= @participant.biography %></li>
+			<% end %>
+			<% if @participant.is_student_at_minho_univ %>
+			<li class="list-group-item-info list-group-item"><b>Nº de Aluno UM:</b> <%= @participant.minho_univ_student_id %></li>
+			<% end %>
+			<% if @participant.is_cesium_associate %>
+			<li class="list-group-item-info list-group-item"><b>Nº de Sócio Cesium:</b> <%= @participant.cesium_associate_number %></li>
+			<% end %>
+			<li class="list-group-item-info list-group-item"><b>Curso:</b> <%= @participant.course %></li>
+		</ul>
+	</div>
+	<% if @social %>
+		<div class="wrapper">
+			<h3>Social</h3>
+			<% if @participant.facebook_account != "" && @participant.facebook_account != nil %>
+			<a href="<%= @participant.facebook_account%>">Facebook</a>
+			<% end %>
+			<% if @participant.twitter_account != "" && @participant.twitter_account != nil %>
+			<a href="<%= @participant.twitter_account%>">Twitter</a>
+			<% end %>
+			<% if @participant.github_account != "" && @participant.github_account != nil %>
+			<a href="<%= @participant.github_account%>">Github</a>
+			<% end %>
+			<% if @participant.google_plus_account != "" && @participant.google_plus_account != nil %>
+			<a href="<%= @participant.google_plus_account%>">Google Plus</a>
+			<% end %>
+		</div>
+	<% end %>
+	
+	<h3>Atividades em que se registou</h3>
+	<% if @participant.activities.empty? %>
+		<h5><%= @participant.full_name %> ainda não se registou em nenhuma atividade.</h5>
+	<% else %>
+		<% @participant.activities.each do |activity| %>
+		<div>
+			<div><%= link_to activity.name, edition_activity(@edition, activity) %></div>	
+		</div>
+		<% end %>
+	<% end %>
+	<div>
+
+	<h3>Badges adquiridos</h3>
+	<% if @participant.badges.empty? %>
+		<h5><%= @participant.full_name %> ainda não conquistou nenhum badge.</h5>
+	<% else %>
+		<% @participant.badges.each do |badge| %>
+		<div>
+			<div><%= link_to badge.name, edition_badge(@edition, badge) %></div>	
+			<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+	<button class="btn btn-info"><%= link_to 'Back', edition_participants_path(@edition) %></button>
+</div>
