@@ -1,6 +1,6 @@
 class ParticipantsController < ApplicationController
-	before_action :set_participant, only: [:show]
 	before_action :set_edition
+	before_action :set_participant, only: [:show]
 
 	def index
 		@participants = @edition.users.map { |u| u.public_profile }
@@ -9,6 +9,16 @@ class ParticipantsController < ApplicationController
 
 	def show
 		respond_with(@participant)
+	end
+
+	def find_by_email
+		user = User.where(email: params[:email]).first
+		
+		if user
+			redirect_to edition_participant_path(@edition, user).sub(/\d+$/, user.username)
+		else
+			redirect_to edition_participants_path(@edition)	
+		end
 	end
 
 	private
@@ -22,6 +32,6 @@ class ParticipantsController < ApplicationController
 	end
 
 	def user_params
-		params.require(:participant).permit(:username)
+		params.require(:participant).permit(:username, :email)
 	end
 end

@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
 	validates :first_name, :last_name, presence: true
 
-	validates :username, presence: true, uniqueness: { case_sensitive: false }
+	validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A[a-zA-Z_0-9]+\z/ }, length: { in: 3..15 }, exclusion: { in: %w(sign_up sign_in sign_out edit password find_by_email) }
 
 	validates :sex, presence: true
 	validates :sex, numericality: { only_integer: true, greater_than_or_equal_to: UserSex::UNDEFINED, less_than_or_equal_to: UserSex::FEMALE }, unless: "sex.blank?"
