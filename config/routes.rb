@@ -1,28 +1,29 @@
 Rails.application.routes.draw do
-  #resources :editions
-  #resources :companies
+  resources :editions, only: [:index, :show] do
+		resources :participants, only: [:index, :show], param: :username
+
+		resources :activities, only: [:index, :show] do
+			post :register, on: :member
+			delete :deregister, on: :member
+		end
+
+		resources :badges, only: [:index, :show] do
+			get :redeem, on: :collection, to: 'badges#require', as: 'redeem' 
+			post :redeem, on: :collection, to: 'badges#redeem', as: 'redeem_post'
+			get 'redeem/:code', on: :collection, to: 'badges#redeem', as: 'redeem_get'
+		end
+	end
+  
+	#resources :companies
   #resources :speakers
   
-	resources :activities, only: [:index, :show] do
-		post :register, on: :member
-		delete :deregister, on: :member
-	end
-	
-	resources :badges, only: [:index, :show] do
-		get :require, on: :collection
-		post :register, on: :collection, as: 'register_post'
-		get 'register/:code', on: :collection, to: 'badges#register', as: 'register_get'
-	end
-  
 	devise_for :users
-	#get '/users/:username', to: 'users#show', as: 'user_root_path'
-	resources :users, only: [:index, :show], param: :username
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-	root 'users#index'
+	root to: 'editions#show', id: 2015
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

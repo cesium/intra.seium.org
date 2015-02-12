@@ -17,17 +17,17 @@
 	</div>
 	<div id="badge-users">
 		<div id="badge-users-title">
-			<h2>Lista de utilizadores com este badge:</h2>
+			<h2>Lista de participantes com este badge:</h2>
 		</div>
 		<div id="badge-users-list">
 			<ul>
-				<% @badge.users.each do |user| %>
+				<% @badge.users.each do |participant| %>
 					<li class="badge-user">
 						<div id="badge-user-name">
-							<%= user.full_name %>
+							<%= participant.full_name %>
 						</div>
 						<div class="badge-user-photo">
-							<%= image_tag user.avatar.url(:thumb) %>
+							<%= image_tag participant.avatar.url(:thumb) %>
 						</div>
 					</li>
 				<% end %>
@@ -37,5 +37,5 @@
 </div>
 
 <div>
-	<%= link_to 'Back', badges_path %>
+	<%= link_to 'Back', edition_badges_path(@edition) %>
 </div>

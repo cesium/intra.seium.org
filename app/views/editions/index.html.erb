@@ -21,13 +21,7 @@
         <td><%= edition.begin_date %></td>
         <td><%= edition.end_date %></td>
         <td><%= link_to 'Show', edition %></td>
-        <td><%= link_to 'Edit', edit_edition_path(edition) %></td>
-        <td><%= link_to 'Destroy', edition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Edition', new_edition_path %>

@@ -1,8 +1,9 @@
 class BadgesController < ApplicationController
-  before_action :set_badge, only: [:show, :edit, :update, :destroy]
+  before_action :set_badge, only: [:show]
+  before_action :set_edition
 
   def index
-    @badges = Badge.all
+    @badges = @edition.badges
     respond_with(@badges)
   end
 
@@ -13,7 +14,7 @@ class BadgesController < ApplicationController
 	def require
 	end
 
-	def register
+	def redeem
 		code = params[:code]
 		begin
 			@badge = BadgeAcquisition.acquire_badge_with_code(current_user, code)
@@ -26,6 +27,10 @@ class BadgesController < ApplicationController
     def set_badge
       @badge = Badge.find(params[:id])
     end
+
+		def set_edition
+			@edition = Edition.find params[:edition_id]
+		end
 
     def badge_params
       params.require(:badge).permit(:name, :description, :code)

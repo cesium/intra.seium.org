@@ -1,8 +1,9 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :register, :deregister]
+  before_action :set_edition
 
 	def index
-		@activities = Activity.all
+		@activities = @edition.activities
 		respond_with(@activities)
 	end
 
@@ -18,7 +19,7 @@ class ActivitiesController < ApplicationController
 			user.activities << @activity
 		end
 
-		redirect_to activity_path
+		redirect_to edition_activity_path(@edition, @activity)
 	end
 
 	def deregister
@@ -28,13 +29,17 @@ class ActivitiesController < ApplicationController
 			user.activities.delete @activity
 		end
 
-		redirect_to activity_path
+		redirect_to edition_activity_path(@edition, @activity)
 	end
 
   private
     def set_activity
       @activity = Activity.find(params[:id])
     end
+
+		def set_edition
+			@edition = Edition.find params[:edition_id]
+		end
 
     def activity_params
       params.require(:activity).permit(:name, :description, :begin_date, :end_date, :type, :place)

@@ -1,0 +1,39 @@
+<div>
+	<div><b>Email:</b> <%= @participant.email %></div>
+	<div><b>Username:</b> <%= @participant.username %></div>
+	<div><b>Nome:</b> <%= @participant.full_name %></div>
+	<div><b>Data de Nascimento:</b> <%= @participant.birthday %></div>
+	<div><b>Sexo:</b> <%= @participant.sex_to_s %></div>
+	<div><b>Biografia:</b> <%= @participant.biography %></div>
+	<div><b>Estudante Universitário?:</b> <%= @participant.is_univ_student %></div>
+	<div><b>Estudante da Universidade do Minho?:</b> <%= @participant.is_student_at_minho_univ %></div>
+	<div><b>Nº de Aluno da UM:</b> <%= @participant.minho_univ_student_id %></div>
+	<div><b>Estudante de E.I. na U.M.?:</b> <%= @participant.is_inf_eng_student_at_minho_univ %></div>
+	<div><b>Sócio do CeSIUM?:</b> <%= @participant.is_cesium_associate %></div>
+	<div><b>Nº de Sócio:</b> <%= @participant.cesium_associate_number %></div>
+	<div><b>Universidade:</b> <%= @participant.university %></div>
+	<div><b>Curso:</b> <%= @participant.course %></div>
+	<div><b>Facebook:</b> <%= @participant.facebook_account %></div>
+	<div><b>Twitter:</b> <%= @participant.twitter_account %></div>
+	<div><b>GitHub:</b> <%= @participant.github_account %></div>
+	<div><b>Google Plus:</b> <%= @participant.google_plus_account %></div>
+	<%= image_tag @participant.avatar.url %>
+	<div>
+		<h3>Atividades em que se registou</h3>
+		<% @participant.activities.each do |activity| %>
+			<div>
+				<div><%= link_to activity.name, activity %></div>	
+			</div>
+		<% end %>
+	</div>
+	<div>
+		<h3>Badges adquiridos</h3>
+		<% @participant.badges.each do |badge| %>
+			<div>
+				<div><%= link_to badge.name, badge %></div>	
+				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+			</div>
+		<% end %>
+	</div>
+</div>
+<div><%= link_to 'Back', edition_participants_path(@edition) %></div>

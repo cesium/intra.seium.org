@@ -22,7 +22,7 @@
         <td><%= activity.end_date %></td>
         <td><%= activity.activity_type %></td>
         <td><%= activity.place %></td>
-        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Show', edition_activity_path(@edition, activity) %></td>
       </tr>
     <% end %>
   </tbody>
