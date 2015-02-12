@@ -1,70 +1,119 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-container" id="user-edit-form">
+        <img class="sei-logo" id="login-logo">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
-  <%= devise_error_messages! %>
+        <h2>Editar Conta</h2>
 
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_field :birthday %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :biography %><br />
-    <%= f.text_area :biography %>
-  </div>
+          <div class="row">
+            <div class="col-md-12 user-edit-img">
+              <%= image_tag @user.avatar.url(:medium) %>
+              <%= f.file_field :avatar %>
+            </div>
+          </div>
 
-	<div>
-		<%= image_tag @user.avatar.url(:medium) %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :biography %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_area :biography, id: 'bio-field' %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.file_field :avatar %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :birthday %>
+            </div>
+            <div class="col-md-7">
+              <%= f.date_field :birthday %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :facebook_account %><br />
-    <%= f.text_field :facebook_account %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :facebook_account %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_field :facebook_account %>
+            </div>
+	        </div>
 
-  <div class="field">
-    <%= f.label :twitter_account %><br />
-    <%= f.text_field :twitter_account %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :twitter_account %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_field :twitter_account %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :github_account %><br />
-    <%= f.text_field :github_account %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :github_account %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_field :github_account %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :google_plus_account %><br />
-    <%= f.text_field :google_plus_account %>
-	</div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :google_plus_account %>
+            </div>
+            <div class="col-md-7">
+              <%= f.text_field :google_plus_account %>
+            </div>
+          </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+             <div class="account-confirmation">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :password, class: "center-label" %>
+            </div>
+            <div class="col-md-7">
+              <%= f.password_field :password, autocomplete: "off" %>
+              <div class="col-md-12 user-edit-info">
+                <i>(deixar em branco se não quiser alterar)</i>
+              </div>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <div class="field row">
+            <div class="col-md-offset-2 col-md-3">
+              <%= f.label :password_confirmation %>
+            </div>
+            <div class="col-md-7">
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+             <div class="field row">
+               <div class="col-md-offset-2 col-md-3">
+                 <%= f.label :current_password, class: "center-label" %>
+               </div>
+               <div class="col-md-7">
+                 <%= f.password_field :current_password, autocomplete: "off" %>
+                 <div class="col-md-12 user-edit-info">
+                   <i>(precisamos da tua password atual para confirmar as mudanças)</i>
+                 </div>
+               </div>
+             </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<%= link_to "Back", :back %>
+             <div class="row">
+               <div class="actions">
+                 <%= button_tag "Atualizar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit' %>
+               </div>
+             </div>
+             <% end %>
+           </div>
+         </div>
+       </div>
+     </div>

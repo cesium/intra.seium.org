@@ -18,6 +18,10 @@
   margin-top: 50px
   content: image-url('logo_sei.png')
 
+
+#user-edit-form label
+  float: none
+
 label.sex-option
   float: right
 
@@ -29,3 +33,32 @@ div.sex-option-container
 
 div.sex-option-label-container
   padding: 0
+
+#bio-field
+  background-color: transparent
+  margin-top: 20px
+  float: left
+  width: 180px
+  height: 75px
+  border-color: #B0BEC5
+  resize: none
+  outline: none
+  &:focus
+    border-color: #fff
+
+.user-edit-img
+  & img
+    max-width: 300px
+    margin-bottom: 15px
+  & input
+    margin: 0 auto
+
+div.user-edit-info
+  padding: 0
+  i
+    float: left
+    font-size: 11px
+    font-decoration: italic
+
+#user-edit-submit
+  margin-top: 20px

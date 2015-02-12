@@ -207,6 +207,7 @@ pt:
         username: "Nome de Utilizador"
         biography: "Biografia"
         password_confirmation: "Confirmação de Password"
+        current_password: "Password atual"
         sex: "Sexo"
         birthday: "Data de Nascimento"
         is_univ_student: "Estudante Universitário?"
