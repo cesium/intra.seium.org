@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="form-container">
+      <div class="form-container" id="users-new">
         <img class="sei-logo" id="login-logo">
 
         <h2>Registar</h2>
@@ -10,55 +10,55 @@
           <%= devise_error_messages! %>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :first_name %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.text_field :first_name, autofocus: true %>
             </div>
           </div>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :last_name %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.text_field :last_name %>
             </div>
           </div>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :email %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.email_field :email %>
             </div>
           </div>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :username %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.text_field :username %>
             </div>
           </div>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :password %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.password_field :password, autocomplete: "off" %>
             </div>
           </div>
 
           <div class="field row">
-            <div class="col-md-offset-2 col-md-3">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
               <%= f.label :password_confirmation %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-xs-7 col-sm-7">
               <%= f.password_field :password_confirmation, autocomplete: "off" %>
             </div>
           </div>
@@ -107,10 +107,10 @@
             </div>
 
             <div id="minho-univ-student-id" class="field" hidden>
-              <div class="col-md-offset-2 col-md-3">
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
                 <%= f.label :minho_univ_student_id %>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-7 col-xs-7 col-sm-7">
                 <%= f.text_field :minho_univ_student_id %>
               </div>
             </div>
@@ -118,19 +118,19 @@
 
           <div id="other-univ-info" hidden>
             <div class="field row" id="university">
-              <div class="col-md-offset-2 col-md-3">
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
                 <%= f.label :university %>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-7 col-xs-7 col-sm-7">
                 <%= f.text_field :university %>
               </div>
             </div>
 
             <div class="field row" id="course">
-              <div class="col-md-offset-2 col-md-3">
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
                 <%= f.label :course %>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-7 col-xs-7 col-sm-7">
                 <%= f.text_field :course %>
               </div>
             </div>
@@ -161,10 +161,10 @@
 
             <div id="cesium-associate-number" hidden>
               <div class="field row">
-                <div class="col-md-offset-2 col-md-3">
+                <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
                   <%= f.label :cesium_associate_number %>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 col-xs-7 col-sm-7">
                   <%= f.text_field :cesium_associate_number %>
                 </div>
               </div>
