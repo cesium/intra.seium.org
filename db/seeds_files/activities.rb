@@ -8,8 +8,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Anunciado Brevemente',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -19,21 +17,16 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 16, 0),
 				activity_type: ActivityType::DISCUSSION,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
 				name: 'Corrida Social',
 				description: 'A primeira edição da “Corrida Social CeSIUM” foi um evento memorável! O montante arrecadado a partir das inscrições dos participantes resultou nuns espantosos 315€ que reverteram totalmente para o Fundo de Emergência Social da Universidade do Minho.
-                        Este ano depende de todos nós superar este valor. No dia 18 de Fevereiro tu podes ser o verdadeiro herói desta história! Contamos contigo? O percurso está estrategicamente pensado de maneira a que todos os alunos, funcionários e docentes da Universidade do Minho possam participar, independentemente da sua preparação física.
-                        Pré-Inscrição',
+				Este ano depende de todos nós superar este valor. No dia 18 de Fevereiro tu podes ser o verdadeiro herói desta história! Contamos contigo? O percurso está estrategicamente pensado de maneira a que todos os alunos, funcionários e docentes da Universidade do Minho possam participar, independentemente da sua preparação física.',
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 18, 16, 30),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 18, 30),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -43,20 +36,17 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 11, 0),
 				activity_type: ActivityType::PRESENTATION,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
 				name: 'Introdução ao Android 5.0 Lollipop',
 				description: 'A BloomIdeia vai dar a conhecer uma das principais novidades do Android Lollipop, o Material Design.
-                        Esta sessão será composta por uma componente teórica com uma pequena introdução sobre as principais mudanças e uma parte prática, onde se vai desenvolver uma aplicação para experimentar alguns dos elementos implementados nesta última versão do Android.',
+				Esta sessão será composta por uma componente teórica com uma pequena introdução sobre as principais mudanças e uma parte prática, onde se vai desenvolver uma aplicação para experimentar alguns dos elementos implementados nesta última versão do Android.',
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 16, 11, 0),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 13, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Rafael D Escoffier',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Rafael D')],
 				edition: editions[0]
 			},
 			{
@@ -66,8 +56,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 16, 0),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Hélder Pinto',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Hélder Pinto')],
 				edition: editions[0]
 			},
 			{
@@ -77,8 +66,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 18, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Anunciado Brevemente',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -90,8 +77,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 12, 0),
 				activity_type: ActivityType::CHALLENGE,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -101,8 +86,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 13, 0),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Miguel Palhas',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Miguel Palhas')],
 				edition: editions[0]
 			},
 			{
@@ -111,9 +95,7 @@ module Seed
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 21, 14, 30),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 16, 30),
 				activity_type: ActivityType::CHALLENGE,
-				place: '',
-				speaker_name: '',
-				speakers: [],
+				place: 'DI A2',
 				edition: editions[0]
 			},
 			{
@@ -123,8 +105,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 18, 0),
 				activity_type: ActivityType::CHALLENGE,
 				place: '',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -134,8 +114,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 11, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'João Justo',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'João Justo')],
 				edition: editions[0]
 			},
 			{
@@ -145,8 +124,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Norberto Henriques',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Norberto Henriques')],
 				edition: editions[0]
 			},
 			{
@@ -156,8 +134,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 16, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Francisco Tomé Costa',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Francisco Costa')],
 				edition: editions[0]
 			},
 			{
@@ -167,8 +144,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 19, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Rui Antunes',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Rui Antunes')],
 				edition: editions[0]
 			},
 			{
@@ -178,8 +154,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 20, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: '',
-				speaker_name: 'Anunciado Brevemente',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -189,8 +163,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 19, 11, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Paulo Vieira',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Paulo Vieira')],
 				edition: editions[0]
 			},
 			{
@@ -200,8 +173,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 19, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Anunciado Brevemente',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -211,8 +182,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 19, 16, 0),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Francisco Mendes',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Francisco Mendes')],
 				edition: editions[0]
 			},
 			{
@@ -222,8 +192,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 19, 18, 30),
 				activity_type: ActivityType::TALK,
 				place: '',
-				speaker_name: 'Rui Figueira',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Rui Figueira')],
 				edition: editions[0]
 			},
 			{
@@ -234,8 +203,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 0, 0),
 				activity_type: ActivityType::LOUNGE,
 				place: '',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -247,8 +214,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 14, 12, 0),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -258,8 +223,6 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 14, 16, 0),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				speaker_name: '',
-				speakers: [],
 				edition: editions[0]
 			},
 			{
@@ -269,8 +232,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 17, 11, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Luís Fonseca',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Luís Fonseca')],
 				edition: editions[0]
 			},
 			{
@@ -280,8 +242,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 17, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				speaker_name: 'Roberto Machado',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Roberto Machado')],
 				edition: editions[0]
 			},
 			{
@@ -291,8 +252,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 17, 16, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Manuel Costa',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Manuel Costa')],
 				edition: editions[0]
 			},
 			{
@@ -302,10 +262,17 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 17, 18, 30),
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
-				speaker_name: 'Gabriel Poça',
-				speakers: [],
+				speakers: [find_speaker(speakers, 'Gabriel Poça')],
 				edition: editions[0]
 			}
 		])
+	end
+
+	def self.find_speaker(speakers, speaker_name)
+		speakers.each do |s|
+			return s if s.name.downcase.include? speaker_name.downcase
+		end
+		p "SPEAKER NO FOUND #{speaker_name}"
+		nil
 	end
 end

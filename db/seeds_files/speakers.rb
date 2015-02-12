@@ -9,7 +9,7 @@ module Seed
 				web_site: "http://www.helderpinto.com/",
 				twitter_account: "https://twitter.com/HelderHP",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'Blizzard'),
 				editions: [editions[0]]
 			},
 			{
@@ -20,7 +20,7 @@ module Seed
 				web_site: "http://luispedrofonseca.com/",
 				twitter_account: "https://twitter.com/lpfonseca",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'X-team'),
 				editions: [editions[0]]
 			},
 			{
@@ -31,7 +31,7 @@ module Seed
 				web_site: "https://www.beeverycreative.com",
 				twitter_account: "https://twitter.com/fmendes75/",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'BEE VERY CREATIVE'),
 				editions: [editions[0]]
 			},
 			{
@@ -42,7 +42,7 @@ module Seed
 				web_site: "http://groupbuddies.com/",
 				twitter_account: "https://twitter.com/rmdgb",
 				github_account: "https://github.com/rmdmachado",
-				company: nil,
+				company: find_company(companies, 'Group Buddies'),
 				editions: [editions[0]]
 			},
 			{
@@ -53,7 +53,7 @@ module Seed
 				web_site: "",
 				twitter_account: "https://twitter.com/Naps62",
 				github_account: "https://github.com/naps62",
-				company: nil,
+				company: find_company(companies, 'Group Buddies'),
 				editions: [editions[0]]
 			},
 			{
@@ -64,7 +64,7 @@ module Seed
 				web_site: "http://gabrielpoca.com/",
 				twitter_account: "https://twitter.com/gabrielgpoca",
 				github_account: "https://github.com/gabrielpoca",
-				company: nil,
+				company: find_company(companies, 'Group Buddies'),
 				editions: [editions[0]]
 			},
 			{
@@ -75,7 +75,7 @@ module Seed
 				web_site: "",
 				twitter_account: "https://twitter.com/jpjustonunes",
 				github_account: "https://github.com/joaojusto",
-				company: nil,
+				company: find_company(companies, 'Group Buddies'),
 				editions: [editions[0]]
 			},
 			{
@@ -86,7 +86,7 @@ module Seed
 				web_site: "http://bloomidea.com/",
 				twitter_account: "",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'BloomIdea'),
 				editions: [editions[0]]
 			},
 			{
@@ -97,7 +97,7 @@ module Seed
 				web_site: "http://www.imobilemagic.com/",
 				twitter_account: "https://twitter.com/imobilemagic",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'ImobileMagic'),
 				editions: [editions[0]]
 			},
 			{
@@ -119,7 +119,7 @@ module Seed
 				web_site: "http://www.eurotux.com",
 				twitter_account: "",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'Eurotux'),
 				editions: [editions[0]]
 			},
 			{
@@ -130,7 +130,7 @@ module Seed
 				web_site: "http://www.vilt-group.com/en/",
 				twitter_account: "",
 				github_account: "https://github.com/ruifigueira",
-				company: nil,
+				company: find_company(companies, 'Vilt'),
 				editions: [editions[0]]
 			},
 			{
@@ -141,7 +141,7 @@ module Seed
 				web_site: "https://www.linkedin.com/in/norbertohenriques",
 				twitter_account: "",
 				github_account: "",
-				company: nil,
+				company:find_company(companies, 'WeDo'),
 				editions: [editions[0]]
 			},
 			{
@@ -152,9 +152,27 @@ module Seed
 				web_site: "http://fpvportugal.com/",
 				twitter_account: "",
 				github_account: "",
-				company: nil,
+				company: find_company(companies, 'FPV'),
 				editions: [editions[0]]
-			}
+			},
+			{
+				name: "Manuel Costa",
+				role: nil,
+				biography: nil,
+				photo_url: nil,
+				web_site: nil,
+				twitter_account: nil,
+				github_account: nil,
+				company: find_company(companies, 'Storyo'),
+				editions: [editions[0]]
+			},
 		])
+	end
+
+	def self.find_company(companies, company_name)
+		companies.each do |c|
+			return c if c.name.downcase.include? company_name.downcase
+		end
+		nil
 	end
 end
