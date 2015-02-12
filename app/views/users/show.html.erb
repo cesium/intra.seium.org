@@ -3,7 +3,7 @@
 		<div class="col-md-4 col-md-offset-4">
 			<%= image_tag @user.avatar.url, class: 'img-responsive' %>
 			<h4><%= @user.full_name %></h4>
-			<!-- Verificar se utilizador é estudante universitário -->
+			<!-- Check if user is a university student -->
 			<% if @user.is_univ_student %>
 			<% if @user.is_inf_eng_student_at_minho_univ %>
 			<h5>Estudante de Engenharia Informática na Universidade do Minho</h5>
@@ -26,7 +26,7 @@
 			<li class="list-group-item-info list-group-item"><b>Data de nascimento:</b> <%= @user.birthday %></li>
 			<% end %>
 			<li class="list-group-item-info list-group-item"><b>Sexo:</b> <%= @user.sex_to_s %></li>
-			<% if @user.biography != nil %>
+			<% if @user.biography != nil && @user.biography != "" %>
 			<li class="list-group-item-info list-group-item"><b>Biografia:</b> <%= @user.biography %></li>
 			<% end %>
 			<% if @user.is_student_at_minho_univ %>
@@ -38,38 +38,47 @@
 			<li class="list-group-item-info list-group-item"><b>Curso:</b> <%= @user.course %></li>
 		</ul>
 	</div>
-	<br>
-	<div class="wrapper">
-		<h4>Social</h4>
-		<% if @user.facebook_account != "" && @user.facebook_account != nil %>
-		<a href="<%= @user.facebook_account%>">Facebook</a>
-		<% end %>
-		<% if @user.twitter_account != "" && @user.twitter_account != nil %>
-		<a href="<%= @user.twitter_account%>">Twitter</a>
-		<% end %>
-		<% if @user.github_account != "" && @user.github_account != nil %>
-		<a href="<%= @user.github_account%>">Github</a>
-		<% end %>
-		<% if @user.google_plus_account != "" && @user.google_plus_account != nil %>
-		<a href="<%= @user.google_plus_account%>">Google Plus</a>
-		<% end %>
-
-	</div>
+	<% if @social %>
+		<div class="wrapper">
+			<h3>Social</h3>
+			<% if @user.facebook_account != "" && @user.facebook_account != nil %>
+			<a href="<%= @user.facebook_account%>">Facebook</a>
+			<% end %>
+			<% if @user.twitter_account != "" && @user.twitter_account != nil %>
+			<a href="<%= @user.twitter_account%>">Twitter</a>
+			<% end %>
+			<% if @user.github_account != "" && @user.github_account != nil %>
+			<a href="<%= @user.github_account%>">Github</a>
+			<% end %>
+			<% if @user.google_plus_account != "" && @user.google_plus_account != nil %>
+			<a href="<%= @user.google_plus_account%>">Google Plus</a>
+			<% end %>
+		</div>
+	<% end %>
 	
 	<h3>Atividades em que se registou</h3>
-	<% @user.activities.each do |activity| %>
-	<div>
-		<div><%= link_to activity.name, activity %></div>	
-	</div>
+	<% if @user.activities.empty? %>
+		<h5><%= @user.full_name %> ainda não se registou em nenhuma atividade.</h5>
+	<% else %>
+		<% @user.activities.each do |activity| %>
+		<div>
+			<div><%= link_to activity.name, activity %></div>	
+		</div>
+		<% end %>
 	<% end %>
 	<div>
+
 	<h3>Badges adquiridos</h3>
-	<% @user.badges.each do |badge| %>
-	<div>
-		<div><%= link_to badge.name, badge %></div>	
-		<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+	<% if @user.badges.empty? %>
+		<h5><%= @user.full_name %> ainda não conquistou nenhum badge.</h5>
+	<% else %>
+		<% @user.badges.each do |badge| %>
+		<div>
+			<div><%= link_to badge.name, badge %></div>	
+			<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+		</div>
+		<% end %>
+		<% end %>
 	</div>
-	<% end %>
-</div>
-<%= link_to 'Back', users_path %>
+	<button class="btn btn-info"><%= link_to 'Back', users_path %></button>
 </div>
