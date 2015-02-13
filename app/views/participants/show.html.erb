@@ -1,20 +1,25 @@
 <style type="text/css">
-	.participant-img {
-		width: 55%;
-		height: 55%;
-		margin: auto;
-		margin-top: 20px;
-	}
+.participant-img {
+	width: 55%;
+	height: 55%;
+	margin: auto;
+	margin-top: 20px;
+}
 
-	.list-group-item {
-		background-color: transparent;
-		color: #fff;
-	}
+.list-group-item {
+	background-color: transparent;
+	color: #fff;
+}
+
+#back-button {
+	margin: 0 auto;
+	display: block;
+}
 </style>
 
 <div class="container">
 	<div class="col-md-12 text-center">
-		<div class="col-md-5 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-3">
 			<%= image_tag @participant.avatar.url, class: 'img-responsive participant-img' %>
 			<h4><%= @participant.full_name %></h4>
 			<!-- Check if user is a university student -->
@@ -34,7 +39,7 @@
 <div class="container">
 	<div class="wrapper">
 		<div class="col-md-12">
-			<div class="col-md-5 col-md-offset-3">
+			<div class="col-md-6 col-md-offset-3">
 				<ul class="list-group">
 					<li class="list-group-item-info list-group-item"><b>Email:</b> <%= @participant.email %></li>
 					<li class="list-group-item-info list-group-item"><b>Username:</b> <%= @participant.username %></li>
@@ -57,49 +62,61 @@
 		</div>
 	</div>
 	<div class="col-md-12">
-		<div class="col-md-5 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-3">
 			<% if @social %>
-				<div class="wrapper text-center">
-					<h3>Social</h3>
-					<% if @participant.facebook_account != "" && @participant.facebook_account != nil %>
-					<a href="<%= @participant.facebook_account%>">Facebook</a>
-					<% end %>
-					<% if @participant.twitter_account != "" && @participant.twitter_account != nil %>
-					<a href="<%= @participant.twitter_account%>">Twitter</a>
-					<% end %>
-					<% if @participant.github_account != "" && @participant.github_account != nil %>
-					<a href="<%= @participant.github_account%>">Github</a>
-					<% end %>
-					<% if @participant.google_plus_account != "" && @participant.google_plus_account != nil %>
-					<a href="<%= @participant.google_plus_account%>">Google Plus</a>
-					<% end %>
-				</div>
-			<% end %>
-			
-			<h3>Atividades</h3>
-			<% if @participant.activities.empty? %>
-				<h5><%= @participant.full_name %> ainda não se registou em nenhuma atividade.</h5>
-			<% else %>
-				<% @participant.activities.each do |activity| %>
-				<div>
-					<div><%= link_to activity.name, edition_activity_path(@edition, activity) %></div>	
-				</div>
+			<div class="wrapper text-center">
+				<h3>Social</h3>
+				<% if @participant.facebook_account != "" && @participant.facebook_account != nil %>
+				<a href="<%= @participant.facebook_account%>">Facebook</a>
 				<% end %>
-			<% end %>
-			<div>
-
-			<h3>Badges</h3>
-			<% if @participant.badges.empty? %>
-				<h5><%= @participant.full_name %> ainda não conquistou nenhum badge.</h5>
-			<% else %>
-				<% @participant.badges.each do |badge| %>
-				<div>
-					<div><%= link_to badge.name, edition_badge_path(@edition, badge) %></div>	
-					<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
-				</div>
+				<% if @participant.twitter_account != "" && @participant.twitter_account != nil %>
+				<a href="<%= @participant.twitter_account%>">Twitter</a>
 				<% end %>
+				<% if @participant.github_account != "" && @participant.github_account != nil %>
+				<a href="<%= @participant.github_account%>">Github</a>
+				<% end %>
+				<% if @participant.google_plus_account != "" && @participant.google_plus_account != nil %>
+				<a href="<%= @participant.google_plus_account%>">Google Plus</a>
 				<% end %>
 			</div>
-	<br>
-	<button class="btn btn-submit"><%= link_to 'Back', edition_participants_path(@edition) %></button>
+			<% end %>
+		</div>
+	</div>
+
+	<!-- ATIVIDADES -->
+	<div class="col-md-12 text-center">
+		<h3>Atividades</h3>
+		<% if @participant.activities.empty? %>
+		<h5><%= @participant.full_name %> ainda não se registou em nenhuma atividade.</h5>
+		<% else %>
+		<% @participant.activities.each do |activity| %>
+		<div>
+			<div><%= link_to activity.name, edition_activity_path(@edition, activity) %></div>	
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+
+	<!-- BADGES -->
+	<div class="col-md-12 text-center">
+		<h3>Badges</h3>
+		<% if @participant.badges.empty? %>
+		<h5><%= @participant.full_name %> ainda não conquistou nenhum badge.</h5>
+		<% else %>
+		<div class="col-md-6 col-md-offset-3">
+			<% @participant.badges.each do |badge| %>
+			<div class="col-md-2 col-sm-2 col-xs-4">
+				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+				<div><%= link_to badge.name, edition_badge_path(@edition, badge) %></div>
+			</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<button class="btn btn-submit" id="back-button"><%= link_to 'Back', edition_participants_path(@edition) %></button>
+	</div>
 </div>
