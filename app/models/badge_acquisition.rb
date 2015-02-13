@@ -50,6 +50,22 @@ class BadgeAcquisition < ActiveRecord::Base
 		end
 	end
 
+	def self.get_available_codes_for_one_use(badge)
+		BadgeAcquisition.where(badge_id: badge.id).select { |badge_acq| badge_acq.code_available_for_one_use? }.map { |ba| ba.code }
+	end
+
+	def self.number_available_codes_for_one_use(badge)
+		BadgeAcquisition.where(badge_id: badge.id).select { |badge_acq| badge_acq.code_available_for_one_use? }.size
+	end
+
+	def self.get_multiple_use_code(badge)
+		BadgeAcquisition.where(badge_id: badge.id).select { |badge_acq| badge_acq.code_available_for_multiple_uses? }.first.code
+	end
+
+	def self.has_any_multiple_use_code?(badge)
+		BadgeAcquisition.where(badge_id: badge.id).select { |badge_acq| badge_acq.code_available_for_multiple_uses? }.size > 0
+	end
+
 	def code_not_available?
 		status == BadgeCodeStatus::NOT_AVAILABLE
 	end

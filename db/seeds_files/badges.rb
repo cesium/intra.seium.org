@@ -53,7 +53,7 @@ module Seed
 			},
 			{
 				name: "javascript-master",
-				codename: "javascript-master",
+				codename: "javascript_master",
 				badge_type: BadgeType::CODE_NEEDED,
 				description: "ES6 ftw!",
 				is_code_needed: true,

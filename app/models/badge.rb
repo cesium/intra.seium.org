@@ -2,6 +2,7 @@ class Badge < ActiveRecord::Base
 	belongs_to :edition
   belongs_to :activity
 
+	BadgeNotFoundError = Class.new(StandardError)
 	CodesNotAllowedError = Class.new(StandardError)
 	ExpirationDateExcedeedError = Class.new(StandardError)
 
