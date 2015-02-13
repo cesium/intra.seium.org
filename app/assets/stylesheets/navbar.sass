@@ -35,13 +35,22 @@ nav#navbar
     -webkit-transform: translateY(-10px)
     -moz-transform: translateY(-10px)
     transform: translateY(-10px)
-  &:hover::after,
-  &.active::after
+  &:hover::after
     height: 5px
     opacity: 1
     -webkit-transform: translateY(0px)
     -moz-transform: translateY(0px)
     transform: translateY(0px)
+
+#nav-menu li.active
+  a
+    background-color: #0277BD
+    &::after
+      height: 5px
+      opacity: 1
+      -webkit-transform: translateY(0px)
+      -moz-transform: translateY(0px)
+      transform: translateY(0px)
 
 #navbar-toggle
   & span
