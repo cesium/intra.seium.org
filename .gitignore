@@ -17,3 +17,6 @@
 
 # Paperclip images files
 public/system
+
+# OS X
+.DS_Store
