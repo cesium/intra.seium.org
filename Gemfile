@@ -58,3 +58,6 @@ gem "paperclip"
 
 # Nokogiri - Html Parser
 gem 'nokogiri'
+
+# Gem for generate qrcodes
+gem 'rqrcode_png'

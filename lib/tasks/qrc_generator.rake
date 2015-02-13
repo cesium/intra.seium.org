@@ -1,3 +1,5 @@
+require 'fileutils'
+
 namespace :sei do
 	desc "Generate Qrcodes for badges"
 	task :qrc_generator, [:badge_codename, :num, :code_type]  => :environment  do |t, args|
@@ -6,7 +8,12 @@ namespace :sei do
 		raise Badge::BadgeNotFoundError.new unless badge = Badge.where(codename: args.badge_codename).first
 		raise Badge::CodesNotAllowedError.new  unless badge.is_code_needed
 
-		dir = './tmp'
+		ts = Time.now
+		dir = "./tmp/qrcodes/#{ts.year}_#{ts.month}_#{ts.day}_#{ts.hour}_#{ts.min}_#{ts.sec}"
+		FileUtils.mkdir_p(dir)
+
+		host = 'localhost:3000'
+		route = '/editions/2015/badges/redeem'
 
 		if args.code_type == 'SU'
 			badge.generate_codes(args.num.to_i - BadgeAcquisition.number_available_codes_for_one_use(badge), BadgeCodeStatus::AVAILABLE_FOR_ONE_USE)	
@@ -20,6 +27,12 @@ namespace :sei do
 			else
 				[BadgeAcquisition.get_multiple_use_code(badge)]
 			end
+
+		codes.each do |code|
+			qr = RQRCode::QRCode.new("#{host}#{route}/#{code}", size: 8, level: :h)
+			png = qr.to_img
+			png.resize(90, 90).save("#{dir}/#{badge.codename}_#{code}.png")
+		end
 
 		puts codes.to_s
 	end
