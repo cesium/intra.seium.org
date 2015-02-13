@@ -11,12 +11,17 @@
 	color: #fff;
 }
 
+.social-link {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 #back-button {
 	margin: 0 auto;
 	display: block;
 }
 </style>
-
+<%= stylesheet_link_tag "stylsheets/glyphicons", media: "all" %>
 <div class="container">
 	<div class="col-md-12 text-center">
 		<div class="col-md-6 col-md-offset-3">
@@ -67,16 +72,16 @@
 			<div class="wrapper text-center">
 				<h3>Social</h3>
 				<% if @participant.facebook_account != "" && @participant.facebook_account != nil %>
-				<a href="<%= @participant.facebook_account%>">Facebook</a>
+				<a class="social-link" href="<%= @participant.facebook_account%>"><i class="fa fa-facebook fa-2x"></i></a>
 				<% end %>
 				<% if @participant.twitter_account != "" && @participant.twitter_account != nil %>
-				<a href="<%= @participant.twitter_account%>">Twitter</a>
+				<a class="social-link" href="<%= @participant.twitter_account%>"><i class="fa fa-twitter fa-2x"></i></a>
 				<% end %>
 				<% if @participant.github_account != "" && @participant.github_account != nil %>
-				<a href="<%= @participant.github_account%>">Github</a>
+				<a class="social-link" href="<%= @participant.github_account%>"><i class="fa fa-github fa-2x"></i></a>
 				<% end %>
 				<% if @participant.google_plus_account != "" && @participant.google_plus_account != nil %>
-				<a href="<%= @participant.google_plus_account%>">Google Plus</a>
+				<a class="social-link" href="<%= @participant.google_plus_account%>"><i class="fa fa-google-plus fa-2x"></i></a>
 				<% end %>
 			</div>
 			<% end %>
