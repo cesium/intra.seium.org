@@ -22,6 +22,16 @@ module Seed
 				edition: editions[0]
 			},
 			{
+				name: "organizer",
+				codename: "is_organizer",
+				badge_type: BadgeType::USER_ACCOUNT,
+				description: "Membro faz parte da organização da SEI!",
+				is_code_needed: false,
+				category: 'main',
+				logo_url: 'http://rlv.zcache.co.uk/trust_me_im_an_event_organizer_badge-rae454b00e45a4b708cc198f99fa59ed4_x7j12_8byvr_324.jpg',
+				edition: editions[0]
+			},
+			{
 				name: "explorer",
 				codename: "explorer",
 				badge_type: BadgeType::CODE_NEEDED,

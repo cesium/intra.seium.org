@@ -19,14 +19,14 @@ speakers = Seed::speakers(editions, companies)
 # Activities
 activities = Seed::activities(editions, speakers)
 
+# Badges
+badges = Seed::badges(editions, activities)
+
 # Staff
 staff = Seed::staff(editions, activities)
 
 # Users
 users = Seed::users(editions, activities)
 
-# Badges
-badges = Seed::badges(editions, activities)
-
 # Badges Acquisition
-badge_acquisitions = Seed::badge_acquisitions(users, badges)
+#badge_acquisitions = Seed::badge_acquisitions(users, badges)
