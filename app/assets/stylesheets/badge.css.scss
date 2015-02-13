@@ -24,6 +24,7 @@
 
 #badge-users-list{
   list-style-type: none;
+  padding-left: 0;
 
 }
 
@@ -40,21 +41,45 @@
 .badge-user{
   border-bottom: 1px solid white;
   width: 400px;
-  height: 120px;
-  margin-left: 120px;
+  display:block;
+  overflow: auto;
+  margin: 0 auto;
   padding: 10px 0;
 }
 
 .badge-user-name{
   float: left;
   font-size: 25px;
-  overflow: scroll;
-  width: 260px;
-  height: 90px;
+  overflow-x: scroll;
+  overflow-y: auto;
+  display: block;
   margin-left: 20px;
   text-align: left;
+  max-width: 240px;
 }
 
+
+@media(max-width: 507px) {
+    .badge-user{
+        width: 200px;
+    }
+
+    .badge-user-name{
+      font-size: 20px;
+      float: none;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .badge-user-photo-img{
+      margin: 0 auto;
+      float: none;
+    }
+
+    #badge{
+      width: 350px;
+    }
+}
 
 
 
