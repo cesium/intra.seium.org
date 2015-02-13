@@ -1,12 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700)
+
 nav#navbar
   background-color: #0277BD
   border-color: #0277BD
+  height: 60px
+  padding-top: 5px
 
 #nav-logo
   max-height: 51px
+  margin-left: 10px
 
 #nav-logo-container
   padding: 0
+
+#nav-menu ul li a
+  color: #fff !important
+  font-size: 18px
+  text-transform: uppercase
+  font-weight: bold
+  font-family: 'Open Sans Condensed', sans-serif
+  margin-right: 20px
+  &::after
+    position: absolute
+    top: 92%
+    left: 0
+    width: 100%
+    height: 1px
+    background: #fff
+    content: ''
+    opacity: 0
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s
+    transition: height 0.3s, opacity 0.3s, transform 0.3s
+    -webkit-transform: translateY(-10px)
+    -moz-transform: translateY(-10px)
+    transform: translateY(-10px)
+  &:hover::after,
+  &.active::after
+    height: 5px
+    opacity: 1
+    -webkit-transform: translateY(0px)
+    -moz-transform: translateY(0px)
+    transform: translateY(0px)
 
 #navbar-toggle
   & span
