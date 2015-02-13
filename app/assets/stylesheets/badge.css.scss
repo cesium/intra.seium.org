@@ -1,3 +1,63 @@
 // Place all the styles related to the Badge controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#badge-logo {
+  border: 2px solid white;
+  border-radius: 500px;
+  width: 250px;
+  height: 250px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px;
+}
+
+#badge-logo-img{
+  width: 150px;
+  margin-top: 40px;
+}
+
+#badge-name{
+  text-transform: capitalize;
+}
+
+#badge-users-list{
+  list-style-type: none;
+
+}
+
+
+
+.badge-user-photo-img{
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.badge-user{
+  border-bottom: 1px solid white;
+  width: 400px;
+  height: 120px;
+  margin-left: 120px;
+  padding: 10px 0;
+}
+
+.badge-user-name{
+  float: left;
+  font-size: 25px;
+  overflow: scroll;
+  width: 260px;
+  height: 90px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+
+
+
+
+
+
