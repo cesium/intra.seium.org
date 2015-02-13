@@ -35,5 +35,6 @@ namespace :sei do
 		end
 
 		puts codes.to_s
+		puts "[LOG] QRCodes saved in: #{dir}"
 	end
 end
