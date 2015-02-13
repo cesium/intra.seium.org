@@ -46,6 +46,9 @@ gem 'devise'
 # Use CouponCode for Generating Codes for Badges
 gem 'coupon_code'
 
+# Use font-awesome for glyphicons
+gem 'font-awesome-sass'
+
 # Model Diagram Generation tool
 group :development, :test do
 	gem 'railroady'
