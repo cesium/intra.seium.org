@@ -1,8 +1,12 @@
 module Seed
 	def self.staff(editions, activities)
-		User.create!([
+		User.create!(staff_list(editions, activities).each { |s| s[:email].sub!(/<at>/, '@')})
+	end
+
+	def self.staff_list(editions, activities)
+		[
 			{
-				email: I18n.transliterate('André Santos').downcase.gsub(' ', '') + '@seium.org',
+				email: 'andreccdr<at>gmail.com',
 				password: '123456789',
 				first_name: "André",
 				last_name: "Santos",
@@ -25,7 +29,7 @@ module Seed
 				linked_in_account: "http://pt.linkedin.com/in/62gerente",
 			},
 			{
-				email: I18n.transliterate('Miguel Pinto').downcase.gsub(' ', '') + '@seium.org',
+				email: 'mcpinto98<at>gmail.com',
 				password: '123456789',
 				first_name: "Miguel",
 				last_name: "Pinto",
@@ -48,7 +52,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/miguelpinto98",
 			},
 			{
-				email: I18n.transliterate('Pedro Duarte').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pedroduarte870<at>gmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Duarte",
@@ -71,7 +75,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Pedro Maia').downcase.gsub(' ', '') + '@seium.org',
+				email: 'maiarib<at>gmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Maia",
@@ -94,7 +98,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/maiarib",
 			},
 			{
-				email: I18n.transliterate('Patrícia Barros').downcase.gsub(' ', '') + '@seium.org',
+				email: 'bpatrcia<at>gmail.com',
 				password: '123456789',
 				first_name: "Patrícia",
 				last_name: "Barros",
@@ -117,7 +121,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/7patricia",
 			},
 			{
-				email: I18n.transliterate('Fernando Mendes').downcase.gsub(' ', '') + '@seium.org',
+				email: 'fjrib.mendes<at>gmail.com',
 				password: '123456789',
 				first_name: "Fernando",
 				last_name: "Mendes",
@@ -140,7 +144,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/fribmendes",
 			},
 			{
-				email: I18n.transliterate('Martinho Aragão ').downcase.gsub(' ', '') + '@seium.org',
+				email: 'martinhoaragao<at>gmail.com',
 				password: '123456789',
 				first_name: "Martinho",
 				last_name: "Aragão",
@@ -163,7 +167,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/martinhoaragao",
 			},
 			{
-				email: I18n.transliterate('Francisco Neves').downcase.gsub(' ', '') + '@seium.org',
+				email: 'fntneves<at>gmail.com',
 				password: '123456789',
 				first_name: "Francisco",
 				last_name: "Neves",
@@ -186,7 +190,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/in/fntneves",
 			},
 			{
-				email: I18n.transliterate('Fábio Gomes').downcase.gsub(' ', '') + '@seium.org',
+				email: 'mrfabiogomes<at>gmail.com',
 				password: '123456789',
 				first_name: "Fábio",
 				last_name: "Gomes",
@@ -209,7 +213,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/profile/view?id=353827731",
 			},
 			{
-				email: I18n.transliterate('Tiago Cunha').downcase.gsub(' ', '') + '@seium.org',
+				email: 'tiagocunha<at>seium.org',
 				password: '123456789',
 				first_name: "Tiago",
 				last_name: "Cunha",
@@ -232,7 +236,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Pedro Faria').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pmiguelf15<at>gmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Faria",
@@ -255,7 +259,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Gil Gonçalves').downcase.gsub(' ', '') + '@seium.org',
+				email: 'gilgoncalves<at>seium.org',
 				password: '123456789',
 				first_name: "Gil",
 				last_name: "Gonçalves",
@@ -278,7 +282,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Filipe Oliveira').downcase.gsub(' ', '') + '@seium.org',
+				email: 'filipecosta.90<at>gmail.com',
 				password: '123456789',
 				first_name: "Filipe",
 				last_name: "Oliveira",
@@ -301,7 +305,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Mariana Medeiros').downcase.gsub(' ', '') + '@seium.org',
+				email: '63msim<at>gmail.com',
 				password: '123456789',
 				first_name: "Mariana",
 				last_name: "Medeiros",
@@ -324,7 +328,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/mariana63medeiros",
 			},
 			{
-				email: I18n.transliterate('Jorge Simão').downcase.gsub(' ', '') + '@seium.org',
+				email: 'schroeder.jorge<at>gmail.com',
 				password: '123456789',
 				first_name: "Jorge",
 				last_name: "Simão",
@@ -347,7 +351,7 @@ module Seed
 				linked_in_account: "http://pt.linkedin.com/in/jorgepedrosimao",
 			},
 			{
-				email: I18n.transliterate('Paulo Sousa').downcase.gsub(' ', '') + '@seium.org',
+				email: 'prsousa34<at>gmail.com',
 				password: '123456789',
 				first_name: "Paulo",
 				last_name: "Sousa",
@@ -370,7 +374,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Mário Santos').downcase.gsub(' ', '') + '@seium.org',
+				email: 'santos.mario125<at>gmail.com',
 				password: '123456789',
 				first_name: "Mário",
 				last_name: "Santos",
@@ -393,7 +397,7 @@ module Seed
 				linked_in_account: "https://lnkd.in/A7mvHm",
 			},
 			{
-				email: I18n.transliterate('Serafim Pinto').downcase.gsub(' ', '') + '@seium.org',
+				email: 'smcp92<at>gmail.com',
 				password: '123456789',
 				first_name: "Serafim",
 				last_name: "Pinto",
@@ -416,7 +420,7 @@ module Seed
 				linked_in_account: "http://pt.linkedin.com/in/serafimpinto",
 			},
 			{
-				email: I18n.transliterate('Pedro Carneiro').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pedrosfdcarneiro<at>gmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Carneiro",
@@ -439,7 +443,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Sandra Ferreira').downcase.gsub(' ', '') + '@seium.org',
+				email: 'sandraferreira<at>seium.org',
 				password: '123456789',
 				first_name: "Sandra",
 				last_name: "Ferreira",
@@ -462,7 +466,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Mário Leite').downcase.gsub(' ', '') + '@seium.org',
+				email: 'maleite.cbc<at>gmail.com',
 				password: '123456789',
 				first_name: "Mário",
 				last_name: "Leite",
@@ -485,7 +489,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/in/marioleite80",
 			},
 			{
-				email: I18n.transliterate('Daniel Carvalho').downcase.gsub(' ', '') + '@seium.org',
+				email: 'mail<at>danielcarvalho.pt',
 				password: '123456789',
 				first_name: "Daniel",
 				last_name: "Carvalho",
@@ -508,7 +512,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/dapcarvalho/",
 			},
 			{
-				email: I18n.transliterate('Ricardo Branco').downcase.gsub(' ', '') + '@seium.org',
+				email: '28.ricardobranco<at>gmail.com',
 				password: '123456789',
 				first_name: "Ricardo",
 				last_name: "Branco",
@@ -531,7 +535,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('André Pimenta').downcase.gsub(' ', '') + '@seium.org',
+				email: '53.andre.pimenta<at>gmail.com',
 				password: '123456789',
 				first_name: "André",
 				last_name: "Pimenta",
@@ -554,7 +558,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Pedro Leite').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pmcleite<at>gmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Leite",
@@ -577,7 +581,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/in/pmcleite",
 			},
 			{
-				email: I18n.transliterate('Rui Oliveira').downcase.gsub(' ', '') + '@seium.org',
+				email: 'rui96pedro<at>gmail.com',
 				password: '123456789',
 				first_name: "Rui",
 				last_name: "Oliveira",
@@ -600,7 +604,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('João Costa').downcase.gsub(' ', '') + '@seium.org',
+				email: 'ajoao_19<at>hotmail.com',
 				password: '123456789',
 				first_name: "João",
 				last_name: "Costa",
@@ -623,7 +627,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Paulo Cardoso').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pcardoso.lei<at>gmail.com',
 				password: '123456789',
 				first_name: "Paulo",
 				last_name: "Cardoso",
@@ -646,7 +650,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/pcardosolei/",
 			},
 			{
-				email: I18n.transliterate('Joana Arantes').downcase.gsub(' ', '') + '@seium.org',
+				email: 'frize_91<at>hotmail.com',
 				password: '123456789',
 				first_name: "Joana",
 				last_name: "Arantes",
@@ -669,7 +673,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Susana Mendes').downcase.gsub(' ', '') + '@seium.org',
+				email: 'sukinha_mendes<at>hotmail.com',
 				password: '123456789',
 				first_name: "Susana",
 				last_name: "Mendes",
@@ -692,7 +696,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/pub/susana-mendes/43/8b8/906",
 			},
 			{
-				email: I18n.transliterate('Bruno Ferreira').downcase.gsub(' ', '') + '@seium.org',
+				email: 'chalkos<at>chalkos.net',
 				password: '123456789',
 				first_name: "Bruno",
 				last_name: "Ferreira",
@@ -715,7 +719,7 @@ module Seed
 				linked_in_account: "https://pt.linkedin.com/in/chalkos",
 			},
 			{
-				email: I18n.transliterate('Pedro Costa').downcase.gsub(' ', '') + '@seium.org',
+				email: 'psac92<at>hotmail.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Costa",
@@ -738,7 +742,7 @@ module Seed
 				linked_in_account: "",
 			},
 			{
-				email: I18n.transliterate('Diana Lemos').downcase.gsub(' ', '') + '@seium.org',
+				email: 'demosbb<at>gmail.com',
 				password: '123456789',
 				first_name: "Diana",
 				last_name: "Lemos",
@@ -761,7 +765,7 @@ module Seed
 				linked_in_account: "https://www.linkedin.com/profile/view?id=227209565&trk=nav_responsive_tab_profile",
 			},
 			{
-				email: I18n.transliterate('Pedro Silva').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pedro_miguelsilva<at>outlook.com',
 				password: '123456789',
 				first_name: "Pedro",
 				last_name: "Silva",
@@ -784,7 +788,7 @@ module Seed
 				linked_in_account: "http://pt.linkedin.com/pub/pedro-silva/a2/7ab/769",
 			},
 			{
-				email: I18n.transliterate('Duarte Araújo').downcase.gsub(' ', '') + '@seium.org',
+				email: 'pmda95<at>hotmail.com',
 				password: '123456789',
 				first_name: "Duarte",
 				last_name: "Araújo",
@@ -806,6 +810,6 @@ module Seed
 				facebook_account: "https://www.facebook.com/Duarte.Araujo1",
 				linked_in_account: "",
 			}
-		])
+		]
 	end
 end
