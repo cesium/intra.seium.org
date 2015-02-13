@@ -15,16 +15,12 @@ namespace :sei do
 		host = 'localhost:3000'
 		route = '/editions/2015/badges/redeem'
 
-		if args.code_type == 'SU'
-			badge.generate_codes(args.num.to_i - BadgeAcquisition.number_available_codes_for_one_use(badge), BadgeCodeStatus::AVAILABLE_FOR_ONE_USE)	
-		else
-			badge.generate_codes(1, BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES) unless BadgeAcquisition.has_any_multiple_use_code?(badge)
-		end
-
 		codes =
 			if args.code_type == 'SU'
-				BadgeAcquisition.get_available_codes_for_one_use(badge).take args.num.to_i
+				badge.generate_codes(args.num.to_i - BadgeAcquisition.number_available_codes_for_one_use(badge), BadgeCodeStatus::AVAILABLE_FOR_ONE_USE)	
+				BadgeAcquisition.get_available_codes_for_one_use(badge).take(args.num.to_i)
 			else
+				badge.generate_codes(1, BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES) unless BadgeAcquisition.has_any_multiple_use_code?(badge)
 				[BadgeAcquisition.get_multiple_use_code(badge)]
 			end
 
