@@ -9,7 +9,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/api.png'
 			},
 			{
 				name: 'Reunião Geral de Alunos',
@@ -19,7 +20,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 16, 0),
 				activity_type: ActivityType::DISCUSSION,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/rga.png'
 			},
 			{
 				name: 'Corrida Social',
@@ -30,7 +32,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 18, 30),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/socialrun.jpg'
 			},
 			{
 				name: 'Sessão de Abertura',
@@ -40,7 +43,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 11, 0),
 				activity_type: ActivityType::PRESENTATION,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/abertura.png'
 			},
 			{
 				name: 'Introdução ao Android 5.0 Lollipop',
@@ -52,7 +56,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Rafael D')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/androidl.jpg'
 			},
 			{
 				name: 'Vídeo Jogos Além-Fronteiras',
@@ -63,7 +68,8 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Hélder Pinto')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/gaming.png'
 			},
 			{
 				name: 'Moeda Virtual',
@@ -73,7 +79,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 18, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/cryptocurrency.png'
 			},
 			{
 				name: 'Hackathon Seegno',
@@ -85,7 +92,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 12, 0),
 				activity_type: ActivityType::CHALLENGE,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/hackathon.jpg'
 			},
 			{
 				name: 'Rust',
@@ -96,7 +104,8 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Miguel Palhas')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/rust.svg.png'
 			},
 			{
 				name: 'Time Trial Talks',
@@ -106,7 +115,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 16, 30),
 				activity_type: ActivityType::CHALLENGE,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/ttt.png'
 			},
 			{
 				name: 'Presentation Karaoke',
@@ -116,7 +126,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 21, 18, 0),
 				activity_type: ActivityType::CHALLENGE,
 				place: '',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/presentation.jpg'
 			},
 			{
 				name: 'HTML 5 & CSS 3',
@@ -127,7 +138,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'João Justo')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/html.png'
 			},
 			{
 				name: 'User Experience: This is How WeDo It',
@@ -138,7 +150,8 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Norberto Henriques')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/ux.png'
 			},
 			{
 				name: 'Python + web2py',
@@ -149,7 +162,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Francisco Costa')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/python.svg.png'
 			},
 			{
 				name: 'Saiba Mais Sobre Drones',
@@ -160,7 +174,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Rui Antunes')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/drone.png'
 			},
 			{
 				name: 'Arduíno',
@@ -170,7 +185,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 20, 0),
 				activity_type: ActivityType::WORKSHOP,
 				place: '',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/arduino.png'
 			},
 			{
 				name: 'Swift',
@@ -181,7 +197,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Paulo Vieira')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/swift.png'
 			},
 			{
 				name: 'DevOps',
@@ -191,7 +208,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 19, 13, 30),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/devops.png'
 			},
 			{
 				name: 'Modelação 3D',
@@ -202,7 +220,8 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Francisco Mendes')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/3d_printing.jpg'
 			},
 			{
 				name: 'Behaviour Driven Development',
@@ -213,30 +232,30 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: '',
 				speakers: [find_speaker(speakers, 'Rui Figueira')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/bdd.png'
 			},
 			{
 				name: 'Quiz Show',
 				url_escaped_name: CGI::escape(I18n.transliterate('Quiz Show'.gsub(/(\s+|\.+)/, '-').downcase)),
-				description: 'O primeiro Quiz Show da SEI está aí! Junta-te a nós para participar num momento de convívio e diversão, onde poderás testar o teu conhecimento e ganhar um prémio.
-                        Pré-Inscrição',
+				description: 'O primeiro Quiz Show da SEI está aí! Junta-te a nós para participar num momento de convívio e diversão, onde poderás testar o teu conhecimento e ganhar um prémio.',
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 19, 22, 0),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 20, 0, 0),
 				activity_type: ActivityType::LOUNGE,
 				place: '',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/quiz.png'
 			},
 			{
 				name: 'CoderDojo Minho',
 				url_escaped_name: CGI::escape(I18n.transliterate('CoderDojo Minho'.gsub(/(\s+|\.+)/, '-').downcase)),
-				description: 'O CoderDojo Minho é um movimento aberto e sem fins lucrativos para ensinar jovens dos 7 aos 17 a programar. Com a ajuda de membros ativos da comunidade, os mais novos têm a oportunidade de entrar em contacto com o mundo da programação.
-
-                    Inscrição',
+				description: 'O CoderDojo Minho é um movimento aberto e sem fins lucrativos para ensinar jovens dos 7 aos 17 a programar. Com a ajuda de membros ativos da comunidade, os mais novos têm a oportunidade de entrar em contacto com o mundo da programação.',
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 14, 10, 0),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 14, 12, 0),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/coderdojo.jpg'
 			},
 			{
 				name: 'Improve Braga',
@@ -246,7 +265,8 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 14, 16, 0),
 				activity_type: ActivityType::SOCIAL,
 				place: 'DI A2',
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/improve.jpg'
 			},
 			{
 				name: 'Unity 3D',
@@ -257,7 +277,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Luís Fonseca')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/unity.png'
 			},
 			{
 				name: 'Product Development & Agile',
@@ -268,7 +289,8 @@ module Seed
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Roberto Machado')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/agile.png'
 			},
 			{
 				name: 'Xamarin',
@@ -279,7 +301,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Manuel Costa')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/xamarin.png'
 			},
 			{
 				name: 'Meteor.js',
@@ -290,7 +313,8 @@ module Seed
 				activity_type: ActivityType::WORKSHOP,
 				place: 'DI A2',
 				speakers: [find_speaker(speakers, 'Gabriel Poça')],
-				edition: editions[0]
+				edition: editions[0],
+				poster_photo_url: '/sei_15_webpage/img/events/meteorjs.png'
 			}
 		])
 	end

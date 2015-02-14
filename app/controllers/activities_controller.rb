@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
 	end
 
   def show
-		@user = current_user
+		@participant = current_user
     respond_with(@activity)
   end
 
