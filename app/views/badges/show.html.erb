@@ -16,7 +16,7 @@
 		<img src="<%= @badge.logo_url %>" alt="<%= @badge.name %>" id="badge-logo-img">
 	</div>
 	<button class="back-button">
-	<%= link_to 'Back', badges_path %>
+	<%= link_to 'Back', edition_badges_path(@edition) %>
 	</button>
 	<div id="badge-users">
 		<div id="badge-users-title">
@@ -24,13 +24,13 @@
 		</div>
 		<div>
 			<ul id="badge-users-list">
-				<% @badge.users.each do |user| %>
+				<% @badge.users.each do |participant| %>
 					<li>
-						<div class="badge-user">
-								<%= image_tag user.avatar.url(:thumb), class:'badge-user-photo-img' %>
-							<div class="badge-user-name">
-								<a href="<%= user_path(user.username) %>">
-									<%= user.full_name %>
+						<div class="badge-participant">
+								<%= image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img' %>
+							<div class="badge-participant-name">
+								<a href="<%= edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>">
+									<%= participant.full_name %>
 								</a>
 								
 							</div>
