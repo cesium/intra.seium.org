@@ -1,14 +1,17 @@
 # Must run in the rails root project folder
+require 'fileutils'
 
 sei_15_webpage_project = '../SEI15'
 dest_folder_name = 'sei_15_webpage'
 dest_dir = "public/#{dest_folder_name}"
 
 # Create 'public/sei_15_webpage' folder
-`mkdir #{dest_dir}` if !Dir.exists? dest_dir
+FileUtils.mkdir_p(dest_dir) unless Dir.exists? dest_dir
 
 # Copy the project webpage to that location
-`cp -r #{sei_15_webpage_project}/* #{dest_dir}`
+['index.html', 'css', 'events', 'fonts', 'img', 'js'].each do |f|
+	FileUtils.cp_r("#{sei_15_webpage_project}/#{f}", dest_dir)
+end
 
 # In index.html, replace 'src="img/' by 'src="/sei_15_webpage/img/'
 # In index.html, replace '<link href="' by '<link href="/sei_15_webpage/'

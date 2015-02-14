@@ -7,13 +7,11 @@ class EditionsController < ApplicationController
   end
 
   def show
-		#if @edition.id == 2015
-		#  render :file => 'public/sei_15_webpage/index.html', :layout => false
-		#else
-    #  respond_with(@edition)
-		#end
-
-		respond_with(@edition)
+		if @edition.id == 2015
+			render :file => 'public/sei_15_webpage/index.html', :layout => false
+		else
+			respond_with(@edition)
+		end
   end
 
   def new
