@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
-	resources :editions, only: [:index, :show] do
+	resources :editions, only: [:show] do
 		
-		resources :participants, only: [:index, :show], param: :username do
-			get 'find_by_email/:email', on: :collection, action: :find_by_email, constraints: { email: /[^@]+@[^@]+/ }
-		end
+		resources :participants, only: [:index, :show], param: :username
 
 		resources :activities, only: [:index, :show] do
 			post :register, on: :member
@@ -17,9 +15,6 @@ Rails.application.routes.draw do
 			get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'
 		end
 	end
-  
-	#resources :companies
-  #resources :speakers
   
 	devise_for :users
 
