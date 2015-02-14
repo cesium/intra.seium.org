@@ -1,27 +1,54 @@
-<h1>Listing activities</h1>
+<style type="text/css">
+.participant-img {
+	width: 55%;
+	height: 55%;
+	margin: auto;
+	margin-top: 20px;
+}
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Begin date</th>
-      <th>End date</th>
-      <th>Type</th>
-      <th>Place</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+.list-group-item {
+	background-color: transparent;
+	color: #fff;
+}
 
-  <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><%= activity.name %></td>
-        <td><%= activity.begin_date %></td>
-        <td><%= activity.activity_type %></td>
-        <td><%= activity.place %></td>
-        <td><%= link_to 'Show', edition_activity_path(@edition, activity).sub(/\d+$/, activity.url_escaped_name) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+.social-link {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#back-button {
+	margin: 0 auto;
+	display: block;
+}
+</style>
+<%= stylesheet_link_tag "stylsheets/glyphicons", media: "all" %>
+
+<% (Date.new(@edition.begin_date.year, @edition.begin_date.month, @edition.begin_date.day)..Date.new(@edition.end_date.year, @edition.end_date.month, @edition.end_date.day)).each do |day| %>
+
+	<% if @activities.select { |a| a.begin_date.day == day.day }.size > 0 %>
+		<div class="container">
+			<div class="col-md-12 text-center">
+				<div class="col-md-6 col-md-offset-3">
+					<h2><%= Activity::day_to_s(day) %></h2>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<div class="container">
+			<div class="wrapper">
+				<div class="col-md-12">
+					<div class="col-md-6 col-md-offset-3">
+						<ul class="list-group">
+							<% @activities.select { |a| a.begin_date.day == day.day }.each do |a| %>
+								<%= link_to(edition_activity_path(@edition, a)) do %>
+									<li class="list-group-item-info list-group-item"><b><%= a.name %></b></li>
+								<% end %>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<% end %>

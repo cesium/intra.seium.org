@@ -4,7 +4,11 @@ class Activity < ActiveRecord::Base
 	belongs_to :edition
 
 	def begin_date_to_s
-		"#{weekday_to_s(begin_date.wday)}, #{begin_date.day} de #{month_to_s(begin_date.month)}, às #{begin_date.hour}#{begin_date.min == 0 ? '' : ':' + begin_date.min.to_s}h"
+		"#{Activity::weekday_to_s(begin_date.wday)}, #{begin_date.day} de #{Activity::month_to_s(begin_date.month)}, às #{begin_date.hour}#{begin_date.min == 0 ? '' : ':' + begin_date.min.to_s}h"
+	end
+
+	def self.day_to_s(d)
+		"#{weekday_to_s(d.wday)}, #{d.day} de #{month_to_s(d.month)}"
 	end
 
 	def type_to_s
@@ -36,7 +40,7 @@ class Activity < ActiveRecord::Base
 
 	private
 
-	def weekday_to_s(wday)
+	def self.weekday_to_s(wday)
 		case wday
 		when 1
 			"Segunda-feira"
@@ -50,14 +54,14 @@ class Activity < ActiveRecord::Base
 			"Sexta-feira"
 		when 6
 			"Sábado"
-		when 7
+		when 0
 			"Domingo"
 		else
 			""
 		end
 	end
 
-	def month_to_s(month)
+	def self.month_to_s(month)
 		case month
 		when 1
 			"Janeiro"
