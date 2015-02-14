@@ -17,7 +17,7 @@ end
 # In index.html, replace '<link href="' by '<link href="/sei_15_webpage/'
 # In index.html, replace '<script src="js/' by '<script src="/sei_15_webpage/js/'
 
-text = File.read("#{dest_dir}/index.html").gsub(/"img/, "\"/#{dest_folder_name}/img")
+text = File.read("#{dest_dir}/index.html").gsub(/"img\//, "\"/#{dest_folder_name}/img/")
 text.gsub!(/"css/, "\"/#{dest_folder_name}/css")
 text.gsub!(/"js/, "\"/#{dest_folder_name}/js")
 File.write("#{dest_dir}/index.html", text)
