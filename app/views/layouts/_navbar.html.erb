@@ -17,6 +17,10 @@
     <div class="collapse navbar-collapse" id="nav-menu">
       <ul class="nav navbar-nav navbar-right">
         <li class="<%= is_active?(edition_participant_path(username: current_user.username, edition_id: 2015)) %>"><%= link_to current_user.full_name, edition_participant_path(username: current_user.username, edition_id: 2015) %></li>
+        <li class="<%= is_active?(edition_participants_path(edition_id: 2015)) %>"><%= link_to "Participantes", edition_participants_path(edition_id: 2015) %></li>
+				<li class="<%= is_active?(root_path) %>"><%= link_to "Atividades", "#{root_path}/#events" %></li>
+        <li class="<%= is_active?(edition_badges_path(edition_id: 2015)) %>"><%= link_to "Badges", edition_badges_path(edition_id: 2015) %></li>
+        <li class="<%= is_active?(redeem_edition_badges_path(edition_id: 2015)) %>"><%= link_to "Requisitar Badge", redeem_edition_badges_path(edition_id: 2015) %></li>
         <li class="<%= is_active?(edit_user_registration_path) %>"><%= link_to "Editar Perfil", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       </ul>
