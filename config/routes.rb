@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+	get 'intranet' => 'intranet#intranet'
+	get 'intranet' => 'intranet#intranet', as: 'user_root'
   
 	resources :editions, only: [:show] do
 		
