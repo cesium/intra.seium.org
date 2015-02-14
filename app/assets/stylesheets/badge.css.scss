@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.badge-name {
+    font-family: "Open Sans Condensed";
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.badge-logo img{
+    width: 150px;
+    display: block;
+    margin: 15px auto 20px auto;
+}
 
 #badge-logo {
   border: 2px solid white;

@@ -1,14 +1,19 @@
-<h1>Badges</h1>
-
-<div id="badge-list">
-	<% @badges.each do |badge| %>
-		<div class="badge">
-			<div class="badge-name">
-				<%= link_to badge.name, edition_badge_path(@edition, badge) %>
-			</div>	
-			<div class="badge-logo">
-				<img src="<%= badge.logo_url %>" alt="<%= badge.name %>"
-			</div>	
-		</div>
-	<% end %>
+<div class="col-md-12">
+    <h1>Badges</h1>
+    <% @badges.each do |badge| %>
+        <div class="col-md-3">
+            <div class="badge-name">
+                <h5><%= link_to badge.name, edition_badge_path(@edition, badge) %></h5>
+            </div>
+            <div class="badge-logo">
+                <%= link_to (image_tag (badge.logo_url)), edition_badge_path(@edition, badge) %>
+            </div>  
+        </div>
+    <% end %>
+    <!-- Change the following class, after the upcoming back-class -->
+    <div class="col-md-12">
+        <button class="col-md-2 btn btn-submit">
+            <a href="/editions/2015">Back</a>
+        </button>
+    </div>
 </div>
