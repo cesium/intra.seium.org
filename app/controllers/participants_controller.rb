@@ -1,4 +1,6 @@
 class ParticipantsController < ApplicationController
+	before_action :authenticate_user!
+
 	before_action :set_edition
 	before_action :set_participant, only: [:show]
 
@@ -10,16 +12,6 @@ class ParticipantsController < ApplicationController
 	def show
 		@social = check_accounts
 		respond_with(@participant)
-	end
-
-	def find_by_email
-		user = User.where(email: params[:email]).first
-		
-		if user
-			redirect_to edition_participant_path(@edition, user).sub(/\d+$/, user.username)
-		else
-			redirect_to edition_participants_path(@edition)	
-		end
 	end
 
 	private
