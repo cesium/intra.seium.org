@@ -1,0 +1,15 @@
+<div>
+	<%= link_to "Edit Account", edit_user_registration_path %>
+	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+</div>
+<div>
+	<% @participants.each do |participant| %>
+		<div>
+			<div>Username: <%= link_to participant.username, edition_participant_path(@edition, participant).sub(/\d+$/, participant.username) %></div>
+			<div>Email: <%= participant.email %></div>
+			<div>Nome: <%= participant.full_name %></div>
+			<%= image_tag participant.avatar.url(:thumb) %>
+			</div>
+		</div>
+	<% end %>
+</div>

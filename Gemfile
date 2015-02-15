@@ -7,12 +7,14 @@ gem 'rails', '4.1.7'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.3.3'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,3 +40,24 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use devise for User authentication
+gem 'devise'
+
+# Use CouponCode for Generating Codes for Badges
+gem 'coupon_code'
+
+# Model Diagram Generation tool
+group :development, :test do
+	gem 'railroady'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+end
+
+# Paperclip for image management
+gem "paperclip"
+
+# Nokogiri - Html Parser
+gem 'nokogiri'
+
+# Gem for generate qrcodes
+gem 'rqrcode_png'

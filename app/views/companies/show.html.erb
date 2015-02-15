@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company.address %>
+</p>
+
+<p>
+  <strong>Is partner:</strong>
+  <%= @company.is_partner %>
+</p>
+
+<p>
+  <strong>Partnership type:</strong>
+  <%= @company.partnership_type %>
+</p>
+
+<p>
+  <strong>Web site:</strong>
+  <%= @company.web_site %>
+</p>
+
+<p>
+  <strong>Facebook account:</strong>
+  <%= @company.facebook_account %>
+</p>
+
+<p>
+  <strong>Twitter account:</strong>
+  <%= @company.twitter_account %>
+</p>
+
+<p>
+  <strong>Github account:</strong>
+  <%= @company.github_account %>
+</p>
+
+<p>
+  <strong>Google plus account:</strong>
+  <%= @company.google_plus_account %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @company.logo_url %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

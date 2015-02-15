@@ -1,0 +1,105 @@
+<style type="text/css">
+	.participant-img {
+		width: 55%;
+		height: 55%;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	.list-group-item {
+		background-color: transparent;
+		color: #fff;
+	}
+</style>
+
+<div class="container">
+	<div class="col-md-12 text-center">
+		<div class="col-md-5 col-md-offset-3">
+			<%= image_tag @participant.avatar.url, class: 'img-responsive participant-img' %>
+			<h4><%= @participant.full_name %></h4>
+			<!-- Check if user is a university student -->
+			<% if @participant.is_univ_student %>
+			<% if @participant.is_inf_eng_student_at_minho_univ %>
+			<h5>Estudante de Engenharia Informática na Universidade do Minho</h5>
+			<% elsif @participant.is_student_at_minho_univ %>
+			<h5>Estudante na Universidade do Minho</h5>
+			<% else %>
+			<h5>Estudante Universitário na <%= @participant.university %></h5>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<br>
+<div class="container">
+	<div class="wrapper">
+		<div class="col-md-12">
+			<div class="col-md-5 col-md-offset-3">
+				<ul class="list-group">
+					<li class="list-group-item-info list-group-item"><b>Email:</b> <%= @participant.email %></li>
+					<li class="list-group-item-info list-group-item"><b>Username:</b> <%= @participant.username %></li>
+					<% if @participant.birthday != nil %>
+					<li class="list-group-item-info list-group-item"><b>Data de nascimento:</b> <%= @participant.birthday %></li>
+					<% end %>
+					<li class="list-group-item-info list-group-item"><b>Sexo:</b> <%= @participant.sex_to_s %></li>
+					<% if @participant.biography != nil && @participant.biography != "" %>
+					<li class="list-group-item-info list-group-item"><b>Biografia:</b> <%= @participant.biography %></li>
+					<% end %>
+					<% if @participant.is_student_at_minho_univ %>
+					<li class="list-group-item-info list-group-item"><b>Nº de Aluno UM:</b> <%= @participant.minho_univ_student_id %></li>
+					<% end %>
+					<% if @participant.is_cesium_associate %>
+					<li class="list-group-item-info list-group-item"><b>Nº de Sócio Cesium:</b> <%= @participant.cesium_associate_number %></li>
+					<% end %>
+					<li class="list-group-item-info list-group-item"><b>Curso:</b> <%= @participant.course %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="col-md-5 col-md-offset-3">
+			<% if @social %>
+				<div class="wrapper text-center">
+					<h3>Social</h3>
+					<% if @participant.facebook_account != "" && @participant.facebook_account != nil %>
+					<a href="<%= @participant.facebook_account%>">Facebook</a>
+					<% end %>
+					<% if @participant.twitter_account != "" && @participant.twitter_account != nil %>
+					<a href="<%= @participant.twitter_account%>">Twitter</a>
+					<% end %>
+					<% if @participant.github_account != "" && @participant.github_account != nil %>
+					<a href="<%= @participant.github_account%>">Github</a>
+					<% end %>
+					<% if @participant.google_plus_account != "" && @participant.google_plus_account != nil %>
+					<a href="<%= @participant.google_plus_account%>">Google Plus</a>
+					<% end %>
+				</div>
+			<% end %>
+			
+			<h3>Atividades</h3>
+			<% if @participant.activities.empty? %>
+				<h5><%= @participant.full_name %> ainda não se registou em nenhuma atividade.</h5>
+			<% else %>
+				<% @participant.activities.each do |activity| %>
+				<div>
+					<div><%= link_to activity.name, edition_activity_path(@edition, activity) %></div>	
+				</div>
+				<% end %>
+			<% end %>
+			<div>
+
+			<h3>Badges</h3>
+			<% if @participant.badges.empty? %>
+				<h5><%= @participant.full_name %> ainda não conquistou nenhum badge.</h5>
+			<% else %>
+				<% @participant.badges.each do |badge| %>
+				<div>
+					<div><%= link_to badge.name, edition_badge_path(@edition, badge) %></div>	
+					<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+				</div>
+				<% end %>
+				<% end %>
+			</div>
+	<br>
+	<button class="btn btn-submit"><%= link_to 'Back', edition_participants_path(@edition) %></button>
+</div>

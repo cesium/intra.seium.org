@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <strong>Name:</strong>
+  <%= @activity.name %>
+</div>
+
+<div>
+  <strong>Description:</strong>
+  <%= @activity.description %>
+</div>
+
+<div>
+  <strong>Begin date:</strong>
+  <%= @activity.begin_date %>
+</div>
+
+<div>
+  <strong>End date:</strong>
+  <%= @activity.end_date %>
+</div>
+
+<div>
+  <strong>Type:</strong>
+  <%= @activity.activity_type %>
+</div>
+
+<div>
+  <strong>Place:</strong>
+  <%= @activity.place %>
+</div>
+
+<div>
+	<% if @activity.end_date > DateTime.now %>
+		<div>
+			<% if !@user.registered_at? @activity %>
+				<%= button_to 'Inscrever na Atividade', register_edition_activity_path(@edition, @activity) %>
+			<% else %>
+				<%= button_to 'Anular Inscrição na Atividade', deregister_edition_activity_path(@edition, @activity), method: :delete %>
+			<% end %>	
+		</div>
+	<% else %>
+		<div>
+			Atividade já terminou.
+			<% if @user.registered_at? @activity %>
+				Tu participaste nela!
+			<% else %>
+				Tu não participaste nela.
+			<% end %>	
+		</div>
+	<% end %>
+</div>
+
+<div>
+	<h3>Número de Participante: <%= @activity.users.size %></h3>
+	<h3>Lista de Participantes</h3>
+	<% @activity.users.each do |participant| %>
+		<div><%= link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+$/, participant.username) %></div>
+		<div>
+			<%= image_tag participant.avatar.url(:thumb) %>
+		</div>
+	<% end %>
+</div>

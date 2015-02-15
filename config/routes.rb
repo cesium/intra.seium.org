@@ -1,9 +1,33 @@
 Rails.application.routes.draw do
+  
+	resources :editions, only: [:index, :show] do
+		
+		resources :participants, only: [:index, :show], param: :username do
+			get 'find_by_email/:email', on: :collection, action: :find_by_email, constraints: { email: /[^@]+@[^@]+/ }
+		end
+
+		resources :activities, only: [:index, :show] do
+			post :register, on: :member
+			delete :deregister, on: :member
+		end
+
+		resources :badges, only: [:index, :show] do
+			get :redeem, on: :collection, action: :require, as: 'redeem' 
+			post :redeem, on: :collection, action: :redeem, as: 'redeem_post'
+			get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'
+		end
+	end
+  
+	#resources :companies
+  #resources :speakers
+  
+	devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+	root to: 'editions#show', id: 2015
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

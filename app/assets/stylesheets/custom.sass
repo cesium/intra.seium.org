@@ -1,0 +1,93 @@
+/* I really hate using !important but I'm having a hard overriding Bootstrap */
+
+body
+  background-color: #0277BD !important
+  color: #fff !important
+  padding-top: 70px
+
+a
+  color: #fff !important
+  -webkit-transition: color 0.3s
+  -moz-transition: color 0.3s
+  transition: color 0.3s
+  &:hover,
+  &:focus
+    color: #fec503 !important
+    text-decoration: none !important
+
+label.option-label
+  font-weight: normal
+
+.form-container
+  margin: 0 auto
+  width: 50%
+  text-align: center
+  & .col-md-3
+    padding: 0
+    & label
+      margin-bottom: 0px
+      margin-top: 10px
+      margin-right: 10px
+      float: right
+  & .col-md-7
+    padding: 0
+    input
+      float: left
+
+
+form
+  margin-top: 20px
+  & input
+    margin: 5px
+
+input:not([type=submit])
+  border: none
+  background-color: transparent
+  border-bottom: 1px solid #B0BEC5
+  -webkit-transition: border-color .3s ease
+  -moz-transition: border-color .3s ease
+  -o-transition: border-color .3s ease
+  transition: border-color .3s ease
+  &:focus
+    outline: 0
+    border-bottom: 1px solid #fff
+
+.form-container .col-md-3 label
+  text-align: right
+
+button.btn.btn-submit
+  background: none
+  border: 2px solid #fff
+  border-radius: 5px
+  color: #fff
+  outline: none
+  text-transform: uppercase
+  padding: 10px
+  margin-bottom: 10px
+  -webkit-transition: all 0.3s ease
+  -moz-transition: all 0.3s ease
+  -o-transition: all 0.3s ease
+  transition: all 0.3s ease
+  &:hover,
+  &:focus
+    background: #fff
+    color: #0277BD
+    & a
+      color: #0277BD !important
+  & a
+    color: inherit
+    &:hover,
+    &:focus
+      text-decoration: none
+
+.sei-logo
+  content: img-url('logo_sei.png')
+
+#error_explanation
+  background-color: #fff
+  border-radius: 5px
+  color: #0277BD
+  padding: 10px
+  ul
+    list-style-type: none
+    text-align: left

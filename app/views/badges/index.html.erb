@@ -1,0 +1,14 @@
+<h1>Badges</h1>
+
+<div id="badge-list">
+	<% @badges.each do |badge| %>
+		<div class="badge">
+			<div class="badge-name">
+				<%= link_to badge.name, edition_badge_path(@edition, badge) %>
+			</div>	
+			<div class="badge-logo">
+				<img src="<%= badge.logo_url %>" alt="<%= badge.name %>"
+			</div>	
+		</div>
+	<% end %>
+</div>
