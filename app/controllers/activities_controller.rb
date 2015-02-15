@@ -21,7 +21,7 @@ class ActivitiesController < ApplicationController
 			user.activities << @activity
 		end
 
-		redirect_to edition_activity_path(@edition, @activity)
+		redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
 	end
 
 	def deregister
@@ -31,7 +31,7 @@ class ActivitiesController < ApplicationController
 			user.activities.delete @activity
 		end
 
-		redirect_to edition_activity_path(@edition, @activity)
+		redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
 	end
 
   private

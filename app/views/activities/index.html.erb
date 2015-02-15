@@ -40,9 +40,9 @@
 				<div class="col-md-12">
 					<div class="col-md-6 col-md-offset-3">
 						<ul class="list-group">
-							<% @activities.select { |a| a.begin_date.day == day.day }.each do |a| %>
+							<% @activities.select { |a| a.begin_date.day == day.day }.sort { |a, b| a.begin_date <=> b.begin_date }.each do |a| %>
 								<%= link_to(edition_activity_path(@edition, a).sub(/\d+\z/, a.url_escaped_name)) do %>
-									<li class="list-group-item-info list-group-item"><b><%= a.name %></b></li>
+									<li class="list-group-item-info list-group-item text-center"><b><%= a.name %></b></li>
 								<% end %>
 							<% end %>
 						</ul>
