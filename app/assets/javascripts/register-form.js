@@ -68,7 +68,6 @@ $(document).ready(function(){
 		hideDiv(studInfo.infEngStud.div);
 		hideDiv(studInfo.minhoUnivStud.studentIdDiv);
 		if(studInfo.univStud.yesInput.checked) {
-			console.log('show')
 			showDiv(studInfo.univStud.otherUnivDiv);
 			showDiv(studInfo.univStud.courseDiv);
 		}
@@ -81,12 +80,15 @@ $(document).ready(function(){
 	function isMinhoUnivInfEngStudUpdate(studInfo) {
 		uncheckBoth(studInfo.cesiumAssociate);
 		showDiv(studInfo.cesiumAssociate.div);
+		hideDiv(studInfo.univStud.courseDiv);
 	}
 
 	function isNotMinhoUnivInfEngStudUpdate(studInfo) {
 		check(studInfo.infEngStud.noInput);
 		isNotCesiumAssociateUpdate(studInfo);
 		hideDiv(studInfo.cesiumAssociate.div);
+		if(studInfo.minhoUnivStud.yesInput.checked)
+			showDiv(studInfo.univStud.courseDiv);
 	}
 
 	function isCesiumAssociateUpdate(studInfo) {

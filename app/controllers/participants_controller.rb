@@ -5,7 +5,7 @@ class ParticipantsController < ApplicationController
 	before_action :set_participant, only: [:show]
 
 	def index
-		@participants = @edition.users
+		@participants = User.all
 		respond_with(@participants)
 	end
 

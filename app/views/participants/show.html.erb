@@ -68,6 +68,7 @@
 					<% if @participant.is_univ_student %>
 					<li class="list-group-item-info list-group-item"><b>Curso:</b> <%= @participant.is_inf_eng_student_at_minho_univ ? "Engenharia Informática" :  @participant.course %></li>
 					<% end %>
+					<li class="list-group-item-info list-group-item"><b>Localidade:</b> <%= @participant.location %></li>
 				</ul>
 			</div>
 		</div>

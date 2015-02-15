@@ -21,7 +21,8 @@ module Seed
 				is_organizer: true,
 				organizer_role: 'Membro',
 				activities: activities,
-				editions: editions
+				editions: editions,
+				location: 'Braga'
 			},
 			{
 				email: 'beatrizmac@hotmail.com',
@@ -40,7 +41,8 @@ module Seed
 				is_univ_student: true,
 				is_student_at_minho_univ: false,
 				is_inf_eng_student_at_minho_univ: false,
-				is_cesium_associate: false
+				is_cesium_associate: false,
+				location: 'Braga'
 			},
 			{
 				email: 'tatianamiranda@gmail.com',
@@ -56,7 +58,8 @@ module Seed
 				is_inf_eng_student_at_minho_univ: false,
 				is_cesium_associate: false,
 				activities: activities[1, 1],
-				editions: editions
+				editions: editions,
+				location: 'Braga'
 			}
 		])
 	end

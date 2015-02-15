@@ -27,6 +27,7 @@ module Seed
 				github_account: "https://github.com/62Gerente",
 				facebook_account: "",
 				linked_in_account: "http://pt.linkedin.com/in/62gerente",
+				location: 'Braga'
 			},
 			{
 				email: 'mcpinto98<at>gmail.com',
@@ -50,6 +51,7 @@ module Seed
 				github_account: "https://github.com/miguelpinto98",
 				facebook_account: "https://www.facebook.com/mcpinto98",
 				linked_in_account: "https://pt.linkedin.com/in/miguelpinto98",
+				location: 'Braga'
 			},
 			{
 				email: 'pedroduarte870<at>gmail.com',
@@ -73,6 +75,7 @@ module Seed
 				github_account: "https://github.com/pedroduarte870",
 				facebook_account: "https://www.facebook.com/pedrodpduarte870",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'maiarib<at>gmail.com',
@@ -96,6 +99,7 @@ module Seed
 				github_account: "https://github.com/PedroMaia",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/maiarib",
+				location: 'Braga'
 			},
 			{
 				email: 'bpatrcia<at>gmail.com',
@@ -119,6 +123,7 @@ module Seed
 				github_account: "https://github.com/7patricia",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/7patricia",
+				location: 'Braga'
 			},
 			{
 				email: 'fjrib.mendes<at>gmail.com',
@@ -142,6 +147,7 @@ module Seed
 				github_account: "https://github.com/frmendes",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/fribmendes",
+				location: 'Braga'
 			},
 			{
 				email: 'martinhoaragao<at>gmail.com',
@@ -165,6 +171,7 @@ module Seed
 				github_account: "https://github.com/martinhoaragao",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/martinhoaragao",
+				location: 'Braga'
 			},
 			{
 				email: 'fntneves<at>gmail.com',
@@ -188,6 +195,7 @@ module Seed
 				github_account: "https://github.com/fntneves",
 				facebook_account: "",
 				linked_in_account: "https://www.linkedin.com/in/fntneves",
+				location: 'Braga'
 			},
 			{
 				email: 'mrfabiogomes<at>gmail.com',
@@ -211,6 +219,7 @@ module Seed
 				github_account: "https://github.com/MrFabio",
 				facebook_account: "",
 				linked_in_account: "https://www.linkedin.com/profile/view?id=353827731",
+				location: 'Braga'
 			},
 			{
 				email: 'tiagocunha<at>seium.org',
@@ -234,6 +243,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/Apocalipse.113",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'pmiguelf15<at>gmail.com',
@@ -257,6 +267,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/NoventaESeis",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'gilgoncalves<at>seium.org',
@@ -280,6 +291,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/gil.goncalves.161",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'filipecosta.90<at>gmail.com',
@@ -303,6 +315,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/filipecosta.90",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: '63msim<at>gmail.com',
@@ -326,6 +339,7 @@ module Seed
 				github_account: "https://github.com/Mariana63",
 				facebook_account: "https://www.facebook.com/mim063",
 				linked_in_account: "https://pt.linkedin.com/in/mariana63medeiros",
+				location: 'Braga'
 			},
 			{
 				email: 'schroeder.jorge<at>gmail.com',
@@ -349,6 +363,7 @@ module Seed
 				github_account: "",
 				facebook_account: "",
 				linked_in_account: "http://pt.linkedin.com/in/jorgepedrosimao",
+				location: 'Braga'
 			},
 			{
 				email: 'prsousa34<at>gmail.com',
@@ -372,6 +387,7 @@ module Seed
 				github_account: "https://github.com/prsousa",
 				facebook_account: "https://www.facebook.com/34chronos",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'santos.mario125<at>gmail.com',
@@ -395,6 +411,7 @@ module Seed
 				github_account: "https://github.com/Galay125",
 				facebook_account: "",
 				linked_in_account: "https://lnkd.in/A7mvHm",
+				location: 'Braga'
 			},
 			{
 				email: 'smcp92<at>gmail.com',
@@ -418,6 +435,7 @@ module Seed
 				github_account: "https://github.com/serafimpinto",
 				facebook_account: "",
 				linked_in_account: "http://pt.linkedin.com/in/serafimpinto",
+				location: 'Braga'
 			},
 			{
 				email: 'pedrosfdcarneiro<at>gmail.com',
@@ -441,6 +459,7 @@ module Seed
 				github_account: "https://github.com/pedrosfdcarneiro",
 				facebook_account: "https://www.facebook.com/pedrosfdcarneiro",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'sandraferreira<at>seium.org',
@@ -464,6 +483,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/sandra.ferreira.96742",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'maleite.cbc<at>gmail.com',
@@ -487,6 +507,7 @@ module Seed
 				github_account: "https://github.com/maleite",
 				facebook_account: "https://www.facebook.com/mario.leite.80",
 				linked_in_account: "https://www.linkedin.com/in/marioleite80",
+				location: 'Braga'
 			},
 			{
 				email: 'mail<at>danielcarvalho.pt',
@@ -510,6 +531,7 @@ module Seed
 				github_account: "https://github.com/Insatisfeito",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/dapcarvalho/",
+				location: 'Braga'
 			},
 			{
 				email: '28.ricardobranco<at>gmail.com',
@@ -533,6 +555,7 @@ module Seed
 				github_account: "https://github.com/ricardobranco",
 				facebook_account: "https://www.facebook.com/ricardobranco28",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: '53.andre.pimenta<at>gmail.com',
@@ -556,6 +579,7 @@ module Seed
 				github_account: "",
 				facebook_account: "https://www.facebook.com/pimenta53",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'pmcleite<at>gmail.com',
@@ -579,6 +603,7 @@ module Seed
 				github_account: "https://github.com/pmcleite",
 				facebook_account: "",
 				linked_in_account: "https://www.linkedin.com/in/pmcleite",
+				location: 'Braga'
 			},
 			{
 				email: 'rui96pedro<at>gmail.com',
@@ -602,6 +627,7 @@ module Seed
 				github_account: "https://bitbucket.org/ruioliveiras",
 				facebook_account: "https://www.facebook.com/rui.oliveiras",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'ajoao_19<at>hotmail.com',
@@ -625,6 +651,7 @@ module Seed
 				github_account: "https://github.com/joaofcosta",
 				facebook_account: "https://www.facebook.com/arnaldo.asturias.9",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'pcardoso.lei<at>gmail.com',
@@ -648,6 +675,7 @@ module Seed
 				github_account: "https://github.com/pcardosolei",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/pcardosolei/",
+				location: 'Braga'
 			},
 			{
 				email: 'frize_91<at>hotmail.com',
@@ -671,6 +699,7 @@ module Seed
 				github_account: "https://github.com/joanaarantes",
 				facebook_account: "https://www.facebook.com/joana.arantes.10",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'sukinha_mendes<at>hotmail.com',
@@ -694,6 +723,7 @@ module Seed
 				github_account: "",
 				facebook_account: "",
 				linked_in_account: "https://www.linkedin.com/pub/susana-mendes/43/8b8/906",
+				location: 'Braga'
 			},
 			{
 				email: 'chalkos<at>chalkos.net',
@@ -717,6 +747,7 @@ module Seed
 				github_account: "https://github.com/chalkos",
 				facebook_account: "",
 				linked_in_account: "https://pt.linkedin.com/in/chalkos",
+				location: 'Braga'
 			},
 			{
 				email: 'psac92<at>hotmail.com',
@@ -740,6 +771,7 @@ module Seed
 				github_account: "https://github.com/santosk20",
 				facebook_account: "https://www.facebook.com/pedrocosta92",
 				linked_in_account: "",
+				location: 'Braga'
 			},
 			{
 				email: 'demosbb<at>gmail.com',
@@ -763,6 +795,7 @@ module Seed
 				github_account: "https://github.com/dianalemos",
 				facebook_account: "https://www.facebook.com/dianaguimaraes57",
 				linked_in_account: "https://www.linkedin.com/profile/view?id=227209565&trk=nav_responsive_tab_profile",
+				location: 'Braga'
 			},
 			{
 				email: 'pedro_miguelsilva<at>outlook.com',
@@ -786,6 +819,7 @@ module Seed
 				github_account: "https://github.com/pedroSilva4",
 				facebook_account: "https://www.facebook.com/miguelsilvaface",
 				linked_in_account: "http://pt.linkedin.com/pub/pedro-silva/a2/7ab/769",
+				location: 'Braga'
 			},
 			{
 				email: 'pmda95<at>hotmail.com',
@@ -809,6 +843,7 @@ module Seed
 				github_account: "https://github.com/PMDA",
 				facebook_account: "https://www.facebook.com/Duarte.Araujo1",
 				linked_in_account: "",
+				location: 'Braga'
 			}
 		]
 	end

@@ -20,8 +20,11 @@ class User < ActiveRecord::Base
 	validates :sex, presence: true
 	validates :sex, numericality: { only_integer: true, greater_than_or_equal_to: UserSex::UNDEFINED, less_than_or_equal_to: UserSex::FEMALE }, unless: "sex.blank?"
 
+	validates :location, presence: true
+
 	validates :is_univ_student, :is_student_at_minho_univ, :is_inf_eng_student_at_minho_univ, :is_cesium_associate, inclusion: { in: [true, false] }
-	validates :university, :course, presence: true, if: "is_univ_student && !is_student_at_minho_univ"
+	validates :university, :course, presence: true, if: "is_univ_student && (is_student_at_minho_univ != nil) && !is_student_at_minho_univ"
+	validates :course, presence: true, if: "is_univ_student && is_student_at_minho_univ && (is_inf_eng_student_at_minho_univ != nil) && !is_inf_eng_student_at_minho_univ"
 	validates :minho_univ_student_id, presence: true, if: "is_student_at_minho_univ"
 	validates :cesium_associate_number, numericality: { only_integer: true }, if: "is_cesium_associate && !cesium_associate_number.blank?"
 	validate :student_info_cannot_be_incoherent

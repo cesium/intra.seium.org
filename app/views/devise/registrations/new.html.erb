@@ -1,3 +1,6 @@
+<style type="text/css">
+	.field_with_errors { display: inline; }
+</style>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -17,6 +20,7 @@
               <%= f.text_field :first_name, autofocus: true %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -26,6 +30,7 @@
               <%= f.text_field :last_name %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -35,6 +40,7 @@
               <%= f.email_field :email %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -44,6 +50,7 @@
               <%= f.text_field :username %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -53,6 +60,7 @@
               <%= f.password_field :password, autocomplete: "off" %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -62,6 +70,17 @@
               <%= f.password_field :password_confirmation, autocomplete: "off" %>
             </div>
           </div>
+					<br />
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :location %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.text_field :location %>
+            </div>
+          </div>
+					<br />
 
           <div class="row">
             <%= f.label :sex %>
@@ -82,6 +101,7 @@
               </div>
             </div>
           </div>
+					<br />
 
           <div id="is-univ-student">
             <%= f.label :is_univ_student %>
@@ -94,6 +114,7 @@
               <%= f.radio_button :is_univ_student, false, class: 'univ-student-info-checkbox', checked: false %>
             </div>
           </div>
+					<br />
 
           <div id="is-student-at-minho-univ" class="row" hidden>
             <%= f.label :is_student_at_minho_univ %>
@@ -105,6 +126,7 @@
               <%= f.label :no_sir, class: 'option-label' %>
               <%= f.radio_button :is_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
             </div>
+						<br />
 
             <div id="minho-univ-student-id" class="field" hidden>
               <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
@@ -113,28 +135,12 @@
               <div class="col-md-7 col-xs-7 col-sm-7">
                 <%= f.text_field :minho_univ_student_id, value: nil %>
               </div>
+							<br />
             </div>
           </div>
 
-					<div class="field row" id="university" hidden>
-						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
-							<%= f.label :university %>
-						</div>
-						<div class="col-md-7 col-xs-7 col-sm-7">
-							<%= f.text_field :university, value: nil %>
-						</div>
-					</div>
-
-					<div class="field row" id="course" hidden>
-						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
-							<%= f.label :course %>
-						</div>
-						<div class="col-md-7 col-xs-7 col-sm-7">
-							<%= f.text_field :course, value: nil %>
-						</div>
-					</div>
-
           <div id="is-inf-eng-student-at-minho-univ" class="row" hidden>
+						<br />
             <%= f.label :is_inf_eng_student_at_minho_univ %>
             <div class="field">
               <%= f.label :yes_sir, class: 'option-label' %>
@@ -144,7 +150,29 @@
               <%= f.label :no_sir, class: 'option-label' %>
               <%= f.radio_button :is_inf_eng_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
             </div>
+						<br />
           </div>
+
+					<div class="field row" id="university" hidden>
+						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+							<%= f.label :university %>
+						</div>
+						<div class="col-md-7 col-xs-7 col-sm-7">
+							<%= f.text_field :university, value: nil %>
+						</div>
+						<br />
+					</div>
+
+					<div class="field row" id="course" hidden>
+						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+							<%= f.label :course %>
+						</div>
+						<div class="col-md-7 col-xs-7 col-sm-7">
+							<%= f.text_field :course, value: nil %>
+						</div>
+						<br />
+					</div>
+
 
           <div id="is-cesium-associate" hidden>
             <%= f.label :is_cesium_associate %>
@@ -156,6 +184,7 @@
               <%= f.label :no_sir, class: 'option-label' %>
               <%= f.radio_button :is_cesium_associate, false, class: 'univ-student-info-checkbox', checked: true %>
             </div>
+						<br />
 
             <div id="cesium-associate-number" hidden>
               <div class="field row">
@@ -165,7 +194,8 @@
                 <div class="col-md-7 col-xs-7 col-sm-7">
                   <%= f.text_field :cesium_associate_number, value: nil %>
                 </div>
-              </div>
+							</div>
+							<br />
             </div>
           </div>
           <div class="row">
