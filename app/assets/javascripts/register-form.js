@@ -2,7 +2,8 @@ $(document).ready(function(){
 	var studInfo = {
 		univStud: {
 			div: document.getElementById('is-univ-student'),
-			otherUnivDiv: document.getElementById('other-univ-info'),
+			otherUnivDiv: document.getElementById('university'),
+			courseDiv: document.getElementById('course'),
 			yesInput: document.getElementById('user_is_univ_student_true'),
 			noInput: document.getElementById('user_is_univ_student_false')
 		},
@@ -45,7 +46,6 @@ $(document).ready(function(){
 	function isUnivStudUpdate(studInfo) {
 		uncheckBoth(studInfo.minhoUnivStud);
 		hideDiv(studInfo.minhoUnivStud.studentIdDiv);
-		hideDiv(studInfo.univStud.otherUnivDiv);
 		showDiv(studInfo.minhoUnivStud.div);
 	}
 
@@ -57,6 +57,7 @@ $(document).ready(function(){
 	function isMinhoUnivStudUpdate(studInfo) {
 		uncheckBoth(studInfo.infEngStud);
 		hideDiv(studInfo.univStud.otherUnivDiv);
+		hideDiv(studInfo.univStud.courseDiv);
 		showDiv(studInfo.minhoUnivStud.studentIdDiv);
 		showDiv(studInfo.infEngStud.div);
 	}
@@ -66,8 +67,15 @@ $(document).ready(function(){
 		isNotMinhoUnivInfEngStudUpdate(studInfo);
 		hideDiv(studInfo.infEngStud.div);
 		hideDiv(studInfo.minhoUnivStud.studentIdDiv);
-		if(studInfo.univStud.yesInput.checked)
+		if(studInfo.univStud.yesInput.checked) {
+			console.log('show')
 			showDiv(studInfo.univStud.otherUnivDiv);
+			showDiv(studInfo.univStud.courseDiv);
+		}
+		else {
+			hideDiv(studInfo.univStud.otherUnivDiv);
+			hideDiv(studInfo.univStud.courseDiv);
+		}
 	}
 
 	function isMinhoUnivInfEngStudUpdate(studInfo) {

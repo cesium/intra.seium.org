@@ -116,25 +116,23 @@
             </div>
           </div>
 
-          <div id="other-univ-info" hidden>
-            <div class="field row" id="university">
-              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
-                <%= f.label :university %>
-              </div>
-              <div class="col-md-7 col-xs-7 col-sm-7">
-                <%= f.text_field :university, value: nil %>
-              </div>
-            </div>
+					<div class="field row" id="university" hidden>
+						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+							<%= f.label :university %>
+						</div>
+						<div class="col-md-7 col-xs-7 col-sm-7">
+							<%= f.text_field :university, value: nil %>
+						</div>
+					</div>
 
-            <div class="field row" id="course">
-              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
-                <%= f.label :course %>
-              </div>
-              <div class="col-md-7 col-xs-7 col-sm-7">
-                <%= f.text_field :course, value: nil %>
-              </div>
-            </div>
-          </div>
+					<div class="field row" id="course" hidden>
+						<div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+							<%= f.label :course %>
+						</div>
+						<div class="col-md-7 col-xs-7 col-sm-7">
+							<%= f.text_field :course, value: nil %>
+						</div>
+					</div>
 
           <div id="is-inf-eng-student-at-minho-univ" class="row" hidden>
             <%= f.label :is_inf_eng_student_at_minho_univ %>
