@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  address: MyString
+  is_partner: false
+  partnership_type: 1
+  web_site: MyString
+  facebook_account: MyString
+  twitter_account: MyString
+  github_account: MyString
+  google_plus_account: MyString
+  logo_url: MyString
+
+two:
+  name: MyString
+  description: MyText
+  address: MyString
+  is_partner: false
+  partnership_type: 1
+  web_site: MyString
+  facebook_account: MyString
+  twitter_account: MyString
+  github_account: MyString
+  google_plus_account: MyString
+  logo_url: MyString

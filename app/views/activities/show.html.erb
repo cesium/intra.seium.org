@@ -1,0 +1,99 @@
+<style type="text/css">
+.participant-img {
+	width: 55%;
+	height: 55%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.list-group-item {
+	background-color: transparent;
+	color: #fff;
+}
+
+.social-link {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#back-button {
+	margin: 0 auto;
+	display: block;
+}
+</style>
+<%= stylesheet_link_tag "stylsheets/glyphicons", media: "all" %>
+<div class="container">
+	<div class="col-md-12 text-center">
+		<div class="col-md-6 col-md-offset-3">
+			<%= image_tag @activity.poster_photo_url, class: 'img-responsive participant-img' %>
+			<h2><%= @activity.name %></h2>
+			<h5><%= @activity.type_to_s %></h5>
+		</div>
+	</div>
+</div>
+
+<div>
+	<% if @activity.end_date > DateTime.now %>
+		<div>
+			<% if !@participant.registered_at? @activity %>
+				<button class="btn btn-submit" id="back-button"><%= link_to 'Inscrever na Atividade', register_edition_activity_path(@edition, @activity), method: :post %></button>
+			<% else %>
+				<button class="btn btn-danger" id="back-button"><%= link_to 'Anular Inscrição na Atividade', deregister_edition_activity_path(@edition, @activity), method: :delete %></button>
+			<% end %>	
+		</div>
+	<% end %>
+</div>
+
+<br>
+<div class="container">
+	<div class="wrapper">
+		<div class="col-md-12">
+			<div class="col-md-6 col-md-offset-3">
+				<ul class="list-group">
+					<% if @activity.speakers.first %>
+						<li class="list-group-item-info list-group-item"><b>Orador:</b> <%= @activity.speakers.first.name + (@activity.speakers.first.company ? " (#{@activity.speakers.first.company.name})" : '') %></li>
+					<% end %>
+					<li class="list-group-item-info list-group-item"><b>Data:</b> <%= @activity.begin_date_to_s %></li>
+					<li class="list-group-item-info list-group-item"><b>Local:</b> <%= @activity.place %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="col-md-12 text-center">
+		<div class="col-md-6 col-md-offset-3">
+			<h2>Descrição</h2>
+			<span>
+				<%= @activity.description %>
+			</span>
+		</div>
+	</div>
+</div>
+
+<% if @activity.users.size > 0 %>
+	<div class="container">
+		<div class="col-md-12 text-center">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Lista de Participantes</h3>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<div class="col-md-12">
+				<% @activity.users.each do |participant| %>
+						<div class="col-md-3">
+								<div class="badge-name">
+										<h5><%= link_to participant.full_name, edition_participant_path(@edition, username: participant.username) %></h5>
+								</div>
+								<div class="badge-logo">
+										<%= link_to (image_tag (participant.avatar.url)), edition_badge_path(edition_id: @edition.id, username: participant.username ) %>
+								</div>  
+						</div>
+				<% end %>
+		</div>
+	</div>
+	<br>
+<% end %>

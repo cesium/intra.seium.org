@@ -1,0 +1,99 @@
+// Place all the styles related to the Badge controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.badge-name {
+    font-family: "Open Sans Condensed";
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.badge-logo img{
+    width: 150px;
+    display: block;
+    margin: 15px auto 20px auto;
+}
+
+#badge-logo {
+  border: 2px solid white;
+  border-radius: 500px;
+  width: 250px;
+  height: 250px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px;
+}
+
+#badge-logo-img{
+  width: 150px;
+  margin-top: 40px;
+}
+
+#badge-name{
+  text-transform: capitalize;
+}
+
+#badge-users-list{
+  list-style-type: none;
+  padding-left: 0;
+
+}
+
+
+
+.badge-user-photo-img{
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.badge-user{
+  border-bottom: 1px solid white;
+  width: 400px;
+  display:block;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.badge-user-name{
+  float: left;
+  font-size: 25px;
+  overflow-x: scroll;
+  overflow-y: auto;
+  display: block;
+  margin-left: 20px;
+  text-align: left;
+  max-width: 240px;
+}
+
+
+@media(max-width: 507px) {
+    .badge-user{
+        width: 200px;
+    }
+
+    .badge-user-name{
+      font-size: 20px;
+      float: none;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .badge-user-photo-img{
+      margin: 0 auto;
+      float: none;
+    }
+
+    #badge{
+      width: 350px;
+    }
+}
+
+
+
+
+
+

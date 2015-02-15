@@ -1,0 +1,14 @@
+<div class="col-md-12">
+	<br />
+	<br />
+    <% @badges.each do |badge| %>
+        <div class="col-md-3">
+            <div class="badge-name">
+                <h5><%= link_to badge.name, edition_badge_path(@edition, badge) %></h5>
+            </div>
+            <div class="badge-logo">
+                <%= link_to (image_tag (badge.logo_url)), edition_badge_path(@edition, badge) %>
+            </div>  
+        </div>
+    <% end %>
+</div>

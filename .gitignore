@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Paperclip images files
+public/system
+
+# OS X
+.DS_Store

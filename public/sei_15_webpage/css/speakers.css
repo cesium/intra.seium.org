@@ -1,0 +1,251 @@
+#speakers {
+    text-align: center;
+    background-attachment: scroll;
+    background-image: url(../img/background_events.png);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    padding-bottom: 30px;
+}
+
+.speakers-title {
+    float: left;
+}
+
+.speakers-carousel {
+    height: 600px;
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+
+.speaker-img {
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    float: none;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.speaker-name {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 26px;
+    color: #0098ff;
+    letter-spacing: 1px;
+}
+
+.speaker-name::after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 80%;
+    max-width: 170px;
+    margin: 0 auto;
+    border-bottom: 4px solid #fff;
+}
+
+.speaker-position {
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+}
+
+.speaker-company {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #0098ff;
+    font-weight: bold;
+}
+
+.speaker-about {
+    color: #fff;
+    text-align: justify;
+    line-height: 150%;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.speaker-about::before,
+.speaker-about::after {
+    color: #0098ff;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: serif;
+}
+
+.speaker-about::before {
+    content: "\201C\00a0";
+}
+
+.speaker-about::after {
+    content: "\00a0\201D";
+}
+
+.speaker-social {
+    margin-top: 15px;
+}
+
+.speaker-indicators div.rn-carousel-indicator span {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 5px;
+}
+
+
+.speaker-indicators div.rn-carousel-indicator span:hover,
+.speaker-indicators div.rn-carousel-indicator span:focus,
+.speaker-indicators div.rn-carousel-indicator span.active {
+    font-size: 24px;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+}
+
+.speaker-indicators div.rn-carousel-indicator span.active {
+    font-size: 24px;
+    color: #fff;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+}
+
+div.organization-indicators span:hover,
+div.organization-indicators span:focus {
+    font-size: 24px;
+    color: #0098ff;
+}
+
+@media(max-width: 1200px) {
+    ul.speakers-carousel {
+        height: 700px;
+    }
+
+    #speakers {
+        height: 950px;
+    }
+}
+
+@media(max-width: 992px) {
+    #speakers {
+        height: 1000px;
+    }
+
+
+    ul.speakers-carousel {
+        height: 750px;
+    }
+
+    .speaker-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #speakers {
+        padding-bottom: 50px;
+    }
+
+    .speaker-name {
+        font-size: 22px;
+    }
+
+    .speaker-position {
+        font-size: 14px;
+    }
+
+    .speaker-company {
+        font-size: 12px;
+    }
+
+    section ul.social-buttons li a {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+    section ul.social-buttons li {
+        padding: 0;
+    }
+}
+
+@media(max-width: 767px) {
+
+    #speakers {
+        height: 600px;
+    }
+
+    .speaker-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .speaker-name {
+        font-size: 16px;
+    }
+
+    .speaker-name::after {
+        border-bottom: 2px solid #fff;
+    }
+
+    .speaker-about {
+        padding: 0;
+    }
+
+    section ul.social-buttons li a {
+        height: 30px;
+        width: 30px;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    ul.speakers-carousel {
+        height: 400px;
+    }
+}
+
+@media(max-width: 507px) {
+    section ul.social-buttons li a {
+        height: 20px;
+        width: 20px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+@media(max-width: 447px) {
+    .speaker-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .speaker-name {
+        font-size: 14px;
+    }
+
+    .speaker-position {
+        font-size: 12px;
+    }
+
+    .speaker-company {
+        font-size: 10px;
+    }
+
+    span.speaker-about {
+        font-size: 10px;
+        padding: 0;
+    }
+}

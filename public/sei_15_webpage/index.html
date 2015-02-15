@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SEI 15 - Semana da Engenharia Informática</title>
+    <link rel="shortcut icon" href="/sei_15_webpage/img/favicon.ico">
+    <!-- Angular things -->
+    <link href="/sei_15_webpage/css/angular-carousel.min.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core CSS -->
+    <link href="/sei_15_webpage/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/sei_15_webpage/css/template.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/custom.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/navbar.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/header.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/agenda.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/events.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/partners.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/speakers.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/organization.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/map.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/ribbon.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/footer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/sei_15_webpage/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- endcut-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index" ng-app="sei-app">
+    <!-- Ribbons -->
+    <div class="ribbon-container">
+      <a href="https://www.facebook.com/SEI.UMinho" target="_blank" class="ribbon facebook">
+          <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://twitter.com/cesiuminho" target="_blank" class="ribbon twitter">
+          <i class="fa fa-twitter"></i>
+      </a>
+      <a href="http://seium.eventbrite.pt/" target="_blank" class="ribbon signup">
+          <i class="fa fa-calendar-o"></i>
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" id="nav-logo">
+                    <img src="/sei_15_webpage/img/nav-logo.png" />
+                    <div>
+                        <span>
+                            SEMANA DA<br>
+                            ENGENHARIA INFORMÁTICA<br>
+                            <strong>UNIVERSIDADE DO MINHO<br>
+                            2015</strong>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav nav-item">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#agenda">Agenda</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#events">Eventos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#speakers">Oradores</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#partners">Parceiros</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#organization">Organização</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about-map">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Header -->
+    <header id="home">
+        <div id="ohsnap"><a href="http://seium.eventbrite.pt/" target="_blank"></a></div>
+        <div class="container">
+            <div class="row banner">
+                <div class="col-md-6 col-sm-6 col-xs-6 banner-image">
+                    <img src="/sei_15_webpage/img/mascote.png" />
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 banner-text">
+                    <div class="col-md-10 banner-date-locale">
+                        <div class="banner-date">14 a 21 Fevereiro</div>
+                        <div class="banner-locale">Universidade do Minho - Departamento de Informática</div>
+                    </div>
+                    <div class="col-md-10">
+                        <span class="banner-title">Semana da Engenharia Informática</span>
+                    </div>
+                    <div class="col-md-10 banner-sponsors">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4">Organização</div>
+                            <br>
+                            <div class="col-md-4 col-sm-4 col-xs-4 banner-logos">
+                                <a href="http://www.cesium.di.uminho.pt/" target="_blank"><img src="/sei_15_webpage/img/logos/cesium.png" /></a>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 banner-logos">
+                                <a href="http://www.uminho.pt/" target="_blank"><img src="/sei_15_webpage/img/logos/ee-um-di-color.png" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Agenda -->
+    <section id="agenda">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="col-md-12 title-container">
+                            <div class="agenda-title">Agenda</div>
+                        </div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">14 FEV. <br><span>S&Aacute;BADO</span></h4>
+                        <!-- Filler -->
+                        <div class="cal-labels-filler"></div>
+                        <div class="cal-two-thirty"></div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">10:00 - 12:00
+                            </div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(0)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject"><b>CODERDOJO MINHO</b>
+                                </div>
+                                <div class="cal-space">DI 0.02</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">SOCIAL
+                        </div>
+                        <!-- Filler -->
+                        <div class="cal-coffee-filler"></div>
+                        <div class="cal-one-thirty"></div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 19:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(0)">
+                            <div class="cal-event cal-six-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">IMPROVE BRAGA</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">SOCIAL</div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">16 FEV.<br><span>SEGUNDA</span></h4>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">9:00 - 10:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(1)">
+                            <div class="cal-event cal-two-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">SESS&Atilde;O DE ABERTURA</div>
+                                <div class="cal-space">DI 0.02</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">APRESENTAÇ&Atilde;O</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">10:30 - 13:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(1)">
+                            <div class="cal-event cal-five-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">ANDROID L</div>
+                                <div class="cal-speaker">Rafael D'Escoffier - BloomIdea</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 16:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(1)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">V&Iacute;DEO JOGOS AL&Eacute;M-FRONTEIRAS</div>
+                                <div class="cal-speaker">H&eacute;lder Pinto - Blizzard</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">16:30 - 18:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(1)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">MOEDA VIRTUAL</div>
+                                <div class="cal-speaker">Bitreserve</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">18:00 - 19:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(1)">
+                            <div class="col-md-12 cal-two-thirty cal-event text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">ESPA&Ccedil;O SEEGNO & BITRESERVE</div>
+                                <div class="col-md-4 cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">MEET</div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">17 FEV.<br><span>TER&ccedil;A</span></h4>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">9:00 - 11:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(2)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">UNITY 3D</div>
+                                <div class="cal-speaker">Lu&iacute;s Fonseca</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">11:30 - 13:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(2)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">PRODUCT DEVELOPMENT & AGILE</div>
+                                <div class="cal-speaker">Roberto Machado - Group Buddies</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 16:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(2)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">XAMARIN</div>
+                                <div class="cal-speaker">Manuel Costa - Storyo</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">16:30 - 18:30</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(2)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">THE METEOR SHOWER, FROM PROTOTYPE TO PRODUCTION</div>
+                                <div class="cal-speaker">Gabriel Po&ccedil;a - Group Buddies</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">21:00 - 00:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(2)">
+                            <div class="cal-event cal-six-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">JOGOS</div>
+                                <div class="cal-speaker">Comissão de Festas</div>
+                                <div class="cal-space">A ser anunciado</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">LOUNGE</div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">18 FEV.<br><span>QUARTA</span></h4>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">9:00 - 11:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(3)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">A ser anunciado</div>
+                                <div class="cal-speaker">A ser anunciado</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">11:30 - 13:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(3)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">API DRIVEN DEVELOPMENT</div>
+                                <div class="cal-speaker">Seegno</div>
+                                <div class="cal-space">DI A2 </div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 16:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(3)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">REUNI&Atilde;O GERAL</div>
+                                <div class="cal-speaker">Alunos de Eng. Inform&aacute;tica</div>
+                                <div class="cal-space">DI A2 </div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">DISCUSS&Atilde;O</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">17:00 - 19:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(3)">
+                            <div class="cal-event cal-five-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">CORRIDA SOCIAL</div>
+                                <div class="cal-space">Gualtar</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">SOCIAL</div>
+                <!-- Event -->
+                <div class="text-left">
+                    <div class="cal-hour">21:00 - 00:00</div>
+                </div>
+                <a class="page-scroll" href="#events" ng-click="eventGoto(3)">
+                    <div class="cal-event cal-six-thirty text-left">
+                        <div class="cal-block"></div>
+                        <div class="cal-subject">RALLY DAS TASCAS</div>
+                        <div class="cal-speaker">Comissão de Festas</div>
+                        <div class="cal-space">LARGO DO CARPE</div>
+                    </div>
+                </a>
+                <div class="cal-label text-right">LOUNGE</div>
+            </div>
+            <br>
+                <div class="col-md-12">
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">19 FEV.<br><span>QUINTA</span></h4>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">9:00 - 11:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">INTRODU&Ccedil;&Atilde;O A SWIFT</div>
+                                <div class="cal-speaker">Paulo Vieira - iMobileMagic</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">11:30 - 13:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">DEVOPS</div>
+                                <div class="cal-speaker">Nuno Fernandes - Eurotux</div>
+                                <div class="cal-space">DI A2 </div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 15:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="cal-event cal-two-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">MODELA&Ccedil;&Atilde;O 3D</div>
+                                <div class="cal-speaker">Francisco Mendes - BeeVeryCreative</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">15:00 - 16:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="cal-event cal-two-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">IMPRESS&Atilde;O 3D</div>
+                                <div class="cal-speaker">Francisco Mendes - BeeVeryCreative</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">16:30 - 18:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">BEHAVIOUR DRIVEN DEVELOPMENT</div>
+                                <div class="cal-speaker">Rui Figueira - VILT</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">18:00 - 19:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                            <div class="col-md-12 cal-two-thirty cal-event text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">ESPA&Ccedil;O VILT</div>
+                                <div class="col-md-4 cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">MEET</div>
+                            <div class="col-md-6 cal-parallel-left">
+                                <!-- Event -->
+                                <div class="text-left">
+                                    <div class="cal-hour">21:00 - 00:00</div>
+                                </div>
+                                <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                                    <div class="cal-event cal-six-thirty text-left">
+                                        <div class="cal-block"></div>
+                                        <div class="cal-subject">ARRAIAL DAS ENGENHARIAS</div>
+                                        <div class="cal-space">LARGO DO CARPE</div>
+                                    </div>
+                                </a>
+                                <div class="cal-label text-right">LOUNGE</div>
+                            </div>
+                            <div class="col-md-6 cal-parallel-right">
+                            <!-- Filler -->
+                            <div class="cal-two-thirty"></div>
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">22:00 - 00:00</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-click="eventGoto(4)">
+                                <div class="cal-event cal-four-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">QUIZ SHOW</div>
+                                    <div class="cal-space">LARGO DO CARPE</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">LOUNGE</div>
+                        </div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-3 text-center">
+                        <h4 class="cal-day">20 FEV.<br><span>SEXTA</span></h4>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">9:00 - 11:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">HTML5 & CSS3: From Basics to Magic Tricks</div>
+                                <div class="cal-speaker">Jo&atilde;o Justo - Group Buddies</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" />
+                        </div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">11:30 - 13:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">USER EXPERIENCE</div>
+                                <div class="cal-speaker">Norberto Henriques - WeDo</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">PALESTRA</div>
+                        <!-- Lunch -->
+                        <h5 class="cal-lunch">
+                            <span>ALMO&Ccedil;O</span>
+                        </h5>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">14:00 - 16:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-four-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">PYTHON + WEB2PY</div>
+                                <div class="cal-speaker">Francisco Costa</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Break -->
+                        <div id="cal-coffee"><img src="/sei_15_webpage/img/coffee-break.png" /></div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">16:30 - 18:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-three-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">SAIBA MAIS SOBRE DRONES</div>
+                                <div class="cal-speaker">Rui Antunes - FPV</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">18:00 - 19:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-two-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">ARDUINO</div>
+                                <div class="cal-speaker">InMotion</div>
+                                <div class="cal-space">DI A2</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">WORKSHOP</div>
+                        <!-- Event -->
+                        <div class="text-left">
+                            <div class="cal-hour">21:00 - 00:00</div>
+                        </div>
+                        <a class="page-scroll" href="#events" ng-click="eventGoto(5)">
+                            <div class="cal-event cal-six-thirty text-left">
+                                <div class="cal-block"></div>
+                                <div class="cal-subject">JANTAR DE ENCERRAMENTO</div>
+                                <div class="cal-space">PANOR&Acirc;MICO</div>
+                            </div>
+                        </a>
+                        <div class="cal-label text-right">LOUNGE</div>
+                    </div>
+                    <!-- DAY -->
+                    <div class="col-md-6 text-center">
+                        <h4 class="cal-day">21 FEV.<br><span>S&aacute;BADO</span></h4>
+                        <div class="col-md-6 cal-parallel-left">
+                            <!-- Filler -->
+                            <div class="cal-labels-filler"></div>
+                            <div class="cal-one-thirty"></div>
+                            <div class="cal-coffee-filler"></div>
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">10:00 - 13:00</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-onclick="eventGoto(6)">
+                                <div class="cal-event cal-six-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">HACKATHON SEEGNO</div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">CONCURSO</div>
+                        </div>
+                        <div class="col-md-6 cal-parallel-right">
+                            <!-- Filler -->
+                            <div class="cal-labels-filler"></div>
+                            <div class="cal-coffee-filler"></div>
+                            <div class="cal-three-thirty"></div>
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">11:00 - 12:30</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-click="eventGoto(6)">
+                                <div class="cal-event cal-three-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">RUST</div>
+                                    <div class="cal-speaker">Miguel Palhas - Group Buddies </div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">PALESTRA</div>
+                        </div>
+                        <!-- Lunch -->
+                        <div class="col-md-12">
+                            <h5 class="cal-lunch">
+                                <span>ALMO&Ccedil;O</span>
+                            </h5>
+                        </div>
+                        <div class="col-md-6 cal-parallel-left">
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">14:00 - 19:00</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-onclick="eventGoto(6)">
+                                <div class="cal-event cal-ten-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">HACKATHON SEEGNO</div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">CONCURSO</div>
+                        </div>
+                        <div class="col-md-6 cal-parallel-right">
+                            <!-- Filler -->
+                            <div class="cal-one-thirty"></div>
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">14:30 - 16:00</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-click="eventGoto(6)">
+                                <div class="cal-event cal-three-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">TIME TRIAL TALKS</div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">CONCURSO</div>
+                            <!-- Filler -->
+                            <div class="cal-labels-filler"></div>
+                            <div class="cal-four-thirty"></div>
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">18:00 - 19:30</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-click="eventGoto(6)">
+                                <div class="cal-event cal-three-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">PRESENTATION KARAOKE</div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">CONCURSO</div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- Dinner -->
+                            <h5 class="cal-lunch">
+                                <span>JANTAR</span>
+                            </h5>
+                        </div>
+                        <div class="col-md-6 cal-parallel-left">
+                            <!-- Event -->
+                            <div class="text-left">
+                                <div class="cal-hour">20:00 - 22:00</div>
+                            </div>
+                            <a class="page-scroll" href="#events" ng-onclick="eventGoto(6)">
+                                <div class="cal-event cal-four-thirty text-left">
+                                    <div class="cal-block"></div>
+                                    <div class="cal-subject">HACKATHON SEEGNO</div>
+                                    <div class="cal-space">DI A2</div>
+                                </div>
+                            </a>
+                            <div class="cal-label text-right">CONCURSO</div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Events Section -->
+    <section id="events" ng-controller="eventCtrl as event">
+        <div class="container">
+            <div class="col-md-12 title-container">
+                <div class="events-title">Eventos</div>
+            </div>
+            <ul rn-carousel rn-carousel-index="carouselEvents" class="carousel1 events-carousel col-md-12">
+                <li ng-repeat="slide in eventSlides">
+                    <div ng-include="slide.file" onload="marteladaIncludeFeito()"></div>
+                </li>
+            </ul>
+            <div class="events-status col-md-12 rn-carousel-indicator custom-indicator">
+                <div ng-repeat="slide in eventSlides" class="event-day col-md-1 col-sm-1 col-xs-1" ng-class="{'col-md-offset-2 col-sm-offset-2 col-xs-offset-2': $first, 'last-circle' : $last, 'active' : ($parent.carouselEvents == $index) }" ng-click="$parent.carouselEvents = $index">
+                    <div class="events-circle">
+                        <div></div>
+                    </div>
+                    <span class="event-day-date">{{ slide.day }}</span></br>
+                    <span class="event-day-week">{{ slide.weekday }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- speakers Section -->
+    <section id="speakers" ng-controller="speakerCtrl">
+        <div class="container">
+            <div class="col-md-12 title-container">
+                <div class="speakers-title">Oradores</div>
+            </div>
+            <ul rn-carousel rn-carousel-index="carouselSpeakers" rn-carousel-controls class="carousel1 speakers-carousel">
+                <li ng-repeat="speakers in speakerSlides">
+                    <div ng-repeat="speaker in speakers" class="col-md-4 col-sm-4 col-xs-12">
+                        <div ng-style="{'background-image': 'url(' + speaker.pic + ')'}" class="col-md-12 col-xs-12 col-sm-12 speaker-img"></div>
+                        <span class="col-md-12 col-xs-12 col-sm-12 speaker-name">{{speaker.name}}</span>
+                        <span class="col-md-12 col-xs-12 col-sm-12 speaker-position">{{speaker.position}}</span>
+                        <span class="col-md-12 col-xs-12 col-sm-12 speaker-company">
+                            <a ng-repeat="enterprise in speaker.enterprise" target="_blank" ng-href="{{ enterprise.enterpriseUrl }}">
+                                {{ enterprise.name }}
+                            </a>
+                        </span>
+                        <span class="col-md-12 col-xs-12 col-sm-12 speaker-about">{{speaker.about}}</span>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <ul class="list-inline social-buttons speaker-social">
+                                <li>
+                                    <a ng-if="speaker.web" target="_blank" ng-href="{{ speaker.web }}"><i class="fa fa-globe"></i></a>
+                                </li>
+                                <li>
+                                    <a ng-if="speaker.twitter" target="_blank" ng-href="{{ speaker.twitter }}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a ng-if="speaker.github" target="_blank" ng-href="{{ speaker.github }}"><i class="fa fa-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div rn-carousel-indicators class="speaker-indicators col-md-12 col-sm-12 col-xs-12" ng-if="speakerSlides.length > 1" slides="speakerSlides" rn-carousel-index="carouselSpeakers"></div>
+        </div>
+    </section>
+
+            <!-- Partners -->
+    <section id="partners">
+        <div class="container text-center">
+            <div class="col-md-12 title-container">
+                <div class="partners-title">Parceiros</div>
+            </div>
+            <!-- MAIN SPONSORS -->
+            <div class="wrapper text-center col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                    <h4 class="partners-header">
+                        <span>MAIN SPONSORS</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://bloomidea.com/"><img src="/sei_15_webpage/img/logos/partner-bloom.png" height="244" width="558" class="img-responsive center-block" alt="Bloom Idea"></a>
+                </div><!--
+             --><div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://eurotux.com/"><img src="/sei_15_webpage/img/logos/partner-eurotux.png" height="76" width="229" class="img-responsive center-block"
+                    alt="Eurotux"></a>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://www.vilt-group.com/"><img src="/sei_15_webpage/img/logos/partner-vilt.png" height="231" width="1052" class="img-responsive center-block"
+                    alt="VILT"></a>
+                </div><!--
+             --><div class="col-md-4 partner-img">
+                    <a target="_blank" href="https://bitreserve.org"><img src="/sei_15_webpage/img/logos/partner-bitreserve.png" height="87" width="365" class="img-responsive center-block"
+                    alt="Bitreserve"></a>
+                </div><!--
+             --><div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://seegno.com"><img src="/sei_15_webpage/img/logos/partner-seegno.png" height="167" width="522" class="img-responsive center-block"
+                    alt="Seegno"></a>
+                </div>
+            </div>
+            <!-- SPONSORS -->
+            <div class="wrapper text-center col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                    <h4 class="partners-header">
+                        <span>SPONSORS</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-4 col-sm-12 partner-img">
+                    <a target="_blank" href="http://www.wedotechnologies.com/pt/"><img src="/sei_15_webpage/img/logos/partner-wedo.png" height="152" width="316" alt="WeDo Technologies" class="img-responsive center-block"></a>
+                </div><!--
+             --><div class="col-md-4 col-sm-12 partner-img">
+                    <a target="_blank" href="http://www.imobilemagic.com"><img src="/sei_15_webpage/img/logos/partner-imobilemagic.png" height="138" width="507" alt="imobilemagic" class="img-responsive center-block"></a>
+                </div>
+            </div>
+            <!-- MAIN PARTNERS -->
+            <div class="wrapper text-center col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                    <h4 class="partners-header">
+                        <span>MAIN PARTNERS</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://www.microsoft.com"><img src="/sei_15_webpage/img/logos/partner-microsoft.png" height="1617" width="4400" class="img-responsive center-block" alt="Microsoft"></a>
+                </div><!--
+             --><div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://www.groupbuddies.com/"><img src="/sei_15_webpage/img/logos/partner-gb.png" height="526" width="568" class="img-responsive center-block"
+                    alt="Group Buddies" style="width: 45%; height: 45%;"></a>
+                </div><!--
+             --><div class="col-md-4 partner-img">
+                    <a target="_blank" href="http://www.keep.pt/"><img src="/sei_15_webpage/img/logos/partner-keep.png" height="185" width="1290" class="img-responsive center-block"
+                    alt="Keep Solutions"></a>
+                </div>
+            </div>
+            <!-- PARTNERS -->
+            <div class="wrapper text-center col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+                    <h4 class="partners-header">
+                        <span>PARTNERS</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-3 partner-img">
+                   <a target="_blank" href="http://storyoapp.com"><img src="/sei_15_webpage/img/logos/partner-storyo.png" height="4861" width="8523" class="img-responsive center-block" alt="Storyo"></a>
+                </div>
+                <div class="col-md-3 partner-img">
+                   <a target="_blank" href="http://www.blip.pt/"><img src="/sei_15_webpage/img/logos/partner-blip.png" height="4861" width="8523" class="img-responsive center-block" alt="Blip"></a>
+                </div>
+                <div class="col-md-3 partner-img">
+                    <a target="_blank" href="https://beeverycreative.com/"><img src="/sei_15_webpage/img/logos/partner-bee.png" height="1655" width="4851" class="img-responsive center-block"
+                    alt="BeeVeryCreative"></a>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-3 col-sm-12 partner-img">
+                    <a target="_blank" href="http://inmotion.pt"><img src="/sei_15_webpage/img/logos/partner-inmotion.png" height="1918" width="7776" class="img-responsive center-block" alt="inmotion"></a>
+                </div>
+                <div class="col-md-3 col-sm-12 partner-img">
+                   <a target="_blank" href="fpvportugal.com"><img src="/sei_15_webpage/img/logos/partner-fpv.png" height="514" width="200" class="img-responsive center-block" alt="FPV Portugal"></a>
+                </div>
+                <div class="col-md-3 col-sm-12 partner-img">
+                   <a target="_blank" href="http://www.novobanco.pt"><img src="/sei_15_webpage/img/logos/partner-novo-banco.png" height="4861" width="8523" class="img-responsive center-block" alt="Novo Banco"></a>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-3 col-sm-12 partner-img">
+                    <a target="_blank" href="http://www.investbraga.com/startup/"><img src="/sei_15_webpage/img/logos/partner-startupbraga.png" height="156" width="1000" class="img-responsive center-block"
+                    alt="Startup Braga"></a>
+                </div>
+                <div class="col-md-3 col-sm-12 partner-img">
+                    <a target="_blank" href="http://www.allkits.pt"><img src="/sei_15_webpage/img/logos/partner-allkits.png" height="500" width="1000" class="img-responsive center-block"
+                    alt="Allkits"></a>
+                </div>
+                <div class="col-md-3 col-sm-12 partner-img">
+                    <a target="_blank" href="http://www.redbull.com/pt/pt"><img src="/sei_15_webpage/img/logos/partner-red-bull.png" height="1655" width="4851" class="img-responsive center-block"
+                    alt="Red Bull"></a>
+                </div>
+            </div>
+            <div class="wrapper col-md-12">
+                <div class="col-md-5 partner-img">
+                    <a target="_blank" href="https://www.facebook.com/tasquinhabracarensepagina"><img src="/sei_15_webpage/img/logos/partner-tasquinha-bracarense.png" height="1655" width="4851" class="img-responsive center-block"
+                    alt="Tasquinha Bracarense"></a>
+                </div>
+                <div class="col-md-3 partner-img">
+                    <a target="_blank" href="https://www.facebook.com/festaslei"><img src="/sei_15_webpage/img/logos/comissao_festas.png" height="720" width="1206" class="img-responsive center-block"
+                    alt="Comissão de Festas de LEI"></a>
+                </div>
+            </div>
+    </section>
+    <!-- Organization Section -->
+    <section id="organization" ng-controller="organizationCtrl">
+        <div class="container">
+            <div class="col-md-12 col-sm-12 col-xs-12  title-container">
+                <div class="organization-title">Organização</div>
+            </div>
+            <ul rn-carousel rn-carousel-index="carouselOrganization" rn-carousel-controls class="carousel1 organization-carousel col-md-9  col-sm-12  col-xs-12 ">
+                <li ng-repeat="staffs in staffSlides">
+                    <div ng-repeat="staff in staffs" class="col-md-2  col-sm-2 col-xs-3 staff">
+                        <!-- ng-style="{'background-image': 'url(' + staff.pic + ')' }" -->
+                        <div class="staff-info-container" style="background-image: url( {{ staff.pic }} )">
+                            <div class="staff-info">
+                                <span class="col-md-12 col-sm-12 col-xs-12  staff-name">{{ staff.name }}</span>
+                                <span class="col-md-12 col-sm-12 col-xs-12  staff-position">{{ staff.position }}</span>
+                                <!--<div class="col-md-12 col-sm-12 col-xs-12 staff-social">-->
+                                    <ul class="list-inline social-buttons">
+                                        <li ng-if="staff.facebook">
+                                            <a ng-href="{{ staff.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li ng-if="staff.twitter ">
+                                            <a ng-href="{{ staff.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li ng-if="staff.github">
+                                            <a ng-href="{{ staff.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                                        </li>
+                                        <li ng-if="staff.linkedin">
+                                            <a ng-href="{{ staff.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div rn-carousel-indicators class="organization-indicators" ng-if="staffSlides.length > 1" slides="staffSlides" rn-carousel-index="carouselOrganization"></div>
+        </div>
+    </section>
+    <section id="about-map">
+        <div class="container">
+            <div class="col-md-12">
+                <div id="icon-map">
+                    <span class="fa-stack fa-2x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 cesium-info">
+                    <div class="col-md-3">
+                        <a href="http://www.cesium.di.uminho.pt/" target="_blank"><div id="cesium-circle"> <span id="helper-center"></span><img src="/sei_15_webpage/img/logos/cesium-icon-white.png" /></div></a>
+                        </div>
+                    <div class="col-md-9">
+                        <h5>Centro de Estudantes de Engenharia Informática </h5>
+                        <p class="cesium-location">Universidade do Minho </p>
+                        <p class="cesium-location">Departamento de Informática, Campus de Gualtar 4710-057 Braga</p>
+                        <p> <strong>WEB: </strong> <a href="http://www.cesium.di.uminho.pt/" target="_blank">www.cesium.di.uminho.pt</a></p>
+                        <p> <strong>EMAIL: </strong> <a href="mailto:cesium@di.uminho.pt">cesium@di.uminho.pt </a></p>
+                        <p> <strong>FACEBOOK: </strong> <a href="http://www.facebook.com/cesiumum" target="_blank">www.facebook.com/cesiumum </a></p>
+                        <p> <strong>TELEFONE: </strong> 253 604 448 </p>
+                        <p> A participação na SEI é completamente grátis. É organizada por voluntários do Centro de Estudantes de Engenharia Informática da Universidade do Minho</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 cesium-map">
+                    <div id="map-canvas"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="about">
+        <div class="container">
+            <div class="col-md-6 text-left about-text">
+                <h4>SOBRE N&Oacute;S</h4>
+                <p> O CeSIUM - Centro de Estudantes de Engenharia Inform&aacutetica da Universidade do Minho – &eacute um grupo de estudantes, volunt&aacuterios, que tem como objectivo representar e promover o curso.</p>
+                <h4>ÚLTIMAS FOTOS</h4>
+                <!-- FACEBOOK -->
+                <iframe scrolling="no" marginheight="0" style="height: 361px;" src="http://facebookgalleria.com/gallery.php?id=SEI.UMinho&display=uploaded_photos&rows=2&margin=10&cols=3&width=170&font_size=11&title_color=000&hide_next_back=0&shape=square&frame=0" frameborder="0" width="100%"></iframe>
+            </div>
+            <!-- TWITTER -->
+            <div class="col-md-6 text-left">
+                <h4>TWITTER</h4>
+                <div class="media">
+                    <a class="twitter-timeline" href="https://twitter.com/cesiuminho" data-widget-id="559868374789156864" data-tweet-limit="3" data-chrome="noscrollbar noheader nofooter noborders transparent" data-theme="dark" data-link-color="#227FF0">
+                    Tweets by @cesiuminho</a>
+                    <script>
+                        ! function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");
+                    </script>
+                </div>
+            </div>
+            <p>Made with ❤ by <a href="http://cesium.di.uminho.pt" target="_blank">CeSIUM</a>. Hosted on <a href="http://github.com/cesium/SEI15" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="/sei_15_webpage/js/lib/lib.min.js"></script>
+    <script src="/sei_15_webpage/js/lib/ohsnap.js"></script>
+
+    <script src="/sei_15_webpage/js/nav-var.js"></script>
+    <script src="/sei_15_webpage/js/sei.js"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="/sei_15_webpage/js/map.js"></script>
+</body>
+
+</html>

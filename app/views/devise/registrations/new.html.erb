@@ -1,0 +1,186 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-container" id="users-new">
+        <img class="sei-logo" id="login-logo">
+
+        <h2>Registar</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :first_name %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.text_field :first_name, autofocus: true %>
+            </div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :last_name %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :email %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.email_field :email %>
+            </div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :username %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.text_field :username %>
+            </div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :password %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+          </div>
+
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+              <%= f.label :password_confirmation %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+          </div>
+
+          <div class="row">
+            <%= f.label :sex %>
+            <div class="field col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-label-container">
+                <%= f.label :male, class: 'option-label sex-option' %>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-container">
+                <%= f.radio_button :sex, UserSex::MALE, class: 'sex-option' %>
+              </div>
+            </div>
+            <div class="field col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-label-container">
+                <%= f.label :female, class: 'option-label sex-option' %>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 sex-option-container">
+                <%= f.radio_button :sex, UserSex::FEMALE, class: 'sex-option' %>
+              </div>
+            </div>
+          </div>
+
+          <div id="is-univ-student">
+            <%= f.label :is_univ_student %>
+            <div class="field">
+              <%= f.label :yes_sir, class: 'option-label' %>
+              <%= f.radio_button :is_univ_student, true, class: 'univ-student-info-checkbox', checked: false %>
+            </div>
+            <div class="field">
+              <%= f.label :no_sir, class: 'option-label' %>
+              <%= f.radio_button :is_univ_student, false, class: 'univ-student-info-checkbox', checked: false %>
+            </div>
+          </div>
+
+          <div id="is-student-at-minho-univ" class="row" hidden>
+            <%= f.label :is_student_at_minho_univ %>
+            <div class="field">
+              <%= f.label :yes_sir, class: 'option-label' %>
+              <%= f.radio_button :is_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
+            </div>
+            <div class="field">
+              <%= f.label :no_sir, class: 'option-label' %>
+              <%= f.radio_button :is_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
+            </div>
+
+            <div id="minho-univ-student-id" class="field" hidden>
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+                <%= f.label :minho_univ_student_id %>
+              </div>
+              <div class="col-md-7 col-xs-7 col-sm-7">
+                <%= f.text_field :minho_univ_student_id, value: nil %>
+              </div>
+            </div>
+          </div>
+
+          <div id="other-univ-info" hidden>
+            <div class="field row" id="university">
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+                <%= f.label :university %>
+              </div>
+              <div class="col-md-7 col-xs-7 col-sm-7">
+                <%= f.text_field :university, value: nil %>
+              </div>
+            </div>
+
+            <div class="field row" id="course">
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+                <%= f.label :course %>
+              </div>
+              <div class="col-md-7 col-xs-7 col-sm-7">
+                <%= f.text_field :course, value: nil %>
+              </div>
+            </div>
+          </div>
+
+          <div id="is-inf-eng-student-at-minho-univ" class="row" hidden>
+            <%= f.label :is_inf_eng_student_at_minho_univ %>
+            <div class="field">
+              <%= f.label :yes_sir, class: 'option-label' %>
+              <%= f.radio_button :is_inf_eng_student_at_minho_univ, true, class: 'univ-student-info-checkbox' %>
+            </div>
+            <div class="field">
+              <%= f.label :no_sir, class: 'option-label' %>
+              <%= f.radio_button :is_inf_eng_student_at_minho_univ, false, class: 'univ-student-info-checkbox', checked: true %>
+            </div>
+          </div>
+
+          <div id="is-cesium-associate" hidden>
+            <%= f.label :is_cesium_associate %>
+            <div class="field">
+              <%= f.label :yes_sir, class: 'option-label' %>
+              <%= f.radio_button :is_cesium_associate, true, class: 'univ-student-info-checkbox' %>
+            </div>
+            <div class="field">
+              <%= f.label :no_sir, class: 'option-label' %>
+              <%= f.radio_button :is_cesium_associate, false, class: 'univ-student-info-checkbox', checked: true %>
+            </div>
+
+            <div id="cesium-associate-number" hidden>
+              <div class="field row">
+                <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+                  <%= f.label :cesium_associate_number, "Qual é o teu número de sócio? (Deixa em branco caso não saibas)" %>
+                </div>
+                <div class="col-md-7 col-xs-7 col-sm-7">
+                  <%= f.text_field :cesium_associate_number, value: nil %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="actions">
+              <%= button_tag "Registar", type: 'submit', class: 'btn btn-submit', id: 'user-new-submit' %>
+            </div>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+        <%= javascript_include_tag 'register-form' %>
+      </div>
+    </div>
+  </div>
+</div>
