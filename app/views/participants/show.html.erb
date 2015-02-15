@@ -36,7 +36,9 @@
 			<% else %>
 			<h5>Estudante Universitário na <%= @participant.university %></h5>
 			<% end %>
-			<% end %>
+		<% else %>
+				<h5><%= @participant.profession %></h5>
+		<% end %>
 		</div>
 	</div>
 </div>

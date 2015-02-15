@@ -116,6 +116,16 @@
           </div>
 					<br />
 
+            <div id="profession" class="field" hidden>
+              <div class="col-md-offset-2 col-sm-offset-2 col-sm-3 col-xs-5 col-md-3">
+                <%= f.label :profession %>
+              </div>
+              <div class="col-md-7 col-xs-7 col-sm-7">
+                <%= f.text_field :profession, value: nil %>
+              </div>
+            </div>
+						<br />
+
           <div id="is-student-at-minho-univ" class="row" hidden>
             <%= f.label :is_student_at_minho_univ %>
             <div class="field">

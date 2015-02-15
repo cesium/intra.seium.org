@@ -4,6 +4,7 @@ $(document).ready(function(){
 			div: document.getElementById('is-univ-student'),
 			otherUnivDiv: document.getElementById('university'),
 			courseDiv: document.getElementById('course'),
+			professionDiv: document.getElementById('profession'),
 			yesInput: document.getElementById('user_is_univ_student_true'),
 			noInput: document.getElementById('user_is_univ_student_false')
 		},
@@ -46,10 +47,12 @@ $(document).ready(function(){
 	function isUnivStudUpdate(studInfo) {
 		uncheckBoth(studInfo.minhoUnivStud);
 		hideDiv(studInfo.minhoUnivStud.studentIdDiv);
+		hideDiv(studInfo.univStud.professionDiv);
 		showDiv(studInfo.minhoUnivStud.div);
 	}
 
 	function isNotUnivStudUpdate(studInfo) {
+		showDiv(studInfo.univStud.professionDiv);
 		hideDiv(studInfo.minhoUnivStud.div);
 		isNotMinhoUnivStudUpdate(studInfo);
 	}

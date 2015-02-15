@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 	validates :location, presence: true
 
 	validates :is_univ_student, :is_student_at_minho_univ, :is_inf_eng_student_at_minho_univ, :is_cesium_associate, inclusion: { in: [true, false] }
+	validates :profession, presence: true, if: "(is_univ_student != nil) && !is_univ_student"
 	validates :university, :course, presence: true, if: "is_univ_student && (is_student_at_minho_univ != nil) && !is_student_at_minho_univ"
 	validates :course, presence: true, if: "is_univ_student && is_student_at_minho_univ && (is_inf_eng_student_at_minho_univ != nil) && !is_inf_eng_student_at_minho_univ"
 	validates :minho_univ_student_id, presence: true, if: "is_student_at_minho_univ"

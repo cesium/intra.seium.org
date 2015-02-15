@@ -207,6 +207,7 @@ pt:
         username: "Nome de Utilizador"
         biography: "Biografia"
         location: "Localidade de Residência"
+        profession: "Ocupação"
         password_confirmation: "Confirmação de Password"
         current_password: "Password atual"
         sex: "Sexo"

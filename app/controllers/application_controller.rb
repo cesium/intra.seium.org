@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 		[	:first_name, :last_name, :username, :sex, :is_univ_student, :is_student_at_minho_univ,
 			:is_inf_eng_student_at_minho_univ, :is_cesium_associate,
 			:cesium_associate_number, :minho_univ_student_id, :university,
-			:course, :location
+			:course, :location, :profession
 		].each do |p|
 			devise_parameter_sanitizer.for(:sign_up) << p
 		end
