@@ -17,6 +17,7 @@ class BadgesController < ApplicationController
 
 	def redeem
 		code = params[:code]
+		@redeem_action = true
 		begin
 			@badge = BadgeAcquisition.acquire_badge_with_code(current_user, code)
 		rescue BadgeAcquisition::AcquisitionError => e
