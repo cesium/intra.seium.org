@@ -54,6 +54,7 @@ module Seed
 				birthday: DateTime.civil_from_format(:local, 1993, 5, 2),
 				avatar: File.open("#{Rails.root}/public/images/users/tatim.jpg"),
 				is_univ_student: false,
+				profession: "Designer",
 				is_student_at_minho_univ: false,
 				is_inf_eng_student_at_minho_univ: false,
 				is_cesium_associate: false,
