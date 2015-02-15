@@ -1,5 +1,24 @@
-<%= form_tag(redeem_post_edition_badges_path) do %>
-	<%= label_tag(:code, "Código do Crachá") %>
-	<%= text_field_tag(:code) %>
-	<%= submit_tag("Registar Crachá") %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-container">
+        <h2>Obter crachá</h2>
+          <%= form_tag(redeem_post_edition_badges_path) do %>
+            <div class="field row">
+              <div class="col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-md-3 col-sm-3 col-xs-3">
+                <%= label_tag(:code, "Código do Crachá") %>
+              </div>
+              <div class="col-md-7 col-sm-7 col-xs-7">
+                <%= text_field_tag(:code) %>
+              </div>
+            </div>
+              <div class="row" style="margin-top:30px">
+                <div class="actions col-xs-offset-3 col-md-6 col-xs-6 col-sm-6">
+                  <%= button_tag "Registar crachá", type: 'submit', class: 'btn btn-submit', id: 'badge-redeem' %>
+                </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
