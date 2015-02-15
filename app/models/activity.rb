@@ -3,6 +3,27 @@ class Activity < ActiveRecord::Base
 	has_and_belongs_to_many :users
 	belongs_to :edition
 
+	def self.next_activity(activities)
+		activities.select { |a| a.end_date > DateTime.now }.sort { |a, b| a.begin_date <=> b.begin_date }.first
+	end
+
+	def is_happening?
+		begin_date <= DateTime.now && end_date >= DateTime.now
+	end
+
+	def to_s_compact
+		str =
+			if begin_date.wday == DateTime.now.wday
+				"Hoje"
+			elsif begin_date.wday == (DateTime.now + 1.day).wday
+				"Amanhã"
+			else
+				Activity::weekday_to_s(begin_date.wday)
+			end
+		str << ", às #{begin_date.hour}#{begin_date.min == 0 ? '' : ':' + begin_date.min.to_s}h"
+		str << " (#{place})"
+	end
+
 	def begin_date_to_s
 		"#{Activity::weekday_to_s(begin_date.wday)}, #{begin_date.day} de #{Activity::month_to_s(begin_date.month)}, às #{begin_date.hour}#{begin_date.min == 0 ? '' : ':' + begin_date.min.to_s}h"
 	end

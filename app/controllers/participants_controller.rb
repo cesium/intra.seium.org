@@ -1,7 +1,6 @@
 class ParticipantsController < ApplicationController
 	before_action :authenticate_user!
 
-	before_action :set_edition
 	before_action :set_participant, only: [:show]
 
 	def index
@@ -26,10 +25,6 @@ class ParticipantsController < ApplicationController
 
 	def set_participant
 		@participant = User.where(username: params[:username]).first
-	end
-
-	def set_edition
-		@edition = Edition.find params[:edition_id]
 	end
 
 	def user_params

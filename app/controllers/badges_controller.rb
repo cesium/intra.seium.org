@@ -2,7 +2,6 @@ class BadgesController < ApplicationController
 	before_action :authenticate_user!
 
   before_action :set_badge, only: [:show]
-  before_action :set_edition
 
   def index
     @badges = @edition.badges
@@ -29,10 +28,6 @@ class BadgesController < ApplicationController
     def set_badge
       @badge = Badge.find(params[:id])
     end
-
-		def set_edition
-			@edition = Edition.find params[:edition_id]
-		end
 
     def badge_params
       params.require(:badge).permit(:name, :description, :code)

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 	respond_to :html
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
+	before_action :set_global_info
 
 	protected
 
@@ -23,5 +24,10 @@ class ApplicationController < ActionController::Base
 		].each do |p|
 			devise_parameter_sanitizer.for(:account_update) << p
 		end
+	end
+
+	def set_global_info
+		@edition = Edition.find(2015)
+		@activities = @edition.activities
 	end
 end
