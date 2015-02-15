@@ -1,5 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-container" id="user-edit-form">
+ 
 <%= form_tag(redeem_post_edition_badges_path) do %>
-	<%= label_tag(:code, "Código do Crachá") %>
-	<%= text_field_tag(:code) %>
-	<%= submit_tag("Registar Crachá") %>
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
+							<%= label_tag(:code, "Código") %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+							<%= text_field_tag(:code) %>
+            </div>
+          </div>
+					<br />
+
+             <div class="row">
+               <div class="actions">
+                 <%= button_tag "Requisitar", type: 'submit', class: 'btn btn-submit', id: 'badge-redeem-submit' %>
+               </div>
+             </div>
 <% end %>
+
+           </div>
+         </div>
+       </div>
+     </div>
