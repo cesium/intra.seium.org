@@ -51,7 +51,7 @@
 					<li class="list-group-item-info list-group-item"><b>Email:</b> <%= @participant.email %></li>
 					<li class="list-group-item-info list-group-item"><b>Username:</b> <%= @participant.username %></li>
 					<% if @participant.birthday != nil %>
-					<li class="list-group-item-info list-group-item"><b>Data de nascimento:</b> <%= @participant.birthday %></li>
+					<li class="list-group-item-info list-group-item"><b>Data de nascimento:</b> <%= @participant.birthday.strftime("%Y-%m-%d") %></li>
 					<% end %>
 					<li class="list-group-item-info list-group-item"><b>Sexo:</b> <%= @participant.sex_to_s %></li>
 					<% if @participant.biography != nil && @participant.biography != "" %>
@@ -105,7 +105,7 @@
 		<% else %>
 		<% @participant.activities.each do |activity| %>
 		<div>
-			<div><%= link_to activity.name, edition_activity_path(@edition, activity).sub(/\d+\z/, activity.url_escaped_name) %></div>	
+			<div><%= link_to activity.name, edition_activity_path(@edition, activity).sub(/\d+\z/, activity.url_escaped_name) %></div>
 		</div>
 		<% end %>
 		<% end %>
@@ -120,7 +120,7 @@
 		<div class="col-md-6 col-md-offset-3">
 			<% @participant.badges.each do |badge| %>
 			<div class="col-md-2 col-sm-2 col-xs-4">
-				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>	
+				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>
 				<div><%= link_to badge.name, edition_badge_path(@edition, badge) %></div>
 			</div>
 			<% end %>
