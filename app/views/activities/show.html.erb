@@ -93,7 +93,7 @@
 										<h5><%= link_to participant.full_name, edition_participant_path(@edition, username: participant.username) %></h5>
 								</div>
 								<div class="badge-logo">
-										<%= link_to (image_tag (participant.avatar.url)), edition_badge_path(edition_id: @edition.id, username: participant.username ) %>
+										<%= link_to (image_tag (participant.avatar.url)), edition_participant_path(edition_id: @edition.id, username: participant.username ) %>
 								</div>
 						</div>
 				<% end %>
