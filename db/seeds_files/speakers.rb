@@ -176,6 +176,17 @@ module Seed
 				github_account: 'http://localhost:3000/github.com/ruimarinho',
 				company: find_company(companies, 'bitreserve'),
 				editions: [editions[0]]
+			},
+			{
+				name: "Nuno Sousa",
+				role: 'Developer',
+				biography: 'Nuno Sousa é actualmente responsável pelas operações de Bitcoin na Bitreserve e segue o desenvolvimento das cripto-moedas desde o início.A sua curiosidade levou-o a focar-se no campo das cripto-moedas e na revolução do dinheiro digital, onde tenta concentrar as suas contribuições para a comunidade open-source',
+				photo_url: "img/speakers/nsousa.jpg",
+				web_site: nil,
+				twitter_account: 'http://twitter.com/nunofgs',
+				github_account: 'https://github.com/nunofgs',
+				company: find_company(companies, 'bitreserve'),
+				editions: [editions[0]]
 			}
 		])
 	end

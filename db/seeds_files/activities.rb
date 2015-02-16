@@ -8,6 +8,7 @@ module Seed
 				begin_date: DateTime.civil_from_format(:local, 2015, 2, 18, 11, 30),
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 18, 13, 30),
 				activity_type: ActivityType::TALK,
+				speakers: [find_speaker(speakers, 'Rui Marinho')],
 				place: 'DI A2',
 				edition: editions[0],
 				poster_photo_url: '/sei_15_webpage/img/events/api.png'
@@ -88,6 +89,7 @@ module Seed
 				end_date: DateTime.civil_from_format(:local, 2015, 2, 16, 18, 0),
 				activity_type: ActivityType::TALK,
 				place: 'DI A2',
+				speakers: [find_speaker(speakers, 'Rui Marinho'), find_speaker(speakers, 'Nuno Sousa')],
 				edition: editions[0],
 				poster_photo_url: '/sei_15_webpage/img/events/cryptocurrency.png'
 			},
