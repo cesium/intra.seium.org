@@ -11,10 +11,10 @@
 		<div id="badge-users-title">
 			<h2>Utilizadores com este badge</h2>
 		</div>
-		<div>
-			<ul id="badge-users-list">
+		<div style="margin-top: 20px">
+			<div id="badge-users-list" class="row">
 				<% users.each do |participant| %>
-					<li>
+					<li class="col-sm-2">
 						<div class="badge-participant">
 								<%= image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img' %>
 							<div class="badge-participant-name">
