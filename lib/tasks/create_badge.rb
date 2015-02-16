@@ -1,13 +1,15 @@
 namespace :sei do
-	desc "Add a Cesium Associate"
-	task :associate, [:email, :associate_number]  => :environment  do |t, args|
-		raise ArgumentError.new if args.email.blank?
+	desc "Add Badges"
+	task :create_badges, [:path]  => :environment  do |t, args|
+		raise ArgumentError.new if args.path.blank?
 
-		raise User::UserNotFoundError.new unless user = User.where(email: args.email).first
-		raise StandardException, "Error: Already a Cesium Associate" if user.is_cesium_associate
+		require "#{args.path}"
 
-		user.is_cesium_associate = true
-		user.cesium_associate_number = 
-		user.save!
+		new_badges.each do |badge|
+
+			raise StandardException, "ERROR: Badge already exists with the same codename" if Badge.find_by_codename(badge.codename)
+
+			badge.save!
+		end
 	end
 end
