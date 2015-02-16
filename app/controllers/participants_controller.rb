@@ -23,6 +23,13 @@ class ParticipantsController < ApplicationController
 		( @participant.google_plus_account != nil && @participant.google_plus_account != "" )
 	end
 
+
+	def hall_of_fame
+		@participants = User.select('badges.*, count(badges.id) as badges_count')
+											.join(:badges).group('badges.id')
+											.having('badges_count > 0').order('badges_count DESC')
+	end
+
 	def set_participant
 		@participant = User.where(username: params[:username]).first
 	end

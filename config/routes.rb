@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
 	get 'intranet' => 'intranet#intranet'
 	get 'intranet' => 'intranet#intranet', as: 'user_root'
-  
+
 	resources :editions, only: [:show] do
-		
+
 		resources :participants, only: [:index, :show], param: :username
+		match :hall_of_fame, to: 'participants#hall_of_fame', via: :get
 
 		resources :activities, only: [:index, :show] do
 			post :register, on: :member
@@ -13,12 +14,12 @@ Rails.application.routes.draw do
 		end
 
 		resources :badges, only: [:index, :show] do
-			get :redeem, on: :collection, action: :require, as: 'redeem' 
+			get :redeem, on: :collection, action: :require, as: 'redeem'
 			post :redeem, on: :collection, action: :redeem, as: 'redeem_post'
 			get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'
 		end
 	end
-  
+
 	devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
