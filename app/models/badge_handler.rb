@@ -15,7 +15,15 @@ module BadgeHandler
 		end
 	end
 
-	def self.is_organizer(user, badge)
+	def self.cesium_associate(user, badge)
+		begin
+			BadgeAcquisition.acquire_badge(user, badge) if user.is_cesium_associate
+		rescue BadgeAcquisition::AcquisitionError => e
+			puts e
+		end
+	end
+
+	def self.staff(user, badge)
 		begin
 			BadgeAcquisition.acquire_badge(user, badge) if user.is_organizer
 		rescue BadgeAcquisition::AcquisitionError => e

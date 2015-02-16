@@ -12,6 +12,36 @@ module Seed
 				edition: editions[0]
 			},
 			{
+				name: "Participação no dia 14",
+				codename: "attendee_14",
+				badge_type: BadgeType::USER_ACCOUNT,
+				description: "Dia 14 - Check!",
+				is_code_needed: false,
+				category: 'attendee',
+				logo_url: '/images/badges/participacao/14/Participacao.png',
+				edition: editions[0]
+			},
+			{
+				name: "Participação no dia 16",
+				codename: "attendee_16",
+				badge_type: BadgeType::USER_ACCOUNT,
+				description: "Dia 16 - Check!",
+				is_code_needed: false,
+				category: 'attendee',
+				logo_url: '/images/badges/participacao/16/Participacao.png',
+				edition: editions[0]
+			},
+			{
+				name: "Membro da Organização da SEI",
+				codename: "staff",
+				badge_type: BadgeType::USER_ACCOUNT,
+				description: "Staff SEI",
+				is_code_needed: false,
+				category: 'main',
+				logo_url: '/images/badges/sei/Organizacao.png',
+				edition: editions[0]
+			},
+			{
 				name: "Amigo da Bitreserve",
 				codename: "bitreserve_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
@@ -92,16 +122,6 @@ module Seed
 				edition: editions[0]
 			},
 			{
-				name: "Participação no dia 14",
-				codename: "attendee_14",
-				badge_type: BadgeType::USER_ACCOUNT,
-				description: "Dia 14 - Check!",
-				is_code_needed: false,
-				category: 'attendee',
-				logo_url: '/images/badges/participacao/14/Participacao.png',
-				edition: editions[0]
-			},
-			{
 				name: "Voluntário no dia 14",
 				codename: "volunteer_14",
 				badge_type: BadgeType::CODE_NEEDED,
@@ -152,16 +172,6 @@ module Seed
 				edition: editions[0]
 			},
 			{
-				name: "Participação no dia 16",
-				codename: "attendee_16",
-				badge_type: BadgeType::USER_ACCOUNT,
-				description: "Dia 16 - Check!",
-				is_code_needed: false,
-				category: 'attendee',
-				logo_url: '/images/badges/participacao/16/Participacao.png',
-				edition: editions[0]
-			},
-			{
 				name: "Voluntário no dia 16",
 				codename: "volunteer_16",
 				badge_type: BadgeType::CODE_NEEDED,
@@ -189,16 +199,6 @@ module Seed
 				is_code_needed: true,
 				category: 'main',
 				logo_url: '/images/badges/sei/Kit.png',
-				edition: editions[0]
-			},
-			{
-				name: "Membro da Organização da SEI",
-				codename: "staff",
-				badge_type: BadgeType::USER_ACCOUNT,
-				description: "Staff SEI",
-				is_code_needed: false,
-				category: 'main',
-				logo_url: '/images/badges/sei/Organizacao.png',
 				edition: editions[0]
 			}
 		])
