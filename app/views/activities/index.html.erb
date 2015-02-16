@@ -23,7 +23,7 @@
 </style>
 <%= stylesheet_link_tag "stylsheets/glyphicons", media: "all" %>
 
-<% (Date.new(@edition.begin_date.year, @edition.begin_date.month, @edition.begin_date.day)..Date.new(@edition.end_date.year, @edition.end_date.month, @edition.end_date.day)).each do |day| %>
+<% (Date.new(@edition.begin_date.year, @edition.begin_date.month, (@edition.begin_date.day - 1))..Date.new(@edition.end_date.year, @edition.end_date.month, @edition.end_date.day)).each do |day| %>
 
 	<% if @activities.select { |a| a.begin_date.day == day.day }.size > 0 %>
 		<div class="container">
