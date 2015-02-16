@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 		end
 
 		[	:birthday, :biography, :facebook_account, :twitter_account,
-	 		:github_account, :google_plus_account, :avatar
+	 		:github_account, :google_plus_account, :avatar, :cesium_associate_number
 		].each do |p|
 			devise_parameter_sanitizer.for(:account_update) << p
 		end

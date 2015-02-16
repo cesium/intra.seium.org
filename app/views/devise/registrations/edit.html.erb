@@ -13,6 +13,7 @@
               <%= f.file_field :avatar %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -22,6 +23,7 @@
               <%= f.text_area :biography, id: 'bio-field' %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -31,6 +33,19 @@
               <%= f.date_field :birthday %>
             </div>
           </div>
+					<br />
+
+					<% if @user.is_cesium_associate && @user.cesium_associate_number.blank? %>
+          <div class="field row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
+              <%= f.label :cesium_associate_number %>
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7">
+              <%= f.text_field :cesium_associate_number %>
+            </div>
+          </div>
+					<br />
+				<% end %>
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -40,6 +55,7 @@
               <%= f.text_field :facebook_account %>
             </div>
 	        </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -49,6 +65,7 @@
               <%= f.text_field :twitter_account %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -58,6 +75,7 @@
               <%= f.text_field :github_account %>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -67,6 +85,7 @@
               <%= f.text_field :google_plus_account %>
             </div>
           </div>
+					<br />
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
              <div class="account-confirmation">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -83,6 +102,7 @@
               </div>
             </div>
           </div>
+					<br />
 
           <div class="field row">
             <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -92,6 +112,7 @@
               <%= f.password_field :password_confirmation, autocomplete: "off" %>
             </div>
           </div>
+					<br />
 
              <div class="field row">
                <div class="col-md-offset-2 col-sm-offset-2 col-md-3 col-sm-3 col-xs-5">
@@ -104,6 +125,7 @@
                  </div>
                </div>
              </div>
+					<br />
 
              <div class="row">
                <div class="actions">
