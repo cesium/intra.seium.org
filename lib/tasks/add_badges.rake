@@ -1,10 +1,9 @@
 namespace :sei do
 	desc "Add Badges"
 
-	task :add_badges, [:path]  => :environment  do |t, args|
-		raise ArgumentError.new if args.path.blank?
+	task :add_badges, [:path]  => :environment  do |t|
 
-		require "./#{args.path}"
+		require "./db/seeds_files/new_badges.rb"
 
 		RakeBadgeCreation.badges.each do |badge|
 
