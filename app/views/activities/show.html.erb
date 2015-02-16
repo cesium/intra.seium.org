@@ -61,6 +61,7 @@
 	</div>
 </div>
 
+<% if !@activity.description.blank? %>
 <div class="container">
 	<div class="col-md-12 text-center">
 		<div class="col-md-6 col-md-offset-3">
@@ -71,6 +72,9 @@
 		</div>
 	</div>
 </div>
+<% end %>
+
+<br />
 
 <% if @activity.users.size > 0 %>
 	<div class="container">

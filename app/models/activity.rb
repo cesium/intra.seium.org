@@ -54,6 +54,8 @@ class Activity < ActiveRecord::Base
 			"Apresentação"
 		when ActivityType::DISCUSSION
 			"Debate"
+		when ActivityType::MEET
+			"Meet"
 		else
 			""
 		end

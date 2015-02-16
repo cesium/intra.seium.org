@@ -9,5 +9,6 @@ module ActivityType
 	SPORT = 8
 	PRESENTATION = 9
 	DISCUSSION = 10
+	MEET = 11
 	OTHER = 0
 end

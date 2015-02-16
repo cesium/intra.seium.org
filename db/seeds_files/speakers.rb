@@ -166,6 +166,17 @@ module Seed
 				company: find_company(companies, 'Storyo'),
 				editions: [editions[0]]
 			},
+			{
+				name: "Rui Marinho",
+				role: 'Developer',
+				biography: 'Rui Marinho co-fundou a Seegno em 2008 e desde então participou em múltiplos projectos com as mais variadas tecnologias. No final de 2013 junta-se à equipa fundadora de Bitreserve, na qual é actualmente um dos responsáveis pelo desenvolvimento de serviços de backend. Interessado em performance, escalabilidade e segurança, é também um ávido contribuidor open-source, tanto como autor como colaborador em diversos projectos.',
+				photo_url: "img/speakers/rmarinho.jpg",
+				web_site: nil,
+				twitter_account: 'https://twitter.com/ruipmarinho',
+				github_account: 'http://localhost:3000/github.com/ruimarinho',
+				company: find_company(companies, 'bitreserve'),
+				editions: [editions[0]]
+			}
 		])
 	end
 
