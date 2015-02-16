@@ -1,0 +1,69 @@
+#challenges {
+    background-attachment: scroll;
+    background-image: url(../img/background_1.png);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#challenges a:hover,
+#challenges a:focus,
+#challenges .modal-body a:hover,
+#challenges .modal-body a:focus {
+    color: #fec503;
+}
+
+#challenges .modal-body a {
+  color: #0098ff;
+}
+
+.challenges-title {
+    float: left;
+}
+
+.challenges-container {
+  margin-bottom: 5px;
+  background: #0098ff;
+  max-height: 500px;
+}
+
+.challenges-container img {
+  max-width: 125px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.challenges-container p::before {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.challenge-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.challenge-description {
+  margin-top: -10px;
+}
+
+.challenge-sponsor::before {
+  content: 'Patrocinador: ';
+}
+
+.challenge-prize::before {
+  content: 'Prémio: ';
+}
+
+.challenges-container .modal-title {
+  color: #0098ff;
+}
+
+.challenges-container .modal-body, .modal-body a{
+  color: #333;
+}

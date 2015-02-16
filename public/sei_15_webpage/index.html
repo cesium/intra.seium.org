@@ -26,6 +26,7 @@
     <link href="/sei_15_webpage/css/map.css" rel="stylesheet">
     <link href="/sei_15_webpage/css/ribbon.css" rel="stylesheet">
     <link href="/sei_15_webpage/css/footer.css" rel="stylesheet">
+    <link href="/sei_15_webpage/css/challenges.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="/sei_15_webpage/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -83,6 +84,9 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#events">Eventos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#challenges">Desafios</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#speakers">Oradores</a>
@@ -758,6 +762,137 @@
                     <span class="event-day-week">{{ slide.weekday }}</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges">
+        <div class="container">
+            <div class="col-md-12 title-container">
+                <div class="challenges-title">Desafios</div>
+            </div>
+            <!-- MVP --> 
+            <div class="col-md-3">
+                <div class="col-md-12 challenges-container">
+                  <img src="/sei_15_webpage/img/challenges/smartphone.png">
+                  <p class="challenge-title">Build Your MVP</p>
+                  <p class="challenge-description">Um grupo de amigos. Uma semana. Um MVP.</p>
+                  <p class="challenge-sponsor"><a href="http://www.investbraga.com/startup/" target="_blank">Startup Braga</a> & <a href="http://www.microsoft.com/" target="_blank">Microsoft</a></p>
+                  <p class="challenge-prize">Tablet Dell Venue 8 Pro e 6 meses de incubação na Startup Braga</p>
+                  <button class="btn btn-info btn-sei" data-toggle="modal" data-target="#mvp-modal">Ver desafio</button>
+                    <div class="modal fade" id="mvp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Build Your MVP</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>A <a href="http://www.investbraga.com/startup/" target="_blank">Startup Braga</a>, em parceria com a <a href="http://www.microsoft.com/" target="_blank">Microsoft</a>, vão estar presentes na Semana da Engenharia Informática na Universidade do Minho!</p>
+                            <p>No Sábado, dia 21, durante a Hackathon, contaremos com as presenças de Daniel Loureiro da Pepfeed e João Ribeiro da Peekmed, que passarão na primeira pessoa a experiência de lançarem uma startup estando integrados na comunidade da Startup Braga.</p>
+                            <p>Será também atribuído um prémio para o melhor MVP (Minimum Viable Product) construído durante a semana da Informática e apresentado no final do Hackhathon, sendo o prémio 1 tablet Dell Venue 8 Pro e 6 meses de incubação na Startup Braga.</p>
+                            <p>E afinal o que é um MVP? Deixamo-vos aqui dois exemplos, uma <a href="http://bit.ly/sbarcode" target="_blank">abordagem mais radical</a> e outra sobre o <a href="http://bit.ly/sbseicust" target="_blank">foco no cliente</a>.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+           <!-- Bitreserve -->
+            <div class="col-md-3">
+                <div class="col-md-12 challenges-container">
+                  <img src="/sei_15_webpage/img/challenges/bitcoin.png">
+                  <p class="challenge-title">Bitreserve Challenge</p> 
+                  <!-- To push down for design --> <br>
+                  <p class="challenge-description">Bitcoin, API, <em>Mobile</em> e <em> Web</em>. Tens duas opções, podes começar!</p>
+                  <p class="challenge-sponsor"><a href="https://bitreserve.org/" target="_blank">Bitreserve</a> </p>
+                  <p class="challenge-prize">Por anunciar</p>
+                  <button class="btn btn-info btn-sei" data-toggle="modal" data-target="#bitreserve-modal">Ver desafio</button>
+                    <div class="modal fade" id="bitreserve-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Bitreserve Challenge</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p> 
+                                Bitreserve’s real-time transparency system eliminates the opportunities for fraud and destructive risk-taking that have caused the collapse of banks and other financial institutions throughout history.
+                            </p>
+                            <p><b> Reservechain </b> <br>
+                                The Reservechain enables anyone to trace a transaction all the way back to the point where it entered the network. <br>
+                                There are ample examples of visualizers for the Bitcoin blockchain, from the typical navigator at <a href="http://blockchain.info/" target="_blank">blockchain.info</a> to the artsy <a href="http://bitlisten.com/" target="_blank">bitlisten.com</a>, and Bitreserve's <a href="https://bitreserve.org/reserve/transactions/fff3c274-588e-4cc6-bd78-501300a5c922" target="_blank">transaction viewer</a>.
+                            </p>
+                            <p> <b> Reserveledger </b> <br>
+                                The Reserveledger is a real-time publication of every change in our obligations to our members and every change in assets held in our reserve. <br>
+                                The ledger provides information regarding obligations vs assets, on multiple currencies. We're looking to build a visualizer that will allow people to explore how the values in assets and obligations varied throughout time.
+                            </p>
+                            <p> For information about the API, please visit <a href="https://developer.bitreserve.org/api/vo/#transparency" target="_blank">the developer website</a>. Acceptable solutions should be mobile or web based. There will be prizes to the best ones.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+           <!-- VILT -->
+            <div class="col-md-3">
+                <div class="col-md-12 challenges-container">
+                  <img src="/sei_15_webpage/img/challenges/vilt.png">
+                  <p class="challenge-title">VILT Challenge</p> 
+                  <!-- To push down for design --> <br>
+                  <p class="challenge-description">Bots, Minium, Open Source. Este desafio decorre durante a Hackathon, aproveita!</p>
+                  <p class="challenge-sponsor"><a href="http://www.vilt-group.com/pt" target="_blank">VILT</a> </p>
+                  <p class="challenge-prize">Por anunciar</p>
+                </div>
+            </div>
+            <!-- Eurotux -->
+            <div class="col-md-3">
+                <div class="col-md-12 challenges-container">
+                  <img src="/sei_15_webpage/img/challenges/security.png">
+                  <p class="challenge-title">Desafio de Segurança</p> 
+                  <!-- To push down for design --> <br>
+                  <p class="challenge-description">Testa as tuas capacidades de hacker, obtém os ficheiros!</p>
+                  <p class="challenge-sponsor"><a href="http://eurotux.com/?set_language=pt" target="_blank">Eurotux</a> </p>
+                  <p class="challenge-prize">Cheques Fnac</p>
+                    <button class="btn btn-info btn-sei" data-toggle="modal" data-target="#seguranca-modal">Ver desafio</button>
+                    <div class="modal fade" id="seguranca-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Desafio de Segurança</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p> 
+                                Se tens gosto por segurança e te julgas um verdadeiro hacker, tenta aceder ao servidor com ao IP que te fui enviado para o e-mail, sozinho ou com outro amigo, e descobre os três elementos que lá foram depositados. O primeiro elemento será um ficheiro em texto claro contendo um código. Assim que encontres este código deves enviar um email para securitychallenge@cesium.di.uminho.pt com o código encontrado. O segundo elemento escondido, encontra-se cifrado devendo ser tornado em texto limpo para descobrires o seu conteúdo. Assim que consigas fazer esta conversão, deverás mais uma vez enviar um email com o conteúdo encontrado para o e-mail. Fica aqui uma dica para acederes ao segundo elemento: "f962bed5616612c8c7053f6e97e72b12". Existe ainda um terceiro elemento/ficheiro de bónus, procura que vale bem a pena. Caso encontres este bónus, deves enviar outro e-mail com o conteúdo presente neste ficheiro de bónus. Tenta ser o mais rápido porque só tens 4 dias dias para encontrares estes elementos, desde o dia 17 ao dia 20 de Fevereiro.
+                            </p>
+                            <p><b> Pontuação </b> <br>
+                                O primeiro elemento vale 100 pontos e o segundo elemento vale 200 pontos. Por cada dia passado, cada um destes elementos vale menos 25 pontos. O elemento de bónus é o que vale mais, totalizando 300 pontos, contudo, por cada dia passado o seu valor decresce em 50 pontos. Em caso de empate ganha a equipa que mais rápida.
+                            </p>
+                            <p> <b>Prémios</b> <br>
+                                1º prémio: Vale de 100€ na Fnac para a equipa com mais pontos.<br> 
+                                2º prémio: Vale de 50€ na Fnac para a segunda equipa com mais pontos. <br>
+                                Há ainda um prémio surpresa para a primeira equipa que consiga encontrar o terceiro ficheiro escondido. <br>
+                            </p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
 

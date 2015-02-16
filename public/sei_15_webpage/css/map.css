@@ -9,6 +9,11 @@
   padding: 25px;
 }
 
+#about-map a:hover,
+#about-map a:focus {
+    color: #fec503;
+}
+
 #icon-map{
     margin-bottom: 25px;
     width: 100%;

@@ -14,8 +14,15 @@
     font-family: "Helvetica Neue", "Open Sans", Helvetica,Arial,sans-serif;
 }
 
+
+#events a:hover,
+#events a:focus {
+    color: #fec503;
+}
+
 .external-link {
     font-weight: bold;
+
 }
 
 .events-title {
