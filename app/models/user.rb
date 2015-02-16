@@ -90,7 +90,7 @@ class User < ActiveRecord::Base
 	def update_account_badges
 		user_badges = badges
 		Badge.where(badge_type: BadgeType::USER_ACCOUNT).each do |badge|
-			BadgeHandler.send(badge.codename.to_sym, self, badge) unless user_badges.include? badge
+			BadgeHandler.send(badge.codename.to_sym, self, badge) if BadgeHandler.method_defined?(badge.codename.to_sym) && !(user_badges.include? badge)
 		end
 	end
 end
