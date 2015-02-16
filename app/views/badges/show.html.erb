@@ -1,17 +1,13 @@
-<div id="notice">
-	<%= notice %>
-</div>
-
 <div id="badge" class="form-container">
 	<div id="badge-name">
 		<h1><%= @badge.name %></h1>
-	</div>	
+	</div>
 	<div id="badge-description">
 		<h4><%= @badge.description %></h4>
-	</div>	
+	</div>
 	<div id="badge-category">
 		Categoria: <%= @badge.category %>
-	</div>	
+	</div>
 	<div id="badge-logo">
 		<img src="<%= @badge.logo_url %>" alt="<%= @badge.name %>" id="badge-logo-img">
 	</div>
@@ -32,7 +28,7 @@
 								<a href="<%= edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>">
 									<%= participant.full_name %>
 								</a>
-								
+
 							</div>
 						</div>
 					</li>
