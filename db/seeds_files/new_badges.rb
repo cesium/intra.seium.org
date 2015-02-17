@@ -86,42 +86,42 @@ module RakeBadgeCreation
 				edition_id: 2015
 			},
 			{
-				name: "Faço tudo por um badge!"
+				name: "Faço tudo por um badge!",
 				codename: "idonteven",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/idonteven.png',
 				edition_id: 2015
 			},
 			{
-				name: "Rei dos Coffee Breaks"
+				name: "Rei dos Coffee Breaks",
 				codename: "uhomnon",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/uhomnon.png',
 				edition_id: 2015
 			},
 			{
-				name: "Deixou-nos orgulhosos"
+				name: "Deixou-nos orgulhosos",
 				codename: "awesome",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/awesome.png',
 				edition_id: 2015
 			},
 			{
-				name: "Entregue a quem fizer uma declaração pública de amor à SEI"
+				name: "Entregue a quem fizer uma declaração pública de amor à SEI",
 				codename: "lover",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/lover.png',
 				edition_id: 2015
 			},
 			{
-				name: "Amigo da Microsoft"
+				name: "Amigo da Microsoft",
 				codename: "microsoft",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/microsoft.png',
 				edition_id: 2015
 			},
 			{
-				name: "Ninguém sabe ao certo como se ganha este badge. Há quem diga que não existe."
+				name: "Ninguém sabe ao certo como se ganha este badge. Há quem diga que não existe.",
 				codename: "wat",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/wat.png',
