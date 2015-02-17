@@ -126,6 +126,55 @@ module RakeBadgeCreation
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/sei/wat.png',
 				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de API Driven Development",
+				codename: "palestra_api",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_api.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Reunião Geral de Alunos",
+				codename: "rga_participation",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/rga_participation.png',
+				edition_id: 2015
+			},
+			{
+				name: "Colocou questões na Reunião Geral de Alunos",
+				codename: "rga_question",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/rga_question.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Corrida Social",
+				codename: "run_participation",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/run_participation.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor da Corrida Social",
+				codename: "run_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/run_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no dia 17",
+				codename: "attendee_17",
+				badge_type: BadgeType::USER_ACCOUNT,
+				logo_url: '/images/badges/attendee_17.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no dia 18",
+				codename: "attendee_18",
+				badge_type: BadgeType::USER_ACCOUNT,
+				logo_url: '/images/badges/attendee_18.png',
+				edition_id: 2015
 			}
 		]
 	end
