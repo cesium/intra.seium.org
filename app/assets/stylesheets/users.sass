@@ -5,16 +5,22 @@ $detective: "(max-width: 380px)"
 .user-logo
   width: 200px
   height: 200px
-  margin: 15px auto 50px
+  margin: 0px auto 40px
   border-radius: 50%
   border: 5px solid white
   background-color: #444
   background-size: cover
   background-position: center
 
+.user-name
+  font-family: "Open Sans Condensed"
+  text-align: center
+  text-transform: uppercase
+  min-height: 50px
+  max-height: 2em
+
 @media #{$tablet}
   .user-logo
-    margin: 0px auto 20px
     width: 150px
     height: 150px
 
@@ -27,13 +33,6 @@ $detective: "(max-width: 380px)"
   .user-logo
     width: 60px
     height: 60px
-
-.user-name
-  font-family: "Open Sans Condensed"
-  text-align: center
-  text-transform: capitalize
-  min-height: 50px
-  max-height: 2em
 
 
 #user-new-login,
