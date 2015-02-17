@@ -3,10 +3,10 @@
 	<br />
     <% @participants.each do |participant| %>
         <div class="col-md-3 col-sm-4 col-xs-4">
-            <div class="badge-name">
+            <div class="user-name">
                 <h5><%= link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %></h5>
             </div>
-            <div class="badge-logo">
+            <div class="user-logo">
                 <%= link_to (image_tag (participant.avatar.url)), edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>
             </div>
         </div>

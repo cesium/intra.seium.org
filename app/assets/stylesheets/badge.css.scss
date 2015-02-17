@@ -2,16 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.badge-name {
-    font-family: "Open Sans Condensed";
-    text-align: center;
-    min-height: 30px;
-    text-transform: uppercase;
-}
-
 .badge-logo img{
-    width: 100px;
-    height: 100px;
+    width: 80%;
     display: block;
     margin: 15px auto 50px auto;
 }
@@ -37,10 +29,7 @@
 #badge-users-list{
   list-style-type: none;
   padding-left: 0;
-
 }
-
-
 
 .badge-user-photo-img{
   height: 100px;
