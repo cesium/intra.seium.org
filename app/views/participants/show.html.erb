@@ -119,9 +119,11 @@
 		<% else %>
 		<div class="col-md-6 col-md-offset-3">
 			<% @participant.badges.each do |badge| %>
-			<div class="col-md-2 col-sm-2 col-xs-4">
-				<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>
-				<div><%= link_to badge.name, edition_badge_path(@edition, badge) %></div>
+			<div class="col-md-3 col-xs-4">
+				<div><%= link_to edition_badge_path(@edition, badge) do %>
+					<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>
+				<% end %>
+				</div>
 			</div>
 			<% end %>
 		</div>
