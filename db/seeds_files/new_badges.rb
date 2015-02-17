@@ -16,13 +16,6 @@ module RakeBadgeCreation
 				edition_id: 2015
 			},
 			{
-				name: "Amigo da Microsoft",
-				codename: "microsoft_buddy",
-				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/microsoft_buddy.png',
-				edition_id: 2015
-			},
-			{
 				name: "Participação na Palestra de Unity 3D",
 				codename: "palestra_unity3d",
 				badge_type: BadgeType::CODE_NEEDED,
@@ -49,7 +42,7 @@ module RakeBadgeCreation
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/palestra_meteor.png',
 				edition_id: 2015
-			},
+			}
 		]
 	end
 end
