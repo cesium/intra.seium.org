@@ -1,14 +1,32 @@
-.user-logo img
-  width: 80%
-  display: block
+$tablet: "(max-width: 1023px)"
+$smartphone: "(max-width: 767px)"
+$detective: "(max-width: 380px)"
+
+.user-logo
+  width: 200px
+  height: 200px
   margin: 15px auto 50px
   border-radius: 50%
   border: 5px solid white
-  background-color: #333
+  background-color: #444
+  background-size: cover
+  background-position: center
 
-@media(max-width: 768px)
-  .user-logo img
+@media #{$tablet}
+  .user-logo
     margin: 0px auto 20px
+    width: 150px
+    height: 150px
+
+@media #{$smartphone}
+  .user-logo
+    width: 100px
+    height: 100px
+
+@media #{$detective}
+  .user-logo
+    width: 60px
+    height: 60px
 
 .user-name
   font-family: "Open Sans Condensed"
