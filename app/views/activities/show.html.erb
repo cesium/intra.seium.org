@@ -32,14 +32,16 @@
 	</div>
 </div>
 
-<div>
+<div class="container">
 	<% if @activity.end_date > DateTime.now %>
-		<div>
-			<% if !@participant.registered_at? @activity %>
-				<%= link_to 'Inscrever na Atividade', register_edition_activity_path(@edition, @activity), class: "btn btn-submit", method: :post %>
-			<% else %>
-				<%= link_to 'Anular Inscrição na Atividade', deregister_edition_activity_path(@edition, @activity), method: :delete, class: "btn btn-danger" %>
-			<% end %>
+		<div class="col-xs-12">
+			<div class="text-center">
+				<% if !@participant.registered_at? @activity %>
+					<%= link_to 'Inscrever na Atividade', register_edition_activity_path(@edition, @activity), class: "btn btn-submit", method: :post %>
+				<% else %>
+					<%= link_to 'Anular Inscrição na Atividade', deregister_edition_activity_path(@edition, @activity), method: :delete, class: "btn btn-danger" %>
+				<% end %>
+			</div>
 		</div>
 	<% end %>
 </div>

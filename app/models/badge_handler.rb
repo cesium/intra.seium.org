@@ -30,4 +30,33 @@ module BadgeHandler
 			puts e
 		end
 	end
+
+	def self.attendee_14(user, badge)
+		begin
+			user_badges = user.badges
+			BadgeAcquisition.acquire_badge(user, badge) if (BadgeHandler.user_has_badge?(user_badges, 'coderdojo_volunteer') || BadgeHandler.user_has_badge?(user_badges, 'coderdojo_Attendee') || BadgeHandler.user_has_badge?(user_badges, 'improve_volunteer') || BadgeHandler.user_has_badge?(user_badges, 'improve_attendee'))
+		rescue BadgeAcquisition::AcquisitionError => e
+			puts e
+		end
+	end
+
+	def self.attendee_16(user, badge)
+		begin
+			user_badges = user.badges
+			BadgeAcquisition.acquire_badge(user, badge) if (BadgeHandler.user_has_badge?(user_badges, 'androidl_workshop') || BadgeHandler.user_has_badge?(user_badges, 'sessao_abertura') || BadgeHandler.user_has_badge?(user_badges, 'moedavirtual_bitreserve') || BadgeHandler.user_has_badge?(user_badges, 'helderPinto_VideoJogos'))
+		rescue BadgeAcquisition::AcquisitionError => e
+			puts e
+		end
+	end
+
+	private
+
+	def self.user_has_badge?(user_badges, codename)
+		badge = Badge.find_by_codename(codename)
+		if badge
+			user_badges.include? badge
+		else
+			false
+		end
+	end
 end
