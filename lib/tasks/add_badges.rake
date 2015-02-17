@@ -21,7 +21,7 @@ namespace :sei do
 						puts "[ERROR] Invalid Badge type: #{badge[:badge_type]}"
 					end
 				else
-					puts "[ERROR] Already exists a badge with codename: #{badge[:codename]}"
+					puts "[Warning] Already exists a badge with codename: #{badge[:codename]}. Skipping create.."
 				end
 			else
 					puts "[ERROR] Missings fields for badge: #{badge[:codename]}"
