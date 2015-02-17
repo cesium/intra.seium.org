@@ -121,7 +121,7 @@
 			<% @participant.badges.each do |badge| %>
 			<div class="col-md-3 col-xs-4">
 				<div><%= link_to edition_badge_path(@edition, badge) do %>
-					<div><%= image_tag(badge.logo_url, alt: badge.description, size: "64") %></div>
+					<div class="user-badge"><%= image_tag(badge.logo_url, alt: badge.description, size: "128") %></div>
 				<% end %>
 				</div>
 			</div>
