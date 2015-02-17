@@ -13,42 +13,42 @@ module RakeBadgeCreation
 				codename: "keepsolutions_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/keepsolutions_buddy.png',
-				edition: 2015
+				edition_id: 2015
 			},
 			{
 				name: "Amigo da Microsoft",
 				codename: "microsoft_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/microsoft_buddy.png',
-				edition: 2015
+				edition_id: 2015
 			},
 			{
 				name: "Participação na Palestra de Unity 3D",
 				codename: "palestra_unity3d",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/palestra_unity3d.png',
-				edition: 2015
+				edition_id: 2015
 			},
 			{
 				name: "Participação na Palestra de Product Development & Agile",
 				codename: "palestra_pd_agile",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/palestra_pd_agile.png',
-				edition: 2015
+				edition_id: 2015
 			},
 			{
 				name: "Participação na Palestra de Xamarin",
 				codename: "palestra_xamarin",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/palestra_xamarin.png',
-				edition: 2015
+				edition_id: 2015
 			},
 			{
 				name: "Participação na Palestra de Meteor",
 				codename: "palestra_meteor",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/palestra_meteor.png',
-				edition: 2015
+				edition_id: 2015
 			},
 		]
 	end
