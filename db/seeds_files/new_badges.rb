@@ -44,13 +44,6 @@ module RakeBadgeCreation
 				edition_id: 2015
 			},
 			{
-				name: "Participação na Palestra de Meteor",
-				codename: "palestra_meteor",
-				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/palestra_meteor.png',
-				edition_id: 2015
-			},
-			{
 				name: "Encontra o badge que está num membro da organização",
 				codename: "hide_n_seek",
 				badge_type: BadgeType::CODE_NEEDED,
