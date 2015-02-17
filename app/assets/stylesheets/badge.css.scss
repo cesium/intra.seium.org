@@ -5,6 +5,7 @@
 .badge-name {
     font-family: "Open Sans Condensed";
     text-align: center;
+    min-height: 30px;
     text-transform: uppercase;
 }
 
@@ -12,7 +13,7 @@
     width: 100px;
     height: 100px;
     display: block;
-    margin: 15px auto 20px auto;
+    margin: 15px auto 50px auto;
 }
 
 #badge-logo {
@@ -30,6 +31,7 @@
 
 #badge-name{
   text-transform: capitalize;
+  min-height: 50px;
 }
 
 #badge-users-list{
