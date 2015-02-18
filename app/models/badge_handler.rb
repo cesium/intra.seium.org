@@ -58,6 +58,15 @@ module BadgeHandler
 		end
 	end
 
+	def self.attendee_18(user, badge)
+		begin
+			user_badges = user.badges
+			BadgeAcquisition.acquire_badge(user, badge) if (BadgeHandler.user_has_badge?(user_badges, 'palestra_api') || BadgeHandler.user_has_badge?(user_badges, 'rga_participation') || BadgeHandler.user_has_badge?(user_badges, 'rga_question') || BadgeHandler.user_has_badge?(user_badges, 'run_participation') || BadgeHandler.user_has_badge?(user_badges, 'run_winner'))
+		rescue BadgeAcquisition::AcquisitionError => e
+			puts e
+		end
+	end
+
 	private
 
 	def self.user_has_badge?(user_badges, codename)
