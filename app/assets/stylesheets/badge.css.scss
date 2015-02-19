@@ -25,7 +25,9 @@
   text-transform: capitalize;
   min-height: 50px;
 }
-
+#badge-users {
+  margin-top: 50px;
+}
 #badge-users-list{
   list-style-type: none;
   padding-left: 0;
@@ -89,6 +91,9 @@ div.user-logo.badge-user-logo {
   }
 }
 
+#share-button {
+  margin: 20px auto;
+}
 
 @media(max-width: 507px) {
     .badge-user{
