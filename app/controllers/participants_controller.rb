@@ -13,6 +13,16 @@ class ParticipantsController < ApplicationController
 		respond_with(@participant)
 	end
 
+	def hall_of_fame
+		@participants = User.participants_with_badges
+	end
+
+	def organizer_of_fame
+		@participants = User.organizers_with_badges
+		render :hall_of_fame
+	end
+
+
 	private
 
 	# Check if there are any social accounts
@@ -21,13 +31,6 @@ class ParticipantsController < ApplicationController
 		( @participant.twitter_account != nil && @participant.twitter_account != "" ) ||
 		( @participant.github_account != nil && @participant.github_account != "" ) ||
 		( @participant.google_plus_account != nil && @participant.google_plus_account != "" )
-	end
-
-
-	def hall_of_fame
-		@participants = User.select('badges.*, count(badges.id) as badges_count')
-											.join(:badges).group('badges.id')
-											.having('badges_count > 0').order('badges_count DESC')
 	end
 
 	def set_participant

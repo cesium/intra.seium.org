@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 	resources :editions, only: [:show] do
 
 		resources :participants, only: [:index, :show], param: :username
-		match :hall_of_fame, to: 'participants#hall_of_fame', via: :get
+		get 'hall_of_fame' => 'participants#hall_of_fame'
+		get 'organizer_of_fame' => 'participants#organizer_of_fame'
 
 		resources :activities, only: [:index, :show] do
 			post :register, on: :member

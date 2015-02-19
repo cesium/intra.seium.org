@@ -1,16 +1,22 @@
 <div class="col-md-12 text-center">
+  <h1><%= params[:action] == "hall_of_fame" ? "Hall Of Fame" : "Organizer Of Fame" %></h1>
   <br />
   <br />
     <% @participants.each do |participant| %>
         <div class="row">
           <div class="col-xs-3">
-            <%= link_to (image_tag (participant.avatar.url)), edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>
+            <%= link_to edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) do %>
+                <div class="user-logo badge-user-logo" style="background-image:url(<%= participant.avatar.url %>)">
+                </div>
+            <% end %>
           </div>
-          <div class="col-xs-6">
-            <p><%= link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %></p>
+          <div class="col-xs-6 badge-fame-participant">
+            <div><%= link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %></div>
           </div>
-          <div class="col-xs-3">
-            <p><%= participant.badges.count %></p>
+          <div class="col-xs-3 badge-fame-participant">
+            <div class="participant-badge-count">
+              <%= link_to participant.badge_count, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>
+            </div>
           </div>
         </div>
     <% end %>

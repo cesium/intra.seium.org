@@ -59,6 +59,36 @@
   max-width: 240px;
 }
 
+a.badge-of-fame {
+  font-size: 16px;
+  padding: 10px;
+}
+
+div.user-logo.badge-user-logo {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.badge-fame-participant {
+  font-size: 20px;
+
+  div {
+    height: 100px;
+    display: table;
+    width: 100%;
+  }
+
+  a {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 50%;
+  }
+  .participant-badge-count {
+    font-size: 30px;
+  }
+}
+
 
 @media(max-width: 507px) {
     .badge-user{
