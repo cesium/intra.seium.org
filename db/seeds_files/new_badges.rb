@@ -175,6 +175,62 @@ module RakeBadgeCreation
 				badge_type: BadgeType::USER_ACCOUNT,
 				logo_url: '/images/badges/attendee_18.png',
 				edition_id: 2015
+			},
+			{
+				name: "Participação no dia 19",
+				codename: "attendee_19",
+				badge_type: BadgeType::USER_ACCOUNT,
+				logo_url: '/images/badges/attendee_19.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de Behaviour Driven Development",
+				codename: "palestra_bdd",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_bdd.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Modelação 3D",
+				codename: "workshop_modelacao3d",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_modelacao3d.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Impressão 3D",
+				codename: "workshop_impressao3d",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_impressao3d.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Swift",
+				codename: "workshop_swift",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_swift.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de DevOps",
+				codename: "palestra_devops",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_devops.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Quiz Show",
+				codename: "quiz_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/quiz_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor do Quiz Show",
+				codename: "quiz_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/quiz_winner.png',
+				edition_id: 2015
 			}
 		]
 	end
