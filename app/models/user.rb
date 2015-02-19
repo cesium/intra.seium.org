@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :activities
 	has_and_belongs_to_many :editions
 
+  has_many :badge_acquisitions
+  has_many :badges, through: :badge_acquisitions
+
 	after_save :update_account_badges
 
 	UserNotFoundError = Class.new(StandardError)
@@ -57,9 +60,9 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def badges
-		BadgeAcquisition.where(user_id: id).map { |bc| bc.badge }
-	end
+	# def badges
+	# 	BadgeAcquisition.where(user_id: id).map { |bc| bc.badge }
+	# end
 
 	def full_name
 		"#{first_name} #{last_name}"
@@ -96,4 +99,23 @@ class User < ActiveRecord::Base
 			BadgeHandler.send(badge.codename.to_sym, self, badge) if BadgeHandler.respond_to?(badge.codename.to_sym) && !(user_badges.include?(badge))
 		end
 	end
+
+  def self.participants_with_badges
+    User.with_badges(false)
+  end
+
+  def self.organizers_with_badges
+    User.with_badges(true)
+  end
+
+  private
+
+  def self.with_badges(is_organizer)
+    User.select('users.*, count(badges.id) as badge_count')
+        .joins(:badges)
+        .group(:user_id)
+        .having('badge_count' > '0')
+        .order('badge_count DESC')
+        .where(is_organizer: is_organizer)
+  end
 end

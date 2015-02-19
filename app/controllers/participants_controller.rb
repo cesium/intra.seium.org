@@ -13,6 +13,16 @@ class ParticipantsController < ApplicationController
 		respond_with(@participant)
 	end
 
+	def hall_of_fame
+		@participants = User.participants_with_badges
+	end
+
+	def organizer_of_fame
+		@participants = User.organizers_with_badges
+		render :hall_of_fame
+	end
+
+
 	private
 
 	# Check if there are any social accounts
