@@ -15,3 +15,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require turbolinks
+//= require share.min
+//= require share-button
