@@ -231,6 +231,216 @@ module RakeBadgeCreation
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/quiz_winner.png',
 				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de HTML5 e CSS3",
+				codename: "workshop_htmlcss",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_htmlcss.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Arduino",
+				codename: "workshop_arduino",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_arduino.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Python + web2py",
+				codename: "workshop_python_web2py",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_python_web2py.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Workshop de Drones",
+				codename: "workshop_drones",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/workshop_drones.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de User Experience",
+				codename: "palestra_user_experience",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_user_experience.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de Rust",
+				codename: "palestra_rust",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_rust.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na Palestra de Startup Experience",
+				codename: "palestra_startup_experience",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/palestra_startup_experience.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor do desafio de colecionar badges",
+				codename: "badges_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/badges_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Melhor publicação Twitter #seiuminho",
+				codename: "best_twitter",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/best_twitter.png',
+				edition_id: 2015
+			},
+			{
+				name: "Melhor publicação Facebook #seiuminho",
+				codename: "best_facebook",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/best_facebook.png',
+				edition_id: 2015
+			},
+			{
+				name: "Melhor foto publicada nas redes sociais #seiuminho",
+				codename: "best_photo",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/best_photo.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor do desafio Build Your MVP",
+				codename: "challenge_build_mvp_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_build_mvp_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participante no desafio Build Your MVP",
+				codename: "challenge_build_mvp_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_build_mvp_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor da Bitreserve Challenge",
+				codename: "challenge_bitreserve_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_bitreserve_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participante na Bitreserve Challenge",
+				codename: "challenge_bitreserve_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_bitreserve_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor da VILT Challenge",
+				codename: "challenge_vilt_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_vilt_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participante na VILT Challenge",
+				codename: "challenge_vilt_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_vilt_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Completou o 1º desafio de segurança",
+				codename: "challenge_security_1",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_security_1.png',
+				edition_id: 2015
+			},
+			{
+				name: "Completou o 2º desafio de segurança",
+				codename: "challenge_security_2",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_security_2.png',
+				edition_id: 2015
+			},
+			{
+				name: "Completou o 3º desafio de segurança",
+				codename: "challenge_security_3",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_security_3.png',
+				edition_id: 2015
+			},
+			{
+				name: "Completou os 3 desafios de segurança",
+				codename: "challenge_security_all",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_security_all.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor do desafio de segurança",
+				codename: "challenge_security_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_security_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor das Time Trial Talks",
+				codename: "challenge_ttt_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_ttt_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participante nas Time Trial Talks",
+				codename: "challenge_ttt_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_ttt_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Vencedor do Presentation Karaoke",
+				codename: "challenge_karaoke_winner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_karaoke_winner.png',
+				edition_id: 2015
+			},
+			{
+				name: "participante no presentation karaoke",
+				codename: "challenge_karaoke_attendee",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/challenge_karaoke_attendee.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no Jantar de Encerramento",
+				codename: "attendee_dinner",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/attendee_dinner.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação na hackathon",
+				codename: "attendee_hackathon",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/attendee_hackathon.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no dia 20",
+				codename: "attendee_20",
+				badge_type: BadgeType::USER_ACCOUNT,
+				logo_url: '/images/badges/attendee_20.png',
+				edition_id: 2015
+			},
+			{
+				name: "Participação no dia 21",
+				codename: "attendee_21",
+				badge_type: BadgeType::USER_ACCOUNT,
+				logo_url: '/images/badges/attendee_21.png',
+				edition_id: 2015
 			}
 		]
 	end
