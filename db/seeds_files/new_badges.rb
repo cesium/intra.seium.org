@@ -373,13 +373,6 @@ module RakeBadgeCreation
 				edition_id: 2015
 			},
 			{
-				name: "Completou os 3 desafios de segurança",
-				codename: "challenge_security_all",
-				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_security_all.png',
-				edition_id: 2015
-			},
-			{
 				name: "Vencedor do desafio de segurança",
 				codename: "challenge_security_winner",
 				badge_type: BadgeType::CODE_NEEDED,
