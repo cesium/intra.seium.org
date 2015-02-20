@@ -18,5 +18,4 @@ $("#share-button").hover(function(){
     }, function(){
     share.close();
 }); 
-
 });
