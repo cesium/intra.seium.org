@@ -7,16 +7,16 @@ namespace :sei do
 
 		RakeBadgeCreation.badges.each do |badge|
 
-			if !badge[:name].blank? && !badge[:codename].blank? && !badge[:badge_type].blank? && !badge[:logo_url].blank? && !badge[:edition_id].blank?
+			if !badge[:name].blank? && !badge[:codename].blank? && !badge[:badge_type].blank? && !badge[:edition_id].blank?
 				if !Badge.find_by_codename(badge[:codename])
 					if badge[:badge_type] == BadgeType::CODE_NEEDED
 						badge[:is_code_needed] = true
 						Badge.create(badge)
-						puts "[LOG] Created badge: #{badge[:codename]}"
+						puts "[LOG] Created badge: #{badge[:codename]} #{badge[:logo_url].blank? ? 'WITHOUT LOGO' : ''}"
 					elsif badge[:badge_type] == BadgeType::USER_ACCOUNT
 						badge[:is_code_needed] = false
 						Badge.create(badge)
-						puts "[LOG] Created badge: #{badge[:codename]}"
+						puts "[LOG] Created badge: #{badge[:codename]} #{badge[:logo_url].blank? ? 'WITHOUT LOGO' : ''}"
 					else
 						puts "[ERROR] Invalid Badge type: #{badge[:badge_type]}"
 					end

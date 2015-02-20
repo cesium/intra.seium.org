@@ -257,7 +257,7 @@ module RakeBadgeCreation
 				name: "Participação no Workshop de Drones",
 				codename: "workshop_drones",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/workshop_drones.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
@@ -278,14 +278,14 @@ module RakeBadgeCreation
 				name: "Participação na Palestra de Startup Experience",
 				codename: "palestra_startup_experience",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/palestra_startup_experience.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Vencedor do desafio de colecionar badges",
 				codename: "badges_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/badges_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
@@ -313,35 +313,35 @@ module RakeBadgeCreation
 				name: "Vencedor do desafio Build Your MVP",
 				codename: "challenge_build_mvp_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_build_mvp_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Participante no desafio Build Your MVP",
 				codename: "challenge_build_mvp_attendee",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_build_mvp_attendee.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Vencedor da Bitreserve Challenge",
 				codename: "challenge_bitreserve_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_bitreserve_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Participante na Bitreserve Challenge",
 				codename: "challenge_bitreserve_attendee",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_bitreserve_attendee.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Vencedor da VILT Challenge",
 				codename: "challenge_vilt_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_vilt_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
@@ -383,28 +383,28 @@ module RakeBadgeCreation
 				name: "Vencedor das Time Trial Talks",
 				codename: "challenge_ttt_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_ttt_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Participante nas Time Trial Talks",
 				codename: "challenge_ttt_attendee",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_ttt_attendee.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "Vencedor do Presentation Karaoke",
 				codename: "challenge_karaoke_winner",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_karaoke_winner.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
 				name: "participante no presentation karaoke",
 				codename: "challenge_karaoke_attendee",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/challenge_karaoke_attendee.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
@@ -418,7 +418,7 @@ module RakeBadgeCreation
 				name: "Participação na hackathon",
 				codename: "attendee_hackathon",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/attendee_hackathon.png',
+				logo_url: nil, 
 				edition_id: 2015
 			},
 			{
