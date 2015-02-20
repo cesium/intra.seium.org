@@ -441,6 +441,20 @@ module RakeBadgeCreation
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/startupbraga_buddy.png',
 				edition_id: 2015
+			},
+			{
+				name: "Amigo da VILT",
+				codename: "vilt_buddy",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/vilt_buddy.png',
+				edition_id: 2015
+			},
+			{
+				name: "Amigo da Eurotux",
+				codename: "eurotux_buddy",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/eurotux_buddy.png',
+				edition_id: 2015
 			}
 		]
 	end
