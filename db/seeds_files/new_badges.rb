@@ -434,6 +434,13 @@ module RakeBadgeCreation
 				badge_type: BadgeType::USER_ACCOUNT,
 				logo_url: '/images/badges/attendee_21.png',
 				edition_id: 2015
+			},
+			{
+				name: "Amigo da Startup Braga",
+				codename: "startupbraga_buddy",
+				badge_type: BadgeType::CODE_NEEDED,
+				logo_url: '/images/badges/startupbraga_buddy.png',
+				edition_id: 2015
 			}
 		]
 	end
