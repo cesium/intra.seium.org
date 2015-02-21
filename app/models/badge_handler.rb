@@ -76,6 +76,15 @@ module BadgeHandler
 		end
 	end
 
+	def self.attendee_20(user, badge)
+		begin
+			user_badges = user.badges
+			BadgeAcquisition.acquire_badge(user, badge) if (BadgeHandler.user_has_badge?(user_badges, 'workshop_htmlcss') || BadgeHandler.user_has_badge?(user_badges, 'palestra_user_experience') || BadgeHandler.user_has_badge?(user_badges, 'workshop_python_web2py') || BadgeHandler.user_has_badge?(user_badges, 'workshop_drones') || BadgeHandler.user_has_badge?(user_badges, 'workshop_arduino') || BadgeHandler.user_has_badge?(user_badges, 'attendee_dinner'))
+		rescue BadgeAcquisition::AcquisitionError => e
+			puts e
+		end
+	end
+
 	private
 
 	def self.user_has_badge?(user_badges, codename)
