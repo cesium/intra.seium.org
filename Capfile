@@ -4,6 +4,9 @@ require 'capistrano/setup'
 # Includes default deployment tasks
 require 'capistrano/deploy'
 
+# Include setup tasks (secrets.yml)
+require 'capistrano/secrets_yml'
+
 # Includes tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
