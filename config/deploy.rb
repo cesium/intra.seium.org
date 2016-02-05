@@ -4,7 +4,6 @@ set :repo_url, 'git@github.com:cesium/intra.seium.org.git'
 set :deploy_to, '/home/chalkos/intra.seium.org'
 
 set :linked_files, %w{config/database.yml}
-set :linked_files, %w{config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :deploy do
