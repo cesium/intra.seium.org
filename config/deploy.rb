@@ -26,7 +26,7 @@ namespace :deploy do
     end
   end
 
-  after :publishing, 'deploy:seed'
+  #after :publishing, 'deploy:seed'
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
