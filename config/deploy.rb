@@ -1,5 +1,5 @@
 set :application, 'intra.seium.org'
-set :repo_url, 'git@github.com:cesium/intra.seium.org.git'
+set :repo_url, 'https://github.com/cesium/intra.seium.org.git'
 
 set :deploy_to, '/home/chalkos/intra.seium.org'
 
@@ -26,6 +26,7 @@ namespace :deploy do
     end
   end
 
+  after :publishing, 'deploy:seed'
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
