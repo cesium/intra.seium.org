@@ -20,6 +20,3 @@ public/system
 
 # OS X
 .DS_Store
-
-# don't track secrets in git
-config/secrets.yml
