@@ -73,3 +73,6 @@ gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rvm', github: "capistrano/rvm"
 gem 'capistrano-secrets-yml', '~> 1.0.0'
+
+# Production logging
+gem 'rails_12factor', group: :production
