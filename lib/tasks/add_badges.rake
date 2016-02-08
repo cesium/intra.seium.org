@@ -3,7 +3,7 @@ namespace :sei do
 
 	task :add_badges, [:path]  => :environment  do |t|
 
-		require "./db/seeds_files/new_badges.rb"
+		require "./db/seeds_files/badges16.rb"
 
 		RakeBadgeCreation.badges.each do |badge|
 
