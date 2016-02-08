@@ -3,11 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 
 gem 'pg', group: :production
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -72,8 +71,8 @@ gem 'rqrcode_png'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
-# gem 'capistrano-rvm', github: "capistrano/rvm"
-gem 'capistrano-rbenv', '~> 2.0'
+gem 'capistrano-rvm', github: "capistrano/rvm"
+# gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-secrets-yml', '~> 1.0.0'
 
 # Production logging
