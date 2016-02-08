@@ -6,7 +6,8 @@ module RakeBadgeCreation
 				codename: "blip_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/blip.png',
-				edition_id: 2016
+				edition_id: 2016,
+        is_code_needed: true
 			},
 			{
 				name: "Amigo da BloomIdea",
@@ -20,6 +21,7 @@ module RakeBadgeCreation
 				codename: "eurotux_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/eurotux.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -27,6 +29,7 @@ module RakeBadgeCreation
 				codename: "farfetch_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/farfetch.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -34,6 +37,7 @@ module RakeBadgeCreation
 				codename: "outsystems_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/outsystems.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -41,6 +45,7 @@ module RakeBadgeCreation
 				codename: "seegno_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/seegno.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -48,6 +53,7 @@ module RakeBadgeCreation
 				codename: "subvisual_buddy",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/enterprises/subvisual.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -55,6 +61,7 @@ module RakeBadgeCreation
 				codename: "unwrap_kit",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/random/kit.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -62,6 +69,7 @@ module RakeBadgeCreation
 				codename: "early_bird",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/random/early_bird.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -69,6 +77,7 @@ module RakeBadgeCreation
 				codename: "bitalino",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/activities/monday/bitalino.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -76,6 +85,7 @@ module RakeBadgeCreation
 				codename: "swift",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/activities/monday/swift.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -83,6 +93,7 @@ module RakeBadgeCreation
 				codename: "entrepreneur_celso",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/activities/monday/entrepreneur.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -90,6 +101,7 @@ module RakeBadgeCreation
 				codename: "opening_ceremony",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/activities/monday/opening_ceremony.png',
+        is_code_needed: true,
 				edition_id: 2016
 			},
       {
@@ -97,6 +109,7 @@ module RakeBadgeCreation
 				codename: "react_redux",
 				badge_type: BadgeType::CODE_NEEDED,
 				logo_url: '/images/badges/16/activities/monday/react_redux.png',
+        is_code_needed: true,
 				edition_id: 2016
 			}
 		])
