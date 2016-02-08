@@ -18,4 +18,4 @@ speakers = Seed::speakers(editions, companies)
 activities = []
 
 # Badges
-badges = RakeBadgeCreation::badges(editions, activities)
+badges = RakeBadgeCreation::badges

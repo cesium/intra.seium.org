@@ -1,7 +1,7 @@
 namespace :sei do
 	desc "Add Badges"
 
-	task :add_badges, [:path]  => :environment  do |t|
+	task :add_badges  => :environment  do
 
 		require "./db/seeds_files/badges16.rb"
 
