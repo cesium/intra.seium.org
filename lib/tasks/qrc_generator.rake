@@ -13,11 +13,11 @@ namespace :sei do
 		FileUtils.mkdir_p(dir)
 
 		host = 'localhost:3000'
-		route = '/editions/2015/badges/redeem'
+		route = '/editions/2016/badges/redeem'
 
 		codes =
 			if args.code_type == 'SU'
-				badge.generate_codes(args.num.to_i - BadgeAcquisition.number_available_codes_for_one_use(badge), BadgeCodeStatus::AVAILABLE_FOR_ONE_USE)	
+				badge.generate_codes(args.num.to_i - BadgeAcquisition.number_available_codes_for_one_use(badge), BadgeCodeStatus::AVAILABLE_FOR_ONE_USE)
 				BadgeAcquisition.get_available_codes_for_one_use(badge).take(args.num.to_i)
 			else
 				badge.generate_codes(1, BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES) unless BadgeAcquisition.has_any_multiple_use_code?(badge)
