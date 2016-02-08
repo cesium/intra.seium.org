@@ -6,7 +6,7 @@ namespace :sei do
 		raise ArgumentError.new if args.badge_codename.blank? || (args.num.blank? || !(args.num.match /\A\d+\z/)) || (args.code_type.blank? || !(args.code_type.match /\A(SU)|(MU)\z/))
 
 		raise Badge::BadgeNotFoundError.new unless badge = Badge.where(codename: args.badge_codename).first
-		raise Badge::CodesNotAllowedError.new  unless badge.is_code_needed
+#		raise Badge::CodesNotAllowedError.new  unless badge.is_code_needed
 
 		ts = Time.now
 		dir = "./tmp/qrcodes/#{ts.year}_#{ts.month}_#{ts.day}_#{ts.hour}_#{ts.min}_#{ts.sec}"
