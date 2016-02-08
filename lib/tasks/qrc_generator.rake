@@ -12,7 +12,7 @@ namespace :sei do
 		dir = "./tmp/qrcodes/#{ts.year}_#{ts.month}_#{ts.day}_#{ts.hour}_#{ts.min}_#{ts.sec}"
 		FileUtils.mkdir_p(dir)
 
-		host = 'localhost:3000'
+    host = 'intra.seium.org'
 		route = '/editions/2016/badges/redeem'
 
 		codes =
