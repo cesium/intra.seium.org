@@ -2,7 +2,7 @@ require './db/seeds_files/editions'
 require './db/seeds_files/companies'
 require './db/seeds_files/speakers'
 require './db/seeds_files/activities'
-require './db/seeds_files/badges'
+require './db/seeds_files/badges16'
 
 # Editions
 editions = Seed::editions
@@ -14,7 +14,8 @@ companies = Seed::companies(editions)
 speakers = Seed::speakers(editions, companies)
 
 # Activities
-activities = Seed::activities(editions, speakers)
+# activities = Seed::activities(editions, speakers)
+activities = []
 
 # Badges
-badges = Seed::badges(editions, activities)
+badges = RakeBadgeCreation::badges(editions, activities)

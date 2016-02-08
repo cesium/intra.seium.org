@@ -1,6 +1,6 @@
 module RakeBadgeCreation
-	def self.badges
-		[
+	def self.badges(editions, activities)
+		Badge.create!([
       {
 				name: "Amigo da Blip",
 				codename: "blip_buddy",
@@ -51,13 +51,6 @@ module RakeBadgeCreation
 				edition_id: 2016
 			},
       {
-				name: "Amigo da OutSystems",
-				codename: "outsystems_buddy",
-				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/16/enterprises/outsystems.png',
-				edition_id: 2016
-			},
-      {
 				name: "Levantar Kit",
 				codename: "unwrap_kit",
 				badge_type: BadgeType::CODE_NEEDED,
@@ -89,7 +82,7 @@ module RakeBadgeCreation
 				name: "Wannabe Empreendedor",
 				codename: "entrepreneur_celso",
 				badge_type: BadgeType::CODE_NEEDED,
-				logo_url: '/images/badges/16/activities/monday/entrepreneur_celso.png',
+				logo_url: '/images/badges/16/activities/monday/entrepreneur.png',
 				edition_id: 2016
 			},
       {
@@ -106,6 +99,6 @@ module RakeBadgeCreation
 				logo_url: '/images/badges/16/activities/monday/react_redux.png',
 				edition_id: 2016
 			}
-		]
+		])
 	end
 end

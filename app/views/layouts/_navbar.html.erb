@@ -12,15 +12,17 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-		
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="nav-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li class="<%= is_active?(edition_participant_path(username: current_user.username, edition_id: 2015)) %>"><%= link_to current_user.full_name, edition_participant_path(username: current_user.username, edition_id: 2015) %></li>
-        <li class="<%= is_active?(edition_participants_path(edition_id: 2015)) %><%= "active" if @participant && current_user && (@participant.id != current_user.id) %>"><%= link_to "Participantes", edition_participants_path(edition_id: 2015) %></li>
-				<li class="<%= is_active?(edition_activities_path(edition_id: 2015)) %><%= "active" if @activity %>"><%= link_to "Atividades", edition_activities_path(edition_id: 2015) %></li>
-				<li class="<%= is_active?(edition_badges_path(edition_id: 2015)) %><%= "active" if @badge_show_action %>"><%= link_to "Badges", edition_badges_path(edition_id: 2015) %></li>
-        <li class="<%= is_active?(redeem_edition_badges_path(edition_id: 2015)) %><%= "active" if @redeem_action %>"><%= link_to "Requisitar Badge", redeem_edition_badges_path(edition_id: 2015) %></li>
+        <li class="<%= is_active?(edition_participant_path(username: current_user.username, edition_id: 2016)) %>"><%= link_to current_user.full_name, edition_participant_path(username: current_user.username, edition_id: 2016) %></li>
+        <li class="<%= is_active?(edition_participants_path(edition_id: 2016)) %><%= "active" if @participant && current_user && (@participant.id != current_user.id) %>"><%= link_to "Participantes", edition_participants_path(edition_id: 2016) %></li>
+        <!--
+				<li class="<%= is_active?(edition_activities_path(edition_id: 2016)) %><%= "active" if @activity %>"><%= link_to "Atividades", edition_activities_path(edition_id: 2016) %></li>
+        -->
+				<li class="<%= is_active?(edition_badges_path(edition_id: 2016)) %><%= "active" if @badge_show_action %>"><%= link_to "Badges", edition_badges_path(edition_id: 2016) %></li>
+        <li class="<%= is_active?(redeem_edition_badges_path(edition_id: 2016)) %><%= "active" if @redeem_action %>"><%= link_to "Requisitar Badge", redeem_edition_badges_path(edition_id: 2016) %></li>
         <li class="<%= is_active?(edit_user_registration_path) %>"><%= link_to "Editar Perfil", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       </ul>
