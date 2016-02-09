@@ -113,11 +113,7 @@ class User < ActiveRecord::Base
   private
 
   def self.with_badges(is_organizer)
-    User.select('users.*, count(badges.id) as badge_count')
-        .joins(:badges)
-        .group(:user_id)
-        .having('badge_count' > '0')
-        .order('badge_count DESC')
-        .where(is_organizer: is_organizer)
+    User.where(is_organizer: is_organizer)
+        .order(badge_acquisitions_count: :desc)
   end
 end
