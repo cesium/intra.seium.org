@@ -1,8 +1,8 @@
 <div class="col-md-12">
-<!--	<div class="col-xs-12 text-center">
+	<div class="col-xs-12 text-center">
 		<%= link_to "Hall of Fame", edition_hall_of_fame_path, class: 'badge-of-fame' %>
 		<%= link_to "Organizer of Fame", edition_organizer_of_fame_path, class: 'badge-of-fame' %>
-    </div> -->
+  </div>
 	<br />
 	<br />
 	<% @badges.select{ |b| b.logo_url }.each do |badge| %>
