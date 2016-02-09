@@ -2,10 +2,10 @@ module RakeBadgeCreation
     def self.badges
         Badge.create!([
             {
-                name: "Eu arranjei um Mac, iSwift",
-                codename: "swift",
+                name: "Realidade Virtual",
+                codename: "vr",
                 badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/monday/swift.png',
+                logo_url: '/images/badges/16/activities/9/vr.png',
                 is_code_needed: true,
                 edition_id: 2016
             },
