@@ -499,7 +499,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Ana Anjo",
-                codename: "ana_anjo"
+                codename: "ana_anjo",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/ana_anjo.png',
                 is_code_needed: true,
@@ -507,7 +507,7 @@ module RakeBadgeCreation
             },
             {
                 name: "André Santos",
-                codename: "andre_santos"
+                codename: "andre_santos",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/andre_santos.png',
                 is_code_needed: true,
@@ -515,7 +515,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Belén Albeza",
-                codename: "belen_albeza"
+                codename: "belen_albeza",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/belen_albeza.png',
                 is_code_needed: true,
@@ -523,7 +523,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Carlos Soares",
-                codename: "carlos_soares"
+                codename: "carlos_soares",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/carlos_soares.png',
                 is_code_needed: true,
@@ -531,7 +531,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Celso Martinho",
-                codename: "celso_martinho"
+                codename: "celso_martinho",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/celso_martinho.png',
                 is_code_needed: true,
@@ -539,7 +539,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Daniel Luz",
-                codename: "daniel_luz"
+                codename: "daniel_luz",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/daniel_luz.png',
                 is_code_needed: true,
@@ -547,7 +547,7 @@ module RakeBadgeCreation
             },
             {
                 name: "David Teixeira",
-                codename: "david_teixeira"
+                codename: "david_teixeira",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/david_teixeira.png',
                 is_code_needed: true,
@@ -555,7 +555,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Francisco Monsanto",
-                codename: "francisco_monsanto"
+                codename: "francisco_monsanto",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/francisco_monsanto.png',
                 is_code_needed: true,
@@ -563,7 +563,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Helder Ribeiro",
-                codename: "helder_ribeiro"
+                codename: "helder_ribeiro",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/helder_ribeiro.png',
                 is_code_needed: true,
@@ -571,7 +571,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Hugo Silva",
-                codename: "hugo_silva"
+                codename: "hugo_silva",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/hugo_silva.png',
                 is_code_needed: true,
@@ -579,7 +579,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Joana Almeida",
-                codename: "joana_almeida"
+                codename: "joana_almeida",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/joana_almeida.png',
                 is_code_needed: true,
@@ -587,7 +587,7 @@ module RakeBadgeCreation
             },
             {
                 name: "João Granado",
-                codename: "joao_granado"
+                codename: "joao_granado",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/joao_granado.png',
                 is_code_needed: true,
@@ -595,7 +595,7 @@ module RakeBadgeCreation
             },
             {
                 name: "João Horta",
-                codename: "joao_horta"
+                codename: "joao_horta",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/joao_horta.png',
                 is_code_needed: true,
@@ -603,7 +603,7 @@ module RakeBadgeCreation
             },
             {
                 name: "João Silva",
-                codename: "joao_silva"
+                codename: "joao_silva",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/joao_silva.png',
                 is_code_needed: true,
@@ -611,7 +611,7 @@ module RakeBadgeCreation
             },
             {
                 name: "José Fernandes",
-                codename: "jose_fernandes"
+                codename: "jose_fernandes",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/jose_fernandes.png',
                 is_code_needed: true,
@@ -619,7 +619,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Luís Zamith",
-                codename: "luis_zamith"
+                codename: "luis_zamith",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/luis_zamith.png',
                 is_code_needed: true,
@@ -627,7 +627,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Michael Matias",
-                codename: "michael_matias"
+                codename: "michael_matias",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/michael_matias.png',
                 is_code_needed: true,
@@ -635,7 +635,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Mike Elsmore",
-                codename: "mike_elsmore"
+                codename: "mike_elsmore",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/mike_elsmore.png',
                 is_code_needed: true,
@@ -643,7 +643,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Nuno Rafael Rocha",
-                codename: "nuno_rafael_rocha"
+                codename: "nuno_rafael_rocha",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/nuno_rafael_rocha.png',
                 is_code_needed: true,
@@ -651,7 +651,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Ricardo Oliveira",
-                codename: "ricardo_oliveira"
+                codename: "ricardo_oliveira",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/ricardo_oliveira.png',
                 is_code_needed: true,
@@ -659,7 +659,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Ricardo Vitorino",
-                codename: "ricardo_vitorino"
+                codename: "ricardo_vitorino",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/ricardo_vitorino.png',
                 is_code_needed: true,
@@ -667,7 +667,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Roberto Cortez",
-                codename: "roberto_cortez"
+                codename: "roberto_cortez",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/roberto_cortez.png',
                 is_code_needed: true,
@@ -675,7 +675,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Rubén Gonçalves",
-                codename: "ruben_goncalves"
+                codename: "ruben_goncalves",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/ruben_goncalves.png',
                 is_code_needed: true,
@@ -683,7 +683,7 @@ module RakeBadgeCreation
             },
             {
                 name: "Rui Guedes",
-                codename: "rui_guedes"
+                codename: "rui_guedes",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/speakers/rui_guedes.png',
                 is_code_needed: true,
