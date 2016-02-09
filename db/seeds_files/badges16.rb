@@ -488,6 +488,206 @@ module RakeBadgeCreation
                 logo_url: '/images/badges/16/random/voluntario.png',
                 is_code_needed: true,
                 edition_id: 2016
+            },
+            {
+                name: "Adelino Faria",
+                codename: "adelino_faria",
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/adelino_faria.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Ana Anjo",
+                codename: "ana_anjo"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/ana_anjo.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "André Santos",
+                codename: "andre_santos"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/andre_santos.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Belén Albeza",
+                codename: "belen_albeza"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/belen_albeza.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Carlos Soares",
+                codename: "carlos_soares"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/carlos_soares.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Celso Martinho",
+                codename: "celso_martinho"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/celso_martinho.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Daniel Luz",
+                codename: "daniel_luz"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/daniel_luz.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "David Teixeira",
+                codename: "david_teixeira"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/david_teixeira.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Francisco Monsanto",
+                codename: "francisco_monsanto"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/francisco_monsanto.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Helder Ribeiro",
+                codename: "helder_ribeiro"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/helder_ribeiro.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Hugo Silva",
+                codename: "hugo_silva"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/hugo_silva.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Joana Almeida",
+                codename: "joana_almeida"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/joana_almeida.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "João Granado",
+                codename: "joao_granado"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/joao_granado.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "João Horta",
+                codename: "joao_horta"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/joao_horta.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "João Silva",
+                codename: "joao_silva"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/joao_silva.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "José Fernandes",
+                codename: "jose_fernandes"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/jose_fernandes.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Luís Zamith",
+                codename: "luis_zamith"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/luis_zamith.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Michael Matias",
+                codename: "michael_matias"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/michael_matias.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Mike Elsmore",
+                codename: "mike_elsmore"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/mike_elsmore.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Nuno Rafael Rocha",
+                codename: "nuno_rafael_rocha"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/nuno_rafael_rocha.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Ricardo Oliveira",
+                codename: "ricardo_oliveira"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/ricardo_oliveira.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Ricardo Vitorino",
+                codename: "ricardo_vitorino"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/ricardo_vitorino.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Roberto Cortez",
+                codename: "roberto_cortez"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/roberto_cortez.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Rubén Gonçalves",
+                codename: "ruben_goncalves"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/ruben_goncalves.png',
+                is_code_needed: true,
+                edition_id: 2016
+            },
+            {
+                name: "Rui Guedes",
+                codename: "rui_guedes"
+                badge_type: BadgeType::CODE_NEEDED,
+                logo_url: '/images/badges/16/speakers/rui_guedes.png',
+                is_code_needed: true,
+                edition_id: 2016
             }
         ])
     end
