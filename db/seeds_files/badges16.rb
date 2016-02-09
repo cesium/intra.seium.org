@@ -2,85 +2,6 @@ module RakeBadgeCreation
     def self.badges
         Badge.create!([
             {
-                name: "Participação CoderDojo",
-                codename: "part_coderdojo",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/6/part_coderdojo.png',
-                edition_id: 2016,
-                is_code_needed: true
-            },
-            {
-                name: "Voluntário CoderDojo",
-                codename: "voluntario_coderdojo",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/6/voluntario_coderdojo.png',
-                edition_id: 2016
-            },
-            {
-                name: "Mentor Rails Girls",
-                codename: "rails_girls_mentor",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/7/rails_girls_mentor.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Participação Rails Girls",
-                codename: "rails_girls_participante",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/7/rails_girls_participante.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Jantar SEI",
-                codename: "jantar",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/8/jantar.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Participação Dia 8",
-                codename: "participacao8",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/8/participacao8.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Being Idenpendent - Making Games From Code To Art",
-                codename: "being_idenpendent_making_games_codeart",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/9/being_idenpendent_making_games_codeart.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "I LOVE TO RUBY",
-                codename: "i_love_ruby",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/9/i_love_ruby.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Intelligent Solutions For Today's Cities",
-                codename: "intelligent_solutions_cities",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/9/intelligent_solutions_cities.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Introdução A Concept Art E A Industrita Dos Jogos",
-                codename: "concept_art",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/9/concept_art.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
                 name: "Eu arranjei um Mac, iSwift",
                 codename: "swift",
                 badge_type: BadgeType::CODE_NEEDED,
@@ -109,14 +30,6 @@ module RakeBadgeCreation
                 codename: "rubyist",
                 badge_type: BadgeType::CODE_NEEDED,
                 logo_url: '/images/badges/16/activities/9/rubyist.png',
-                is_code_needed: true,
-                edition_id: 2016
-            },
-            {
-                name: "Unity - 2D Platformer",
-                codename: "unity_2D_platformer",
-                badge_type: BadgeType::CODE_NEEDED,
-                logo_url: '/images/badges/16/activities/9/unity_2D_platformer.png',
                 is_code_needed: true,
                 edition_id: 2016
             },
@@ -576,7 +489,6 @@ module RakeBadgeCreation
                 is_code_needed: true,
                 edition_id: 2016
             }
-
         ])
     end
 end
