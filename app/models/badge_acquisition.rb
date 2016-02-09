@@ -1,5 +1,5 @@
 class BadgeAcquisition < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   belongs_to :badge
 
 	AcquisitionError = Class.new(StandardError)
@@ -11,7 +11,7 @@ class BadgeAcquisition < ActiveRecord::Base
 	AcquisitionCodeNeededForBadgeError = Class.new(AcquisitionError)
 
 	def self.acquire_badge(user, badge)
-		raise Badge::ExpirationDateExcedeedError.new if badge.expired? 
+		raise Badge::ExpirationDateExcedeedError.new if badge.expired?
 		raise AcquisitionCodeNeededForBadgeError if badge.is_code_needed
 		raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
 
@@ -22,7 +22,7 @@ class BadgeAcquisition < ActiveRecord::Base
 		raise InvalidCodeError.new unless code && badge_acq = where(code: code).first
 
 		badge = badge_acq.badge
-		raise Badge::ExpirationDateExcedeedError.new if badge.expired? 
+		raise Badge::ExpirationDateExcedeedError.new if badge.expired?
 
 		raise CodeNotAvailableRightNowError.new if badge_acq.code_not_available?
 		raise CodeAlreadyInUseError.new if badge_acq.code_used?
