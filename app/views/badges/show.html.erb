@@ -8,6 +8,9 @@
 		<%= content_tag  :div, "", id: "share-button", data: { description:"Que badge maravilhosa, já viste?", image: "http://seium.org" + @badge.logo_url} %>
 		</div>
 	</div>
+  <div class="col-md-12">
+    <%= @badge.description %>
+  </div>
 	<div id="badge-users">
 		<br />
 		<% if (users = @badge.users).size > 0 %>
@@ -24,7 +27,6 @@
 								<a href="<%= edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) %>">
 									<%= participant.full_name %>
 								</a>
-
 							</div>
 						</div>
 					</li>
