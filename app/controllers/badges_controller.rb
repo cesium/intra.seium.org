@@ -4,7 +4,7 @@ class BadgesController < ApplicationController
   before_action :set_badge, only: [:show]
 
   def index
-    @badges = @edition.badges
+    @badges = @edition.badges.order(name: :asc)
     respond_with(@badges)
   end
 
