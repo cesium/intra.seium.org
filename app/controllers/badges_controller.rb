@@ -21,6 +21,7 @@ class BadgesController < ApplicationController
 		@redeem_action = true
 		begin
 			@badge = BadgeAcquisition.acquire_badge_with_code(current_user, code)
+      User.reset_badge_counters(current_user)
 		rescue BadgeAcquisition::AcquisitionError => e
 			@error = e
 		end
