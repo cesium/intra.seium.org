@@ -110,6 +110,10 @@ class User < ActiveRecord::Base
     User.with_badges(true)
   end
 
+  def self.reset_badge_counters(user)
+    User.reset_counters user.id, :badge_acquisitions
+  end
+
   private
 
   def self.with_badges(is_organizer)
