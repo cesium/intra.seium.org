@@ -9,9 +9,8 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' if user_signed_in? %>
-
-<%= yield %>
+  <%= render 'layouts/navbar' if user_signed_in? %>
+  <%= yield %>
 
 </body>
 </html>

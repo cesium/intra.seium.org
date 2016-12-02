@@ -7,6 +7,9 @@ gem 'rails', '4.1.7'
 gem 'pg', group: :production
 gem 'sqlite3'
 
+# Use SLIM instead of HTML
+gem 'slim-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.3.3'

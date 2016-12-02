@@ -1,27 +1,25 @@
 /* I really hate using !important but I'm having a hard overriding Bootstrap */
 
 body
-  background-color: #0277BD !important
-  color: #fff !important
+  background-color: $color-white
+  color: $color-black
   padding-top: 70px
+  font-family: 'Hind', sans-serif
+
+h2
+  font-family: 'Montserrat', sans-serif
 
 a
-  color: #fff !important
   -webkit-transition: color 0.3s
   -moz-transition: color 0.3s
   transition: color 0.3s
-  &:hover,
-  &:focus
-    color: #fec503 !important
-    text-decoration: none !important
 
 label.option-label
   font-weight: normal
 
 .form-container
   margin: 0 auto
-  width: 50%
-  text-align: center
+  text-align: left
   & .col-md-3
     padding: 0
     & label
@@ -34,45 +32,62 @@ label.option-label
     input
       float: left
 
+label
+  color: $color-gray
+  text-transform: uppercase
+  font-weight: normal
+  font-family: 'Montserrat', sans-serif
+  letter-spacing: .1em
+  margin-top: 10px
 
 form
   margin-top: 20px
   & input
-    margin: 5px
+    margin-bottom: 20px
+    width: 100%
 
 input:not([type=submit])
   border: none
+  font-size: 1.3em
   background-color: transparent
-  border-bottom: 1px solid #B0BEC5
+  border-bottom: 1px solid $color-gray
   -webkit-transition: border-color .3s ease
   -moz-transition: border-color .3s ease
   -o-transition: border-color .3s ease
   transition: border-color .3s ease
   &:focus
     outline: 0
-    border-bottom: 1px solid #fff
+    border-bottom: 1px solid $color-black
+
+input[type=password]
+  color: $color-blue
 
 .form-container .col-md-3 label
   text-align: right
 
 a.btn.btn-submit,
 button.btn.btn-submit
-  background: none
-  border: 2px solid #fff
-  border-radius: 5px
-  color: #fff
+  background-color: $color-white
+  border: 2px solid $color-blue
+  border-radius: 3em
+  color: $color-blue
   outline: none
   text-transform: uppercase
-  padding: 10px
+  font-weight: normal
+  padding: 10px 40px
   margin-bottom: 10px
+  margin-top: 15px
+  margin-right: 15px
+  font-family: 'Montserrat', sans-serif
+  letter-spacing: .1em
   -webkit-transition: all 0.3s ease
   -moz-transition: all 0.3s ease
   -o-transition: all 0.3s ease
   transition: all 0.3s ease
   &:hover,
   &:focus
-    background: #fff
-    color: #0277BD !important
+    background: $color-blue
+    color: $color-white
     & a
       color: #0277BD !important
   & a
@@ -81,8 +96,8 @@ button.btn.btn-submit
     &:focus
       text-decoration: none
 
-.sei-logo
-  content: img-url('logo_sei.png')
+.sei-logo-sign-in
+  margin-bottom: 100px
 
 #error_explanation
   background-color: #fff
@@ -100,4 +115,16 @@ button.btn.btn-submit
 
 #share-button
   margin: 20px auto
-  
+
+.radio-div
+  width: 100%
+  input
+    width: auto
+    margin-right: 15px
+  label
+    color: $color-black
+
+#error_explanation
+  background-color: $color-white
+  padding: 0
+  color: $color-pink

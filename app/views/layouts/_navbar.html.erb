@@ -30,15 +30,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<style>
-	#navbar-activity-happening {
-		background-color: green;
-	}
-	#navbar-activity-will-happen {
-		background-color: #90CAF9;
-	}
-</style>
-
 <% if (a = Activity.next_activity(@activities)) && a.is_happening? %>
 
 	<%= link_to edition_activity_path(edition_id: @edition.id, id: a.url_escaped_name) do %>
