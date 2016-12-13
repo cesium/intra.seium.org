@@ -13,6 +13,11 @@ class Badge < ActiveRecord::Base
 	# 	BadgeAcquisition.where(badge_id: id).map { |bc| bc.user }.select { |u| u }
 	# end
 
+  scope :logos, -> (edition_id) {
+    select('logo_url')
+    where("badges.edition_id == ?", edition_id)
+  }
+
 	def generate_codes(num_codes, status, code_expiration_date = nil)
 		if is_code_needed
 			(1..num_codes).each do
