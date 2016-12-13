@@ -1,0 +1,117 @@
+.container
+  .col-md-4
+    // ---> PARTICIPANT IMAGE
+    = image_tag @participant.avatar.url, class: 'img-responsive img-circle participant-img'
+    h4.text-center
+      = @participant.full_name
+    // Check if user is a university student
+    p.text-center
+      - if @participant.is_univ_student
+        - if @participant.is_inf_eng_student_at_minho_univ
+          | Estudante de Engenharia Informática na
+          br
+          | Universidade do Minho
+        - elsif @participant.is_student_at_minho_univ
+          | Estudante na Universidade do Minho
+        - else
+          | Estudante Universitário na #{@participant.university}
+      - else
+        = @participant.profession
+    // ---> END PARTICIPANT IMAGE
+
+    hr
+
+    // ---> PARTICIPANT INFO
+    ul.participant-info
+      li.participant-info-category
+        | Email
+      li.participant-info-item
+        = @participant.email
+      li.participant-info-category
+        | Username
+      li.participant-info-item
+        = @participant.username
+      li.participant-info-category
+        | Sexo
+      li.participant-info-item
+        = @participant.sex_to_s
+      li.participant-info-category
+        | Nº de Aluno UMinho
+      li.participant-info-item
+        = @participant.minho_univ_student_id
+      li.participant-info-category
+        | Nº Sócio
+      li.participant-info-item
+        = @participant.cesium_associate_number
+      li.participant-info-category
+        | Curso
+      li.participant-info-item
+        - if @participant.is_inf_eng_student_at_minho_univ
+          | Engenharia Informática
+        - else
+          = @participant.course
+      li.participant-info-category
+        | Localidade
+      li.participant-info-item
+        = @participant.location
+
+    // ul.list-group
+    //   li.list-group-item-info.list-group-item
+    //     b Email:
+    //     = @participant.email
+    //   li.list-group-item-info.list-group-item
+    //     b Username:
+    //     = @participant.username
+    //   - if @participant.birthday != nil
+    //     li.list-group-item-info.list-group-item
+    //       b Data de nascimento:
+    //       = @participant.birthday.strftime("%Y-%m-%d")
+    //   li.list-group-item-info.list-group-item
+    //     b Sexo:
+    //     = @participant.sex_to_s
+    //   - if @participant.biography != nil && @participant.biography != ""
+    //     li.list-group-item-info.list-group-item
+    //       b Biografia:
+    //       = @participant.biography
+    //   - if @participant.is_student_at_minho_univ
+    //     li.list-group-item-info.list-group-item
+    //       b Nº de Aluno UM:
+    //       = @participant.minho_univ_student_id
+    //   - if @participant.is_cesium_associate
+    //     - if @participant.cesium_associate_number.blank?
+    //       li.list-group-item-info.list-group-item
+    //         b Sócio do CeSIUM
+    //     - else
+    //       li.list-group-item-info.list-group-item
+    //         b Sócio do CeSIUM Nº:
+    //         = @participant.cesium_associate_number
+    //   - if @participant.is_univ_student
+    //     li.list-group-item-info.list-group-item
+    //       b Curso:
+    //       = @participant.is_inf_eng_student_at_minho_univ ? "Engenharia Informática" :  @participant.course
+    //   li.list-group-item-info.list-group-item
+    //     b Localidade:
+    //     = @participant.location
+    // ---> END PARTICIPANT INFO
+
+    // ---> BADGES
+  .col-md-8
+    h3 BADGES_
+    - if @participant.badges.empty?
+      p
+        | #{@participant.full_name} ainda não conquistou nenhum badge.
+    - else
+      .col-md-6.col-md-offset-3
+        - @participant.badges.each do |badge|
+          .col-md-3.col-xs-4
+            div
+              = link_to edition_badge_path(@edition, badge) do
+                .user-badge= image_tag(badge.logo_url, alt: badge.description, size: "128")
+  // ---> END BADGES
+
+/! SHARE
+.col-md-12
+  = content_tag  :div, "", id: "share-button", data: { description:"Já viste o que andei a fazer na SEI? ", image: "http://intra.seium.org/editions/2016/participants/" + @participant.username}
+br/
+= javascript_include_tag "share-button", "share.min"
+
