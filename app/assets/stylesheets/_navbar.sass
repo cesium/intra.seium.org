@@ -1,6 +1,5 @@
 nav#navbar
-  background-color: #0277BD
-  border-color: #0277BD
+  background-color: $color-black
   height: 60px
   padding-top: 5px
 
@@ -12,43 +11,17 @@ nav#navbar
   padding: 0
 
 #nav-menu ul li a
-  color: #fff !important
+  color: $color-white
   font-size: 18px
-  text-transform: uppercase
-  font-weight: bold
   font-family: $header-font
   margin-right: 20px
-  &::after
-    position: absolute
-    top: 92%
-    left: 0
-    width: 100%
-    height: 1px
-    background: #fff
-    content: ''
-    opacity: 0
-    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s
-    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s
-    transition: height 0.3s, opacity 0.3s, transform 0.3s
-    -webkit-transform: translateY(-10px)
-    -moz-transform: translateY(-10px)
-    transform: translateY(-10px)
-  &:hover::after
-    height: 5px
-    opacity: 1
-    -webkit-transform: translateY(0px)
-    -moz-transform: translateY(0px)
-    transform: translateY(0px)
+  &:hover
+    color: $color-pink
 
 #nav-menu li.active
   a
-    background-color: #0277BD
-    &::after
-      height: 5px
-      opacity: 1
-      -webkit-transform: translateY(0px)
-      -moz-transform: translateY(0px)
-      transform: translateY(0px)
+    background-color: $color-black
+    color: $color-pink
 
 #navbar-toggle
   & span

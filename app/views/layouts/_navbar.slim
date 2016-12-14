@@ -1,0 +1,47 @@
+nav#navbar.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    /! Brand and toggle get grouped for better mobile display
+    .navbar-header
+      = link_to root_url, class: 'navbar-brand', id: 'nav-logo-container' do
+        = image_tag "nav_logo_white.png", alt: 'SEI', id: 'nav-logo'
+      button#navbar-toggle.navbar-toggle.collapsed data-target="#nav-menu" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    /! Collect the nav links, forms, and other content for toggling
+    #nav-menu.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li class=(is_participants_active?)
+          = link_to "Participantes",
+            edition_participants_path(edition_id: 2016)
+        li class=(is_badges_active?)
+          = link_to "Badges",
+            edition_badges_path(edition_id: 2016)
+        li class=(is_redeem_badge_active?)
+          = link_to "Requisitar Badge",
+            redeem_edition_badges_path(edition_id: 2016)
+        li class=(is_profile_active?)
+          = link_to "Perfil",
+            edition_participant_path(username: current_user.username, edition_id: 2016)
+        li
+          = link_to "Logout", destroy_user_session_path, method: :delete
+    /! /.navbar-collapse
+  /! /.container-fluid
+- if (a = Activity.next_activity(@activities)) && a.is_happening?
+  = link_to edition_activity_path(edition_id: @edition.id, id: a.url_escaped_name) do
+    nav#navbar-activity-happening.navbar.navbar-default.blink_me
+      .container
+        .col-md-12.text-center
+          .col-md-6.col-md-offset-3
+            h4.badge-name= a.name
+            h5= "A decorrer (# a.place )"
+- elsif a != nil
+  = link_to edition_activity_path(edition_id: @edition.id, id: a.url_escaped_name) do
+    nav#navbar-activity-will-happen.navbar.navbar-default
+      .container
+        .col-md-12.text-center
+          .col-md-6.col-md-offset-3
+            h4.badge-name= a.name
+            h5= a.to_s_compact
+
