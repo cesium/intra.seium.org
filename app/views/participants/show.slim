@@ -109,6 +109,13 @@
                 .user-badge= image_tag(badge.logo_url, alt: badge.description, size: "128")
   // ---> END BADGES
 
+  // ---> EDIT PROFILE
+  - if current_user == @participant
+    .col-md-12
+      hr
+        = link_to "Editar Perfil", edit_user_registration_path, class: "btn btn-submit"
+  // ---> END EDIT PROFILE
+
 /! SHARE
 .col-md-12
   = content_tag  :div, "", id: "share-button", data: { description:"Já viste o que andei a fazer na SEI? ", image: "http://intra.seium.org/editions/2016/participants/" + @participant.username}
