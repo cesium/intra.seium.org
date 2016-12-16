@@ -15,6 +15,10 @@ module ApplicationHelper
    is_active?(edition_participant_path(username: current_user.username, edition_id: @edition))
   end
 
+  def page_title
+    "SEI#{@edition.id.to_s.byteslice(2,4)} :: Intranet"
+  end
+
   private
 
   def is_active?(link_path)
