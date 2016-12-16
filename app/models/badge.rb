@@ -15,7 +15,7 @@ class Badge < ActiveRecord::Base
 
   scope :logos, -> (edition_id) {
     select('logo_url')
-    where("badges.edition_id == ?", edition_id)
+    where("badges.edition_id = ?", edition_id)
   }
 
 	def generate_codes(num_codes, status, code_expiration_date = nil)
