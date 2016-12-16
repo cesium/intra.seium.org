@@ -79,4 +79,4 @@ gem 'capistrano-secrets-yml', '~> 1.0.0'
 gem 'capistrano-rails-console'
 
 # Production logging
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
