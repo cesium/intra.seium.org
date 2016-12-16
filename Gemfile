@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 
-gem 'pg', group: :production
-gem 'sqlite3'
+gem 'pg'
 
 # Use SLIM instead of HTML
 gem 'slim-rails'

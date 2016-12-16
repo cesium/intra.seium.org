@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160209124859) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: true do |t|
     t.string   "name",                                      null: false
     t.text     "description"
@@ -33,24 +36,24 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.string   "url_escaped_name",          default: "",    null: false
   end
 
-  add_index "activities", ["edition_id"], name: "index_activities_on_edition_id"
-  add_index "activities", ["url_escaped_name"], name: "index_activities_on_url_escaped_name"
+  add_index "activities", ["edition_id"], name: "index_activities_on_edition_id", using: :btree
+  add_index "activities", ["url_escaped_name"], name: "index_activities_on_url_escaped_name", using: :btree
 
   create_table "activities_speakers", id: false, force: true do |t|
     t.integer "activity_id"
     t.integer "speaker_id"
   end
 
-  add_index "activities_speakers", ["activity_id"], name: "index_activities_speakers_on_activity_id"
-  add_index "activities_speakers", ["speaker_id"], name: "index_activities_speakers_on_speaker_id"
+  add_index "activities_speakers", ["activity_id"], name: "index_activities_speakers_on_activity_id", using: :btree
+  add_index "activities_speakers", ["speaker_id"], name: "index_activities_speakers_on_speaker_id", using: :btree
 
   create_table "activities_users", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "activity_id"
   end
 
-  add_index "activities_users", ["activity_id"], name: "index_activities_users_on_activity_id"
-  add_index "activities_users", ["user_id"], name: "index_activities_users_on_user_id"
+  add_index "activities_users", ["activity_id"], name: "index_activities_users_on_activity_id", using: :btree
+  add_index "activities_users", ["user_id"], name: "index_activities_users_on_user_id", using: :btree
 
   create_table "badge_acquisitions", force: true do |t|
     t.integer  "badge_id"
@@ -63,9 +66,9 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.datetime "acquisition_date"
   end
 
-  add_index "badge_acquisitions", ["badge_id"], name: "index_badge_acquisitions_on_badge_id"
-  add_index "badge_acquisitions", ["code"], name: "index_badge_acquisitions_on_code"
-  add_index "badge_acquisitions", ["user_id"], name: "index_badge_acquisitions_on_user_id"
+  add_index "badge_acquisitions", ["badge_id"], name: "index_badge_acquisitions_on_badge_id", using: :btree
+  add_index "badge_acquisitions", ["code"], name: "index_badge_acquisitions_on_code", using: :btree
+  add_index "badge_acquisitions", ["user_id"], name: "index_badge_acquisitions_on_user_id", using: :btree
 
   create_table "badges", force: true do |t|
     t.string   "name"
@@ -82,10 +85,10 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.integer  "badge_type",      default: 0,  null: false
   end
 
-  add_index "badges", ["activity_id"], name: "index_badges_on_activity_id"
-  add_index "badges", ["badge_type"], name: "index_badges_on_badge_type"
-  add_index "badges", ["codename"], name: "index_badges_on_codename", unique: true
-  add_index "badges", ["edition_id"], name: "index_badges_on_edition_id"
+  add_index "badges", ["activity_id"], name: "index_badges_on_activity_id", using: :btree
+  add_index "badges", ["badge_type"], name: "index_badges_on_badge_type", using: :btree
+  add_index "badges", ["codename"], name: "index_badges_on_codename", unique: true, using: :btree
+  add_index "badges", ["edition_id"], name: "index_badges_on_edition_id", using: :btree
 
   create_table "companies", force: true do |t|
     t.string   "name",                                null: false
@@ -108,8 +111,8 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.integer "edition_id"
   end
 
-  add_index "companies_editions", ["company_id"], name: "index_companies_editions_on_company_id"
-  add_index "companies_editions", ["edition_id"], name: "index_companies_editions_on_edition_id"
+  add_index "companies_editions", ["company_id"], name: "index_companies_editions_on_company_id", using: :btree
+  add_index "companies_editions", ["edition_id"], name: "index_companies_editions_on_edition_id", using: :btree
 
   create_table "editions", force: true do |t|
     t.string   "name"
@@ -126,16 +129,16 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.integer "speaker_id"
   end
 
-  add_index "editions_speakers", ["edition_id"], name: "index_editions_speakers_on_edition_id"
-  add_index "editions_speakers", ["speaker_id"], name: "index_editions_speakers_on_speaker_id"
+  add_index "editions_speakers", ["edition_id"], name: "index_editions_speakers_on_edition_id", using: :btree
+  add_index "editions_speakers", ["speaker_id"], name: "index_editions_speakers_on_speaker_id", using: :btree
 
   create_table "editions_users", id: false, force: true do |t|
     t.integer "edition_id"
     t.integer "user_id"
   end
 
-  add_index "editions_users", ["edition_id"], name: "index_editions_users_on_edition_id"
-  add_index "editions_users", ["user_id"], name: "index_editions_users_on_user_id"
+  add_index "editions_users", ["edition_id"], name: "index_editions_users_on_edition_id", using: :btree
+  add_index "editions_users", ["user_id"], name: "index_editions_users_on_user_id", using: :btree
 
   create_table "speakers", force: true do |t|
     t.string   "name",                null: false
@@ -153,7 +156,7 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.integer  "company_id"
   end
 
-  add_index "speakers", ["company_id"], name: "index_speakers_on_company_id"
+  add_index "speakers", ["company_id"], name: "index_speakers_on_company_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                            default: "",    null: false
@@ -198,8 +201,8 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.integer  "badge_acquisitions_count"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

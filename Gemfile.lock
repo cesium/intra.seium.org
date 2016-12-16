@@ -177,7 +177,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.11)
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -227,7 +226,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   slim-rails
   spring
-  sqlite3
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
