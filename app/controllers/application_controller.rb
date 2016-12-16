@@ -16,13 +16,13 @@ class ApplicationController < ActionController::Base
 			:cesium_associate_number, :minho_univ_student_id, :university,
 			:course, :location, :profession
 		].each do |p|
-			devise_parameter_sanitizer.for(:sign_up) << p
+			devise_parameter_sanitizer.permit(:sign_up, keys: [p])
 		end
 
 		[	:birthday, :biography, :facebook_account, :twitter_account,
 	 		:github_account, :google_plus_account, :avatar, :cesium_associate_number
 		].each do |p|
-			devise_parameter_sanitizer.for(:account_update) << p
+			devise_parameter_sanitizer.permit(:account_update, keys: [p])
 		end
 	end
 
