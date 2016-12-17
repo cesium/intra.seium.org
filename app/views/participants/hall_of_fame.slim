@@ -1,0 +1,15 @@
+.col-md-12.text-center
+  h1
+    = hall_of_fame_title
+  br/
+  br/
+  - @participants.each do |participant|
+    .row
+      .col-xs-3
+        = link_to edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) do
+          .user-logo.badge-user-logo style="background-image:url(#{participant.avatar.url})"
+      .col-xs-6.badge-fame-participant
+        = link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
+      .col-xs-3.badge-fame-participant
+        .participant-badge-count
+          = participant_badge_count(participant)
