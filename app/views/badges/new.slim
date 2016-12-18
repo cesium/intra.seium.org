@@ -1,0 +1,30 @@
+.container
+  h3
+    | NEW BADGE_
+    hr
+    = form_for @badge, url: edition_badges_path(@edition, @badge), html: { method: :post }  do |f|
+      = f.label :name
+      = f.text_field :name
+      br
+      = f.label :codename
+      = f.text_field :codename
+      br
+      = f.label :description
+      = f.text_field :description
+      br
+      = f.label :badge_type
+      = f.radio_button :badge_type, BadgeType::CODE_NEEDED
+      = f.label "BadgeType::CODE_NEEDED"
+      = f.radio_button :badge_type, BadgeType::USER_ACCOUNT
+      = f.label "BadgeType::USER_ACCOUNT"
+      br
+      = f.label :logo_url
+      = f.file_field :logo_url
+      br
+      = f.label :is_code_needed
+      = f.radio_button :is_code_needed, true
+      = f.label "Sim"
+      = f.radio_button :is_code_needed, false
+      = f.label "Não"
+      br
+      = f.submit
