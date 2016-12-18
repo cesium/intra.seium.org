@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 			delete :deregister, on: :member
 		end
 
-		resources :badges, only: [:index, :show] do
+		resources :badges, only: [:index, :show, :new, :create] do
 			get :redeem, on: :collection, action: :require, as: 'redeem'
 			post :redeem, on: :collection, action: :redeem, as: 'redeem_post'
 			get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'

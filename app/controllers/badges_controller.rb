@@ -16,6 +16,25 @@ class BadgesController < ApplicationController
   def require
   end
 
+  def new
+    if user_signed_in? && current_user.is_organizer
+      @badge = Badge.new
+    else
+      redirect_to new_user_session_path
+    end
+  end
+
+  def create
+    image = badge_image
+
+    if Badge.new(badge_params).save
+      save_badge_image(image)
+      redirect_to edition_badges_path, notice: "Badge added with success."
+    else
+      redirect_to edition_badges_path, alert: "Error adding badge."
+    end
+  end
+
   def redeem
     code = params[:code]
     @redeem_action = true
@@ -33,6 +52,26 @@ class BadgesController < ApplicationController
     end
 
     def badge_params
-      params.require(:badge).permit(:name, :description, :code)
+      params.require(:badge).permit(:name, :codename, :description, :badge_type, :is_code_needed,
+        :logo_url, :edition_id)
+    end
+
+    def badge_image
+      image                       = badge_params[:logo_url]
+      params[:badge][:logo_url]   = logo_url(image)
+      params[:badge][:edition_id] = @edition.id
+      return image
+    end
+
+    def save_badge_image(image)
+      image_url = Rails.root.join('public/images/badges', @edition.id.to_s.byteslice(2,4),
+        image.original_filename)
+      File.open(image_url, 'wb') do |file|
+        file.write(image.read)
+      end
+    end
+
+    def logo_url(image)
+      image ? "/images/badges/#{@edition.id.to_s.byteslice(2,4)}/#{image.original_filename}" : ""
     end
 end
