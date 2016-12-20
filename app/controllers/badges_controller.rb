@@ -18,7 +18,11 @@ class BadgesController < ApplicationController
 	end
 
   def new
-    @badge = Badge.new
+    if user_signed_in? && current_user.is_organizer
+      @badge = Badge.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
