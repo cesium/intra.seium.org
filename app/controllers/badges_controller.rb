@@ -26,20 +26,17 @@ class BadgesController < ApplicationController
   end
 
   def create
-    image     = badge_params[:logo_url]
-    logo_url  = Rails.root.join('public/images/badges',
-      @edition.id.to_s.byteslice(2,4), image.original_filename)
-    params[:badge][:logo_url] =
-      "/images/badges/#{@edition.id.to_s.byteslice(2,4)}/#{image.original_filename}"
-    @badge = Badge.new(badge_params)
+    image                       = badge_params[:logo_url]
+    params[:badge][:logo_url]   = logo_url(image)
+    params[:badge][:edition_id] = @edition.id
+    @badge                      = Badge.new(badge_params)
     @badge.save
 
     if @badge.persisted?
-      @badge.update_attribute(:edition_id, @edition.id)
-      File.open(logo_url, 'wb') do |file|
-        file.write(image.read)
-      end
-      redirect_to edition_badges_path
+      save_badge_image(image)
+      redirect_to edition_badges_path, :notice => "Badge added with success."
+    else
+      redirect_to edition_badgeS_path, :notice => "Error saving badge."
     end
   end
 
@@ -61,6 +58,18 @@ class BadgesController < ApplicationController
 
     def badge_params
       params.require(:badge).permit(:name, :codename, :description, :badge_type, :is_code_needed,
-        :logo_url)
+        :logo_url, :edition_id)
+    end
+
+    def save_badge_image(image)
+      image_url = Rails.root.join('public/images/badges', @edition.id.to_s.byteslice(2,4),
+        image.original_filename)
+      File.open(image_url, 'wb') do |file|
+        file.write(image.read)
+      end
+    end
+
+    def logo_url(image)
+      "/images/badges/#{@edition.id.to_s.byteslice(2,4)}/#{image.original_filename}"
     end
 end
