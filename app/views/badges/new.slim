@@ -1,30 +1,39 @@
 .container
-  h3
-    | NEW BADGE_
-    hr
-    = form_for @badge, url: edition_badges_path(@edition, @badge), html: { method: :post }  do |f|
-      = f.label :name
-      = f.text_field :name
-      br
-      = f.label :codename
-      = f.text_field :codename
-      br
-      = f.label :description
-      = f.text_field :description
-      br
-      = f.label :badge_type
-      = f.radio_button :badge_type, BadgeType::CODE_NEEDED
-      = f.label "BadgeType::CODE_NEEDED"
-      = f.radio_button :badge_type, BadgeType::USER_ACCOUNT
-      = f.label "BadgeType::USER_ACCOUNT"
-      br
-      = f.label :logo_url
-      = f.file_field :logo_url
-      br
-      = f.label :is_code_needed
-      = f.radio_button :is_code_needed, true
-      = f.label "Sim"
-      = f.radio_button :is_code_needed, false
-      = f.label "Não"
-      br
-      = f.submit
+  .row
+    .col-md-12
+      .form-container
+        h3
+          | NOVA BADGE_
+        = form_for @badge, url: edition_badges_path(@edition, @badge),
+          html: { method: :post }  do |f|
+          .field
+            = f.label :name
+            = f.text_field :name
+          .field
+            = f.label :codename
+            = f.text_field :codename
+          .field
+            = f.label :description
+            = f.text_field :description
+          .field
+            = f.label :badge_type
+            .radio-div
+              = f.radio_button :badge_type, BadgeType::CODE_NEEDED
+              = f.label "BadgeType::CODE_NEEDED", class: 'option-label'
+            .radio-div
+              = f.radio_button :badge_type, BadgeType::USER_ACCOUNT
+              = f.label "BadgeType::USER_ACCOUNT", class: 'option-label'
+          .field
+            = f.label :logo_url
+            = f.file_field :logo_url, class: 'file-input'
+          .field
+            = f.label :is_code_needed
+            .radio-div
+              = f.radio_button :is_code_needed, true
+              = f.label "Sim", class: 'option-label'
+            .radio-div
+              = f.radio_button :is_code_needed, false
+              = f.label "Não", class: 'option-label'
+          .field
+            = button_tag "Criar Badge", type: 'submit',
+              class: 'btn btn-submit col-md-2 col-xs-12'
