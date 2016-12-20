@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	get 'intranet' => 'intranet#intranet'
 	get 'intranet' => 'intranet#intranet', as: 'user_root'
 
-	resources :editions, only: [:show] do
+	resources :editions, only: [] do
 
 		resources :participants, only: [:index, :show], param: :username
 		get 'hall_of_fame' => 'participants#hall_of_fame'
