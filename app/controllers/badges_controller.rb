@@ -61,12 +61,6 @@ class BadgesController < ApplicationController
         :logo_url, :edition_id)
     end
 
-    # USED ONLY TO ACCESS THE IMAGE NEEDED TO FOR THE BADGE.
-    # DO NOT USE THIS ONE TO CREATE A NEW BADGE.
-    def image_params
-      params.require(:badge).permit(:image)
-    end
-
     def save_badge_image(image)
       image_url = Rails.root.join('public/images/badges', @edition.id.to_s.byteslice(2,4),
         image.original_filename)
