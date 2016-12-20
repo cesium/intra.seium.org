@@ -58,3 +58,15 @@ followed by:
 Change the edition id, defined in the `set_global_info` method of the application controller, to the id of the new edition.
 4. Start the server `rails s`.
 
+Adding and Removing Organizers
+------------------------------
+
+There are rake tasks which allow you to give organizer status to a user. In case you which to see all the tasks available run `rake -T`.
+
+If you wish to give organizer status to an user run:
+
+`rake sei:add_organizer[username]`
+
+On the other hand, if you wish to revoke organizer status from an user run:
+
+`rake sei:remove_organizer[username]`
