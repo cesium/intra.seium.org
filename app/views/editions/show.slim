@@ -1,0 +1,23 @@
+p#notice
+  = notice
+p
+  strong
+    | Name:
+  = @edition.name
+p
+  strong
+    | Edition number:
+  = @edition.edition_number
+p
+  strong
+    | Description:
+  = @edition.description
+p
+  strong
+    | Begin date:
+  = @edition.begin_date
+p
+  strong
+    | End date:
+  = @edition.end_date
+= link_to 'Back', editions_path

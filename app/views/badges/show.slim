@@ -1,0 +1,35 @@
+#badge.form-container
+  #badge-name
+    h1
+      = @badge.name
+  #badge-logo
+    |  <img src="
+    = @badge.logo_url
+    | " alt="
+    = @badge.name
+    | " id="badge-logo-img"> 
+    .col-md-12
+      = @badge.description
+    .col-md-12
+      = content_tag  :div, "", id: "share-button", data: { description:"Que badge maravilhosa, já viste?", image: "http://intra.seium.org" + @badge.logo_url}
+  #badge-users
+    br
+    - if (users = @badge.users).size > 0
+      #badge-users-title
+        h2
+          | Utilizadores com este badge
+      div[style="margin-top: 20px"]
+        #badge-users-list.row
+          - users.each do |participant|
+            li.col-xs-4.col-md-3
+              .badge-participant
+                = image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img'
+                .badge-participant-name
+                  |  <a href="
+                  = edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
+                  | "> 
+                  = participant.full_name
+    - else
+      h2
+        | Não existem participantes com este badge
+= javascript_include_tag "share-button", "share.min"

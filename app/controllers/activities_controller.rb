@@ -3,6 +3,9 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :register, :deregister]
 
   def index
+    begin_date = Date.new(@edition.begin_date.year, @edition.begin_date.month, (@edition.begin_date.day - 1))
+    end_date = Date.new(@edition.end_date.year, @edition.end_date.month, @edition.end_date.day)
+    @time_span = begin_date..end_date
     respond_with(@activities)
   end
 
