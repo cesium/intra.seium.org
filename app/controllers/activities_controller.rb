@@ -1,52 +1,51 @@
 class ActivitiesController < ApplicationController
-	before_action :authenticate_user!
-
+  before_action :authenticate_user!
   before_action :set_activity, only: [:show, :register, :deregister]
 
-	def index
-		respond_with(@activities)
-	end
+  def index
+    respond_with(@activities)
+  end
 
   def show
-		@participant = current_user
+    @participant = current_user
     respond_with(@activity)
   end
 
-	def register
-		user = current_user
-		
-		if !user.registered_at? @activity
-			user.activities << @activity
-		end
+  def register
+    user = current_user
 
-		redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
-	end
+    if !user.registered_at? @activity
+      user.activities << @activity
+    end
 
-	def deregister
-		user = current_user
-		
-		if user.registered_at? @activity
-			user.activities.delete @activity
-		end
+    redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
+  end
 
-		redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
-	end
+  def deregister
+    user = current_user
+
+    if user.registered_at? @activity
+      user.activities.delete @activity
+    end
+
+    redirect_to edition_activity_path(@edition, @activity).sub(/\d+\z/, @activity.url_escaped_name)
+  end
 
   private
     def set_activity
-			act	= 
-				if params[:id].match(/\A[0-9]+\z/)
-      		Activity.find(params[:id])
-				else
-					Activity.where(url_escaped_name: CGI::escape(params[:id])).first
-				end
-			
+      act =
+        if params[:id].match(/\A[0-9]+\z/)
+          Activity.find(params[:id])
+        else
+          Activity.where(url_escaped_name: CGI::escape(params[:id])).first
+        end
+
       @activity =
-				if act && act.edition == @edition
-					act
-				else
-					nil
-				end
+        if act && act.edition == @edition
+          act
+        else
+          nil
+        end
     end
 
     def activity_params
