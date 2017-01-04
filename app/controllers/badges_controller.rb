@@ -10,14 +10,14 @@ class BadgesController < ApplicationController
 
   def show
     @badge_show_action = true
-    respond_with(@badge)
+    respond_with(@badge, @badge_code)
   end
 
   def require
   end
 
   def new
-    if user_signed_in? && current_user.is_organizer
+    if is_organizer?
       @badge = Badge.new
     else
       redirect_to new_user_session_path
@@ -49,6 +49,11 @@ class BadgesController < ApplicationController
   private
     def set_badge
       @badge = Badge.find(params[:id])
+      if BadgeAcquisition.has_any_multiple_use_code?(@badge) && is_organizer?
+        @badge_code = BadgeAcquisition.get_multiple_use_code(@badge)
+      else
+        @badge_code = nil
+      end
     end
 
     def badge_params
@@ -73,5 +78,11 @@ class BadgesController < ApplicationController
 
     def logo_url(image)
       image ? "/images/badges/#{@edition.id.to_s.byteslice(2,4)}/#{image.original_filename}" : ""
+    end
+
+    def badge_code
+      badge = Badge.find(params[:id])
+      badge.generate_codes(1, BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES) unless BadgeAcquisition.has_any_multiple_use_code?(badge)
+      [BadgeAcquisition.get_multiple_use_code(badge)]
     end
 end
