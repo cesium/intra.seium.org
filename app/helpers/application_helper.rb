@@ -19,6 +19,10 @@ module ApplicationHelper
     "SEI#{@edition.id.to_s.byteslice(2,4)} :: Intranet"
   end
 
+  def is_organizer?
+    user_signed_in? && current_user.is_organizer
+  end
+
   private
 
   def is_active?(link_path)

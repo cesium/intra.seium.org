@@ -30,4 +30,8 @@ class ApplicationController < ActionController::Base
     @edition = Edition.find(2016)
     @activities = @edition.activities
   end
+
+  def is_organizer?
+    user_signed_in? && current_user.is_organizer
+  end
 end
