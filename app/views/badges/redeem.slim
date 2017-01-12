@@ -1,9 +1,9 @@
 .container
   .row
     .col-md-12
-      .form-container
-        h2
-          | Obter crachá
+      h3
+        | OBTER BADGE_
+      p
         - case @error
         - when BadgeAcquisition::UserAlreadyHaveBadgeError
           = "Já possui o badge requisitado!"
@@ -19,18 +19,12 @@
           = "O código expirou!"
         - when NilClass
           #badge
-            #badge-name
-              |  Parabéns! Acabaste de ganhar a badge 
-              = @badge.name
-              | . 
             #badge-logo
-              |  <img src="
-              = @badge.logo_url
-              | " alt="
-              = @badge.name
-              | " class="img-responsive"> 
-            .col-md-12
-              = content_tag  :div, "", id: "share-button", data: { description:"Ganhei a badge de " + @badge.name + "!", image: "http://intra.seium.org" + @badge.logo_url}
+              = link_to edition_badge_path(@edition, @badge)
+                = image_tag @badge.logo_url, alt: @badge.name, class: "img-responsive"
+            p.text-center#badge-name
+              | Parabéns! Acabaste de ganhar a badge
+              = link_to " #{@badge.name}", edition_badge_path(@edition, @badge)
+              | !
         - else
           = @error.to_s
-= javascript_include_tag "share-button", "share.min"

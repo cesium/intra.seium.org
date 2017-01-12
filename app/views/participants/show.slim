@@ -97,10 +97,11 @@
 
     // ---> BADGES
   .col-md-8
-    h3 BADGES_
+    h3
+      | #{t('badge').pluralize.mb_chars.upcase}_
     - if @participant.badges.empty?
       p
-        | #{@participant.full_name} ainda não conquistou nenhum badge.
+        | #{@participant.full_name} ainda não conquistou nenhum #{t('badge')}.
     - else
       .col-md-6.col-md-offset-3
         - @participant.badges.each do |badge|

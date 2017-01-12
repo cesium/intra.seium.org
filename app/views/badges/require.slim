@@ -2,14 +2,14 @@
   .row
     .col-md-12
       .form-container
-        h2
-          | Obter crachá
+        h3
+          | OBTER #{t('badge').mb_chars.upcase}_
         = form_tag(redeem_post_edition_badges_path) do
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-xs-offset-2.col-md-3.col-sm-3.col-xs-3
-              = label_tag(:code, "Código do Crachá")
-            .col-md-7.col-sm-7.col-xs-7
-              = text_field_tag(:code)
-          .row[style="margin-top:30px"]
-            .actions.col-xs-offset-3.col-md-6.col-xs-6.col-sm-6
-              = button_tag "Registar crachá", type: 'submit', class: 'btn btn-submit', id: 'badge-redeem'
+          .field
+            = label_tag(:code, "Código do #{t('badge')}")
+            = text_field_tag(:code)
+          .field
+            = button_tag "Obter #{t('badge')}",
+              type: 'submit',
+              class: 'btn btn-submit col-md-3 col-xs-12',
+              id: 'badge-redeem'

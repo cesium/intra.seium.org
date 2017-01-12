@@ -3,7 +3,7 @@
     .col-md-12
       .form-container
         h3
-          | NOVA BADGE_
+          | NOVO #{t('badge').mb_chars.upcase}_
         = form_for @badge, url: edition_badges_path(@edition, @badge),
           html: { method: :post }  do |f|
           .field
@@ -34,6 +34,7 @@
             .radio-div
               = f.radio_button :is_code_needed, false
               = f.label "Não", class: 'option-label'
+          hr
           .field
-            = button_tag "Criar Badge", type: 'submit',
-              class: 'btn btn-submit col-md-2 col-xs-12'
+            = button_tag "Criar #{t('badge')}", type: 'submit',
+              class: 'btn btn-submit col-md-3 col-xs-12'

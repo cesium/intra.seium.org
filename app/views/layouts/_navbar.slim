@@ -16,11 +16,11 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top
           = link_to "Participantes",
             edition_participants_path(edition_id: @edition.id)
         li class=(is_badges_active?)
-          = link_to "Badges",
-            edition_badges_path(edition_id: @edition.id)
+          = link_to t('badge').pluralize,
+            edition_badges_path(edition_id: 2016)
         li class=(is_redeem_badge_active?)
-          = link_to "Requisitar Badge",
-            redeem_edition_badges_path(edition_id: @edition.id)
+          = link_to "Requisitar #{t('badge')}",
+            redeem_edition_badges_path(edition_id: 2016)
         li class=(is_profile_active?)
           = link_to "Perfil",
             edition_participant_path(username: current_user.username, edition_id: @edition.id)

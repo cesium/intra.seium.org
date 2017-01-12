@@ -1,7 +1,8 @@
 .container
   = render 'layouts/notice'
   = render 'layouts/alert'
-  h3 BADGES_
+  h3
+    | #{t('badge').pluralize.mb_chars.upcase}_
   hr
   .col-md-12
     = link_to "Hall of Fame", edition_hall_of_fame_path,
