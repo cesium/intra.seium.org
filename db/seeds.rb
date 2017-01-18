@@ -1,8 +1,4 @@
-require './db/seeds_files/editions'
-require './db/seeds_files/companies'
-require './db/seeds_files/speakers'
-require './db/seeds_files/activities'
-require './db/seeds_files/badges16'
+Dir[File.dirname(__FILE__) + "/seeds_files/*"].each { |file| require_relative file }
 
 # Editions
 editions = Seed::editions
@@ -16,6 +12,8 @@ speakers = Seed::speakers(editions, companies)
 # Activities
 # activities = Seed::activities(editions, speakers)
 activities = []
+
+Seed::users
 
 # Badges
 badges = RakeBadgeCreation::badges

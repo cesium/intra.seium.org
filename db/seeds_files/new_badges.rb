@@ -1,5 +1,5 @@
 module RakeBadgeCreation
-	def self.badges(editions, activities)
+	def self.new_badges(editions, activities)
 		Badge.create!([
       {
 				name: "Amigo da Blip",
