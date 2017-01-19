@@ -4,12 +4,10 @@ class ParticipantsController < ApplicationController
 
   def index
     @participants = User.all
-    respond_with(@participants)
   end
 
   def show
     @social = check_accounts
-    respond_with(@participant)
   end
 
   def hall_of_fame

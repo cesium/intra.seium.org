@@ -1,12 +1,11 @@
-.col-md-12.text-center
-  br
-  br
-  - @participants.each do |participant|
-    .col-md-3.col-sm-4.col-xs-4
-      = link_to edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) do
-        |  <div class="user-logo" style="background-image:url(
-        = participant.avatar.url
-        | )">
-    .user-name
-      h5
-        = link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
+.container
+  .row
+    h3
+      | PARTICIPANTES_
+    hr
+  .row
+    - @participants.each do |participant|
+      .col-md-2.col-sm-4.col-xs-6
+        = participant_image_profile_link(participant)
+        p.participant-profile-link.text-center
+          = participant_profile_link(participant)
