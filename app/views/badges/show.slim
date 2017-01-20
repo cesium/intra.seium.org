@@ -2,34 +2,23 @@
   #badge-name
     h1
       = @badge.name
-  #badge-logo
-    |  <img src="
-    = @badge.logo_url
-    | " alt="
-    = @badge.name
-    | " id="badge-logo-img"> 
-    .col-md-12
-      = @badge.description
-    .col-md-12
-      = content_tag  :div, "", id: "share-button", data: { description:"Que badge maravilhosa, já viste?", image: "http://intra.seium.org" + @badge.logo_url}
-  #badge-users
+  #badge-logo.col-md-4
+    = image_tag @badge.logo_url, id:"badge-logo-img",  alt:@badge.name
     br
-    - if (users = @badge.users).size > 0
+    = @badge.description
+  #badge-users.col-md-8
+    h2 Utilizadores com este badge:
+    br
+    - unless @badge.users.empty?
       #badge-users-title
-        h2
-          | Utilizadores com este badge
-      div[style="margin-top: 20px"]
-        #badge-users-list.row
-          - users.each do |participant|
-            li.col-xs-4.col-md-3
-              .badge-participant
+        table
+          - @badge.users.each do |participant|
+            tr
+              td.badge-participant
                 = image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img'
-                .badge-participant-name
-                  |  <a href="
-                  = edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
-                  | "> 
-                  = participant.full_name
+              td.badge-participant-name
+                = link_to participant.username,
+                  edition_participant_path(@edition,participant.username).sub(/d+\z/, participant.username)
     - else
-      h2
+      p.alert.alert-warning
         | Não existem participantes com este badge
-= javascript_include_tag "share-button", "share.min"
