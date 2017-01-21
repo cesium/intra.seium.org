@@ -1,0 +1,8 @@
+What? I know .gitignore but not .gitkeep. What the hell is this?
+
+Well, in short, .gitkeep is used to track empty folders.
+
+But why do we need to track an empty folder in this app?
+
+Long story short, the default path where badge images are saved is /public/images/badges/17/.
+We already have the /public/images/badges/ path but noth the 17 folder, so, as you might be guessing, Rails slams a nice "We're sorry, but something went wrong" in your face when trying to create new badges. By keeping track of this empty folder we know it will bu pushed to production and this problem will be fixed! (Maybe?)
