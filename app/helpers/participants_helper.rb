@@ -1,6 +1,6 @@
 module ParticipantsHelper
   def hall_of_fame_title
-    params[:action] == "hall_of_fame" ? "Hall Of Fame" : "Organizer Of Fame"
+    params[:action] == "hall_of_fame" ? t('hof'): t('oof')
   end
 
   def participant_badge_count(participant)

@@ -39,3 +39,24 @@
   margin: 0 auto;
   display: block;
 }
+
+.img-hof {
+  padding: 10%;
+}
+
+.hof-row {
+  display: flex;
+}
+
+.hof-row-alternate {
+  background-color: $color-light-gray;
+  display: flex;
+}
+
+.hof-white-bg {
+  background-color: $color-white;
+}
+
+.hof-info {
+  align-self: center;
+}

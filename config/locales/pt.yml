@@ -1,5 +1,4 @@
 pt:
-  badge: "Crachá"
   date:
     abbr_day_names:
     - Dom
@@ -255,3 +254,7 @@ pt:
         female: "Feminino"
         yes_sir: "Sim"
         no_sir: "Não"
+  hof: "Hall Of Fame"
+  oof: "Organizer Of Fame"
+  badge: "Crachá"
+  badge_congrats: "Parabéns! Acabaste de ganhar a badge "

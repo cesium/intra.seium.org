@@ -1,15 +1,13 @@
-.col-md-12.text-center
-  h1
-    = hall_of_fame_title
-  br/
-  br/
-  - @participants.each do |participant|
-    .row
-      .col-xs-3
+.container
+  h3
+    = "#{hall_of_fame_title.upcase}_"
+  hr
+  - @participants.each_with_index do |participant, index|
+    .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
+      .col-md-1.col-sm-2.col-xs-3 class=( index.odd? ? 'hof-white-bg' : '' )
         = link_to edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) do
-          .user-logo.badge-user-logo style="background-image:url(#{participant.avatar.url})"
-      .col-xs-6.badge-fame-participant
+          = image_tag participant.avatar.url, class: 'img-responsive img-circle img-hof'
+      .col-md-11.col-sm-10.col-xs-9.text-right.hof-info
         = link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
-      .col-xs-3.badge-fame-participant
-        .participant-badge-count
-          = participant_badge_count(participant)
+        br
+        | #{participant_badge_count(participant)} Badges

@@ -5,9 +5,9 @@
     | #{t('badge').pluralize.mb_chars.upcase}_
   hr
   .col-md-12
-    = link_to "Hall of Fame", edition_hall_of_fame_path,
+    = link_to t('hof'), edition_hall_of_fame_path,
       class: 'btn btn-submit badge-of-fame'
-    = link_to "Organizer of Fame", edition_organizer_of_fame_path,
+    = link_to t('oof'), edition_organizer_of_fame_path,
       class: 'btn btn-submit badge-of-fame'
     hr
   - @badge_logos.each do |badge|
