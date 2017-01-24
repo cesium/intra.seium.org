@@ -23,3 +23,6 @@ public/system
 
 # Vim files.
 .swp
+
+# Environment Configuration File.
+.env
