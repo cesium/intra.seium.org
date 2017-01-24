@@ -13,5 +13,5 @@
   - @badge_logos.each do |badge|
     .col-md-2.col-sm-4.col-xs-6
       = link_to edition_badge_path(@edition, badge)
-        = image_tag (badge.logo_url), class: 'img-responsive'
+        = image_tag badge.avatar.url, class: 'img-responsive'
 
