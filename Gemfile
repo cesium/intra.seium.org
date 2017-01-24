@@ -64,7 +64,7 @@ end
 gem "paperclip"
 
 # Amazon AWS SDK
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '~> 1.66.0'
 
 # Nokogiri - Html Parser
 gem 'nokogiri'
