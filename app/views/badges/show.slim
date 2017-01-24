@@ -4,14 +4,14 @@
       = @badge.name
   #badge-logo
     |  <img src="
-    = @badge.logo_url
+    = @badge.avatar.url
     | " alt="
     = @badge.name
-    | " id="badge-logo-img"> 
+    | " id="badge-logo-img">
     .col-md-12
       = @badge.description
     .col-md-12
-      = content_tag  :div, "", id: "share-button", data: { description:"Que badge maravilhosa, já viste?", image: "http://intra.seium.org" + @badge.logo_url}
+      = content_tag  :div, "", id: "share-button", data: { description:"Que badge maravilhosa, já viste?", image: "http://intra.seium.org" + @badge.avatar.url}
   #badge-users
     br
     - if (users = @badge.users).size > 0
@@ -27,7 +27,7 @@
                 .badge-participant-name
                   |  <a href="
                   = edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
-                  | "> 
+                  | ">
                   = participant.full_name
     - else
       h2
