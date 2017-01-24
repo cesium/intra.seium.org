@@ -63,6 +63,9 @@ end
 # Paperclip for image management
 gem "paperclip"
 
+# Amazon AWS SDK
+gem 'aws-sdk', '~> 2.3'
+
 # Nokogiri - Html Parser
 gem 'nokogiri'
 
@@ -80,3 +83,6 @@ gem 'capistrano-rails-console'
 
 # Production logging
 gem 'rails_12factor', group: :production
+
+# Environment Variables
+gem 'dotenv-rails', groups: [:development, :test]
