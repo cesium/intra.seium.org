@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209124859) do
+ActiveRecord::Schema.define(version: 20170124215547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,8 +81,12 @@ ActiveRecord::Schema.define(version: 20160209124859) do
     t.datetime "updated_at"
     t.boolean  "is_code_needed"
     t.datetime "expiration_date"
-    t.string   "codename",        default: "", null: false
-    t.integer  "badge_type",      default: 0,  null: false
+    t.string   "codename",            default: "", null: false
+    t.integer  "badge_type",          default: 0,  null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "badges", ["activity_id"], name: "index_badges_on_activity_id", using: :btree
