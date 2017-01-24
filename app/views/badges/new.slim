@@ -1,10 +1,12 @@
 .container
+  = render 'layouts/notice'
+  = render 'layouts/alert'
   .row
     .col-md-12
       .form-container
         h3
           | NOVO #{t('badge').mb_chars.upcase}_
-        = form_for @badge, url: edition_badges_path(@edition, @badge),
+        = form_for @badge, multipart: true, url: edition_badges_path(@edition, @badge),
           html: { method: :post }  do |f|
           .field
             = f.label :name
@@ -24,8 +26,8 @@
               = f.radio_button :badge_type, BadgeType::USER_ACCOUNT
               = f.label "BadgeType::USER_ACCOUNT", class: 'option-label'
           .field
-            = f.label :logo_url
-            = f.file_field :logo_url, class: 'file-input'
+            = f.label :avatar
+            = f.file_field :avatar, class: 'file-input'
           .field
             = f.label :is_code_needed
             .radio-div

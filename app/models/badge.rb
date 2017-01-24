@@ -8,15 +8,12 @@ class Badge < ActiveRecord::Base
 
 	has_many :badge_acquisitions
 	has_many :users, through: :badge_acquisitions
+	has_attached_file :avatar, styles: {  medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/badge-missing.png"
+	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 	# def users
 	# 	BadgeAcquisition.where(badge_id: id).map { |bc| bc.user }.select { |u| u }
 	# end
-
-  scope :logos, -> (edition_id) {
-    select('logo_url')
-    where("badges.edition_id = ?", edition_id)
-  }
 
 	def generate_codes(num_codes, status, code_expiration_date = nil)
 		if is_code_needed

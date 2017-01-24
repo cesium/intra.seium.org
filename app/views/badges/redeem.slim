@@ -21,7 +21,7 @@
           #badge
             #badge-logo
               = link_to edition_badge_path(@edition, @badge)
-                = image_tag @badge.logo_url, alt: @badge.name, class: "img-responsive"
+                = image_tag @badge.avatar.url, alt: @badge.name, class: "img-responsive"
             p.text-center#badge-name
               | #{t('badge_congrats')}
               = link_to " #{@badge.name}", edition_badge_path(@edition, @badge)

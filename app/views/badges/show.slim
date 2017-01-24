@@ -3,7 +3,7 @@
     h1
       = @badge.name
   #badge-logo.col-md-4
-    = image_tag @badge.logo_url, id:"badge-logo-img",  alt:@badge.name
+    = image_tag @badge.avatar.url, id:"badge-logo-img",  alt:@badge.name
     br
     = @badge.description
   #badge-users.col-md-8
@@ -17,8 +17,7 @@
               td.badge-participant
                 = image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img'
               td.badge-participant-name
-                = link_to participant.username,
-                  edition_participant_path(@edition,participant.username).sub(/d+\z/, participant.username)
+                = participant_profile_link(participant)
     - else
       p.alert.alert-warning
         | Não existem participantes com este badge
