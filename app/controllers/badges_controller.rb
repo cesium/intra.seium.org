@@ -4,7 +4,6 @@ class BadgesController < ApplicationController
 
   def index
     @badges = @edition.badges.order(name: :asc)
-    @badge_logos = Badge.logos @edition
     respond_with(@badges)
   end
 
@@ -53,25 +52,6 @@ class BadgesController < ApplicationController
 
     def badge_params
       params.require(:badge).permit(:name, :codename, :description, :badge_type, :is_code_needed,
-        :logo_url, :edition_id, :avatar)
+        :edition_id, :avatar)
     end
-
-    # def badge_image
-    #   image                       = badge_params[:logo_url]
-    #   params[:badge][:logo_url]   = logo_url(image)
-    #   params[:badge][:edition_id] = @edition.id
-    #   return image
-    # end
-
-    # def save_badge_image(image)
-    #   image_url = Rails.root.join('public/images/badges', @edition.id.to_s.byteslice(2,4),
-    #     image.original_filename)
-    #   File.open(image_url, 'wb') do |file|
-    #     file.write(image.read)
-    #   end
-    # end
-
-    # def logo_url(image)
-    #   image ? "/images/badges/#{@edition.id.to_s.byteslice(2,4)}/#{image.original_filename}" : ""
-    # end
 end
