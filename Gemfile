@@ -55,9 +55,10 @@ gem 'font-awesome-sass'
 
 # Model Diagram Generation tool
 group :development, :test do
-	gem 'railroady'
-	gem 'better_errors'
-	gem 'binding_of_caller'
+  gem 'railroady'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'dotenv-rails'
 end
 
 # Paperclip for image management
@@ -85,4 +86,3 @@ gem 'capistrano-rails-console'
 gem 'rails_12factor', group: :production
 
 # Environment Variables
-gem 'dotenv-rails', groups: [:development, :test]
