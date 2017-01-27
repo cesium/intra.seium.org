@@ -1,87 +1,85 @@
+
 .container
   .row
     .col-md-12
-      #user-edit-form.form-container
-        h2
-          | Editar Conta
+      #users-new.form-container
+        h2 Editar Conta 
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
           = devise_error_messages!
-          .row
-            .col-md-12.user-edit-img
+          .user-update-info.col-md-7
+            br
+            #bio-field.field.row
+              .col-md-3.col-sm-3.col-xs-5.text-left
+                = f.label :biography
+              .col-md-7.col-xs-7.col-sm-7.text-left
+                = f.text_area :biography, id: 'bio-field'
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :birthday
+              .col-md-7.col-xs-7.col-sm-7
+                = f.date_field :birthday
+            br
+            - if @user.is_cesium_associate && @user.cesium_associate_number.blank?
+              .field.row
+                .col-md-3.col-sm-3.col-xs-5
+                  = f.label :cesium_associate_number
+                .col-md-7.col-xs-7.col-sm-7
+                  = f.text_field :cesium_associate_number
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :facebook_account, "Facebook"
+              .col-md-7.col-xs-7.col-sm-7
+                = f.text_field :facebook_account
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :twitter_account, "Twitter"
+              .col-md-7.col-xs-7.col-sm-7
+                = f.text_field :twitter_account
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :github_account, "GitHub"
+              .col-md-7.col-xs-7.col-sm-7
+                = f.text_field :github_account
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :google_plus_account, "Google+"
+              .col-md-7.col-xs-7.col-sm-7
+                = f.text_field :google_plus_account
+            br
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              .account-confirmation
+                | Currently waiting confirmation for: 
+                = resource.unconfirmed_email
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :password, "Nova Password", class: "center-label"
+              .col-md-7.col-xs-7.col-sm-7
+                = f.password_field :password, placeholder: "Manter vazio para \
+                não alterar", autocomplete: "off"
+            br
+            .field.row
+              .col-md-3.col-sm-3.col-xs-5
+                = f.label :password_confirmation, "Confirmação da nova Password "
+              .col-md-7.col-xs-7.col-sm-7
+                = f.password_field :password_confirmation, placeholder: "Manter \
+                vazio para não alterar", autocomplete: "off"
+                .col-md-12.user-edit-info
+            br
+            hr
+            .action
+              .col-md-12
+              .field.row
+                .col-md-3.col-sm-3.col-xs-5
+                  = f.label :current_password, class: "center-label"
+                .col-md-7.col-xs-7.col-sm-7
+                  = f.password_field :current_password, placeholder: "A password é necessária para confirmar.",autocomplete: "off"
+              = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'
+          .col-md-5
+            .user-edit-img
               = image_tag(@user.avatar.url(:medium), class: 'user-logo')
               = f.file_field :avatar
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :biography
-            .col-md-7.col-xs-7.col-sm-7
-              = f.text_area :biography, id: 'bio-field'
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :birthday
-            .col-md-7.col-xs-7.col-sm-7
-              = f.date_field :birthday
-          br
-          - if @user.is_cesium_associate && @user.cesium_associate_number.blank?
-            .field.row
-              .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-                = f.label :cesium_associate_number
-              .col-md-7.col-xs-7.col-sm-7
-                = f.text_field :cesium_associate_number
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :facebook_account
-            .col-md-7.col-xs-7.col-sm-7
-              = f.text_field :facebook_account
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :twitter_account
-            .col-md-7.col-xs-7.col-sm-7
-              = f.text_field :twitter_account
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :github_account
-            .col-md-7.col-xs-7.col-sm-7
-              = f.text_field :github_account
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :google_plus_account
-            .col-md-7.col-xs-7.col-sm-7
-              = f.text_field :google_plus_account
-          br
-          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-            .account-confirmation
-              | Currently waiting confirmation for: 
-              = resource.unconfirmed_email
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :password, class: "center-label"
-            .col-md-7.col-xs-7.col-sm-7
-              = f.password_field :password, autocomplete: "off"
-              .col-md-12.user-edit-info
-                i
-                  | (deixar em branco se não quiser alterar)
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :password_confirmation
-            .col-md-7.col-xs-7.col-sm-7
-              = f.password_field :password_confirmation, autocomplete: "off"
-          br
-          .field.row
-            .col-md-offset-2.col-sm-offset-2.col-md-3.col-sm-3.col-xs-5
-              = f.label :current_password, class: "center-label"
-            .col-md-7.col-xs-7.col-sm-7
-              = f.password_field :current_password, autocomplete: "off"
-              .col-md-12.user-edit-info
-                i
-                  | (precisamos da tua password atual para confirmar as mudanças)
-          br
-          .row
-            .actions
-              = button_tag "Atualizar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'
