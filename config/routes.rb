@@ -1,33 +1,34 @@
 Rails.application.routes.draw do
 
-	get 'intranet' => 'intranet#intranet'
-	get 'intranet' => 'intranet#intranet', as: 'user_root'
+  get 'intranet' => 'intranet#intranet'
+  get 'intranet' => 'intranet#intranet', as: 'user_root'
 
-	resources :editions, only: [] do
+  resources :editions, only: [] do
 
-		resources :participants, only: [:index, :show], param: :username
-		get 'hall_of_fame' => 'participants#hall_of_fame'
-		get 'organizer_of_fame' => 'participants#organizer_of_fame'
+    resources :participants, only: [:index, :show], param: :username
+    get 'hall_of_fame' => 'participants#hall_of_fame'
+    get 'organizer_of_fame' => 'participants#organizer_of_fame'
 
-		resources :activities, only: [:index, :show] do
-			post :register, on: :member
-			delete :deregister, on: :member
-		end
+    resources :activities, only: [:index, :show] do
+      post :register, on: :member
+      delete :deregister, on: :member
+    end
 
-		resources :badges, only: [:index, :show, :new, :create] do
-			get :redeem, on: :collection, action: :require, as: 'redeem'
-			post :redeem, on: :collection, action: :redeem, as: 'redeem_post'
-			get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'
-		end
-	end
+    resources :badges, only: [:index, :show, :new, :create] do
+      get :redeem, on: :collection, action: :require, as: 'redeem'
+      post :redeem, on: :collection, action: :redeem, as: 'redeem_post'
+      get 'redeem/:code', on: :collection, action: :redeem, as: 'redeem_get'
+      get 'codes/:codename/:number_of_codes', on: :collection, action: :codes, as: 'codes_get'
+    end
+  end
 
-	devise_for :users
+  devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-	root to: 'intranet#intranet'
+  root to: 'intranet#intranet'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
