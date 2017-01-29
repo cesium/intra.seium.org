@@ -1,0 +1,12 @@
+.container
+  - @codes.each do |code|
+    .col-md-6 style="display: flex; align-items: center; justify-content: center; border: 2px solid black;"
+      .col-md-4
+        = image_tag "#{@url}#{@codename}_#{code}.png", class: "img-responsive"
+      .col-md-8
+        p
+          = code
+        p
+          | Semana da Engenharia Informática 2017
+        p
+          | http://intra.seium.org/editions/2017/badges/redeem/#{code}
