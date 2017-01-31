@@ -2,7 +2,8 @@
   = render 'layouts/notice'
   .col-md-4
     // ---> PARTICIPANT IMAGE
-    = image_tag @participant.avatar.url, class: 'img-responsive img-circle participant-img'
+    .profile-pic
+      = image_tag @participant.avatar.url(:medium), class: 'img-responsive img-circle participant-img'
     h4.text-center
       = @participant.full_name
     // Check if user is a university student
