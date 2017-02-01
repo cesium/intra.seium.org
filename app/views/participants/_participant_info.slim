@@ -1,0 +1,54 @@
+ul.participant-info
+
+  - if @participant.biography && @participant.biography != ""
+    li.participant-info-category
+      | Biografia
+    li.participant-info-item
+      = @participant.biography
+
+  li.participant-info-category
+    | Email
+  li.participant-info-item
+    = @participant.email
+
+  li.participant-info-category
+    | Username
+  li.participant-info-item
+    = @participant.username
+
+  li.participant-info-category
+    | Sexo
+  li.participant-info-item
+    = @participant.sex_to_s
+
+  - if @participant.birthday
+    li.participant-info-category
+      | Data de nascimento
+    li.participant-info-item
+      = @participant.birthday.strftime("%Y-%m-%d")
+
+  - if @participant.is_univ_student
+    - if @participant.minho_univ_student_id != ""
+      li.participant-info-category
+        | Nº de Aluno UMinho
+      li.participant-info-item
+        = @participant.minho_univ_student_id
+
+    li.participant-info-category
+      | Curso
+    li.participant-info-item
+      - if @participant.is_inf_eng_student_at_minho_univ
+        | Engenharia Informática
+      - else
+        = @participant.course
+
+  - if @participant.cesium_associate_number
+    li.participant-info-category
+      | Nº Sócio
+    li.participant-info-item
+      = @participant.cesium_associate_number
+
+  li.participant-info-category
+    | Localidade
+  li.participant-info-item
+    = @participant.location
