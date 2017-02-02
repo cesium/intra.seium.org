@@ -5,6 +5,10 @@
   margin-top: 20px;
 }
 
+.img-participant {
+  margin: auto;
+}
+
 .participant-profile-link {
   margin-top: 10px;
 }
@@ -62,10 +66,6 @@
 .hof-row-alternate {
   background-color: $color-light-gray;
   display: flex;
-}
-
-.hof-white-bg {
-  background-color: $color-white;
 }
 
 .hof-info {

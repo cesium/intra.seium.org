@@ -1,23 +1,25 @@
-#badge.form-container
-  #badge-name
-    h1
-      = @badge.name
-  #badge-logo.col-md-4
-    = image_tag @badge.avatar.url, id:"badge-logo-img",  alt:@badge.name
+.container
+  h3
+    = @badge.name.upcase
+  hr
+  .col-md-3.col-sm-3.col-xs-12
+    .row
+      .col-md-9.col-md-offset-1.col-sm-12.col-sm-offset-0.col-xs-8.col-xs-offset-2
+        = image_tag @badge.avatar.url(:medium), alt: @badge.name, class: "img-responsive"
     br
-    = @badge.description
-  #badge-users.col-md-8
-    h2 Utilizadores com este badge:
-    br
+    p.text-center
+      = @badge.description
+    hr
+  .col-md-8.col-sm-9.col-xs-12
+    .row
+      p Utilizadores com este badge:
     - unless @badge.users.empty?
-      #badge-users-title
-        table
-          - @badge.users.each do |participant|
-            tr
-              td.badge-participant
-                = image_tag participant.avatar.url(:thumb), class:'badge-participant-photo-img'
-              td.badge-participant-name
-                = participant_profile_link(participant)
+      - @badge.users.each_with_index do |participant, index|
+        .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
+          .col-md-2.col-sm-2.col-xs-3 class=( index.odd? ? 'hof-row-alternate' : '' )
+            = hof_participant_image_profile_link(participant)
+          .col-md-10.col-sm-10.col-xs-9.text-right.hof-info
+            = participant_profile_link(participant)
     - else
-      p.alert.alert-warning
-        | Não existem participantes com este badge
+      p.alert
+        = t('badge_withouth_participants')
