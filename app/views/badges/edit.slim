@@ -1,0 +1,23 @@
+.container
+  .form-container
+    h3
+      | #{"Editar #{t('badge').mb_chars.upcase}".upcase}_
+    hr
+    = form_for([@edition, @badge]) do |f|
+      .field
+        = f.label :avatar
+        = f.file_field :avatar, class: 'file-input'
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :codename
+        = f.text_field :codename
+      .field
+        = f.label :description
+        = f.text_field :description
+      hr
+      = button_tag "Atualizar",
+        type: 'submit',
+        class: 'btn btn-submit col-md-3 col-sm-4 col-xs-12',
+        id: 'badge-edit-submit'

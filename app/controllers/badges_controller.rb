@@ -42,6 +42,17 @@ class BadgesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @badge.update_attributes(badge_params)
+      redirect_to edition_badge_path(@edition.id, @badge), notice: "Badge added with success."
+    else
+      render 'edit'
+    end
+  end
+
   private
     def set_badge
       @badge = Badge.find(params[:id])
