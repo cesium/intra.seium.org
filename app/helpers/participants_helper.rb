@@ -9,7 +9,8 @@ module ParticipantsHelper
 
   def participant_image_profile_link(participant)
     link_to edition_participant_path(@edition, participant.username) do
-      image_tag participant.avatar.url, class: 'img-responsive img-circle participant-img'
+      image_tag participant.avatar.url(:thumb),
+        class: 'img-responsive img-circle img-hof'
     end
   end
 

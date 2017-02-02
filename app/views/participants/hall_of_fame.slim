@@ -5,9 +5,8 @@
   - @participants.each_with_index do |participant, index|
     .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
       .col-md-1.col-sm-2.col-xs-3 class=( index.odd? ? 'hof-white-bg' : '' )
-        = link_to edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username) do
-          = image_tag participant.avatar.url(:thumb), class: 'img-responsive img-circle img-hof'
+        = participant_image_profile_link(participant)
       .col-md-11.col-sm-10.col-xs-9.text-right.hof-info
-        = link_to participant.full_name, edition_participant_path(@edition, participant).sub(/\d+\z/, participant.username)
+        = participant_profile_link(participant)
         br
         | #{participant_badge_count(participant)} Badges
