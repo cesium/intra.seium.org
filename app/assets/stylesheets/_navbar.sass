@@ -10,13 +10,16 @@ nav#navbar
 #nav-logo-container
   padding: 0
 
-#nav-menu ul li a
-  color: $color-white
-  font-size: 18px
-  font-family: $header-font
-  margin-right: 20px
-  &:hover
-    color: $color-pink
+#nav-menu
+  background-color: $color-black
+  ul li a
+    color: $color-white
+    font-size: 18px
+    font-family: $header-font
+    background-color: $color-black
+    margin-right: 20px
+    &:hover
+      color: $color-pink
 
 #nav-menu li.active
   a
@@ -25,11 +28,11 @@ nav#navbar
 
 #navbar-toggle
   & span
-    background-color: #fff
+    background-color: $color-white
   &:hover, &:focus
-    background-color: #fff
+    background-color: $color-white
     & span
-      background-color: #0277BD
+      background-color: $color-blue
 
 @media(max-width: 1090px)
   #nav-menu ul li a
