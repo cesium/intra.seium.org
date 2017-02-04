@@ -1,6 +1,7 @@
 class BadgesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_badge, only: [:show]
+  load_and_authorize_resource except: [:require, :redeem]
 
   def index
     @badges = @edition.badges.order(name: :asc)
@@ -16,11 +17,7 @@ class BadgesController < ApplicationController
   end
 
   def new
-    if user_signed_in? && current_user.is_organizer
-      @badge = Badge.new
-    else
-      redirect_to new_user_session_path
-    end
+    @badge = Badge.new
   end
 
   def create

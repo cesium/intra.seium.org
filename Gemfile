@@ -85,4 +85,4 @@ gem 'capistrano-rails-console'
 # Production logging
 gem 'rails_12factor', group: :production
 
-# Environment Variables
+gem 'cancancan'
