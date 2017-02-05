@@ -2,11 +2,15 @@
   h3
     = "#{hall_of_fame_title.upcase}_"
   hr
-  - @participants.each_with_index do |participant, index|
-    .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
-      .col-md-1.col-sm-2.col-xs-3 class=( index.odd? ? 'hof-white-bg' : '' )
-        = hof_participant_image_profile_link(participant)
-      .col-md-11.col-sm-10.col-xs-9.text-right.hof-info
-        = hof_participant_profile_link(participant)
-        br
-        | #{participant_badge_count(participant)} Badges
+  - if participants_hof? && (not current_user.is_organizer)
+    p.alert O ranking econtra-se offline no momento! Diverte-te a colecionar mais badges!
+    hr
+  - else
+    - @participants.each_with_index do |participant, index|
+      .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
+        .col-md-1.col-sm-2.col-xs-3 class=( index.odd? ? 'hof-white-bg' : '' )
+          = hof_participant_image_profile_link(participant)
+        .col-md-11.col-sm-10.col-xs-9.text-right.hof-info
+          = hof_participant_profile_link(participant)
+          br
+          | #{participant_badge_count(participant)} Badges

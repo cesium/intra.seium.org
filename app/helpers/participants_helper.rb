@@ -3,6 +3,10 @@ module ParticipantsHelper
     params[:action] == "hall_of_fame" ? t('hof'): t('oof')
   end
 
+  def participants_hof?
+    params[:action] == "hall_of_fame"
+  end
+
   def participant_badge_count(participant)
     participant.badge_acquisitions_count || 0
   end
