@@ -5,7 +5,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    if user.is_organizer?
+    if user.is_badge_manager?
       can [:read, :create, :update], Badge
       can :read, User
     else
