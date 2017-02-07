@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .badge-logo img{
-    width: 80%;
-    display: block;
-    margin: 15px auto 50px auto;
+  width: 80%;
+  display: block;
+  margin: 15px auto 50px auto;
 }
 
 #badge-logo {
@@ -26,9 +26,14 @@
   min-height: 50px;
 }
 
+.img-badge {
+  height: 170px;
+  margin: auto;
+}
+
 #badge-users {
   margin-top: 50px;
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
 #badge-users-title {
@@ -104,25 +109,31 @@ a
 }
 
 @media(max-width: 507px) {
-    .badge-user{
-        width: 200px;
-    }
+  .badge-user{
+    width: 200px;
+  }
 
-    .badge-user-name{
-      font-size: 20px;
-      float: none;
-      margin: 0 auto;
-      text-align: center;
-    }
+  .badge-user-name{
+    font-size: 20px;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    .badge-user-photo-img{
-      margin: 0 auto;
-      float: none;
-    }
+  .badge-user-photo-img{
+    margin: 0 auto;
+    float: none;
+  }
 
-    #badge{
-      width: 350px;
-    }
+  #badge{
+    width: 350px;
+  }
+}
+
+@media(max-width: 1200px) {
+  .img-badge {
+    height: 130px;
+  }
 }
 
 input[type="file"].file-input {

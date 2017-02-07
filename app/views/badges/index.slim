@@ -12,8 +12,8 @@
         class: 'btn btn-submit badge-of-fame col-md-4 col-sm-5 col-xs-12'
     .row
       hr
-  - @badges.each do |badge|
-    .col-md-2.col-sm-4.col-xs-6
+  - @badges.each_with_index do |badge, index|
+    .col-xl-2.col-lg-2.col-md-2.col-sm-4.col-xs-6
       = link_to edition_badge_path(@edition, badge)
-        = image_tag badge.avatar.url, class: 'img-responsive'
+        = image_tag badge.avatar.url(:medium), class: 'img-responsive img-badge'
 
