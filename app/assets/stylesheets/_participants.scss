@@ -63,6 +63,29 @@
   display: flex;
 }
 
+.participant-badge {
+  height: 132px;
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  .participant-badge {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .participant-badge {
+    height: 132px;
+  }
+}
+
+@media (max-width: 320px) {
+  .participant-badge {
+    height: 110px;
+  }
+}
+
 .hof-row-alternate {
   background-color: $color-light-gray;
   display: flex;
