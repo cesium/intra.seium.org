@@ -21,8 +21,13 @@ module ParticipantsHelper
     end
   end
 
-  def participant_profile_link(participant)
+  def hof_participant_profile_link(participant)
     link_to participant.full_name,
+      edition_participant_path(@edition, participant.username)
+  end
+
+  def participant_profile_link(participant)
+    link_to participant.full_name.split.take(2).join(' '),
       edition_participant_path(@edition, participant.username)
   end
 end
