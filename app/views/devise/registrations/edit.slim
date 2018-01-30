@@ -51,33 +51,8 @@
               .col-md-7.col-xs-7.col-sm-7
                 = f.text_field :google_plus_account
             br
-            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-              .account-confirmation
-                | Currently waiting confirmation for: 
-                = resource.unconfirmed_email
-            .field.row
-              .col-md-3.col-sm-3.col-xs-5
-                = f.label :password, "Nova Password", class: "center-label"
-              .col-md-7.col-xs-7.col-sm-7
-                = f.password_field :password, placeholder: "Manter vazio para \
-                não alterar", autocomplete: "off"
-            br
-            .field.row
-              .col-md-3.col-sm-3.col-xs-5
-                = f.label :password_confirmation, "Confirmação da nova Password "
-              .col-md-7.col-xs-7.col-sm-7
-                = f.password_field :password_confirmation, placeholder: "Manter \
-                vazio para não alterar", autocomplete: "off"
-                .col-md-12.user-edit-info
-            br
             hr
             .action
-              .col-md-12
-              .field.row
-                .col-md-3.col-sm-3.col-xs-5
-                  = f.label :current_password, class: "center-label"
-                .col-md-7.col-xs-7.col-sm-7
-                  = f.password_field :current_password, placeholder: "A password é necessária para confirmar.",autocomplete: "off"
               = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'
           .col-md-5
             .user-edit-img

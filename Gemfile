@@ -45,7 +45,9 @@ gem "spring",        group: :development
 # gem "debugger", group: [:development, :test]
 
 # Use devise for User authentication
-gem "devise"
+gem 'devise'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 
 # Use CouponCode for Generating Codes for Badges
 gem "coupon_code"

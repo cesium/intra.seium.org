@@ -25,12 +25,6 @@ css:
             = f.label :username
             = f.text_field :username
           .field
-            = f.label :password
-            = f.password_field :password, autocomplete: "off"
-          .field
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "off"
-          .field
             = f.label :location
             = f.text_field :location
           .field
@@ -106,7 +100,6 @@ css:
           .field#cesium-associate-number hidden=""
             = f.label :cesium_associate_number, "Qual é o teu número de sócio? (Deixa em branco caso não saibas)"
             = f.text_field :cesium_associate_number, value: nil
-
           .field
             .actions
               = button_tag "Registar", type: 'submit',
