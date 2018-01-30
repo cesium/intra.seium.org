@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   UserNotFoundError = Class.new(StandardError)
   UserIsAlreadyAnOrganizerError = Class.new(StandardError)
 
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+
   validates :first_name, :last_name, presence: true
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 3..20 }

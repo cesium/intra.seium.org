@@ -1,11 +1,19 @@
 .container
+  .divide80
   .row
-    .col-md-12
+    .col-md-6
       .row
-        .col-md-2.col-md-offset-0.col-sm-8.col-sm-offset-2.col-xs-8.col-xs-offset-2.sei-logo-sign-in
+        .col-md-10
           = image_tag "sei-logo.svg", class: "responsive-image"
-      .form-container
-        h2 Log in
-        = link_to "Sign in with GitHub", user_github_omniauth_authorize_path
-        br
-        = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
+    .col-md-6
+      .divide50
+      .login-form
+        h2 Login
+        = link_to user_google_oauth2_omniauth_authorize_path,
+          class: "btn btn-lg border-theme btn-update col-md-12 col-sm-12 col-xs-12" do
+          i.fa.fa-lg.fa-google aria-hidden="true"
+          | Gmail
+        = link_to user_github_omniauth_authorize_path ,
+          class: "btn btn-lg border-theme btn-update col-md-12 col-sm-12 col-xs-12" do
+          i.fa.fa-lg.fa-github aria-hidden="true"
+          | Github
