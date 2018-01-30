@@ -76,6 +76,8 @@ gem "capistrano-rvm", github: "capistrano/rvm"
 gem "capistrano-secrets-yml", "~> 1.0.0"
 gem "capistrano-rails-console"
 
+gem "puma", "~> 3.11"
+
 # Model Diagram Generation tool
 group :development, :test do
   gem "railroady"
