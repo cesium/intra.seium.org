@@ -18,6 +18,9 @@
             = f.label :description
             = f.text_field :description
           .field
+            = f.label :parent
+            = f.select :parent_id, @parent_options, { include_blank: true }
+          .field
             = f.label :badge_type
             .radio-div
               = f.radio_button :badge_type, BadgeType::CODE_NEEDED

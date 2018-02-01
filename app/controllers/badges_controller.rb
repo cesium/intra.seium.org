@@ -17,6 +17,7 @@ class BadgesController < ApplicationController
   end
 
   def new
+    @parent_options = Badge.where(is_code_needed: false).collect{|p| [p.codename, p.id]}
     @badge = Badge.new
   end
 
@@ -59,7 +60,8 @@ class BadgesController < ApplicationController
     end
 
     def badge_params
-      params.require(:badge).permit(:name, :codename, :description, :badge_type, :is_code_needed,
-        :edition_id, :avatar)
+      params.require(:badge).permit(:name, :codename, :description, 
+                                    :badge_type, :is_code_needed,
+                                    :edition_id, :avatar, :parent_id)
     end
 end
