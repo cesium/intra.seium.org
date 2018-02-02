@@ -1,0 +1,25 @@
+[
+ {
+   "name": "Dia 3",
+   "codename": "day_3",
+   "parent": "",
+   "badge_type": 0,
+   "description": "Esteve presente no dia 3",
+   "is_code_needed": 0,
+   "category": "participation",
+   "avatar": "public/images/badges/18/participation/day_3.png",
+   "edition": 2018
+ },
+ {
+   "name": "Mentor do CoderDojo",
+   "codename": "activity_coderdojo",
+   "parent": "day_3",
+   "badge_type": 2,
+   "description": "Foi mentor no CoderDojo",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_coderdojo.png",
+   "edition": 2018
+ }
+]
+

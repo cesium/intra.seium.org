@@ -1,33 +1,31 @@
 namespace :sei do
-	desc "Add Badges"
+  desc "Add badges specified in a JSON document"
 
-	task :add_badges  => :environment  do
+  task :add_badges, [:badges_filename] => [:environment] do |tasks, args|
+    badges_file = open(args.badges_filename)
+    jbadges = JSON.parse(badges_file.read)
 
-		require "./db/seeds_files/badges16.rb"
+    jbadges.each do |jb|
+      unless Badge.where(codename: jb["codename"]).empty?
+        puts "Badge '#{jb["codename"]}' already exists" 
+        next
+      end
 
-		RakeBadgeCreation.badges.each do |badge|
+      is_code_needed = BadgeType::CODE_NEEDED == jb["badge_type"]
+      avatar = File.new(jb["avatar"])
+      parent = Badge.where(codename: jb["parent"]).first
+      parent_id = parent ? parent.id : nil
 
-			if !badge[:name].blank? && !badge[:codename].blank? && !badge[:badge_type].blank? && !badge[:edition_id].blank?
-				if !Badge.find_by_codename(badge[:codename])
-					if badge[:badge_type] == BadgeType::CODE_NEEDED
-						badge[:is_code_needed] = true
-						Badge.create(badge)
-						puts "[LOG] Created badge: #{badge[:codename]} #{badge[:logo_url].blank? ? 'WITHOUT LOGO' : ''}"
-					elsif badge[:badge_type] == BadgeType::USER_ACCOUNT
-						badge[:is_code_needed] = false
-						Badge.create(badge)
-						puts "[LOG] Created badge: #{badge[:codename]} #{badge[:logo_url].blank? ? 'WITHOUT LOGO' : ''}"
-					else
-						puts "[ERROR] Invalid Badge type: #{badge[:badge_type]}"
-					end
-				else
-					puts "[Warning] Already exists a badge with codename: #{badge[:codename]}. Skipping create.."
-				end
-			else
-					puts "[ERROR] Missings fields for badge: #{badge[:codename]}"
-			end
+      Badge.create(name: jb["name"], 
+                   codename: jb["codename"], 
+                   description: jb["description"], 
+                   edition_id: jb["edition"],
+                   badge_type: jb["badge_type"],
+                   parent_id: parent_id,
+                   avatar: avatar,
+                   is_code_needed: is_code_needed)
 
-		end
-
-	end
+      puts "Added '#{jb["codename"]}'"
+    end
+  end
 end
