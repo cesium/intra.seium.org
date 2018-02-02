@@ -48,7 +48,7 @@ Model
 
 ### Configure AWS S3 Credentials
 
-First off you need to correctly configure your AWS S3 credentials in order for image uploading to work correctly. If you do not have a AWS account yet create a new one and create a bucket, for instructions check [Creating A Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
+**The following steps are only needed for production.** First off you need to correctly configure your AWS S3 credentials in order for image uploading to work correctly. If you do not have a AWS account yet create a new one and create a bucket, for instructions check [Creating A Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
 
 Because this webapp is built on top of AWS S3 you need to create a `.env` file in the root folder with the needed credentials. Check [this](https://github.com/cesium/intra.seium.org/blob/master/.env.sample) example file for guidance, you only need to fill in the missing values.
 
