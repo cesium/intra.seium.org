@@ -223,6 +223,8 @@ pt:
         twitter_account: "Link para o perfil do Twitter"
         github_account: "Link para o perfil do GitHub"
         google_plus_account: "Link para o perfil do Google Plus"
+        uid: "Token de identificação"
+        provider: "Serviço de autenticação"
     errors:
       template:
         header:
@@ -239,6 +241,10 @@ pt:
               inclusion: "não pode estar em branco"
             is_cesium_associate:
               inclusion: "não pode estar em branco"
+            uid:
+              blank: "não pode estar em branco. Inicie o seu registo através da página principal."
+            provider:
+              blank: "não pode estar em branco. Inicie o seu registo através da página principal."
   helpers:
     label:
       user:

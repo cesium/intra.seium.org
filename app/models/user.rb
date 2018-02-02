@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   UserIsAlreadyAnOrganizerError = Class.new(StandardError)
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :provider, :uid, presence: true
 
   validates :first_name, :last_name, presence: true
 
