@@ -26,7 +26,7 @@ class ParticipantsController < ApplicationController
     ( @participant.facebook_account != nil && @participant.facebook_account != "" ) ||
     ( @participant.twitter_account != nil && @participant.twitter_account != "" ) ||
     ( @participant.github_account != nil && @participant.github_account != "" ) ||
-    ( @participant.google_plus_account != nil && @participant.google_plus_account != "" )
+    ( @participant.linked_in_account != nil && @participant.linked_in_account != "" )
   end
 
   def set_participant

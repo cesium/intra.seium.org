@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
 
     [ :birthday, :biography, :facebook_account, :twitter_account,
-      :github_account, :google_plus_account, :avatar, :cesium_associate_number
+      :github_account, :linked_in_account, :avatar, :cesium_associate_number
     ].each do |p|
       devise_parameter_sanitizer.permit(:account_update, keys: [p])
     end
