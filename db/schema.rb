@@ -11,32 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201154534) do
+ActiveRecord::Schema.define(version: 20180205012648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string   "name",                      limit: 255,                 null: false
+    t.string   "name",                                      null: false
     t.text     "description"
-    t.datetime "begin_date",                                            null: false
+    t.datetime "begin_date",                                null: false
     t.datetime "end_date"
-    t.integer  "activity_type",                                         null: false
-    t.string   "place",                     limit: 255
-    t.string   "poster_photo_url",          limit: 255
-    t.string   "banner_photo_url",          limit: 255
+    t.integer  "activity_type",                             null: false
+    t.string   "place"
+    t.string   "poster_photo_url"
+    t.string   "banner_photo_url"
     t.integer  "num_available_places"
     t.float    "registration_fee_in_euros"
     t.text     "prizes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_free",                               default: true,  null: false
-    t.boolean  "has_prizes",                            default: false, null: false
+    t.boolean  "is_free",                   default: true,  null: false
+    t.boolean  "has_prizes",                default: false, null: false
     t.integer  "edition_id"
-    t.string   "url_escaped_name",          limit: 255, default: "",    null: false
+    t.string   "url_escaped_name",          default: "",    null: false
   end
 
+  add_index "activities", ["activity_type"], name: "index_activities_on_activity_type", using: :btree
   add_index "activities", ["edition_id"], name: "index_activities_on_edition_id", using: :btree
+  add_index "activities", ["name"], name: "index_activities_on_name", using: :btree
   add_index "activities", ["url_escaped_name"], name: "index_activities_on_url_escaped_name", using: :btree
 
   create_table "activities_speakers", id: false, force: :cascade do |t|
@@ -58,7 +60,7 @@ ActiveRecord::Schema.define(version: 20180201154534) do
   create_table "badge_acquisitions", force: :cascade do |t|
     t.integer  "badge_id"
     t.integer  "user_id"
-    t.string   "code",                 limit: 255
+    t.string   "code"
     t.integer  "status"
     t.datetime "code_expiration_date"
     t.datetime "created_at"
@@ -71,7 +73,7 @@ ActiveRecord::Schema.define(version: 20180201154534) do
   add_index "badge_acquisitions", ["user_id"], name: "index_badge_acquisitions_on_user_id", using: :btree
 
   create_table "badges", force: :cascade do |t|
-    t.string   "name",                limit: 255
+    t.string   "name"
     t.text     "description"
     t.text     "category"
     t.integer  "edition_id"
@@ -80,10 +82,10 @@ ActiveRecord::Schema.define(version: 20180201154534) do
     t.datetime "updated_at"
     t.boolean  "is_code_needed"
     t.datetime "expiration_date"
-    t.string   "codename",            limit: 255, default: "", null: false
-    t.integer  "badge_type",                      default: 0,  null: false
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "avatar_content_type", limit: 255
+    t.string   "codename",            default: "", null: false
+    t.integer  "badge_type",          default: 0,  null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "parent_id"
@@ -96,20 +98,22 @@ ActiveRecord::Schema.define(version: 20180201154534) do
   add_index "badges", ["parent_id"], name: "index_badges_on_parent_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",                limit: 255,                 null: false
+    t.string   "name",                                null: false
     t.text     "description"
-    t.string   "address",             limit: 255
-    t.boolean  "is_partner",                      default: false, null: false
+    t.string   "address"
+    t.boolean  "is_partner",          default: false, null: false
     t.integer  "partnership_type"
-    t.string   "web_site",            limit: 255
-    t.string   "facebook_account",    limit: 255
-    t.string   "twitter_account",     limit: 255
-    t.string   "github_account",      limit: 255
-    t.string   "google_plus_account", limit: 255
-    t.string   "logo_url",            limit: 255
+    t.string   "web_site"
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.string   "google_plus_account"
+    t.string   "logo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "companies", ["name"], name: "index_companies_on_name", using: :btree
 
   create_table "companies_editions", id: false, force: :cascade do |t|
     t.integer "company_id"
@@ -120,7 +124,7 @@ ActiveRecord::Schema.define(version: 20180201154534) do
   add_index "companies_editions", ["edition_id"], name: "index_companies_editions_on_edition_id", using: :btree
 
   create_table "editions", force: :cascade do |t|
-    t.string   "name",           limit: 255
+    t.string   "name"
     t.integer  "edition_number"
     t.text     "description"
     t.datetime "begin_date"
@@ -146,35 +150,36 @@ ActiveRecord::Schema.define(version: 20180201154534) do
   add_index "editions_users", ["user_id"], name: "index_editions_users_on_user_id", using: :btree
 
   create_table "speakers", force: :cascade do |t|
-    t.string   "name",                limit: 255, null: false
-    t.string   "email",               limit: 255
-    t.string   "photo_url",           limit: 255
+    t.string   "name",                null: false
+    t.string   "email"
+    t.string   "photo_url"
     t.text     "biography"
-    t.string   "facebook_account",    limit: 255
-    t.string   "twitter_account",     limit: 255
-    t.string   "github_account",      limit: 255
-    t.string   "google_plus_account", limit: 255
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.string   "google_plus_account"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role",                limit: 255
-    t.string   "web_site",            limit: 255
+    t.string   "role"
+    t.string   "web_site"
     t.integer  "company_id"
   end
 
   add_index "speakers", ["company_id"], name: "index_speakers_on_company_id", using: :btree
+  add_index "speakers", ["name"], name: "index_speakers_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                            limit: 255, default: "",    null: false
+    t.string   "email",                            default: "",    null: false
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                default: 0,     null: false
+    t.integer  "sign_in_count",                    default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",               limit: 255
-    t.string   "last_sign_in_ip",                  limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name",                       limit: 255
-    t.string   "last_name",                        limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "birthday"
     t.text     "biography"
     t.boolean  "is_univ_student"
@@ -182,26 +187,25 @@ ActiveRecord::Schema.define(version: 20180201154534) do
     t.boolean  "is_inf_eng_student_at_minho_univ"
     t.boolean  "is_cesium_associate"
     t.integer  "cesium_associate_number"
-    t.string   "minho_univ_student_id",            limit: 255
-    t.string   "university",                       limit: 255
-    t.string   "course",                           limit: 255
-    t.string   "facebook_account",                 limit: 255
-    t.string   "twitter_account",                  limit: 255
-    t.string   "github_account",                   limit: 255
-    t.string   "google_plus_account",              limit: 255
-    t.boolean  "is_organizer",                                 default: false
-    t.string   "organizer_role",                   limit: 255
-    t.string   "username",                         limit: 255
+    t.string   "minho_univ_student_id"
+    t.string   "university"
+    t.string   "course"
+    t.string   "facebook_account"
+    t.string   "twitter_account"
+    t.string   "github_account"
+    t.boolean  "is_organizer",                     default: false
+    t.string   "organizer_role"
+    t.string   "username"
     t.integer  "sex"
-    t.string   "avatar_file_name",                 limit: 255
-    t.string   "avatar_content_type",              limit: 255
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "linked_in_account",                limit: 255
-    t.string   "location",                         limit: 255
-    t.string   "profession",                       limit: 255
-    t.integer  "badge_acquisitions_count",                     default: 0
-    t.boolean  "is_badge_manager",                             default: false
+    t.string   "linked_in_account"
+    t.string   "location"
+    t.string   "profession"
+    t.integer  "badge_acquisitions_count",         default: 0
+    t.boolean  "is_badge_manager",                 default: false
     t.string   "uid"
     t.string   "provider"
   end

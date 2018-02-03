@@ -90,8 +90,7 @@ class User < ActiveRecord::Base
 
   def has_social_info
     !facebook_account.blank? || !twitter_account.blank? ||
-      !github_account.blank? || !google_plus_account? ||
-      !linked_in_account.blank?
+    !github_account.blank? || !linked_in_account.blank?
   end
 
   def update_account_badges

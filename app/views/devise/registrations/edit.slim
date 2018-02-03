@@ -3,18 +3,18 @@
   .row
     .col-md-12
       #users-new.form-container
-        h2 Editar Conta 
+        h2 Editar Conta
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
           = devise_error_messages!
           .col-md-5.col-sm-12.col-xs-12
             .user-edit-img
-              = f.label :avatar 
+              = f.label :avatar
                 = image_tag(@user.avatar.url(:medium), class: 'img-responsive user-logo', id: 'avatar')
                 .user-img-middle
                   p
-                    | Alterar 
+                    | Alterar
                     br
-                    | Foto 
+                    | Foto
               = f.file_field :avatar
           .col-md-7.col-sm-12.col-xs-12
             br
@@ -41,28 +41,29 @@
               .col-md-4.col-sm-4.col-xs-4
                 = f.label :facebook_account, "Facebook"
               .col-md-8.col-xs-8.col-sm-8
-                = f.text_field :facebook_account
+                = f.text_field :facebook_account, placeholder: "Username"
             br
             .field.row
               .col-md-4.col-sm-4.col-xs-4
                 = f.label :twitter_account, "Twitter"
               .col-md-8.col-xs-8.col-sm-8
-                = f.text_field :twitter_account
+                = f.text_field :twitter_account, placeholder: "Username"
             br
             .field.row
               .col-md-4.col-sm-4.col-xs-4
                 = f.label :github_account, "GitHub"
               .col-md-8.col-xs-8.col-sm-8
-                = f.text_field :github_account
+                = f.text_field :github_account, placeholder: "Username"
             br
             .field.row
               .col-md-4.col-sm-4.col-xs-4
-                = f.label :google_plus_account, "Google+"
+                = f.label :linked_in_account, "LinkedIn"
               .col-md-8.col-xs-8.col-sm-8
-                = f.text_field :google_plus_account
+                = f.text_field :linked_in_account, placeholder: "Unique user ID"
+            br
           .col-md-12.col-sm-12.col-xs-12
             hr
             .action
-              = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'  
+              = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'
 
-= javascript_include_tag 'update_avatar'       
+= javascript_include_tag 'update_avatar'

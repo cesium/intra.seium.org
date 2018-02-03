@@ -1,20 +1,23 @@
 ul.participant-info
 
-  - if @participant.biography && @participant.biography != ""
+  - if @participant.biography
+    - if @participant.biography != ""
+      li.participant-info-category
+        | Biografia
+      li.participant-info-item
+        = @participant.biography
+
+  - if current_user == @participant
     li.participant-info-category
-      | Biografia
+      | Email
     li.participant-info-item
-      = @participant.biography
+      = @participant.email
 
-  li.participant-info-category
-    | Email
-  li.participant-info-item
-    = @participant.email
-
-  li.participant-info-category
-    | Username
-  li.participant-info-item
-    = @participant.username
+  - if current_user == @participant
+    li.participant-info-category
+      | Username
+    li.participant-info-item
+      = @participant.username
 
   li.participant-info-category
     | Sexo
@@ -29,10 +32,11 @@ ul.participant-info
 
   - if @participant.is_univ_student
     - if @participant.minho_univ_student_id != ""
-      li.participant-info-category
-        | Nº de Aluno UMinho
-      li.participant-info-item
-        = @participant.minho_univ_student_id
+      - if current_user == @participant
+        li.participant-info-category
+          | Nº de Aluno UMinho
+        li.participant-info-item
+          = @participant.minho_univ_student_id
 
     li.participant-info-category
       | Curso
@@ -52,3 +56,29 @@ ul.participant-info
     | Localidade
   li.participant-info-item
     = @participant.location
+
+  li.participant-info-category
+    | Redes Sociais
+
+  - if @participant.github_account
+    - if @participant.github_account != ""
+      i.icon-link.fa.fa-lg.fa-github aria-hidden="true"
+      = participant_github_link(@participant)
+
+  - if @participant.twitter_account
+    - if @participant.twitter_account != ""
+      li.participant-info-category
+      i.icon-link.fa.fa-lg.fa-twitter-square aria-hidden="true"
+      = participant_twitter_link(@participant)
+
+  - if @participant.linked_in_account
+    - if @participant.linked_in_account != ""
+      li.participant-info-category
+      i.icon-link.fa.fa-lg.fa-linkedin aria-hidden="true"
+      = participant_linked_in_link(@participant)
+
+  - if @participant.facebook_account
+    - if @participant.facebook_account != ""
+      li.participant-info-category
+      i.icon-link.fa.fa-lg.fa-facebook-square aria-hidden="true"
+      = participant_facebook_link(@participant)
