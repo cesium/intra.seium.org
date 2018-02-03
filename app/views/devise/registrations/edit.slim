@@ -6,55 +6,63 @@
         h2 Editar Conta 
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
           = devise_error_messages!
-          .user-update-info.col-md-7
+          .col-md-5.col-sm-12.col-xs-12
+            .user-edit-img
+              = f.label :avatar 
+                = image_tag(@user.avatar.url(:medium), class: 'img-responsive user-logo', id: 'avatar')
+                .user-img-middle
+                  p
+                    | Alterar 
+                    br
+                    | Foto 
+              = f.file_field :avatar
+          .col-md-7.col-sm-12.col-xs-12
             br
             #bio-field.field.row
-              .col-md-3.col-sm-3.col-xs-5.text-left
+              .col-md-4.col-sm-4.col-xs-4.text-left
                 = f.label :biography
-              .col-md-7.col-xs-7.col-sm-7.text-left
+              .col-md-8.col-xs-8.col-sm-8.text-left
                 = f.text_area :biography, id: 'bio-field'
             br
             .field.row
-              .col-md-3.col-sm-3.col-xs-5
+              .col-md-4.col-sm-4.col-xs-4
                 = f.label :birthday
-              .col-md-7.col-xs-7.col-sm-7
+              .col-md-8.col-xs-8.col-sm-8
                 = f.date_field :birthday
             br
             - if @user.is_cesium_associate && @user.cesium_associate_number.blank?
               .field.row
-                .col-md-3.col-sm-3.col-xs-5
+                .col-md-4.col-sm-4.col-xs-4
                   = f.label :cesium_associate_number
-                .col-md-7.col-xs-7.col-sm-7
+                .col-md-8.col-xs-8.col-sm-8
                   = f.text_field :cesium_associate_number
             br
             .field.row
-              .col-md-3.col-sm-3.col-xs-5
+              .col-md-4.col-sm-4.col-xs-4
                 = f.label :facebook_account, "Facebook"
-              .col-md-7.col-xs-7.col-sm-7
+              .col-md-8.col-xs-8.col-sm-8
                 = f.text_field :facebook_account
             br
             .field.row
-              .col-md-3.col-sm-3.col-xs-5
+              .col-md-4.col-sm-4.col-xs-4
                 = f.label :twitter_account, "Twitter"
-              .col-md-7.col-xs-7.col-sm-7
+              .col-md-8.col-xs-8.col-sm-8
                 = f.text_field :twitter_account
             br
             .field.row
-              .col-md-3.col-sm-3.col-xs-5
+              .col-md-4.col-sm-4.col-xs-4
                 = f.label :github_account, "GitHub"
-              .col-md-7.col-xs-7.col-sm-7
+              .col-md-8.col-xs-8.col-sm-8
                 = f.text_field :github_account
             br
             .field.row
-              .col-md-3.col-sm-3.col-xs-5
+              .col-md-4.col-sm-4.col-xs-4
                 = f.label :google_plus_account, "Google+"
-              .col-md-7.col-xs-7.col-sm-7
+              .col-md-8.col-xs-8.col-sm-8
                 = f.text_field :google_plus_account
-            br
+          .col-md-12.col-sm-12.col-xs-12
             hr
             .action
-              = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'
-          .col-md-5
-            .user-edit-img
-              = image_tag(@user.avatar.url(:medium), class: 'user-logo')
-              = f.file_field :avatar
+              = button_tag "Confirmar", type: 'submit', class: 'btn btn-submit', id: 'user-edit-submit'  
+
+= javascript_include_tag 'update_avatar'       

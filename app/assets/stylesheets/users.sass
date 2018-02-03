@@ -3,30 +3,48 @@ $smartphone: "(max-width: 767px)"
 $detective: "(max-width: 380px)"
 
 .user-logo
-  width: 200px
-  height: 200px
-  margin: 0px auto 30px
-  border-radius: 50%
+  width: 80%
+  height: 80%
+  margin: 0 auto
   border: 5px solid white
   background-color: #444
   background-size: cover
   background-position: center
+  transition: .5s ease
+  backface-visibility: hidden
+  border: 2px solid rgb(21, 130, 213)
+
+.user-img-middle
+  transition: .5s ease
+  opacity: 0
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  text-align: center
+  p
+    font-family: "Montserrat", sans-serif
+    font-size: 20px
+    font-weight: bold
+    color: rgb(21, 130, 213)
 
 @media #{$tablet}
   .user-logo
-    margin: 0px auto 20px
-    width: 150px
-    height: 150px
+    margin: 0px auto
+    width: 80%
+    height: 80%
 
 @media #{$smartphone}
   .user-logo
-    width: 100px
-    height: 100px
+    margin: 0px auto
+    width: 70%
+    height: 70%
 
 @media #{$detective}
   .user-logo
-    width: 60px
-    height: 60px
+    margin: 0px auto
+    width: 60%
+    height: 60%
 
 #user-new-login
   float: left
@@ -42,38 +60,42 @@ $detective: "(max-width: 380px)"
   margin-top: 50px
   content: image-url('logo_sei.png')
 
-label.sex-option
+.sex-option
   float: right
 
-input.sex-option
+.sex-option
   float: left
 
-div.sex-option-container
+.sex-option-container
   padding-left: 8px
 
-div.sex-option-label-container
+.sex-option-label-container
   padding: 0
 
-#bio-field
-  background-color: transparent
-  margin-top: 20px
-  float: left
-  width: 180px
-  height: 75px
-  border-color: #B0BEC5
-  resize: none
-  outline: none
-  &:focus
-    border-color: #fff
-
 .user-edit-img
+  margin-top: 10%
+  & label
+    text-align: center
+    width: 100%
+    margin: auto
   & img
-    max-width: 300px
+    max-width: 500px
     margin-bottom: 15px
   & input
     margin: 0 auto
+    display: none
 
-div.user-edit-info
+.user-edit-img:hover
+  & label
+    cursor: pointer
+  .user-logo
+    opacity: 0.05
+    cursor: pointer
+  .user-img-middle
+    opacity: 1   
+    cursor: pointer
+    
+.user-edit-info
   padding: 0
   i
     float: left
