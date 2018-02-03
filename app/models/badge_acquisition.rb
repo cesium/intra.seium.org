@@ -34,12 +34,11 @@ class BadgeAcquisition < ActiveRecord::Base
     acquire_parent_badge(user, badge)
 
     if badge_acq.code_available_for_one_use?
-      create(user: user, badge: badge, acquisition_date: DateTime.now).badge
       badge_acq.update(user: user, status: BadgeCodeStatus::USED, acquisition_date: DateTime.now)
     elsif badge_acq.code_available_for_multiple_uses?
-      create(user: user, badge: badge, acquisition_date: DateTime.now).badge
       create(user: user, badge: badge, code: code, status: BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES, acquisition_date: DateTime.now, code_expiration_date: badge_acq.code_expiration_date)
     end
+
     badge
   end
 
