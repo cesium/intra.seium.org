@@ -6,9 +6,9 @@
     .row
       .col-md-9.col-md-offset-1.col-sm-12.col-sm-offset-0.col-xs-8.col-xs-offset-2
         = image_tag @badge.avatar.url(:medium), alt: @badge.name, class: "img-responsive"
-    br
-    p.text-center
-      = @badge.description
+        br
+        p.text-center
+          = @badge.description
     hr
   .col-md-8.col-sm-9.col-xs-12
     .row
