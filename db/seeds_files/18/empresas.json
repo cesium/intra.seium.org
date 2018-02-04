@@ -1,0 +1,156 @@
+[
+ {
+   "name": "Accenture",
+   "codename": "banca_accenture",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Accenture",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_accenture.png",
+   "edition": 2018
+ },
+ {
+   "name": "XpandIT",
+   "codename": "banca_xpandit",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da XpandIT",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_xpandit.png",
+   "edition": 2018
+ },
+ {
+   "name": "WeDo",
+   "codename": "banca_wedo",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da WeDo",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_wedo.png",
+   "edition": 2018
+ },
+ {
+   "name": "Vodafone",
+   "codename": "banca_vodafone",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Vodafone",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_vodafone.png",
+   "edition": 2018
+ },
+ {
+   "name": "Aptiv",
+   "codename": "banca_aptiv",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Aptiv",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_aptiv.png",
+   "edition": 2018
+ },
+ {
+   "name": "Blip",
+   "codename": "banca_blip",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Blip",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_blip.png",
+   "edition": 2018
+ },
+ {
+   "name": "Eurotux",
+   "codename": "banca_eurotux",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Eurotux",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_eurotux.png",
+   "edition": 2018
+ },
+ {
+   "name": "Primavera",
+   "codename": "banca_primavera",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Primavera",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_primavera.png",
+   "edition": 2018
+ },
+ {
+   "name": "SmithMicro",
+   "codename": "banca_smithmicro",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da SmithMicro",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_smithmicro.png",
+   "edition": 2018
+ },
+ {
+   "name": "KPMG",
+   "codename": "banca_kpmg",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da KPMG",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_kpmg.png",
+   "edition": 2018
+ },
+ {
+   "name": "Talkdesk",
+   "codename": "banca_talkdesk",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Talkdesk",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_talkdesk.png",
+   "edition": 2018
+ },
+ {
+   "name": "Seegno",
+   "codename": "banca_seegno",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Seegno",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_seegno.png",
+   "edition": 2018
+ },
+ {
+   "name": "OutSystems",
+   "codename": "banca_outsystems",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da OutSystems",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_outsystems.png",
+   "edition": 2018
+ },
+ {
+   "name": "Farfetch",
+   "codename": "banca_farfetch",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da Farfetch",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_farfetch.png",
+   "edition": 2018
+ }
+]

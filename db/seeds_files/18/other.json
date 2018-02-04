@@ -1,0 +1,134 @@
+[
+ {
+   "name": "Acreditação",
+   "codename": "checkin",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Efetuou o check-in",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/checkin.png",
+   "edition": 2018
+ },
+ {
+   "name": "Early Bird",
+   "codename": "early_bird",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Ser a primeira pessoa a chegar à SEI",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/early_bird.png",
+   "edition": 2018
+ },
+ {
+   "name": "First Come, First Served",
+   "codename": "first_50",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Ser das primeiras 50 inscrições",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/first_50.png",
+   "edition": 2018
+ },
+ {
+   "name": "Rei do Coffee Break",
+   "codename": "rei_coffee_break",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Encontrar a badge escondida",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/rei_coffee_break.png",
+   "edition": 2018
+ },
+ {
+   "name": "Treasure Hunter",
+   "codename": "treasure_hunter",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Encontrar a badge escondida",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/treasure_hunter.png",
+   "edition": 2018
+ },
+ {
+   "name": "100% Participação",
+   "codename": "100_participacao",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Participar em todos os eventos da SEI",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/100_participacao.png",
+   "edition": 2018
+ },
+ {
+   "name": "Foto com a mascote",
+   "codename": "foto_mascote",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Tirar uma foto com a mascote",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/foto_mascote.png",
+   "edition": 2018
+ },
+ {
+   "name": "Bug Tracker",
+   "codename": "bug_tracker",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Encontrar um bug num dos nossos sites",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/bug_tracker.png",
+   "edition": 2018
+ },
+ {
+   "name": "SEI Lover",
+   "codename": "sei_lover",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Fazer um post sobre a SEI nas redes sociais",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/sei_lover.png",
+   "edition": 2018
+ },
+ {
+   "name": "Inquisitor",
+   "codename": "inquisitor",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Fazer uma pergunta numa talk",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/inquisitor.png",
+   "edition": 2018
+ },
+ {
+   "name": "Developer",
+   "codename": "developer",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Submeter um pull request a um dos nossos sites",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/developer.png",
+   "edition": 2018
+ },
+ {
+   "name": "Contributor",
+   "codename": "contributor",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Ter um pull request aprovado num dos nossos sites",
+   "is_code_needed": 1,
+   "category": "other",
+   "avatar": "public/images/badges/18/other/contributor.png",
+   "edition": 2018
+ }
+]
