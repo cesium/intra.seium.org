@@ -15,8 +15,10 @@ class BadgeAcquisition < ActiveRecord::Base
     raise AcquisitionCodeNeededForBadgeError if badge.is_code_needed
     raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
 
-    acquire_parent_badge(user, badge)
-    create(user: user, badge: badge, acquisition_date: DateTime.now).badge
+    parent_badges = acquire_parent_badge(user, badge)
+    create(user: user, badge: badge, acquisition_date: DateTime.now)
+
+    parent_badges << badge
   end
 
   def self.acquire_badge_with_code(user, code)
@@ -31,7 +33,7 @@ class BadgeAcquisition < ActiveRecord::Base
     raise UserAlreadyHaveBadgeError.new if user.badges.include? badge
     raise AcquisitionError unless badge_acq.code_available
 
-    acquire_parent_badge(user, badge)
+    parent_badges = acquire_parent_badge(user, badge)
 
     if badge_acq.code_available_for_one_use?
       badge_acq.update(user: user, status: BadgeCodeStatus::USED, acquisition_date: DateTime.now)
@@ -39,7 +41,7 @@ class BadgeAcquisition < ActiveRecord::Base
       create(user: user, badge: badge, code: code, status: BadgeCodeStatus::AVAILABLE_FOR_MULTIPLE_USES, acquisition_date: DateTime.now, code_expiration_date: badge_acq.code_expiration_date)
     end
 
-    badge
+    parent_badges << badge
   end
 
   def validate_code_expiration_date
@@ -97,10 +99,10 @@ class BadgeAcquisition < ActiveRecord::Base
 
   def self.acquire_parent_badge(user, badge)
     parent = badge.parent
-    return if parent.blank?
-    return if user.badges.include? parent
-    return if parent.expired?
-    return if parent.is_code_needed
+    return [] if parent.blank?
+    return [] if user.badges.include? parent
+    return [] if parent.expired?
+    return [] if parent.is_code_needed
 
     acquire_badge(user, parent)
   end

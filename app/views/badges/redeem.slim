@@ -1,30 +1,30 @@
 .container
-  .row
-    .col-md-12
-      h3
-        | OBTER BADGE_
-      p
-        - case @error
-        - when BadgeAcquisition::UserAlreadyHaveBadgeError
-          = "Já possui o badge requisitado!"
-        - when BadgeAcquisition::InvalidCodeError
-          = "O código é inválido!"
-        - when BadgeAcquisition::CodeNotAvailableRightNowError
-          = "O código não está disponível atualmente!"
-        - when BadgeAcquisition::CodeAlreadyInUseError
-          = "O código já foi usado!"
-        - when BadgeAcquisition::CodeExpirationDateExcedeedError
-          = "O código expirou!"
-        - when Badge::ExpirationDateExcedeedError
-          = "O código expirou!"
-        - when NilClass
-          #badge
-            #badge-logo
-              = link_to edition_badge_path(@edition, @badge)
-                = image_tag @badge.avatar.url, alt: @badge.name, class: "img-responsive"
-            p.text-center#badge-name
+  h3
+    | OBTER BADGE_
+  p
+    - case @error
+    - when BadgeAcquisition::UserAlreadyHaveBadgeError
+      = "Já possui o badge requisitado!"
+    - when BadgeAcquisition::InvalidCodeError
+      = "O código é inválido!"
+    - when BadgeAcquisition::CodeNotAvailableRightNowError
+      = "O código não está disponível atualmente!"
+    - when BadgeAcquisition::CodeAlreadyInUseError
+      = "O código já foi usado!"
+    - when BadgeAcquisition::CodeExpirationDateExcedeedError
+      = "O código expirou!"
+    - when Badge::ExpirationDateExcedeedError
+      = "O código expirou!"
+    - when NilClass
+      .row
+        - @badges.each do |badge|
+          .sei-badge class=col_for_badges(@badges)
+            .badge-logo
+              = link_to edition_badge_path(@edition, badge)
+                = image_tag badge.avatar.url, alt: badge.name, class: "img-responsive"
+            p.text-center.badge-name
               | #{t('badge_congrats')}
-              = link_to " #{@badge.name}", edition_badge_path(@edition, @badge)
+              = link_to " #{badge.name}", edition_badge_path(@edition, badge)
               | !
-        - else
+    - else
           = @error.to_s
