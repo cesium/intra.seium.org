@@ -28,20 +28,3 @@ nav#navbar.navbar.navbar-default.navbar-fixed-top
           = link_to "Logout", destroy_user_session_path, method: :delete
     /! /.navbar-collapse
   /! /.container-fluid
-- if (a = Activity.next_activity(@activities)) && a.is_happening?
-  = link_to edition_activity_path(edition_id: @edition.id, id: a.url_escaped_name) do
-    nav#navbar-activity-happening.navbar.navbar-default.blink_me
-      .container
-        .col-md-12.text-center
-          .col-md-6.col-md-offset-3
-            h4.badge-name= a.name
-            h5= "A decorrer (# a.place )"
-- elsif a != nil
-  = link_to edition_activity_path(edition_id: @edition.id, id: a.url_escaped_name) do
-    nav#navbar-activity-will-happen.navbar.navbar-default
-      .container
-        .col-md-12.text-center
-          .col-md-6.col-md-offset-3
-            h4.badge-name= a.name
-            h5= a.to_s_compact
-

@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: {  medium: ["300x300#", :png], thumb: ["100x100#", :png] }, default_url: "/images/:style/avatar-missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  has_and_belongs_to_many :activities
   has_and_belongs_to_many :editions
 
   has_many :badge_acquisitions
@@ -71,10 +70,6 @@ class User < ActiveRecord::Base
 
   def public_profile
     self
-  end
-
-  def registered_at?(activity)
-    activities.include? activity
   end
 
   def sex_to_s

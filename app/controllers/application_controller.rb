@@ -35,6 +35,5 @@ class ApplicationController < ActionController::Base
 
   def set_global_info
     @edition = Edition.find(2018)
-    @activities = @edition.activities
   end
 end

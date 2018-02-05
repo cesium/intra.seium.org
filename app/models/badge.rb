@@ -1,6 +1,5 @@
 class Badge < ActiveRecord::Base
   belongs_to :edition
-  belongs_to :activity
 
   belongs_to :parent, class_name: "Badge", foreign_key: :parent_id
   has_many :children, class_name: "Badge", foreign_key: :parent_id
@@ -11,6 +10,7 @@ class Badge < ActiveRecord::Base
 
   has_many :badge_acquisitions
   has_many :users, through: :badge_acquisitions
+
   has_attached_file :avatar, styles: {  medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/badge-missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
