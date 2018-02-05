@@ -1,0 +1,46 @@
+[
+ {
+   "name": "Empresas nível 1",
+   "codename": "challange_empresas1",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Conseguiu, pelo menos, 4 badges de empresas",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_empresas1.png",
+   "edition": 2018
+ },
+ {
+   "name": "Empresas nivel 2",
+   "codename": "challange_empresas2",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Conseguiu, pelo menos, 8 badges de empresas",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_empresas2.png",
+   "edition": 2018
+ },
+ {
+   "name": "Empresas nível 3",
+   "codename": "challange_empresas3",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Conseguiu, pelo menos, 12 badges de empresas",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_empresas3.png",
+   "edition": 2018
+ },
+ {
+   "name": "Empresas nível 4",
+   "codename": "challange_empresas4",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Conseguiu, pelo menos, 14 badges de empresas",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_empresas4.png",
+   "edition": 2018
+ }
+]
