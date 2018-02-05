@@ -1,0 +1,90 @@
+[
+ {
+   "name": "Sessão Abertura",
+   "codename": "activity_abertura",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presente na sessão abertura",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_abertura.png",
+   "edition": 2018
+ },
+ {
+   "name": "Tabletop Meetup",
+   "codename": "activity_tabletop",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presente no tabletop meetup",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_tabletop.png",
+   "edition": 2018
+ },
+ {
+   "name": "Unbabel AI Stack",
+   "codename": "talk_unbabel",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Unbabel AI Stack'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_unbabel.png",
+   "edition": 2018
+ },
+ {
+   "name": "Bid Data - Present & Future",
+   "codename": "talk_xpandit",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Bid Data - Present & Future'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_xpandit.png",
+   "edition": 2018
+ },
+ {
+   "name": "Enterprise Architecture @ Sonae : let’s dive in?",
+   "codename": "talk_sonae",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Enterprise Architecture @ Sonae : let’s dive in?'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_sonae.png",
+   "edition": 2018
+ },
+ {
+   "name": "Fogos.pt - A história, a tecnologia e os problemas",
+   "codename": "talk_pina",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Fogos.pt - A história, a tecnologia e os problemas'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_pina.png",
+   "edition": 2018
+ },
+ {
+   "name": "Software Inteligente",
+   "codename": "talk_primavera",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Software Inteligente'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_primavera.png",
+   "edition": 2018
+ },
+ {
+   "name": "How to work remotely and live wherever you want",
+   "codename": "talk_job",
+   "parent": "day_5",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'How to work remotely and live wherever you want'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_job.png",
+   "edition": 2018
+ }
+]
