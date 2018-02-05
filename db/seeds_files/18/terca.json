@@ -1,0 +1,57 @@
+[
+ {
+   "name": "Real-Time WebApps com Laravel e Pusher",
+   "codename": "talk_neves",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Real-Time WebApps com Laravel e Pusher'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_neves.png",
+   "edition": 2018
+ },
+ {
+   "name": "Evening the Odds in the Digital Fraud War",
+   "codename": "talk_wedo",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Evening the Odds in the Digital Fraud War'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_wedo.png",
+   "edition": 2018
+ },
+ {
+   "name": "GitLab: One Tool for Software Development",
+   "codename": "talk_gitlab",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'GitLab: One Tool for Software Development'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_gitlab.png",
+   "edition": 2018
+ },
+ {
+   "name": "O Estado da Segurança em Organizações Modernas",
+   "codename": "talk_kpmg",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'O Estado da Segurança em Organizações Modernas'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_kpmg.png",
+   "edition": 2018
+ },
+ {
+   "name": "What About the Future?",
+   "codename": "talk_future",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presenta no painel 'What About the Future?'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_future.png",
+   "edition": 2018
+ }
+]
