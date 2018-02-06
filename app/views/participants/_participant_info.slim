@@ -24,11 +24,12 @@ ul.participant-info
   li.participant-info-item
     = @participant.sex_to_s
 
-  - if @participant.birthday
-    li.participant-info-category
-      | Data de nascimento
-    li.participant-info-item
-      = @participant.birthday.strftime("%Y-%m-%d")
+  - if current_user == @participant
+    - if @participant.birthday
+      li.participant-info-category
+        | Data de nascimento
+      li.participant-info-item
+        = @participant.birthday.strftime("%Y-%m-%d")
 
   - if @participant.is_univ_student
     - if @participant.minho_univ_student_id != ""
