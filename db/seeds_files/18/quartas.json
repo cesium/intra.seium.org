@@ -1,0 +1,112 @@
+[
+ {
+   "name": "Transforming Mobility",
+   "codename": "talk_aptiv",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Transforming Mobility'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_aptiv.png",
+   "edition": 2018
+ },
+ {
+   "name": "DevOps: metodologia de desenvolvimento com GitLab",
+   "codename": "talk_eurotux",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'DevOps: metodologia de desenvolvimento com GitLab'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_eurotux.png",
+   "edition": 2018
+ },
+ {
+   "name": "Ser-se 'Women in Tech'",
+   "codename": "talk_women",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta no painel Ser-se 'Women in Tech'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_women.png",
+   "edition": 2018
+ },
+ {
+   "name": "Building a Single Page Application\n",
+   "codename": "talk_blip",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Building a Single Page Application\n'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_blip.png",
+   "edition": 2018
+ },
+ {
+   "name": "Journey Through P2P Land",
+   "codename": "talk_mendes",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Journey Through P2P Land'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_mendes.png",
+   "edition": 2018
+ },
+ {
+   "name": "Android with Francisco Franco",
+   "codename": "talk_franco",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'Android with Francisco Franco'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_franco.png",
+   "edition": 2018
+ },
+ {
+   "name": "So You Want to Make Videogames",
+   "codename": "talk_papa",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Esteve presenta na palestra 'So You Want to Make Videogames'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_papa.png",
+   "edition": 2018
+ },
+ {
+   "name": "Arraial",
+   "codename": "activity_arraial",
+   "parent": "day_6",
+   "badge_type": 2,
+   "description": "Esteve presente no arraial",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_arraial.png",
+   "edition": 2018
+ },
+ {
+   "name": "Rally Tascas",
+   "codename": "activity_rally",
+   "parent": "day_7",
+   "badge_type": 2,
+   "description": "Participou no rally das tascas",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_rally.png",
+   "edition": 2018
+ },
+ {
+   "name": "Empresas nível 4",
+   "codename": "challange_empresas4",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Conseguiu, pelo menos, 14 badges de empresas",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_empresas4.png",
+   "edition": 2018
+ }
+]
