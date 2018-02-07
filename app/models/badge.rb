@@ -9,7 +9,7 @@ class Badge < ActiveRecord::Base
   CodesNotAllowedError = Class.new(StandardError)
   ExpirationDateExcedeedError = Class.new(StandardError)
 
-  has_many :badge_acquisitions
+  has_many :badge_acquisitions, dependent: :delete_all
   has_many :users, through: :badge_acquisitions
   has_attached_file :avatar, styles: {  medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/badge-missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
