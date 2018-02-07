@@ -1,5 +1,11 @@
 source "https://rubygems.org"
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+ruby "2.4.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.2.10"
@@ -17,8 +23,6 @@ gem "bootstrap-sass", "~> 3.3.3"
 gem "uglifier", ">= 1.3.0"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.1.0"
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem "therubyracer", platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem "jquery-rails"
@@ -32,15 +36,6 @@ gem "spring",        group: :development
 
 # Use ActiveModel has_secure_password
 # gem "bcrypt", "~> 3.1.7"
-
-# Use Unicorn as the app server
-# gem "unicorn"
-
-# Use Capistrano for deployment
-# gem "capistrano-rails", group: :development
-
-# Use debugger
-# gem "debugger", group: [:development, :test]
 
 # Use devise for User authentication
 gem "devise"
@@ -65,17 +60,10 @@ gem "rqrcode_png"
 gem "cancancan", "~> 1.10"
 
 # Production logging
+# Remove when update to Rails 5
 gem "rails_12factor", group: :production
 
 # deployment gems
-gem "capistrano", "~> 3.1.0"
-gem "capistrano-bundler", "~> 1.1.2"
-gem "capistrano-rails", "~> 1.1.1"
-gem "capistrano-rvm", github: "capistrano/rvm"
-# gem "capistrano-rbenv", "~> 2.0"
-gem "capistrano-secrets-yml", "~> 1.0.0"
-gem "capistrano-rails-console"
-
 gem "puma", "~> 3.11"
 
 # Model Diagram Generation tool
