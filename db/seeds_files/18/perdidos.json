@@ -1,0 +1,24 @@
+[
+ {
+   "name": "Gonçalo Matos",
+   "codename": "goncalo_matos",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Falou com o Gonçalo Matos",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/goncalo_matos.png",
+   "edition": 2018
+ },
+ {
+   "name": "Bruno Araújo\n",
+   "codename": "bruno_araujo",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Falou com o Bruno Araújo\n",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/bruno_araujo.png",
+   "edition": 2018
+ }
+]
