@@ -1,0 +1,13 @@
+[
+ {
+   "name": "ENEI",
+   "codename": "banca_enei",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Esteve na banca da ENEI",
+   "is_code_needed": 1,
+   "category": "company",
+   "avatar": "public/images/badges/18/enterprises/banca_enei.png",
+   "edition": 2018
+ }
+]
