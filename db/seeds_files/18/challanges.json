@@ -1,0 +1,46 @@
+[
+ {
+   "name": "Participante do Desafio Segurança",
+   "codename": "challange_seguranca",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Participou no desafio de segurança",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_seguranca.png",
+   "edition": 2018
+ },
+ {
+   "name": "Participante do Desafio Programação",
+   "codename": "challange_dpum",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Participou no desafio de programação",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_dpum.png",
+   "edition": 2018
+ },
+ {
+   "name": "Submeter CV",
+   "codename": "challange_cv",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Submeteu o seu CV",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_cv.png",
+   "edition": 2018
+ },
+ {
+   "name": "Participante do Concurso Fotogradia",
+   "codename": "challange_photo",
+   "parent": "",
+   "badge_type": 2,
+   "description": "Venceu o concurso de fotografia\n",
+   "is_code_needed": 1,
+   "category": "challange",
+   "avatar": "public/images/badges/18/challange/challange_photo.png",
+   "edition": 2018
+ }
+]
