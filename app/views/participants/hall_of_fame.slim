@@ -4,7 +4,7 @@
   hr
 
   - if participants_hof? && (not current_user.is_organizer)
-    p.alert O ranking econtra-se offline no momento! Diverte-te a colecionar mais badges!
+    p.alert O ranking encontra-se offline no momento! Diverte-te a colecionar mais badges!
   - else
     - @participants.each_with_index do |participant, index|
       .row class=(index.odd? ? 'hof-row-alternate' : 'hof-row' )
