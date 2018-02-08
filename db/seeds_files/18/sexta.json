@@ -1,0 +1,79 @@
+[
+ {
+   "name": "Flávia Faria",
+   "codename": "flavia_faria",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Falou com o Flávia Faria",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/flavia_faria.png",
+   "edition": 2018
+ },
+ {
+   "name": "Progressive WebOops I Did It Again",
+   "codename": "talk_mike",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'Progressive WebOops I Did It Again'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_mike.png",
+   "edition": 2018
+ },
+ {
+   "name": "Engineering Fashion with Data",
+   "codename": "talk_farfetch",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'Engineering Fashion with Data'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_farfetch.png",
+   "edition": 2018
+ },
+ {
+   "name": "Kotlin in 42 minutes",
+   "codename": "talk_eugene",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'Kotlin in 42 minutes'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_eugene.png",
+   "edition": 2018
+ },
+ {
+   "name": "Re(cria) o teu CV",
+   "codename": "talk_gip",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'Re(cria) o teu CV'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_gip.png",
+   "edition": 2018
+ },
+ {
+   "name": "iOS - Facebook in 50 Swifty Minutes\n",
+   "codename": "talk_nutrium",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'iOS - Facebook in 50 Swifty Minutes\n'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_nutrium.png",
+   "edition": 2018
+ },
+ {
+   "name": "Sessão encerramento",
+   "codename": "activity_encerramento",
+   "parent": "day_9",
+   "badge_type": 2,
+   "description": "Esteve presente na sessão encerramento",
+   "is_code_needed": 1,
+   "category": "activity",
+   "avatar": "public/images/badges/18/activity/activity_encerramento.png",
+   "edition": 2018
+ }
+]
