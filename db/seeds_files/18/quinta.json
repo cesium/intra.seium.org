@@ -1,0 +1,101 @@
+[
+ {
+   "name": "Paulo Gomes",
+   "codename": "paulo_gomes",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Falou com o Paulo Gomes",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/paulo_gomes.png",
+   "edition": 2018
+ },
+ {
+   "name": "Ali Shoker",
+   "codename": "ali_shoker",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Falou com o Ali Shoker",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/ali_shoker.png",
+   "edition": 2018
+ },
+ {
+   "name": "Inteligência Artificial @Accenture",
+   "codename": "talk_accenture",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente na palestra 'Inteligência Artificial @Accenture'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_accenture.png",
+   "edition": 2018
+ },
+ {
+   "name": "Into the Blockchain",
+   "codename": "talk_blockchain",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'Into the Blockchain'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_blockchain.png",
+   "edition": 2018
+ },
+ {
+   "name": "Workshop de Android",
+   "codename": "talk_smithmicro",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'Workshop de Android'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_smithmicro.png",
+   "edition": 2018
+ },
+ {
+   "name": "H2O - \"The World's Best Machine Learning Platform\" Overview",
+   "codename": "talk_performetric",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'H2O - \"The World's Best Machine Learning Platform\" Overview'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_performetric.png",
+   "edition": 2018
+ },
+ {
+   "name": "Everyone is Excited to Bitcoin and Blockchain, Shall I?",
+   "codename": "talk_shoker",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'Everyone is Excited to Bitcoin and Blockchain, Shall I?'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_shoker.png",
+   "edition": 2018
+ },
+ {
+   "name": "Building WebApps with React",
+   "codename": "talk_talkdesk",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'Building WebApps with React'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_talkdesk.png",
+   "edition": 2018
+ },
+ {
+   "name": "AI&ML @ Critical Software : A Guided Tour",
+   "codename": "talk_critical",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Esteve presente no painel 'AI&ML @ Critical Software : A Guided Tour'",
+   "is_code_needed": 1,
+   "category": "talk",
+   "avatar": "public/images/badges/18/talks/talk_critical.png",
+   "edition": 2018
+ }
+]
