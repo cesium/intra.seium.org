@@ -1,0 +1,24 @@
+[
+ {
+   "name": "Ricardo Mendes",
+   "codename": "ricardo_mendes",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Falou com o Ricardo Mendes",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/ricardo_mendes.png",
+   "edition": 2018
+ },
+ {
+   "name": "Rui Fonseca",
+   "codename": "rui_fonseca",
+   "parent": "day_8",
+   "badge_type": 2,
+   "description": "Falou com o Rui Fonseca",
+   "is_code_needed": 1,
+   "category": "speaker",
+   "avatar": "public/images/badges/18/speakers/rui_fonseca.png",
+   "edition": 2018
+ }
+]
