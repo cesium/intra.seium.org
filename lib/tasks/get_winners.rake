@@ -4,4 +4,5 @@ namespace :sei do
   task :get_winners => :environment do |t, args|
       puts User.all.select{|b| b.badges.count >= 10 and !b.is_organizer}
         .map{|u| Array.new(u.badges.count,u.username)}.flatten.shuffle
+  end
 end
